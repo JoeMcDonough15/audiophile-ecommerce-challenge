@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Header from "./common/Header/Header";
+import Header from "./Header/Header";
 import Homepage from "./pages/Homepage/Homepage";
 import Checkout from "./pages/Checkout/Checkout";
 import Earphones from "./pages/Earphones/Earphones";

@@ -1,9 +1,10 @@
 import React from "react";
+import "./header.sass";
 
 const Header = () => {
   return (
     <header>
-      <h1>Header goes here!</h1>;
+      <h1 className="text-color">Header goes here!</h1>
     </header>
   );
 };
