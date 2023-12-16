@@ -1,0 +1,49 @@
+$small-phone-width: 200px
+$large-phone-width: 600px
+$tablet-width: 768px
+$small-laptop-width: 1080px
+$laptop-width: 1240px
+$desktop-width: 1440px
+
+
+=small-phone
+  @media (min-width: $small-phone-width) and (max-width: $large-phone-width - 1)
+    @content
+
+=large-phone
+  @media (min-width: $large-phone-width) and (max-width: $tablet-width - 1)
+    @content
+
+=all-phone
+  @media (min-width: $small-phone-width) and (max-width: $tablet-width - 1)
+    @content
+
+=small-tablet
+  @media (min-width: $tablet-width) and (max-width: $small-laptop-width - 1)
+    @content
+
+=tablet
+  @media (min-width: $tablet-width) and (max-width: $laptop-width - 1)
+    @content
+
+=laptop
+  @media (min-width: $laptop-width) and (max-width: $desktop-width - 1)
+    @content
+
+=desktop
+  @media (min-width: $desktop-width)
+    @content
+
+=all-large-screen
+  @media (min-width: $small-laptop-width)
+    @content
+
+
+
+
+
+
+
+
+
+

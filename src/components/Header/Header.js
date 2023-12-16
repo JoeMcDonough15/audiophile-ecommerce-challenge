@@ -4,7 +4,9 @@ import "./header.sass";
 const Header = () => {
   return (
     <header>
-      <h1 className="text-color">Header goes here!</h1>
+      {/* <section className="mobile-header"></section>
+      <section className="tablet-header"></section>
+      <section className="desktop-header"></section> */}
     </header>
   );
 };
