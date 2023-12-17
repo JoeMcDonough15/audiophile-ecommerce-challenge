@@ -1,0 +1,79 @@
+@import ../../sass/global
+
+.form-container 
+    padding: 1em
+    width: 75%
+
+.form-field-big
+    width: 100%
+
+.form-field-small
+    width: 45%
+
+.form-field-row, .form-field-col
+    display: flex
+
+.form-field-col 
+    flex-direction: column
+
+.form-field-row 
+    justify-content: flex-start
+
+.top-row-text-field 
+    justify-content: space-between
+
+.warning-border.warning-border.warning-border
+    outline: 2px solid red
+
+    &:focus
+        outline: 2px solid red
+
+::placeholder 
+    color: $light-grey
+
+%default-input-styles
+    border: none
+    border-radius: 4px
+    color: $black
+    font-size: 0.875rem
+    outline: 1px solid $light-grey
+    padding: 0.4em 1em
+
+    &:focus
+        caret-color: $dark-orange
+        outline: 1px solid $dark-orange
+
+.text-input
+    @extend %default-input-styles
+
+.radio-container 
+    @extend %default-input-styles
+    transition: all 0.5s
+
+    &:focus-within, &:hover
+        outline: 1px solid $dark-orange
+
+.radio-input
+    @extend %default-input-styles
+    accent-color: $dark-orange
+    margin-right: 1em
+    outline: none
+
+    &:focus
+        outline: none
+
+.quantity-container 
+    align-items: center
+    background: $quantity-container-grey
+    display: flex
+    height: 48px
+    justify-content: center
+    width: 120px
+
+.quantity-buttons-container 
+    display: flex
+    justify-content: space-between
+    width: 80%
+
+
+

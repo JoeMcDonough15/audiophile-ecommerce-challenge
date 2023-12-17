@@ -1,0 +1,58 @@
+@import fonts
+@import colors
+@import utilities
+
+%default-button-styles
+    @extend %custom-font
+    @include subheading-font
+    background: none
+    border: 1px solid $black
+    height: 48px
+    transition: all .5s 
+    width: 160px
+
+    &:hover
+        cursor: pointer
+
+.button-one
+    @extend %default-button-styles 
+    background: $dark-orange
+    border-color: $dark-orange
+    color: $white
+
+    &:hover 
+        background: $pale-orange
+        border-color: $pale-orange
+
+.button-two
+    @extend %default-button-styles 
+    background: $white
+    border: 1px solid $black
+    color: $black
+
+    &:hover
+        background: $black
+        color: $white
+
+.button-three
+    @extend %default-button-styles
+    align-items: center
+    border: none
+    color: $light-grey
+    display: flex
+    height: 18px
+    justify-content: space-between 
+    width: 57.32px
+
+    &:hover
+        color: $dark-orange
+
+.button-plus, .button-minus 
+    @include subheading-font
+    background: transparent
+    color: $plus-minus-buttons-grey
+    transition: color .5s 
+
+    &:hover
+        color: $dark-orange
+        cursor: pointer

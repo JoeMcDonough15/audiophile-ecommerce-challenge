@@ -5,8 +5,11 @@ $regular: 400
 $medium: 500
 $bold: 700
 
-body 
+%custom-font
     font-family: 'Manrope', sans-serif
+
+body 
+    @extend %custom-font
     font-size: 0.9375rem
     font-weight: $medium
     line-height: 1.666667em
@@ -53,17 +56,36 @@ h6
     letter-spacing: 0.072222em
     line-height: 1.333333em
 
-.subheading, .overline 
-    color: $dark-orange
-
-.subheading 
+@mixin subheading-font
     @extend %header-font
     font-size: 0.8125rem
     letter-spacing: 0.07692307em
     line-height: 1.92307692em
+
+.subheading, .overline 
+    color: $dark-orange
+
+.subheading 
+    @include subheading-font
 
 .overline
     @extend %header-font
     font-size: 0.875rem
     font-weight: $regular
     letter-spacing: 0.71428571em
+
+label, .warning-text
+    font-size: 0.75rem
+
+.warning-text
+    color: red
+    visibility: hidden
+
+input
+    @extend %custom-font
+    font-size: 0.875rem
+
+.quantity
+    color: $black
+    font-size: 0.875rem
+    
