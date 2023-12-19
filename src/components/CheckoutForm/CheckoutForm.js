@@ -37,4 +37,7 @@ const CheckoutForm = () => {
   );
 };
 
+// The quantity-container section will not go on the checkout form
+// but is included because I wrote this while prepping the design's input and form styles
+
 export default CheckoutForm;

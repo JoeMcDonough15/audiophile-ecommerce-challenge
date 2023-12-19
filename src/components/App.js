@@ -12,10 +12,11 @@ import ProductXx99MarkOneHeadphones from "./pages/Product-xx99-Mark-One-Headphon
 import ProductXx99MarkTwoHeadphones from "./pages/Product-xx99-Mark-Two-Headphones/ProductXx99MarkTwoHeadphones";
 import ProductZx7Speaker from "./pages/Product-zx7-Speaker/ProductZx7Speaker";
 import ProductZx9Speaker from "./pages/Product-zx9-Speaker/ProductZx9Speaker";
+import "../sass/global.sass";
 
 function App() {
   return (
-    <main className="main-container">
+    <main>
       <Header />
       <Switch>
         <Route exact path="/" component={Homepage} />

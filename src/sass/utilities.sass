@@ -1,7 +1,29 @@
+@import breakpoints
+
 *, *::before, *::after
     box-sizing: border-box
     margin: 0
     padding: 0
 
-.row 
+a 
+    text-decoration: none
+    
+
+.main-container 
+    max-width: $large-phone-width
+    padding: 0 1.6em
+
+    +tablet
+        max-width: $small-laptop-width
+
+    +all-large-screen
+        max-width: none
+
+.row, .col
     display: flex
+
+.row
+    align-items: center
+
+.col
+    flex-direction: column

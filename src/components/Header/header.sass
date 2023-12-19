@@ -1,2 +1,38 @@
 @import ../../sass/global
 
+.mobile-header, .tablet-header, .desktop-header
+    align-items: center
+    background: $black
+    height: 90px
+    justify-content: space-between
+
+
+.mobile-header.mobile-header   
+    
+    +tablet
+        display: none
+
+    +all-large-screen
+        display: none
+
+
+
+.tablet-header.tablet-header
+    & .icon-group
+        justify-content: space-between
+        width: 25%
+
+    +all-phone
+        display: none
+    
+    +all-large-screen
+        display: none
+
+
+.desktop-header.desktop-header
+
+    +all-phone
+        display: none
+
+    +tablet
+        display: none
