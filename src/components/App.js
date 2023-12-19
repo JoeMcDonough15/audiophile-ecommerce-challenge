@@ -1,22 +1,22 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "./Header/Header";
-import Homepage from "./pages/Homepage/Homepage";
-import Checkout from "./pages/Checkout/Checkout";
-import Earphones from "./pages/Earphones/Earphones";
-import Headphones from "./pages/Headphones/Headphones";
-import Speakers from "./pages/Speakers/Speakers";
-import ProductEarphones from "./pages/Product-Earphones/ProductEarphones";
-import ProductXx59Headphones from "./pages/Product-xx59-Headphones/ProductXx59Headphones";
-import ProductXx99MarkOneHeadphones from "./pages/Product-xx99-Mark-One-Headphones/ProductXx99MarkOneHeadphones";
-import ProductXx99MarkTwoHeadphones from "./pages/Product-xx99-Mark-Two-Headphones/ProductXx99MarkTwoHeadphones";
-import ProductZx7Speaker from "./pages/Product-zx7-Speaker/ProductZx7Speaker";
-import ProductZx9Speaker from "./pages/Product-zx9-Speaker/ProductZx9Speaker";
+import Homepage from "../pages/Homepage/Homepage";
+import Checkout from "../pages/Checkout/Checkout";
+import Earphones from "../pages/Earphones/Earphones";
+import Headphones from "../pages/Headphones/Headphones";
+import Speakers from "../pages/Speakers/Speakers";
+import ProductEarphones from "../pages/Product-Earphones/ProductEarphones";
+import ProductXx59Headphones from "../pages/Product-xx59-Headphones/ProductXx59Headphones";
+import ProductXx99MarkOneHeadphones from "../pages/Product-xx99-Mark-One-Headphones/ProductXx99MarkOneHeadphones";
+import ProductXx99MarkTwoHeadphones from "../pages/Product-xx99-Mark-Two-Headphones/ProductXx99MarkTwoHeadphones";
+import ProductZx7Speaker from "../pages/Product-zx7-Speaker/ProductZx7Speaker";
+import ProductZx9Speaker from "../pages/Product-zx9-Speaker/ProductZx9Speaker";
 import "../sass/global.sass";
 
 function App() {
   return (
-    <main>
+    <body>
       <Header />
       <Switch>
         <Route exact path="/" component={Homepage} />
@@ -40,7 +40,7 @@ function App() {
         <Route path="/checkout" component={Checkout} />
         <Route path="/product-earphones" component={ProductEarphones} />
       </Switch>
-    </main>
+    </body>
   );
 }
 

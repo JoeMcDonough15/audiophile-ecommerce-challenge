@@ -1,0 +1,18 @@
+@import ../../sass/global
+
+@mixin largescreen-rule
+    margin: auto
+    width: 95%
+
+
+.thin-rule
+    background: $thin-rule
+    border: none
+    height: 1px
+    width: 100%
+
+    +tablet
+        @include largescreen-rule
+    +all-large-screen
+        @include largescreen-rule
+        width: 97%
