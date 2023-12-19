@@ -45,7 +45,7 @@
     width: 57.32px
 
     &:hover
-        color: $dark-orange
+        @include hover-orange
 
 .button-plus, .button-minus 
     @include subheading-font
@@ -54,5 +54,4 @@
     transition: color .5s 
 
     &:hover
-        color: $dark-orange
-        cursor: pointer
+        @include hover-orange
