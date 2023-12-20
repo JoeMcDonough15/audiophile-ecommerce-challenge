@@ -16,7 +16,7 @@ import "../sass/global.sass";
 
 function App() {
   return (
-    <body>
+    <div>
       <Header />
       <Switch>
         <Route exact path="/" component={Homepage} />
@@ -40,7 +40,7 @@ function App() {
         <Route path="/checkout" component={Checkout} />
         <Route path="/product-earphones" component={ProductEarphones} />
       </Switch>
-    </body>
+    </div>
   );
 }
 

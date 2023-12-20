@@ -1,38 +1,49 @@
 @import ../../sass/global
 
-.mobile-header, .tablet-header, .desktop-header
-    align-items: center
-    background: $black
-    height: 90px
-    justify-content: space-between
+header
+    position: relative
 
-
-.mobile-header.mobile-header   
-    
+.mobile-header-image-and-menu
     +tablet
         display: none
 
     +all-large-screen
         display: none
 
-
-
-.tablet-header.tablet-header
-    & .icon-group
-        justify-content: space-between
-        width: 25%
-
+.tablet-header-image-and-menu
     +all-phone
         display: none
     
     +laptop
         display: none
 
+    +desktop
+        display: none
 
-.desktop-header.desktop-header
-
+.desktop-header-image-and-menu
     +all-phone
         display: none
 
     +tablet
         display: none
+
+
+.header-image
+    position: absolute
+    width: 100%
+    z-index: -1
+
+.mobile-header, .tablet-header, .desktop-header
+    align-items: center
+    height: 90px
+    justify-content: space-between
+
+
+.tablet-header
+    & .icon-group
+        justify-content: space-between
+        width: 25%
+
+
+
+    
