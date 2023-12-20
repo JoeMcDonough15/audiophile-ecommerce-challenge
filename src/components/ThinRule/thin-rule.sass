@@ -1,7 +1,7 @@
 @import ../../sass/global
 
 @mixin largescreen-rule
-    margin: auto
+    margin: 0 auto
     width: 95%
 
 
@@ -11,8 +11,16 @@
     height: 1px
     width: 100%
 
-    +tablet
+    +small-tablet
         @include largescreen-rule
-    +all-large-screen
+
+    +medium-tablet
         @include largescreen-rule
-        width: 97%
+
+    +laptop
+        @include largescreen-rule
+        width: 85%
+
+    +desktop
+        @include largescreen-rule
+        width: 90%

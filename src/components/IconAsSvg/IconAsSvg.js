@@ -30,7 +30,3 @@ const IconAsSvg = (props) => {
 };
 
 export default IconAsSvg;
-
-// props
-
-//  className, width, height, xmlns, d, stroke, strokeWidth, fill, fillRule, g-element (boolean)

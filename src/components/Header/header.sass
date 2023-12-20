@@ -4,11 +4,9 @@ header
     position: relative
 
 .mobile-header-image-and-menu
-    +tablet
-        display: none
 
-    +all-large-screen
-        display: none
+    +all-screen-bigger-than-mobile
+        display:  none
 
 .tablet-header-image-and-menu
     +all-phone
@@ -24,7 +22,10 @@ header
     +all-phone
         display: none
 
-    +tablet
+    +small-tablet
+        display: none
+
+    +medium-tablet
         display: none
 
 

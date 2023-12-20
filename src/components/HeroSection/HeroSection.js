@@ -4,10 +4,11 @@ import "./hero-section.sass";
 import FeaturedProduct from "../FeaturedProduct/FeaturedProduct";
 
 const HeroSection = (props) => {
+  const featuredProductInformation = props.featuredProductInformation;
   return (
     <section className="hero-section col">
       <ThinRule />
-      <FeaturedProduct />
+      <FeaturedProduct featuredProduct={featuredProductInformation} />
     </section>
   );
 };

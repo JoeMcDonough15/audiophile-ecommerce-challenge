@@ -10,14 +10,17 @@ a
     
 
 .main-container 
-    max-width: $tablet-width - 1
+    max-width: $small-tablet-width - 1
     padding: 0 1.6em
 
-    +tablet
+    +small-tablet
+        max-width: 1239px
+    +medium-tablet
         max-width: 1239px
 
     +all-large-screen
         max-width: none
+        padding: 0 5em
 
 .row, .col
     display: flex
