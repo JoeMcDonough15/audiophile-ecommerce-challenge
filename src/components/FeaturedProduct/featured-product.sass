@@ -3,12 +3,11 @@
 .featured-product
     align-items: center
     gap: 2em
-    margin-top: 7.5em
+    margin-top: 6em
     text-align: center
 
     +small-phone
         gap: 1em
-        margin-top: 2em
 
     +all-screen-bigger-than-mobile
         margin-top: 10em
@@ -31,6 +30,16 @@
     
     +small-phone
         font-size: 2rem
+        padding: 0
+
+    +large-phone
+        padding: 0 1em
+    
+    +very-large-phone
+        padding: 0 2em
+
+    +enormous-phone
+        padding: 0 4em
 
     +all-screen-bigger-than-mobile
         padding: 0 2em
@@ -40,10 +49,20 @@
         padding-right: 58%
 
 .featured-product-teaser
-    padding: 0 15px
+    padding: 0 20px
 
     +small-phone
         font-size: 0.8rem
+        padding: 0 5px
+    
+    +large-phone
+        padding: 0 70px
+
+    +very-large-phone
+        padding: 0 130px
+    
+    +enormous-phone
+        padding: 0 172px
 
     +small-tablet
         padding: 0 180px

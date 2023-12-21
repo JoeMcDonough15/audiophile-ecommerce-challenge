@@ -1,5 +1,6 @@
 import React from "react";
 import HeroSection from "../../components/HeroSection/HeroSection";
+import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCategoryMenu";
 import data from "../../data.json";
 
 const findFeaturedProduct = (productList, productSlug) => {
@@ -23,6 +24,7 @@ const Homepage = () => {
           featuredProductSlug
         )}
       />
+      <ProductCategoryMenu />
     </main>
   );
 };
