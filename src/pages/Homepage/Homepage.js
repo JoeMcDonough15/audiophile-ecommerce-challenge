@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "../../components/HeroSection/HeroSection";
-import data from "../../../starter-code/data.json";
+import data from "../../data.json";
 
 const findFeaturedProduct = (productList, productSlug) => {
   let featuredProduct;

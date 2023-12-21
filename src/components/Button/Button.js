@@ -8,7 +8,7 @@ const Button = (props) => {
   return (
     <button className={props.className}>
       <span className="button-text">{buttonText}</span>
-      <IconAsSvg
+      {/* <IconAsSvg
         className="right-arrow"
         width="8"
         height="12"
@@ -19,7 +19,7 @@ const Button = (props) => {
         fill="none"
         fillRule="evenodd"
         d="M1.322 1l5 5-5 5"
-      />
+      /> */}
     </button>
   );
 };

@@ -3,9 +3,9 @@ import "./header.sass";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
 import NavRow from "../NavRow/NavRow";
 import FullBleedImage from "../FullBleedImage/FullBleedImage";
-import imageHeaderMobile from "./image-header-mobile.jpg";
-import imageHeaderTablet from "./image-header-tablet.jpg";
-import imageHeaderDesktop from "./image-header-desktop.jpg";
+import imageHeaderMobile from "./images/image-header-mobile.jpg";
+import imageHeaderTablet from "./images/image-header-tablet.jpg";
+import imageHeaderDesktop from "./images/image-header-desktop.jpg";
 
 const hamburgerProps = {
   width: "16",
@@ -47,33 +47,12 @@ const Header = () => {
         <section className="mobile-header main-container row">
           <IconAsSvg
             className="hamburger-menu-icon"
-            width={hamburgerProps.width}
-            height={hamburgerProps.height}
-            src={hamburgerProps.src}
-            gElement={hamburgerProps.gElement}
-            fill={hamburgerProps.fill}
-            fillRule={hamburgerProps.fillRule}
-            d={hamburgerProps.d}
+            svgDetails={hamburgerProps}
           />
-          <IconAsSvg
-            className="logo-icon"
-            width={logoProps.width}
-            height={logoProps.height}
-            src={hamburgerProps.src}
-            gElement={logoProps.gElement}
-            fill={logoProps.fill}
-            fillRule={logoProps.fillRule}
-            d={logoProps.d}
-          />
+          <IconAsSvg className="logo-icon" svgDetails={logoProps} />
           <IconAsSvg
             className="shopping-cart-icon"
-            width={shoppingCartProps.width}
-            height={shoppingCartProps.height}
-            src={shoppingCartProps.src}
-            gElement={shoppingCartProps.gElement}
-            fill={shoppingCartProps.fill}
-            fillRule={shoppingCartProps.fillRule}
-            d={shoppingCartProps.d}
+            svgDetails={shoppingCartProps}
           />
         </section>
       </section>
@@ -87,34 +66,13 @@ const Header = () => {
           <div className="icon-group row">
             <IconAsSvg
               className="hamburger-menu-icon"
-              width={hamburgerProps.width}
-              height={hamburgerProps.height}
-              src={hamburgerProps.src}
-              gElement={hamburgerProps.gElement}
-              fill={hamburgerProps.fill}
-              fillRule={hamburgerProps.fillRule}
-              d={hamburgerProps.d}
+              svgDetails={hamburgerProps}
             />
-            <IconAsSvg
-              className="logo-icon"
-              width={logoProps.width}
-              height={logoProps.height}
-              src={hamburgerProps.src}
-              gElement={logoProps.gElement}
-              fill={logoProps.fill}
-              fillRule={logoProps.fillRule}
-              d={logoProps.d}
-            />
+            <IconAsSvg className="logo-icon" svgDetails={logoProps} />
           </div>
           <IconAsSvg
             className="shopping-cart-icon"
-            width={shoppingCartProps.width}
-            height={shoppingCartProps.height}
-            src={shoppingCartProps.src}
-            gElement={shoppingCartProps.gElement}
-            fill={shoppingCartProps.fill}
-            fillRule={shoppingCartProps.fillRule}
-            d={shoppingCartProps.d}
+            svgDetails={shoppingCartProps}
           />
         </section>
       </section>
@@ -126,26 +84,11 @@ const Header = () => {
         />
 
         <section className="desktop-header row main-container">
-          <IconAsSvg
-            className="logo-icon"
-            width={logoProps.width}
-            height={logoProps.height}
-            src={hamburgerProps.src}
-            gElement={logoProps.gElement}
-            fill={logoProps.fill}
-            fillRule={logoProps.fillRule}
-            d={logoProps.d}
-          />
+          <IconAsSvg className="logo-icon" svgDetails={logoProps} />
           <NavRow />
           <IconAsSvg
             className="shopping-cart-icon"
-            width={shoppingCartProps.width}
-            height={shoppingCartProps.height}
-            src={shoppingCartProps.src}
-            gElement={shoppingCartProps.gElement}
-            fill={shoppingCartProps.fill}
-            fillRule={shoppingCartProps.fillRule}
-            d={shoppingCartProps.d}
+            svgDetails={shoppingCartProps}
           />
         </section>
       </section>

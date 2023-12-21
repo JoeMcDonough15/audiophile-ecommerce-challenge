@@ -23,6 +23,10 @@ $desktop-width: 1440px
   @media (min-width: $medium-tablet-width) and (max-width: $small-laptop-width - 1)
     @content
 
+=all-tablets
+  @media (min-width: $small-tablet-width) and (max-width: $small-laptop-width - 1)
+    @content 
+
 =laptop
   @media (min-width: $small-laptop-width) and (max-width: $desktop-width - 1)
     @content

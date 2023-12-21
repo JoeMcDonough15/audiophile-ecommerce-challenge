@@ -13,11 +13,26 @@ import ProductXx99MarkTwoHeadphones from "../pages/Product-xx99-Mark-Two-Headpho
 import ProductZx7Speaker from "../pages/Product-zx7-Speaker/ProductZx7Speaker";
 import ProductZx9Speaker from "../pages/Product-zx9-Speaker/ProductZx9Speaker";
 import "../sass/global.sass";
+import data from "..//data.json";
+
+const findFeaturedProduct = (productList, productSlug) => {
+  let featuredProduct;
+  productList.forEach((productObject) => {
+    if (productObject.slug === productSlug) {
+      featuredProduct = productObject;
+    }
+  });
+  return featuredProduct;
+};
+
+const featuredProductSlug = "xx99-mark-two-headphones";
 
 function App() {
   return (
     <div>
-      <Header />
+      <Header
+        featuredProduct={findFeaturedProduct(data, featuredProductSlug)}
+      />
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/earphones" component={Earphones} />
