@@ -7,10 +7,16 @@ import speakerPreviewImage from "./images/image-category-thumbnail-speakers.png"
 
 const ProductCategoryMenu = () => {
   return (
-    <section className="main-container">
-      <CategorySlab />
-      <CategorySlab />
-      <CategorySlab />
+    <section className="main-container product-category-menu">
+      <CategorySlab
+        categoryName="headphones"
+        imageName={headphonesPreviewImage}
+      />
+      <CategorySlab
+        categoryName="earphones"
+        imageName={earphonesPreviewImage}
+      />
+      <CategorySlab categoryName="speakers" imageName={speakerPreviewImage} />
     </section>
   );
 };

@@ -27,16 +27,17 @@ header
 
 
 .header-image
-    height: 600px
+    height: 100vh
+    max-height: 600px
     position: absolute
     width: 100%
-    z-index: -1    
+    z-index: -1 
 
-    +small-phone
-        height: 550px    
-
+    +tiny-phone
+        max-height: 550px
+        
     +all-screen-bigger-than-mobile
-        height: 729px
+        max-height: 729px      
 
 .mobile-header, .tablet-header, .desktop-header
     align-items: center
