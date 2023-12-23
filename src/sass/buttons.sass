@@ -14,19 +14,30 @@
     &:hover
         cursor: pointer
 
-.button-one
+
+.button-dark-orange, .button-black 
+    color: $white
+
+.button-dark-orange
     @extend %default-button-styles 
     background: $dark-orange
     border-color: $dark-orange
-    color: $white
 
     &:hover 
         background: $pale-orange
         border-color: $pale-orange
 
-.button-two
+.button-black
+    @extend %default-button-styles
+    background: $black
+
+    &:hover
+        background: none
+        color: $black
+
+.button-transparent
     @extend %default-button-styles 
-    background: $white
+    background: transparent
     border: 1px solid $black
     color: $black
 
@@ -34,7 +45,7 @@
         background: $black
         color: $white
 
-.button-three
+.button-with-arrow-icon
     @extend %default-button-styles
     align-items: center
     border: none

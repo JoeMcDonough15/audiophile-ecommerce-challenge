@@ -1,6 +1,7 @@
 import React from "react";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCategoryMenu";
+import FeaturedProductOne from "../../components/FeaturedProductOne/FeaturedProductOne";
 import data from "../../data.json";
 
 const findFeaturedProduct = (productList, productSlug) => {
@@ -13,18 +14,24 @@ const findFeaturedProduct = (productList, productSlug) => {
   return featuredProduct;
 };
 
-const featuredProductSlug = "xx99-mark-two-headphones";
+const heroFeaturedProductSlug = "xx99-mark-two-headphones";
+const featuredProductOneSlug = "zx9-speaker";
 
 const Homepage = () => {
+  // console.log(findFeaturedProduct(data, featuredProductOneSlug));
   return (
     <main>
       <HeroSection
-        featuredProductInformation={findFeaturedProduct(
-          data,
-          featuredProductSlug
-        )}
+        featuredProduct={findFeaturedProduct(data, heroFeaturedProductSlug)}
       />
       <ProductCategoryMenu />
+      <FeaturedProductOne
+        featuredProduct={findFeaturedProduct(data, featuredProductOneSlug)}
+      />
+      {/* <FeaturedProductTwo /> */}
+      {/* <FeaturedProductThree /> */}
+      {/* <AboutUs /> */}
+      {/* <Footer /> */}
     </main>
   );
 };

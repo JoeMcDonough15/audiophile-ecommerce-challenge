@@ -1,14 +1,18 @@
 import React from "react";
 import ThinRule from "../ThinRule/ThinRule";
 import "./hero-section.sass";
-import FeaturedProduct from "../FeaturedProduct/FeaturedProduct";
+import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 
 const HeroSection = (props) => {
-  const featuredProductInformation = props.featuredProductInformation;
+  const { featuredProduct } = props;
   return (
     <section className="hero-section col">
       <ThinRule />
-      <FeaturedProduct featuredProduct={featuredProductInformation} />
+      <FeaturedProductInfo
+        featuredProduct={featuredProduct}
+        newProduct
+        buttonColor="dark-orange"
+      />
     </section>
   );
 };

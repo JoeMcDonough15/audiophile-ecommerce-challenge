@@ -11,7 +11,10 @@ const CategorySlab = (props) => {
         className="thumbnail-image"
       />
       <p className="category-name">{props.categoryName}</p>
-      <Button buttonText="Shop" className="button-three category-slab-button" />
+      <Button
+        buttonText="Shop"
+        className="button-with-arrow-icon category-slab-button"
+      />
     </div>
   );
 };

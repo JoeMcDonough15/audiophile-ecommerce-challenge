@@ -2,7 +2,7 @@ import React from "react";
 import "./header.sass";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
 import NavRow from "../NavRow/NavRow";
-import FullBleedImage from "../FullBleedImage/FullBleedImage";
+import CustomImage from "../CustomImage/CustomImage";
 import imageHeaderMobile from "./images/image-header-mobile.jpg";
 import imageHeaderTablet from "./images/image-header-tablet.jpg";
 import imageHeaderDesktop from "./images/image-header-desktop.jpg";
@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <header>
       <section className="mobile-header-image-and-menu">
-        <FullBleedImage
+        <CustomImage
           className="header-image"
           src={imageHeaderMobile}
           altText="my header image"
@@ -57,7 +57,7 @@ const Header = () => {
         </section>
       </section>
       <section className="tablet-header-image-and-menu">
-        <FullBleedImage
+        <CustomImage
           className="header-image"
           src={imageHeaderTablet}
           altText="my tablet header image"
@@ -77,7 +77,7 @@ const Header = () => {
         </section>
       </section>
       <section className="desktop-header-image-and-menu">
-        <FullBleedImage
+        <CustomImage
           className="header-image"
           src={imageHeaderDesktop}
           altText="my desktop header image"
