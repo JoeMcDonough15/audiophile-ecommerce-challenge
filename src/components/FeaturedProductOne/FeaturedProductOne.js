@@ -15,17 +15,17 @@ const FeaturedProductOne = (props) => {
         <CirclePatternSvg />
         <div className="featured-product-one-image-and-text">
           <CustomImage
-            className="featured-product-image-mobile"
+            className="featured-product-one-image-mobile"
             src={featuredProductImageMobile}
             alt="featured-product-image-mobile"
           />
           <CustomImage
-            className="featured-product-image-tablet"
+            className="featured-product-one-image-tablet"
             src={featuredProductImageTablet}
             alt="featured-product-image-tablet"
           />
           <CustomImage
-            className="featured-product-image-desktop"
+            className="featured-product-one-image-desktop"
             src={featuredProductImageDesktop}
             alt="featured-product-image-desktop"
           />
@@ -33,6 +33,7 @@ const FeaturedProductOne = (props) => {
             featuredProduct={featuredProduct}
             newProduct={false}
             buttonColor="black"
+            buttonText="see product"
           />
         </div>
       </div>

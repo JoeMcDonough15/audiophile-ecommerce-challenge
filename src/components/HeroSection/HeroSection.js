@@ -12,6 +12,7 @@ const HeroSection = (props) => {
         featuredProduct={featuredProduct}
         newProduct
         buttonColor="dark-orange"
+        buttonText="see product"
       />
     </section>
   );

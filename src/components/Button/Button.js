@@ -3,8 +3,8 @@ import IconAsSvg from "../IconAsSvg/IconAsSvg";
 import "./button.sass";
 
 const Button = (props) => {
-  const buttonText = props.buttonText;
-  const arrowColor = "#d87d4a"; // arrow icon is only for button-three
+  const { buttonText, className } = props;
+  const arrowColor = "#d87d4a"; // arrow icon is only for .button-with-arrow-icon
   const arrowIconProps = {
     stroke: arrowColor,
     strokeWidth: "2",
@@ -18,7 +18,7 @@ const Button = (props) => {
   };
 
   return (
-    <button className={props.className}>
+    <button className={className}>
       <span className="button-text">{buttonText}</span>
       <IconAsSvg className="right-arrow" svgDetails={arrowIconProps} />
     </button>
