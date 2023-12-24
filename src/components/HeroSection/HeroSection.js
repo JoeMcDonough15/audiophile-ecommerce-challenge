@@ -13,6 +13,7 @@ const HeroSection = (props) => {
         newProduct
         buttonColor="dark-orange"
         buttonText="see product"
+        customClasses="main-container center-flex-items"
       />
     </section>
   );

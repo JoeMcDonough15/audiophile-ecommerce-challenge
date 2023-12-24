@@ -1,4 +1,5 @@
 @import breakpoints
+@import mixins
 
 *, *::before, *::after
     box-sizing: border-box
@@ -8,6 +9,10 @@
 a 
     text-decoration: none
     
+
+
+////////// containers ///////////
+
 
 .main-container 
     max-width: $small-tablet-minimum - 1
@@ -31,10 +36,38 @@ a
 .col
     flex-direction: column
 
+.content-slab
+    background: $light-grey
+    border-radius: 8px
+    position: relative
+    width: 100%
+
+.center-flex-items
+    @include center-flex-items
+
+.align-flex-col-items-left
+    @include align-flex-col-items-center-left
 
 
-////////// mixins ///////////
+////////// images ///////////
 
-@mixin hover-orange
-    color: $dark-orange
-    cursor: pointer
+.image-mobile
+    +all-screen-bigger-than-mobile
+        display: none
+
+.image-tablet
+    +all-phone
+        display: none
+
+    +all-large-screen
+        display: none
+
+.image-desktop
+    +all-phone
+        display: none
+
+    +all-tablets
+        display: none
+
+
+

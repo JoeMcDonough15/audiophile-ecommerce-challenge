@@ -10,22 +10,22 @@ import featuredProductImageDesktop from "./images/image-speaker-zx9-desktop.png"
 const FeaturedProductOne = (props) => {
   const { featuredProduct } = props;
   return (
-    <section className="main-container">
+    <section>
       <div className="featured-product-one">
         <CirclePatternSvg />
         <div className="featured-product-one-image-and-text">
           <CustomImage
-            className="featured-product-one-image-mobile"
+            className="featured-product-one-image-mobile image-mobile"
             src={featuredProductImageMobile}
             alt="featured-product-image-mobile"
           />
           <CustomImage
-            className="featured-product-one-image-tablet"
+            className="featured-product-one-image-tablet image-tablet"
             src={featuredProductImageTablet}
             alt="featured-product-image-tablet"
           />
           <CustomImage
-            className="featured-product-one-image-desktop"
+            className="featured-product-one-image-desktop image-desktop"
             src={featuredProductImageDesktop}
             alt="featured-product-image-desktop"
           />
@@ -34,6 +34,7 @@ const FeaturedProductOne = (props) => {
             newProduct={false}
             buttonColor="black"
             buttonText="see product"
+            customClasses="center-flex-items"
           />
         </div>
       </div>

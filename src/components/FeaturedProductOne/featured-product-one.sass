@@ -5,12 +5,8 @@ div.featured-product-one
     border-radius: 8px
     position: relative
     
-
 svg.circle-pattern-svg
-    position: absolute
-    width: 100%
-    
-    
+    @include set-image-component-as-background
 
 .featured-product-one-image-and-text
     align-items: center
@@ -18,7 +14,6 @@ svg.circle-pattern-svg
     flex-direction: column
     position: relative           /* for stacking order */
     
-
     +all-large-screen
         flex-direction: row
 
@@ -26,25 +21,10 @@ svg.circle-pattern-svg
     height: 207px
     width: 172px
 
-    +all-screen-bigger-than-mobile
-        display: none
-
 .featured-product-one-image-tablet
     height: 237px
     width: 197px
 
-    +all-phone
-        display: none
-
-    +all-large-screen
-        display: none
-
 .featured-product-one-image-desktop
     height: 493px
     width: 410px
-
-    +all-phone
-        display: none
-
-    +all-tablets
-        display: none

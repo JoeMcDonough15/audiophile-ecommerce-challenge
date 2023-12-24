@@ -40,7 +40,7 @@ const Header = () => {
     <header>
       <section className="mobile-header-image-and-menu">
         <CustomImage
-          className="header-image"
+          className="header-image image-mobile"
           src={imageHeaderMobile}
           altText="my header image"
         />
@@ -58,7 +58,7 @@ const Header = () => {
       </section>
       <section className="tablet-header-image-and-menu">
         <CustomImage
-          className="header-image"
+          className="header-image image-tablet"
           src={imageHeaderTablet}
           altText="my tablet header image"
         />
@@ -78,7 +78,7 @@ const Header = () => {
       </section>
       <section className="desktop-header-image-and-menu">
         <CustomImage
-          className="header-image"
+          className="header-image image-desktop"
           src={imageHeaderDesktop}
           altText="my desktop header image"
         />

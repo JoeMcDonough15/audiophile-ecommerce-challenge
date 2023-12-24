@@ -4,7 +4,7 @@ import "./category-slab.sass";
 
 const CategorySlab = (props) => {
   return (
-    <div className="category-slab col">
+    <div className="category-slab content-slab col">
       <img
         src={props.imageName}
         alt="category-image"

@@ -2,38 +2,14 @@
 
 
 .featured-product-two-image-and-text
-    align-items: end
+    align-items: center
     display: flex
-    justify-content: start
+    justify-content: center
+    padding: 102px 0
     position: relative
     
 
 .featured-product-two-image
+    @include set-image-component-as-background
     border-radius: 8px
-    bottom: 0
-    left: 0
-    position: absolute
-    right: 0
-    top: 0
-    width: 100%
     z-index: -1
-
-
-.featured-product-two-image-mobile
-    +all-screen-bigger-than-mobile
-        display: none
-
-.featured-product-two-image-tablet
-    +all-phone
-        display: none
-
-    +all-large-screen
-        display: none
-
-.featured-product-two-image-desktop
-
-    +all-phone
-        display: none
-
-    +all-tablets
-        display: none
