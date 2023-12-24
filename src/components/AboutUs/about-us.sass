@@ -1,0 +1,43 @@
+@import ../../sass/global
+
+
+.about-us-container
+    display: flex
+    flex-direction: column
+    text-align: center
+    
+
+    +all-large-screen
+        flex-direction: row
+
+.about-us-image-container
+    @include set-background-image-from-file('./images/image-best-gear-mobile.jpg')
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    border-radius: 8px
+    height: 300px
+    margin: auto
+    max-width: 400px
+    width: 100%
+
+    +all-tablets
+        @include set-background-image-from-file('./images/image-best-gear-tablet.jpg')
+        max-width: none
+
+    +all-large-screen
+        @include set-background-image-from-file('./images/image-best-gear-desktop.jpg')
+        max-width: none
+        order: 3
+
+
+.about-us-text-container
+    text-align: center
+
+    +all-large-screen
+        padding-right: 20em
+        text-align: left
+
+
+.dark-orange-text
+    color: $dark-orange

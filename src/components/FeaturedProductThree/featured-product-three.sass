@@ -1,11 +1,17 @@
 @import ../../sass/global
 
 .featured-product-three-container
+    display: flex
+    flex-direction: column
     gap: 25px
+
+    +all-large-screen
+        flex-direction: row
     
 .featured-product-three-image-container
     height: 200px
     position: relative
+    width: 100%
 
 .featured-product-three-image
     @include set-image-component-as-background

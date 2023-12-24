@@ -9,7 +9,7 @@ import featuredProductImageDesktop from "./images/image-earphones-yx1-desktop.jp
 const FeaturedProductThree = (props) => {
   const { featuredProduct } = props;
   return (
-    <section className="col featured-product-three-container">
+    <section className="featured-product-three-container">
       <div className="featured-product-three-image-container">
         <CustomImage
           className="featured-product-three-image featured-product-three-image-mobile image-mobile"

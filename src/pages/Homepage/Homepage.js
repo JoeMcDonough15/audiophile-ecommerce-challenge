@@ -4,45 +4,47 @@ import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCat
 import FeaturedProductOne from "../../components/FeaturedProductOne/FeaturedProductOne";
 import FeaturedProductTwo from "../../components/FeaturedProductTwo/FeaturedProductTwo";
 import FeaturedProductThree from "../../components/FeaturedProductThree/FeaturedProductThree";
+import AboutUs from "../../components/AboutUs/AboutUs";
 import data from "../../data.json";
 import "./homepage.sass";
 
-const findFeaturedProduct = (productList, productSlug) => {
-  let featuredProduct;
-  productList.forEach((productObject) => {
-    if (productObject.slug === productSlug) {
-      featuredProduct = productObject;
-    }
+const featuredProductSlugs = [
+  "xx99-mark-two-headphones",
+  "zx9-speaker",
+  "zx7-speaker",
+  "yx1-earphones",
+];
+
+const findFeaturedProducts = (productList, productSlugs) => {
+  const featuredProducts = [];
+  productSlugs.forEach((productSlug) => {
+    productList.forEach((productObject) => {
+      if (productObject.slug === productSlug) {
+        featuredProducts.push(productObject);
+      }
+    });
   });
-  return featuredProduct;
+  return featuredProducts;
 };
 
-const heroFeaturedProductSlug = "xx99-mark-two-headphones";
-const featuredProductOneSlug = "zx9-speaker";
-const featuredProductTwoSlug = "zx7-speaker";
-const featuredProductThreeSlug = "yx1-earphones";
+const [
+  featuredProductHero,
+  featuredProductOne,
+  featuredProductTwo,
+  featuredProductThree,
+] = findFeaturedProducts(data, featuredProductSlugs);
 
 const Homepage = () => {
-  console.log(findFeaturedProduct(data, featuredProductThreeSlug));
   return (
     <main>
-      <HeroSection
-        featuredProduct={findFeaturedProduct(data, heroFeaturedProductSlug)}
-      />
+      <HeroSection featuredProduct={featuredProductHero} />
       <ProductCategoryMenu />
       <section className="featured-products-section main-container col">
-        <FeaturedProductOne
-          featuredProduct={findFeaturedProduct(data, featuredProductOneSlug)}
-        />
-        <FeaturedProductTwo
-          featuredProduct={findFeaturedProduct(data, featuredProductTwoSlug)}
-        />
-        <FeaturedProductThree
-          featuredProduct={findFeaturedProduct(data, featuredProductThreeSlug)}
-        />
+        <FeaturedProductOne featuredProduct={featuredProductOne} />
+        <FeaturedProductTwo featuredProduct={featuredProductTwo} />
+        <FeaturedProductThree featuredProduct={featuredProductThree} />
       </section>
-
-      {/* <AboutUs /> */}
+      <AboutUs />
       {/* <Footer /> */}
     </main>
   );
