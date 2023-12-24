@@ -31,10 +31,13 @@ const FeaturedProductOne = (props) => {
           />
           <FeaturedProductInfo
             featuredProduct={featuredProduct}
-            newProduct={false}
-            buttonColor="black"
-            buttonText="see product"
-            customClasses="center-flex-items"
+            customClasses={{
+              containerClasses:
+                "featured-product-one-info col center-flex-items",
+              headerClasses: "featured-product-one-header",
+              teaserDescriptionClasses: "featured-product-one-teaser",
+              buttonData: { buttonColor: "black", buttonText: "see product" },
+            }}
           />
         </div>
       </div>

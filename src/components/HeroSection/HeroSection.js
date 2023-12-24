@@ -11,9 +11,13 @@ const HeroSection = (props) => {
       <FeaturedProductInfo
         featuredProduct={featuredProduct}
         newProduct
-        buttonColor="dark-orange"
-        buttonText="see product"
-        customClasses="main-container center-flex-items"
+        customClasses={{
+          containerClasses: "featured-product-hero-info main-container col",
+          headerClasses: "featured-product-hero-header",
+          newProductIntroClasses: "overline new-product-intro",
+          teaserDescriptionClasses: "featured-product-teaser-hero",
+          buttonData: { buttonColor: "dark-orange", buttonText: "see product" },
+        }}
       />
     </section>
   );

@@ -29,10 +29,15 @@ const FeaturedProductThree = (props) => {
       </div>
       <div className="featured-product-three-text-container content-slab">
         <FeaturedProductInfo
-          buttonColor="transparent"
-          buttonText="see product"
           featuredProduct={featuredProduct}
-          customClasses="align-flex-col-items-left"
+          customClasses={{
+            containerClasses: "featured-product-three-info col",
+            headerClasses: "featured-product-three-header",
+            buttonData: {
+              buttonColor: "transparent",
+              buttonText: "see product",
+            },
+          }}
         />
       </div>
     </section>

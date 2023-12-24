@@ -27,10 +27,15 @@ const FeaturedProductTwo = (props) => {
           alt="featured-product-image-desktop"
         />
         <FeaturedProductInfo
-          buttonColor="transparent"
-          buttonText="see product"
           featuredProduct={featuredProduct}
-          customClasses="align-flex-col-items-left"
+          customClasses={{
+            containerClasses: "featured-product-two-info col",
+            headerClasses: "featured-product-two-header",
+            buttonData: {
+              buttonColor: "transparent",
+              buttonText: "see product",
+            },
+          }}
         />
       </div>
     </section>

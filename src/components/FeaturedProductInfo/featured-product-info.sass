@@ -1,6 +1,7 @@
 @import ../../sass/global
 
-.featured-product-info, .secondary-featured-product-info
+.featured-product-hero-info, .featured-product-one-info
+    @include center-flex-items
     gap: 2em
     margin-top: 6em
     text-align: center
@@ -13,13 +14,14 @@
         margin-top: 100px
         text-align: left
 
-.secondary-featured-product-info
+.featured-product-two-info
+    @include align-flex-col-items-center-left
     margin-top: 0
 
 .new-product-intro
     color: $new-product-grey
 
-.featured-product-header 
+.featured-product-hero-header, .featured-product-one-header 
     color: $white
 
     +all-phone
@@ -45,11 +47,11 @@
         padding-left: 0
         padding-right: 58%
 
-.secondary-featured-product-header
+.featured-product-two-header
     color: $secondary-featured-product-header-color
     font-size: 1.75rem
 
-.featured-product-teaser
+.featured-product-teaser-hero, .featured-product-one-teaser
 
     width: 287px
 
