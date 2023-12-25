@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.sass";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
-import NavRow from "../NavRow/NavRow";
+import NavBar from "../NavBar/NavBar";
 import CustomImage from "../CustomImage/CustomImage";
 import imageHeaderMobile from "./images/image-header-mobile.jpg";
 import imageHeaderTablet from "./images/image-header-tablet.jpg";
@@ -85,7 +85,7 @@ const Header = () => {
 
         <section className="desktop-header row main-container">
           <IconAsSvg className="logo-icon" svgDetails={logoProps} />
-          <NavRow />
+          <NavBar />
           <IconAsSvg
             className="shopping-cart-icon"
             svgDetails={shoppingCartProps}

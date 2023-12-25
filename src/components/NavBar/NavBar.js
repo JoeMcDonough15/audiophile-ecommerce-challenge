@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
-import "./nav-row.sass";
+import "./nav-bar.sass";
 
-const NavRow = () => {
+const NavBar = () => {
   return (
     <nav className="row navigation-row">
       <NavLink className="nav-link" to={"/"} exact>
@@ -21,4 +21,4 @@ const NavRow = () => {
   );
 };
 
-export default NavRow;
+export default NavBar;

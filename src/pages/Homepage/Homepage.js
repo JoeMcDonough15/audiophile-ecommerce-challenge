@@ -5,6 +5,7 @@ import FeaturedProductOne from "../../components/FeaturedProductOne/FeaturedProd
 import FeaturedProductTwo from "../../components/FeaturedProductTwo/FeaturedProductTwo";
 import FeaturedProductThree from "../../components/FeaturedProductThree/FeaturedProductThree";
 import AboutUs from "../../components/AboutUs/AboutUs";
+import Footer from "../../components/Footer/Footer";
 import data from "../../data.json";
 import "./homepage.sass";
 
@@ -45,7 +46,7 @@ const Homepage = () => {
         <FeaturedProductThree featuredProduct={featuredProductThree} />
       </section>
       <AboutUs />
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 };
