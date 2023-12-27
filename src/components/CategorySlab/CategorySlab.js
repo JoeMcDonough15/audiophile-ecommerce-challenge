@@ -3,14 +3,11 @@ import Button from "../Button/Button";
 import "./category-slab.sass";
 
 const CategorySlab = (props) => {
+  const { imageSrc, categoryName, thumbnailName } = props;
   return (
     <div className="category-slab content-slab col">
-      <img
-        src={props.imageName}
-        alt="category-image"
-        className="thumbnail-image"
-      />
-      <p className="category-name">{props.categoryName}</p>
+      <img src={imageSrc} alt="category-image" className={thumbnailName} />
+      <p className="category-name">{categoryName}</p>
       <Button
         buttonText="Shop"
         className="button-with-arrow-icon category-slab-button"

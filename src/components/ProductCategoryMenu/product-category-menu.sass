@@ -1,9 +1,51 @@
 @import ../../sass/global
 
-.product-category-menu
+.product-category-menu.main-container
     align-items: center
     display: flex
     flex-direction: column
+    gap: 60px
+    padding-bottom: 120px
+    padding-top: 92px
 
     +all-screen-bigger-than-mobile
         flex-direction: row
+
+    +all-tablets
+        gap: 10px
+        padding-bottom: 96px
+        padding-top: 148px
+    
+    +all-large-screen
+        gap: 30px
+        padding-bottom: 168px
+        padding-top: 200px
+
+
+.headphones-thumbnail, .speaker-thumbnail, .earphones-thumbnail
+    position: absolute
+    top: -50px
+
+.headphones-thumbnail
+    height: 104px
+    width: 79.92px
+
+    +all-large-screen
+        height: 160px
+        width: 122.95px
+
+.speaker-thumbnail
+    height: 101px
+    width: 84.04px
+
+    +all-large-screen
+        height: 146px
+        width: 121.49px
+    
+.earphones-thumbnail
+    height: 104px
+    width: 103px
+
+    +all-large-screen
+        height: 126px
+        width: 125px
