@@ -46,6 +46,10 @@ $desktop-minimum: 1440px
   @media (min-width: $small-tablet-minimum) and (max-width: $small-laptop-minimum - 1)
     @content 
 
+=small-laptop
+  @media (min-width: $small-laptop-minimum) and (max-width: $laptop-minimum - 1)
+    @content
+
 =laptop
   @media (min-width: $small-laptop-minimum) and (max-width: $desktop-minimum - 1)
     @content

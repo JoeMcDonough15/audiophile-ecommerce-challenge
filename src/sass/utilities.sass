@@ -16,16 +16,19 @@ a
 
 .main-container 
     max-width: $small-tablet-minimum - 1
-    padding: 0 1.6em
+    padding-left:  1.6em
+    padding-right: 1.6em
 
-    +small-tablet
+    +all-tablets
         max-width: 1239px
-    +medium-tablet
-        max-width: 1239px
+        padding-left: 39.5px
+        padding-right: 39.5px
+    
 
     +all-large-screen
         max-width: none
-        padding: 0 5em
+        padding-left: 165px
+        padding-right: 165px
 
 .row, .col
     display: flex

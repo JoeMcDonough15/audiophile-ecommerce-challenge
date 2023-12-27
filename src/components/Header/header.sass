@@ -19,13 +19,15 @@ header .header-background
         @include set-background-image-from-file('./images/image-header-desktop.jpg')    
 
 
-.mobile-header.row.main-container, .tablet-header.tablet-header, .desktop-header.desktop-header 
-     align-items: center
-     justify-content: space-between
-     padding: 35px 1.6em
+.mobile-header.row.main-container, .tablet-header.row.main-container, .desktop-header.row.main-container 
+    align-items: center
+    justify-content: space-between
+    padding-bottom: 35px
+    padding-top: 35px
+     
 
 .mobile-header.row.main-container
-
+    
     +all-screen-bigger-than-mobile
         display:  none
 
