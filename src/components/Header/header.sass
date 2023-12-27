@@ -3,12 +3,34 @@
 header
     position: relative
 
-.mobile-header-image-and-menu
+header .header-background
+    @include set-background-image-from-file('./images/image-header-mobile.jpg')
+    background-position: top center
+    background-size: cover
+    height: 600px
+
+    +all-screen-bigger-than-mobile
+        height: 729px
+
+    +all-tablets
+        @include set-background-image-from-file('./images/image-header-tablet.jpg')
+
+    +all-large-screen
+        @include set-background-image-from-file('./images/image-header-desktop.jpg')    
+
+
+.mobile-header.row.main-container, .tablet-header.tablet-header, .desktop-header.desktop-header 
+     align-items: center
+     justify-content: space-between
+     padding: 35px 1.6em
+
+.mobile-header.row.main-container
 
     +all-screen-bigger-than-mobile
         display:  none
 
-.tablet-header-image-and-menu
+
+.tablet-header.row.main-container
     +all-phone
         display: none
     
@@ -18,7 +40,8 @@ header
     +desktop
         display: none
 
-.desktop-header-image-and-menu
+
+.desktop-header.row.main-container
     +all-phone
         display: none
 
@@ -26,30 +49,9 @@ header
         display: none
 
 
-.header-image
-    @include set-image-component-as-background
-    height: 100vh
-    max-height: 600px
-    z-index: -1 
-
-    +tiny-phone
-        max-height: 550px
-        
-    +all-screen-bigger-than-mobile
-        max-height: 729px      
-
-.mobile-header, .tablet-header, .desktop-header
-    align-items: center
-    height: 90px
-    justify-content: space-between
-
-
 .tablet-header
     & .icon-group
         justify-content: space-between
         width: 25%
 
-
-svg.test-orange:hover
-    background: $dark-orange
     

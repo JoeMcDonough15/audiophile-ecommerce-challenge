@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSection from "../../components/HeroSection/HeroSection";
+import Header from "../../components/Header/Header";
 import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCategoryMenu";
 import FeaturedProductOne from "../../components/FeaturedProductOne/FeaturedProductOne";
 import FeaturedProductTwo from "../../components/FeaturedProductTwo/FeaturedProductTwo";
@@ -37,8 +37,8 @@ const [
 
 const Homepage = () => {
   return (
-    <main>
-      <HeroSection featuredProduct={featuredProductHero} />
+    <main className="homepage">
+      <Header withHero featuredProduct={featuredProductHero} />
       <ProductCategoryMenu />
       <section className="featured-products-section main-container col">
         <FeaturedProductOne featuredProduct={featuredProductOne} />
