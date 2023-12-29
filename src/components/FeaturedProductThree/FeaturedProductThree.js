@@ -30,6 +30,7 @@ const FeaturedProductThree = (props) => {
       <div className="featured-product-three-text-container content-slab">
         <FeaturedProductInfo
           featuredProduct={featuredProduct}
+          customHeaderText="YX1 earphones"
           customClasses={{
             containerClasses: "featured-product-three-info col",
             headerClasses: "featured-product-three-header",
