@@ -3,7 +3,7 @@
 .featured-product-three-container
     display: flex
     flex-direction: column
-    gap: 25px
+    gap: 24px
 
     +all-large-screen
         flex-direction: row
@@ -18,4 +18,27 @@
     border-radius: 8px
 
 .featured-product-three-text-container
-    padding: 50px
+    padding: 50px 0 41px 25px
+
+.featured-product-three-info.col
+    gap: 23px
+
+.featured-product-three-header
+    color: $secondary-featured-product-header-color
+    font-size: 1.75rem
+    visibility: hidden
+    position: relative
+    width: max-content
+    
+
+    &::after
+        content: "YXI EARPHONES"
+        visibility: visible
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        
