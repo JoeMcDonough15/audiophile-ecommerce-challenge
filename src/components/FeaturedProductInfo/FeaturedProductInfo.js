@@ -3,7 +3,8 @@ import Button from "../Button/Button";
 import "./featured-product-info.sass";
 
 const FeaturedProductInfo = (props) => {
-  const { featuredProduct, newProduct, customClasses } = props;
+  const { featuredProduct, newProduct, featuredProductMain, customClasses } =
+    props;
   const { name, teaserDescription } = featuredProduct;
   const {
     containerClasses,
@@ -23,7 +24,7 @@ const FeaturedProductInfo = (props) => {
           <p className={teaserDescriptionClasses}>{teaserDescription}</p>
           <Button buttonText={buttonText} className={`button-${buttonColor}`} />
         </div>
-      ) : teaserDescription ? (
+      ) : featuredProductMain ? (
         <div className={containerClasses}>
           <h1 className={headerClasses}>{name}</h1>
           <p className={teaserDescriptionClasses}>{teaserDescription}</p>

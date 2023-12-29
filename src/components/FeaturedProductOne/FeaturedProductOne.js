@@ -32,6 +32,7 @@ const FeaturedProductOne = (props) => {
         </div>
         <FeaturedProductInfo
           featuredProduct={featuredProduct}
+          featuredProductMain
           customClasses={{
             containerClasses: "featured-product-one-info col",
             headerClasses: "featured-product-one-header",
