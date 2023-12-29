@@ -1,6 +1,6 @@
 @import ../../sass/global
 
-div.featured-product-one
+.featured-product-one
     background: $dark-orange
     border-radius: 8px
     padding: 64px 0 55px
@@ -9,35 +9,52 @@ div.featured-product-one
     +all-tablets
         padding: 61px 0 64px
     
+    +all-large-screen
+        padding: 142px 124px 124px 665px
+    
 svg.circle-pattern-svg
     @include set-image-component-as-background
+
+    +all-large-screen
+        left: -135px
 
 .featured-product-one-image-and-text
     align-items: center
     display: flex
     flex-direction: column
-    position: relative           /* for stacking order */
     
     +all-large-screen
         flex-direction: row
+        justify-content: space-between
 
-.featured-product-one-image-mobile
+.featured-product-one-image-container
     height: 207px
+    position: relative
     width: 172px
 
-.featured-product-one-image-tablet
-    height: 237px
-    width: 197px
+    +all-tablets
+        height: 237px
+        width: 197px
+    
+    +all-large-screen
+        bottom: -8px
+        height: 493px
+        left: 140px
+        position: absolute
+        width: 410px
 
-.featured-product-one-image-desktop
-    bottom: 0
-    height: 493px
-    position: absolute
-    width: 410px
+        & img
+            clip-path: rect(0 410px 485px 0)
+
+.featured-product-one-image
+    height: 100%
+    width: 100%
 
 .featured-product-one-info
-    @include center-flex-items
+    align-items: center
+    justify-content: center
     margin-top: 50px
+    position: relative
     text-align: center
 
     +all-tablets
@@ -45,12 +62,15 @@ svg.circle-pattern-svg
 
     +all-large-screen
         align-items: flex-start
-        margin-top: 100px
+        margin-top: 0
         text-align: left
 
 .featured-product-one-header
     color: $white
     padding: 0 80px
+
+    +tiny-phone
+        padding: 0 50px
 
     +all-phone
         font-size: 2.25rem
@@ -58,10 +78,22 @@ svg.circle-pattern-svg
     +all-tablets
         padding: 0 217px
 
+    +all-large-screen
+        padding-left: 0
+
 .featured-product-one-teaser
     color: $featured-product-one-teaser
     line-height: 25px
     padding: 37px 30px 31px
 
+    +tiny-phone
+        padding: 37px 50px 31px
+
     +all-tablets
         padding: 39px 184px 46px
+
+    +all-large-screen
+        padding: 37px 0 31px
+
+    
+        
