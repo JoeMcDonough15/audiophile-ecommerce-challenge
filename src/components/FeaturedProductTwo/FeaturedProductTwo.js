@@ -9,35 +9,33 @@ import "./featured-product-two.sass";
 const FeaturedProductTwo = (props) => {
   const { featuredProduct } = props;
   return (
-    <section>
-      <div className="featured-product-two-image-and-text">
-        <CustomImage
-          className="featured-product-two-image featured-product-two-image-mobile image-mobile"
-          src={featuredProductImageMobile}
-          alt="featured-product-image-mobile"
-        />
-        <CustomImage
-          className="featured-product-two-image featured-product-two-image-tablet image-tablet"
-          src={featuredProductImageTablet}
-          alt="featured-product-image-tablet"
-        />
-        <CustomImage
-          className="featured-product-two-image featured-product-two-image-desktop image-desktop"
-          src={featuredProductImageDesktop}
-          alt="featured-product-image-desktop"
-        />
-        <FeaturedProductInfo
-          featuredProduct={featuredProduct}
-          customClasses={{
-            containerClasses: "featured-product-two-info col",
-            headerClasses: "featured-product-two-header",
-            buttonData: {
-              buttonColor: "transparent",
-              buttonText: "see product",
-            },
-          }}
-        />
-      </div>
+    <section className="featured-product-two-container">
+      <CustomImage
+        className="featured-product-two-image featured-product-two-image-mobile image-mobile"
+        src={featuredProductImageMobile}
+        alt="featured-product-image-mobile"
+      />
+      <CustomImage
+        className="featured-product-two-image featured-product-two-image-tablet image-tablet"
+        src={featuredProductImageTablet}
+        alt="featured-product-image-tablet"
+      />
+      <CustomImage
+        className="featured-product-two-image featured-product-two-image-desktop image-desktop"
+        src={featuredProductImageDesktop}
+        alt="featured-product-image-desktop"
+      />
+      <FeaturedProductInfo
+        featuredProduct={featuredProduct}
+        customClasses={{
+          containerClasses: "featured-product-two-info col",
+          headerClasses: "featured-product-two-header",
+          buttonData: {
+            buttonColor: "transparent",
+            buttonText: "see product",
+          },
+        }}
+      />
     </section>
   );
 };
