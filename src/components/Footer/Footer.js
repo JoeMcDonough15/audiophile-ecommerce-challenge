@@ -45,8 +45,8 @@ const instagramProps = {
 const Footer = () => {
   return (
     <section className="footer">
-      <div className="mobile-and-tablet-footer">
-        <div className="footer-section-one">
+      <div className="mobile-and-tablet-footer main-container">
+        <div className="footer-section-one col">
           <ThinRule customStyle="thin-rule-footer" />
           <IconAsSvg className="logo-icon" svgDetails={logoProps} />
           <NavBar className="footer-navigation" />
@@ -58,7 +58,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="footer-section-two">
-          <p>
+          <p className="footer-text">
             Copyright <CurrentYear />. All Rights Reserved
           </p>
           <div className="social-row">
@@ -68,26 +68,26 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="desktop-footer">
-        <div className="footer-section-one">
+      <div className="desktop-footer main-container row">
+        <div className="footer-section-one col">
           <ThinRule customStyle="thin-rule-footer" />
-          <IconAsSvg svgDetails={logoProps} />
-          <p>
+          <IconAsSvg className="logo-icon" svgDetails={logoProps} />
+          <p className="footer-text footer-main-text">
             {`Audiophile is an all in one stop to fulfill your audio needs. We're
             a small team of music lovers and sound specialists who are devoted
             to helping you get the most out of personal audio. Come and visit
             our demo facility - we’re open 7 days a week.`}
           </p>
-          <p>
+          <p className="footer-text">
             Copyright <CurrentYear />. All Rights Reserved
           </p>
         </div>
-        <div className="footer-section-two">
-          <NavBar classname="footer-navigation" />
+        <div className="footer-section-two col">
+          <NavBar className="footer-navigation" />
           <div className="social-row">
-            <IconAsSvg svgDetails={facebookProps} />
-            <IconAsSvg svgDetails={twitterProps} />
-            <IconAsSvg svgDetails={instagramProps} />
+            <IconAsSvg className="social-icon" svgDetails={facebookProps} />
+            <IconAsSvg className="social-icon" svgDetails={twitterProps} />
+            <IconAsSvg className="social-icon" svgDetails={instagramProps} />
           </div>
         </div>
       </div>

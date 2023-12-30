@@ -67,7 +67,7 @@ const Header = (props) => {
           </section>
           <section className="desktop-header row main-container">
             <IconAsSvg className="logo-icon" svgDetails={logoProps} />
-            <NavBar />
+            <NavBar className="row navigation-bar" />
             <IconAsSvg
               className="shopping-cart-icon"
               svgDetails={shoppingCartProps}
@@ -103,7 +103,7 @@ const Header = (props) => {
           </section>
           <section className="desktop-header row main-container">
             <IconAsSvg className="logo-icon" svgDetails={logoProps} />
-            <NavBar />
+            <NavBar className="row navigation-bar" />
             <IconAsSvg
               className="shopping-cart-icon"
               svgDetails={shoppingCartProps}
