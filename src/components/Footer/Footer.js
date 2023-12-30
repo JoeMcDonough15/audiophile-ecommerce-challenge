@@ -48,9 +48,9 @@ const Footer = () => {
       <div className="mobile-and-tablet-footer">
         <div className="footer-section-one">
           <ThinRule customStyle="thin-rule-footer" />
-          <IconAsSvg svgDetails={logoProps} />
+          <IconAsSvg className="logo-icon" svgDetails={logoProps} />
           <NavBar className="footer-navigation" />
-          <p>
+          <p className="footer-text">
             {`Audiophile is an all in one stop to fulfill your audio needs. We're
             a small team of music lovers and sound specialists who are devoted
             to helping you get the most out of personal audio. Come and visit
@@ -71,7 +71,7 @@ const Footer = () => {
       <div className="desktop-footer">
         <div className="footer-section-one">
           <ThinRule customStyle="thin-rule-footer" />
-          {/* <IconAsSvg /> */}
+          <IconAsSvg svgDetails={logoProps} />
           <p>
             {`Audiophile is an all in one stop to fulfill your audio needs. We're
             a small team of music lovers and sound specialists who are devoted
