@@ -3,7 +3,7 @@
 header
     position: relative
 
-header .header-background
+header .header-image-background
     @include set-background-image-from-file('./images/image-header-mobile.jpg')
     height: 600px
 
@@ -14,13 +14,16 @@ header .header-background
         @include set-background-image-from-file('./images/image-header-tablet.jpg')
 
     +all-large-screen
-        @include set-background-image-from-file('./images/image-header-desktop.jpg')    
+        @include set-background-image-from-file('./images/image-header-desktop.jpg')   
+
+header .header-black-background
+    background: $header-black-background
 
 
 .mobile-header.row.main-container, .tablet-header.row.main-container, .desktop-header.row.main-container 
     align-items: center
     justify-content: space-between
-    padding: 35px 0
+    padding: 32.5px 0
      
 
 .mobile-header.row.main-container
@@ -61,3 +64,12 @@ header .header-background
 
     +small-laptop
         width: 45%
+
+
+.thin-rule-header
+    background: $thin-rule-header
+    width: 100%
+
+    +all-phone
+        max-width: 470px
+        width: 100vw

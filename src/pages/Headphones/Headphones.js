@@ -1,9 +1,10 @@
 import React from "react";
+import Header from "../../components/Header/Header";
 
 const Headphones = () => {
   return (
     <div>
-      <h1>Headphones!</h1>;
+      <Header withBanner bannerText="Headphones" />
     </div>
   );
 };

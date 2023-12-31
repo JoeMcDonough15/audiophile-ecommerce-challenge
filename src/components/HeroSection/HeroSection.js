@@ -7,7 +7,7 @@ const HeroSection = (props) => {
   const { featuredProduct } = props;
   return (
     <section className="hero-section col main-container">
-      <ThinRule customStyle="thin-rule-hero" />
+      <ThinRule customStyle="thin-rule-header" />
       <FeaturedProductInfo
         featuredProduct={featuredProduct}
         newProduct

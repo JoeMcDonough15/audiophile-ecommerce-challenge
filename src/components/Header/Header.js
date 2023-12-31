@@ -2,10 +2,8 @@ import React from "react";
 import "./header.sass";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
 import NavBar from "../NavBar/NavBar";
-import HeroSection from "../../components/HeroSection/HeroSection";
-// import imageHeaderMobile from "./images/image-header-mobile.jpg";
-// import imageHeaderTablet from "./images/image-header-tablet.jpg";
-// import imageHeaderDesktop from "./images/image-header-desktop.jpg";
+import HeroSection from "../HeroSection/HeroSection";
+import Banner from "../Banner/Banner";
 
 const hamburgerProps = {
   width: "16",
@@ -36,11 +34,11 @@ const shoppingCartProps = {
 };
 
 const Header = (props) => {
-  const { withHero, featuredProduct } = props;
+  const { withHero, withBanner, bannerText, featuredProduct } = props;
   return (
     <header>
       {withHero ? (
-        <div className="header-background">
+        <div className="header-image-background">
           <section className="mobile-header main-container row">
             <IconAsSvg
               className="hamburger-menu-icon"
@@ -75,8 +73,44 @@ const Header = (props) => {
           </section>
           <HeroSection featuredProduct={featuredProduct} />
         </div>
+      ) : withBanner ? (
+        <div className="header-black-background header-with-banner">
+          <section className="mobile-header main-container row">
+            <IconAsSvg
+              className="hamburger-menu-icon"
+              svgDetails={hamburgerProps}
+            />
+            <IconAsSvg className="logo-icon" svgDetails={logoProps} />
+            <IconAsSvg
+              className="shopping-cart-icon"
+              svgDetails={shoppingCartProps}
+            />
+          </section>
+          <section className="tablet-header row main-container">
+            <div className="icon-group row">
+              <IconAsSvg
+                className="hamburger-menu-icon"
+                svgDetails={hamburgerProps}
+              />
+              <IconAsSvg className="logo-icon" svgDetails={logoProps} />
+            </div>
+            <IconAsSvg
+              className="shopping-cart-icon"
+              svgDetails={shoppingCartProps}
+            />
+          </section>
+          <section className="desktop-header row main-container">
+            <IconAsSvg className="logo-icon" svgDetails={logoProps} />
+            <NavBar className="row navigation-bar" />
+            <IconAsSvg
+              className="shopping-cart-icon"
+              svgDetails={shoppingCartProps}
+            />
+          </section>
+          <Banner bannerText={bannerText} />
+        </div>
       ) : (
-        <div className="header-background">
+        <div className="header-black-background">
           <section className="mobile-header main-container row">
             <IconAsSvg
               className="hamburger-menu-icon"
