@@ -1,11 +1,12 @@
-$tiny-phone-maximum: 310px
-$small-phone-maximum: 350px
+$tiny-phone-maximum: 320px
+$small-phone-maximum: 360px
 $medium-phone-minimum: 375px
 $large-phone-minimum: 457px
 $very-large-phone-minimum: 567px
 $enormous-phone-minimum: 650px
 $small-tablet-minimum: 768px
 $medium-tablet-minimum: 820px
+$large-tablet-minimum: 844px
 $small-laptop-minimum: 1024px
 $laptop-minimum: 1240px
 $desktop-minimum: 1440px
@@ -39,7 +40,11 @@ $desktop-minimum: 1440px
     @content
 
 =medium-tablet
-  @media (min-width: $medium-tablet-minimum) and (max-width: $small-laptop-minimum - 1)
+  @media (min-width: $medium-tablet-minimum) and (max-width: $large-tablet-minimum - 1)
+    @content
+
+=large-tablet
+  @media (min-width: $large-tablet-minimum) and (max-width: $small-laptop-minimum - 1)
     @content
 
 =all-tablets
