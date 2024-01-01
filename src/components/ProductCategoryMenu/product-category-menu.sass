@@ -1,10 +1,20 @@
 @import ../../sass/global
 
-.product-category-menu.main-container
+
+main.homepage > section.product-category-menu.main-container.col
+
+    +all-tablets
+        margin-bottom: 96px
+    
+    +all-large-screen
+        margin-bottom: 168px
+
+.product-category-menu.main-container.col
     align-items: center
     display: flex
     flex-direction: column
     gap: 60px
+    margin-bottom: 120px
     padding-top: 92px
 
     +all-screen-bigger-than-mobile
@@ -16,6 +26,7 @@
     
     +all-large-screen
         gap: 30px
+        margin-bottom: 160px
         padding-top: 200px
 
 

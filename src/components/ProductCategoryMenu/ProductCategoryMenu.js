@@ -7,7 +7,7 @@ import earphonesPreviewImage from "./images/image-category-thumbnail-earphones.p
 
 const ProductCategoryMenu = () => {
   return (
-    <section className="main-container product-category-menu">
+    <section className="main-container product-category-menu col">
       <CategorySlab
         categoryName="headphones"
         imageSrc={headphonesPreviewImage}

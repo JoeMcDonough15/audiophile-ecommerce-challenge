@@ -1,13 +1,20 @@
 @import ../../sass/global
 
-.featured-products-section
-    gap: 24px
-    padding: 120px 0
+main.homepage > section.product-category-menu.main-container.col
 
     +all-tablets
-        gap: 32px
-        padding: 96px 0
+        margin-bottom: 96px
+    
+    +all-large-screen
+        margin-bottom: 168px
 
+
+.featured-products-section.main-container.col
+    gap: 24px
+    
+    +all-tablets
+        gap: 32px
+        
     +all-large-screen
         gap: 48px
-        padding: 168px 0
+        
