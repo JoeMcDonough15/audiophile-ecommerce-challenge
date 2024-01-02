@@ -1,0 +1,66 @@
+@import ../../sass/global
+
+
+.category-featured-product-container.main-container
+    display: flex
+    flex-direction: column
+    gap: 36px
+
+    +all-tablets
+        gap: 52px
+
+    +all-large-screen
+        flex-direction: row
+        justify-content: space-between
+    
+        & .featured-product-text-container
+            display: flex
+            flex-direction: column
+            justify-content: center
+            width: 40%
+
+.featured-product-info.category-featured-product-info.col
+    gap: 24px
+
+    +all-screen-bigger-than-mobile
+        gap: 0
+    
+    +all-large-screen
+        align-items: flex-start
+        text-align: left
+
+.content-slab.category-featured-product-image-container
+    align-items: center
+    display: flex
+    justify-content: center
+    height: 352px
+    width: 100%
+
+    +all-large-screen
+        height: 560px
+        width: 540px
+
+.content-slab.category-featured-product-image-container .category-featured-product-image
+    height: auto
+    width: 220px
+
+    +all-large-screen
+        width: 349.24px
+
+    +all-tablets
+        height: 100%
+    
+.featured-product-info.category-featured-product-info.col .category-featured-product-header
+
+    +all-tablets
+        margin: 24px 0 44px
+
+
+.featured-product-info.category-featured-product-info.col .category-featured-product-description
+
+    +all-tablets
+        margin-bottom: 28px
+        padding: 0 9%
+
+    +all-large-screen
+        padding: 40px 0

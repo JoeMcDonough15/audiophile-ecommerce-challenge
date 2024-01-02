@@ -6,43 +6,49 @@ const FeaturedProductInfo = (props) => {
   const {
     featuredProduct,
     newProduct,
-    featuredProductMain,
+    featuredProductDescription,
+    teaserOnly,
     customHeaderText,
     customClasses,
   } = props;
-  const { name, teaserDescription } = featuredProduct;
+  const { name, teaserDescription, description } = featuredProduct;
   const {
     containerClasses,
     newProductIntroClasses,
     headerClasses,
-    teaserDescriptionClasses,
+    productDescriptionClasses,
     buttonData,
   } = customClasses;
 
   const { buttonColor, buttonText } = buttonData;
   return (
     <div>
-      {newProduct ? (
-        <div className={containerClasses}>
+      {newProduct && featuredProductDescription ? (
+        <div className={`featured-product-info ${containerClasses}`}>
           <p className={newProductIntroClasses}>New Product</p>
-          <h1 className={headerClasses}>{name}</h1>
-          <p className={teaserDescriptionClasses}>{teaserDescription}</p>
+          <h1 className={headerClasses}>
+            {customHeaderText ? customHeaderText : name}
+          </h1>
+          <p className={productDescriptionClasses}>
+            {teaserOnly ? teaserDescription : description}
+          </p>
           <Button buttonText={buttonText} className={`button-${buttonColor}`} />
         </div>
-      ) : featuredProductMain ? (
-        <div className={containerClasses}>
-          <h1 className={headerClasses}>{name}</h1>
-          <p className={teaserDescriptionClasses}>{teaserDescription}</p>
-          <Button buttonText={buttonText} className={`button-${buttonColor}`} />
-        </div>
-      ) : customHeaderText ? (
-        <div className={containerClasses}>
-          <h4 className={headerClasses}>{customHeaderText}</h4>
+      ) : featuredProductDescription ? (
+        <div className={`featured-product-info ${containerClasses}`}>
+          <h1 className={headerClasses}>
+            {customHeaderText ? customHeaderText : name}
+          </h1>
+          <p className={productDescriptionClasses}>
+            {teaserOnly ? teaserDescription : description}
+          </p>
           <Button buttonText={buttonText} className={`button-${buttonColor}`} />
         </div>
       ) : (
-        <div className={containerClasses}>
-          <h4 className={headerClasses}>{name}</h4>
+        <div className={`featured-product-info ${containerClasses}`}>
+          <h4 className={headerClasses}>
+            {customHeaderText ? customHeaderText : name}
+          </h4>
           <Button buttonText={buttonText} className={`button-${buttonColor}`} />
         </div>
       )}

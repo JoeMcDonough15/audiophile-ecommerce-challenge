@@ -19,11 +19,27 @@ body
     font-weight: $bold
     text-transform: uppercase
 
+%small-header
+    @extend %header-font
+    font-size: 28px
+    letter-spacing: 2px
+    line-height: 38px
+    
+    
+
 h1
     @extend %header-font
-    font-size: 3.5rem
-    letter-spacing: 0.03571428em
-    line-height: 1.035714em
+    font-size: 56px
+    letter-spacing: 2px
+    line-height: 58px
+
+    +all-phone
+        font-size: 36px
+        letter-spacing: 1.29px
+        line-height: 40px
+    
+    +small-phone
+        font-size: 32px
 
 h2
     @extend %header-font
@@ -38,12 +54,18 @@ h3
     line-height: 1.125em
 
 h4, .overline
-    line-height: 1.357142857em
+    line-height: 38px
 
-h4
-    @extend %header-font
-    font-size: 1.75rem
-    letter-spacing: 0.071428571em
+h4, .small-featured-product-header
+    @extend %small-header
+
+.small-featured-product-header
+    letter-spacing: 1px
+    
+    +all-tablets
+        font-size: 40px
+        letter-spacing: 2px
+        line-height: 44px
     
 h5
     @extend %header-font
@@ -86,4 +108,8 @@ input
 .quantity
     color: $black
     font-size: 0.875rem
-    
+
+.new-product-intro-text
+    letter-spacing: 10px
+
+

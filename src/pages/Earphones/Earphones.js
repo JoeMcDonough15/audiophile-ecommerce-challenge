@@ -1,9 +1,16 @@
 import React from "react";
+import Header from "../../components/Header/Header";
+import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCategoryMenu";
+import AboutUs from "../../components/AboutUs/AboutUs";
+import Footer from "../../components/Footer/Footer";
 
 const Earphones = () => {
   return (
     <div>
-      <h1>Earphones!</h1>;
+      <Header withBanner bannerText="earphones" />
+      <ProductCategoryMenu />
+      <AboutUs />
+      <Footer />
     </div>
   );
 };

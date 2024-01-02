@@ -32,11 +32,13 @@ const FeaturedProductOne = (props) => {
         </div>
         <FeaturedProductInfo
           featuredProduct={featuredProduct}
-          featuredProductMain
+          featuredProductDescription
+          teaserOnly
           customClasses={{
             containerClasses: "featured-product-one-info col",
-            headerClasses: "featured-product-one-header",
-            teaserDescriptionClasses: "featured-product-one-teaser",
+            headerClasses: "featured-product-one-header white-text",
+            productDescriptionClasses:
+              "featured-product-description featured-product-one-description",
             buttonData: { buttonColor: "black", buttonText: "see product" },
           }}
         />

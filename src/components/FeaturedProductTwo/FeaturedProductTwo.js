@@ -29,7 +29,7 @@ const FeaturedProductTwo = (props) => {
         featuredProduct={featuredProduct}
         customClasses={{
           containerClasses: "featured-product-two-info col",
-          headerClasses: "featured-product-two-header",
+          headerClasses: "black-text",
           buttonData: {
             buttonColor: "transparent",
             buttonText: "see product",
