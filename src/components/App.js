@@ -5,12 +5,12 @@ import Checkout from "../pages/Checkout/Checkout";
 import Earphones from "../pages/category-pages/Earphones/Earphones";
 import Headphones from "../pages/category-pages/Headphones/Headphones";
 import Speakers from "../pages/category-pages/Speakers/Speakers";
-import ProductEarphones from "../pages/Product-Earphones/ProductEarphones";
-import ProductXx59Headphones from "../pages/Product-xx59-Headphones/ProductXx59Headphones";
-import ProductXx99MarkOneHeadphones from "../pages/Product-xx99-Mark-One-Headphones/ProductXx99MarkOneHeadphones";
-import ProductXx99MarkTwoHeadphones from "../pages/Product-xx99-Mark-Two-Headphones/ProductXx99MarkTwoHeadphones";
-import ProductZx7Speaker from "../pages/Product-zx7-Speaker/ProductZx7Speaker";
-import ProductZx9Speaker from "../pages/Product-zx9-Speaker/ProductZx9Speaker";
+import ProductEarphones from "../pages/product-pages/Product-Earphones/ProductEarphones";
+import ProductXx59Headphones from "../pages/product-pages/Product-xx59-Headphones/ProductXx59Headphones";
+import ProductXx99MarkOneHeadphones from "../pages/product-pages/Product-xx99-Mark-One-Headphones/ProductXx99MarkOneHeadphones";
+import ProductXx99MarkTwoHeadphones from "../pages/product-pages/Product-xx99-Mark-Two-Headphones/ProductXx99MarkTwoHeadphones";
+import ProductZx7Speaker from "../pages/product-pages/Product-zx7-Speaker/ProductZx7Speaker";
+import ProductZx9Speaker from "../pages/product-pages/Product-zx9-Speaker/ProductZx9Speaker";
 import "../sass/global.sass";
 
 function App() {
