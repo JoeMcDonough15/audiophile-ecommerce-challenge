@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
 import "./button.sass";
 
 const Button = (props) => {
-  const { buttonText, className } = props;
+  const { buttonDestination, buttonText, className } = props;
   const arrowColor = "#d87d4a"; // arrow icon is only for .button-with-arrow-icon
   const arrowIconProps = {
     stroke: arrowColor,
@@ -18,10 +19,12 @@ const Button = (props) => {
   };
 
   return (
-    <button className={className}>
-      <span className="button-text">{buttonText}</span>
-      <IconAsSvg className="right-arrow" svgDetails={arrowIconProps} />
-    </button>
+    <NavLink to={`/${buttonDestination}`}>
+      <button className={className}>
+        <span className="button-text">{buttonText}</span>
+        <IconAsSvg className="right-arrow" svgDetails={arrowIconProps} />
+      </button>
+    </NavLink>
   );
 };
 

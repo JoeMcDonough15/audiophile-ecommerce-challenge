@@ -12,16 +12,19 @@ const ProductCategoryMenu = () => {
         categoryName="headphones"
         imageSrc={headphonesPreviewImage}
         thumbnailName="headphones-thumbnail"
+        buttonDestination="headphones"
       />
       <CategorySlab
         categoryName="speakers"
         imageSrc={speakerPreviewImage}
         thumbnailName="speaker-thumbnail"
+        buttonDestination="speakers"
       />
       <CategorySlab
         categoryName="earphones"
         imageSrc={earphonesPreviewImage}
         thumbnailName="earphones-thumbnail"
+        buttonDestination="earphones"
       />
     </section>
   );

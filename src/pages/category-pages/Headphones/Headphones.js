@@ -1,20 +1,20 @@
 import React from "react";
-import Header from "../../components/Header/Header";
-import CategoryFeaturedProduct from "../../components/CategoryFeaturedProduct/CategoryFeaturedProduct";
-import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCategoryMenu";
-import AboutUs from "../../components/AboutUs/AboutUs";
-import Footer from "../../components/Footer/Footer";
-import data from "../../data.json";
-import markTwoMobileImage from "../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg";
-import markTwoTabletImage from "../../assets/product-xx99-mark-two-headphones/tablet/image-product.jpg";
-import markTwoDesktopImage from "../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg";
-import markOneMobileImage from "../../assets/product-xx99-mark-one-headphones/mobile/image-product.jpg";
-import markOneTabletImage from "../../assets/product-xx99-mark-one-headphones/tablet/image-product.jpg";
-import markOneDesktopImage from "../../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg";
-import xxFiveNineMobileImage from "../../assets/product-xx59-headphones/mobile/image-product.jpg";
-import xxFiveNineTabletImage from "../../assets/product-xx59-headphones/tablet/image-product.jpg";
-import xxFiveNineDesktopImage from "../../assets/product-xx59-headphones/desktop/image-product.jpg";
-import "./headphones.sass";
+import Header from "../../../components/Header/Header";
+import CategoryFeaturedProduct from "../../../components/CategoryFeaturedProduct/CategoryFeaturedProduct";
+import ProductCategoryMenu from "../../../components/ProductCategoryMenu/ProductCategoryMenu";
+import AboutUs from "../../../components/AboutUs/AboutUs";
+import Footer from "../../../components/Footer/Footer";
+import data from "../../../data.json";
+import markTwoMobileImage from "../../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg";
+import markTwoTabletImage from "../../../assets/product-xx99-mark-two-headphones/tablet/image-product.jpg";
+import markTwoDesktopImage from "../../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg";
+import markOneMobileImage from "../../../assets/product-xx99-mark-one-headphones/mobile/image-product.jpg";
+import markOneTabletImage from "../../../assets/product-xx99-mark-one-headphones/tablet/image-product.jpg";
+import markOneDesktopImage from "../../../assets/product-xx99-mark-one-headphones/desktop/image-product.jpg";
+import xxFiveNineMobileImage from "../../../assets/product-xx59-headphones/mobile/image-product.jpg";
+import xxFiveNineTabletImage from "../../../assets/product-xx59-headphones/tablet/image-product.jpg";
+import xxFiveNineDesktopImage from "../../../assets/product-xx59-headphones/desktop/image-product.jpg";
+import "../category-pages.sass";
 
 const featuredProductSlugs = [
   "xx99-mark-two-headphones",

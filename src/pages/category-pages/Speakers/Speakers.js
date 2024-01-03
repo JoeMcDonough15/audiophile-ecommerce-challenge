@@ -1,17 +1,17 @@
 import React from "react";
-import Header from "../../components/Header/Header";
-import CategoryFeaturedProduct from "../../components/CategoryFeaturedProduct/CategoryFeaturedProduct";
-import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCategoryMenu";
-import AboutUs from "../../components/AboutUs/AboutUs";
-import Footer from "../../components/Footer/Footer";
-import data from "../../data.json";
-import zxNineMobileImage from "../../assets/product-zx9-speaker/mobile/image-product.jpg";
-import zxNineTabletImage from "../../assets/product-zx9-speaker/tablet/image-product.jpg";
-import zxNineDesktopImage from "../../assets/product-zx9-speaker/desktop/image-product.jpg";
-import zxSevenMobileImage from "../../assets/product-zx7-speaker/mobile/image-product.jpg";
-import zxSevenTabletImage from "../../assets/product-zx7-speaker/tablet/image-product.jpg";
-import zxSevenDesktopImage from "../../assets/product-zx7-speaker/desktop/image-product.jpg";
-import "./speakers.sass";
+import Header from "../../../components/Header/Header";
+import CategoryFeaturedProduct from "../../../components/CategoryFeaturedProduct/CategoryFeaturedProduct";
+import ProductCategoryMenu from "../../../components/ProductCategoryMenu/ProductCategoryMenu";
+import AboutUs from "../../../components/AboutUs/AboutUs";
+import Footer from "../../../components/Footer/Footer";
+import data from "../../../data.json";
+import zxNineMobileImage from "../../../assets/product-zx9-speaker/mobile/image-product.jpg";
+import zxNineTabletImage from "../../../assets/product-zx9-speaker/tablet/image-product.jpg";
+import zxNineDesktopImage from "../../../assets/product-zx9-speaker/desktop/image-product.jpg";
+import zxSevenMobileImage from "../../../assets/product-zx7-speaker/mobile/image-product.jpg";
+import zxSevenTabletImage from "../../../assets/product-zx7-speaker/tablet/image-product.jpg";
+import zxSevenDesktopImage from "../../../assets/product-zx7-speaker/desktop/image-product.jpg";
+import "../category-pages.sass";
 
 const featuredProductSlugs = ["zx9-speaker", "zx7-speaker"];
 
