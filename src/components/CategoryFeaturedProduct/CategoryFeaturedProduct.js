@@ -5,23 +5,28 @@ import "./category-featured-product.sass";
 
 const CategoryFeaturedProduct = (props) => {
   const { imageData } = props;
-  const { mobileImageSrc, tabletImageSrc, desktopImageSrc, imageAltText } =
-    imageData;
+  const {
+    mobileImageSrc,
+    tabletImageSrc,
+    desktopImageSrc,
+    imageAltText,
+    customImageStyles,
+  } = imageData;
   return (
     <section className="main-container category-featured-product-container">
       <div className="content-slab category-featured-product-image-container">
         <CustomImage
-          className="category-featured-product-image image-mobile"
+          className={`category-featured-product-image image-mobile ${customImageStyles}`}
           src={mobileImageSrc}
           altText={imageAltText}
         />{" "}
         <CustomImage
-          className="category-featured-product-image image-tablet"
+          className={`category-featured-product-image image-tablet ${customImageStyles}`}
           src={tabletImageSrc}
           altText={imageAltText}
         />{" "}
         <CustomImage
-          className="category-featured-product-image image-desktop"
+          className={`category-featured-product-image image-desktop ${customImageStyles}`}
           src={desktopImageSrc}
           altText={imageAltText}
         />{" "}
