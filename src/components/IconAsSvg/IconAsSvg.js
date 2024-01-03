@@ -15,21 +15,23 @@ const IconAsSvg = (props) => {
   } = svgDetails;
 
   return (
-    <svg className={className} width={width} height={height} xmlns={src}>
-      {gElement ? (
-        <g fill={fill} fillRule={fillRule}>
-          <path d={d} stroke={stroke} strokeWidth={strokeWidth}></path>
-        </g>
-      ) : (
-        <path
-          d={d}
-          stroke={stroke}
-          strokeWidth={strokeWidth}
-          fill={fill}
-          fillRule={fillRule}
-        />
-      )}
-    </svg>
+    <div className={className}>
+      <svg width={width} height={height} xmlns={src}>
+        {gElement ? (
+          <g fill={fill} fillRule={fillRule}>
+            <path d={d} stroke={stroke} strokeWidth={strokeWidth}></path>
+          </g>
+        ) : (
+          <path
+            d={d}
+            stroke={stroke}
+            strokeWidth={strokeWidth}
+            fill={fill}
+            fillRule={fillRule}
+          />
+        )}
+      </svg>
+    </div>
   );
 };
 
