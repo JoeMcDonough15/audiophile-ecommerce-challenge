@@ -7,7 +7,7 @@ import featuredProductImageMobile from "./images/image-speaker-zx9-mobile.png";
 import featuredProductImageTablet from "./images/image-speaker-zx9-tablet.png";
 import featuredProductImageDesktop from "./images/image-speaker-zx9-desktop.png";
 
-const FeaturedProductOne = (props) => {
+const HomeFeatureOne = (props) => {
   const { featuredProduct } = props;
   const { slug } = featuredProduct;
   return (
@@ -51,4 +51,4 @@ const FeaturedProductOne = (props) => {
   );
 };
 
-export default FeaturedProductOne;
+export default HomeFeatureOne;

@@ -2,7 +2,7 @@ import React from "react";
 import "./featured-product-three.sass";
 import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 
-const FeaturedProductThree = (props) => {
+const HomeFeatureThree = (props) => {
   const { featuredProduct } = props;
   const { slug } = featuredProduct;
   return (
@@ -26,4 +26,4 @@ const FeaturedProductThree = (props) => {
   );
 };
 
-export default FeaturedProductThree;
+export default HomeFeatureThree;

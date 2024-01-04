@@ -6,7 +6,7 @@ import featuredProductImageTablet from "./images/image-speaker-zx7-tablet.jpg";
 import featuredProductImageDesktop from "./images/image-speaker-zx7-desktop.jpg";
 import "./featured-product-two.sass";
 
-const FeaturedProductTwo = (props) => {
+const HomeFeatureTwo = (props) => {
   const { featuredProduct } = props;
   const { slug } = featuredProduct;
   return (
@@ -41,4 +41,4 @@ const FeaturedProductTwo = (props) => {
   );
 };
 
-export default FeaturedProductTwo;
+export default HomeFeatureTwo;

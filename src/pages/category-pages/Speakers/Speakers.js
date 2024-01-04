@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../../components/Header/Header";
-import CategoryFeaturedProduct from "../../../components/CategoryFeaturedProduct/CategoryFeaturedProduct";
+import FeaturedProduct from "../../../components/FeaturedProduct/FeaturedProduct";
 import ProductCategoryMenu from "../../../components/ProductCategoryMenu/ProductCategoryMenu";
 import AboutUs from "../../../components/AboutUs/AboutUs";
 import Footer from "../../../components/Footer/Footer";
@@ -53,14 +53,14 @@ const Speakers = () => {
     <main className="speakers-page">
       <Header withBanner bannerText="Speakers" />
       <section className="category-features col">
-        <CategoryFeaturedProduct
+        <FeaturedProduct
           imageData={featureOneImageData}
           featuredProduct={featuredProductOne}
           newProduct
           featuredProductDescription
           buttonDestination={`product-${featuredProductOne.slug}`}
         />
-        <CategoryFeaturedProduct
+        <FeaturedProduct
           imageData={featureTwoImageData}
           featuredProduct={featuredProductTwo}
           featuredProductDescription
