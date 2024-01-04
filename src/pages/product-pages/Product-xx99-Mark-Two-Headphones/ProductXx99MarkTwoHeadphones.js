@@ -1,19 +1,56 @@
 import React from "react";
+import Header from "../../../components/Header/Header";
+import CategoryFeaturedProduct from "../../../components/CategoryFeaturedProduct/CategoryFeaturedProduct";
+import ProductCategoryMenu from "../../../components/ProductCategoryMenu/ProductCategoryMenu";
+import AboutUs from "../../../components/AboutUs/AboutUs";
+import Footer from "../../../components/Footer/Footer";
+import data from "../../../data.json";
+import markTwoMobileImage from "../../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg";
+import markTwoTabletImage from "../../../assets/product-xx99-mark-two-headphones/tablet/image-product.jpg";
+import markTwoDesktopImage from "../../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg";
+
+const featuredProductSlugs = ["xx99-mark-two-headphones"];
+
+const findFeaturedProducts = (productList, productSlugs) => {
+  const featuredProducts = [];
+  productSlugs.forEach((productSlug) => {
+    productList.forEach((productObject) => {
+      if (productObject.slug === productSlug) {
+        featuredProducts.push(productObject);
+      }
+    });
+  });
+  return featuredProducts;
+};
+
+const [featuredProductOne] = findFeaturedProducts(data, featuredProductSlugs);
+
+const featureOneImageData = {
+  mobileImageSrc: markTwoMobileImage,
+  tabletImageSrc: markTwoTabletImage,
+  desktopImageSrc: markTwoDesktopImage,
+  imageAltText: "mark-two-headphones-image",
+  customImageStyles: "mark-two-image-width",
+};
 
 const ProductXx99MarkTwoHeadphones = () => {
   return (
-    <div>
-      <h1>Product xx99 Mark Two Headphones!</h1>;
-    </div>
+    <main className="product-xx99-mark-two-headphones-page">
+      <Header />
+      <CategoryFeaturedProduct
+        imageData={featureOneImageData}
+        featuredProduct={featuredProductOne}
+        isProductPageDetails
+        newProduct
+      />
+      <ProductCategoryMenu />
+      <AboutUs />
+      <Footer />
+    </main>
   );
 };
 
 export default ProductXx99MarkTwoHeadphones;
-
-// 1. CategoryFeaturedProduct component.  This should really be called just a FeaturedProduct component.
-// I have to tweak this component to return different material for the product pages than it does
-// for the category-pages.  Specifically, the difference is a price is listed for product-pages only, and
-// the See Product button on the category pages is turned into a row of two buttons: a quantity incrementor/decrementor and Add to Cart button
 
 // 2. ProductFeatures component.  This will be a new component that I make that has a simple header and two paragraphs.
 // the content for the header and two paragraphs will come from the data.json.  I need to figure out how to put a space
@@ -33,8 +70,6 @@ export default ProductXx99MarkTwoHeadphones;
 // 5. YouMayAlsoLike.  This component should consist of a top level header, followed by a div.content-slab that renders
 // a CustomImage component.  Under that should be a FeaturedProductInfo component that renders only the header and button a la
 // FeaturedProductTwo and Three on the Homepage.
-
-// 6. ProductCategoryMenu AboutUs and Footer reused
 
 //
 

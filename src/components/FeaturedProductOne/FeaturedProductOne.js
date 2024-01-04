@@ -9,6 +9,7 @@ import featuredProductImageDesktop from "./images/image-speaker-zx9-desktop.png"
 
 const FeaturedProductOne = (props) => {
   const { featuredProduct } = props;
+  const { slug } = featuredProduct;
   return (
     <section className="featured-product-one">
       <CirclePatternSvg />
@@ -39,7 +40,10 @@ const FeaturedProductOne = (props) => {
             headerClasses: "featured-product-one-header white-text",
             productDescriptionClasses:
               "featured-product-description featured-product-one-description",
-            buttonData: { buttonColor: "black", buttonText: "see product" },
+            buttonData: {
+              buttonColor: "black",
+              buttonDestination: `product-${slug}`,
+            },
           }}
         />
       </div>

@@ -34,9 +34,9 @@ function App() {
           component={ProductXx99MarkTwoHeadphones}
         />
         <Route path="/product-zx7-speaker" component={ProductZx7Speaker} />
-        <Route path="/product-zx9-speaker" component={ProductZx9Speaker} /> */
+        <Route path="/product-zx9-speaker" component={ProductZx9Speaker} />
         <Route path="/checkout" component={Checkout} />
-        <Route path="/product-earphones" component={ProductEarphones} />
+        <Route path="/product-yx1-earphones" component={ProductEarphones} />
       </Switch>
     </div>
   );

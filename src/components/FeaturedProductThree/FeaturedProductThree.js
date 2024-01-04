@@ -4,6 +4,7 @@ import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 
 const FeaturedProductThree = (props) => {
   const { featuredProduct } = props;
+  const { slug } = featuredProduct;
   return (
     <section className="featured-product-three-container">
       <div className="featured-product-three-image-container"></div>
@@ -16,7 +17,7 @@ const FeaturedProductThree = (props) => {
             headerClasses: "black-text",
             buttonData: {
               buttonColor: "transparent",
-              buttonText: "see product",
+              buttonDestination: `product-${slug}`,
             },
           }}
         />

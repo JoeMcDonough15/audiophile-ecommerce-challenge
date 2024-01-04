@@ -58,11 +58,13 @@ const Speakers = () => {
           featuredProduct={featuredProductOne}
           newProduct
           featuredProductDescription
+          buttonDestination={`product-${featuredProductOne.slug}`}
         />
         <CategoryFeaturedProduct
           imageData={featureTwoImageData}
           featuredProduct={featuredProductTwo}
           featuredProductDescription
+          buttonDestination={`product-${featuredProductTwo.slug}`}
         />
       </section>
       <ProductCategoryMenu />

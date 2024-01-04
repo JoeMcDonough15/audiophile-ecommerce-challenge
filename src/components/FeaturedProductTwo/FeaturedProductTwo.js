@@ -8,6 +8,7 @@ import "./featured-product-two.sass";
 
 const FeaturedProductTwo = (props) => {
   const { featuredProduct } = props;
+  const { slug } = featuredProduct;
   return (
     <section className="featured-product-two-container">
       <CustomImage
@@ -32,7 +33,7 @@ const FeaturedProductTwo = (props) => {
           headerClasses: "black-text",
           buttonData: {
             buttonColor: "transparent",
-            buttonText: "see product",
+            buttonDestination: `product-${slug}`,
           },
         }}
       />

@@ -1,10 +1,17 @@
 import React from "react";
+import Header from "../../../components/Header/Header";
+import ProductCategoryMenu from "../../../components/ProductCategoryMenu/ProductCategoryMenu";
+import AboutUs from "../../../components/AboutUs/AboutUs";
+import Footer from "../../../components/Footer/Footer";
 
 const ProductZx9Speaker = () => {
   return (
-    <div>
-      <h1>Product zx9 Speaker!</h1>;
-    </div>
+    <main className="product-zx9-speaker-page">
+      <Header />
+      <ProductCategoryMenu />
+      <AboutUs />
+      <Footer />
+    </main>
   );
 };
 

@@ -5,6 +5,7 @@ import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 
 const HeroSection = (props) => {
   const { featuredProduct } = props;
+  const { slug } = featuredProduct;
   return (
     <section className="hero-section col main-container">
       <ThinRule customStyle="thin-rule-header" />
@@ -20,7 +21,10 @@ const HeroSection = (props) => {
             "overline new-product-intro-text new-product-grey-text",
           productDescriptionClasses:
             "featured-product-description featured-product-description-hero",
-          buttonData: { buttonColor: "dark-orange", buttonText: "see product" },
+          buttonData: {
+            buttonColor: "dark-orange",
+            buttonDestination: `product-${slug}`,
+          },
         }}
       />
     </section>

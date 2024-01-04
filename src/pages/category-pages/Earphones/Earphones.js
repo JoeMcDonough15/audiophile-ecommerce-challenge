@@ -44,6 +44,7 @@ const Earphones = () => {
           featuredProduct={featuredProductOne}
           newProduct
           featuredProductDescription
+          buttonDestination={`product-${featuredProductOne.slug}`}
         />
       </section>
       <ProductCategoryMenu />

@@ -71,16 +71,19 @@ const Headphones = () => {
           featuredProduct={featuredProductOne}
           newProduct
           featuredProductDescription
+          buttonDestination={`product-${featuredProductOne.slug}`}
         />
         <CategoryFeaturedProduct
           imageData={featureTwoImageData}
           featuredProduct={featuredProductTwo}
           featuredProductDescription
+          buttonDestination={`product-${featuredProductTwo.slug}`}
         />
         <CategoryFeaturedProduct
           imageData={featureThreeImageData}
           featuredProduct={featuredProductThree}
           featuredProductDescription
+          buttonDestination={`product-${featuredProductThree.slug}`}
         />
       </section>
       <ProductCategoryMenu />
