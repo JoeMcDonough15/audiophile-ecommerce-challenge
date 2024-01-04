@@ -2,33 +2,33 @@ import React from "react";
 import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 import CirclePatternSvg from "../CirclePatternSvg/CirclePatternSvg";
 import CustomImage from "../CustomImage/CustomImage";
-import "./featured-product-one.sass";
 import featuredProductImageMobile from "./images/image-speaker-zx9-mobile.png";
 import featuredProductImageTablet from "./images/image-speaker-zx9-tablet.png";
 import featuredProductImageDesktop from "./images/image-speaker-zx9-desktop.png";
+import "./home-feature-one.sass";
 
 const HomeFeatureOne = (props) => {
   const { featuredProduct } = props;
   const { slug } = featuredProduct;
   return (
-    <section className="featured-product-one">
+    <section className="home-feature-one">
       <CirclePatternSvg />
-      <div className="featured-product-one-image-and-text">
-        <div className="featured-product-one-image-container">
+      <div className="home-feature-one-image-and-text">
+        <div className="home-feature-one-image-container">
           <CustomImage
-            className="featured-product-one-image image-mobile"
+            className="home-feature-one-image image-mobile"
             src={featuredProductImageMobile}
-            alt="featured-product-image-mobile"
+            alt="home-feature-one-image-mobile"
           />
           <CustomImage
-            className="featured-product-one-image image-tablet"
+            className="home-feature-one-image image-tablet"
             src={featuredProductImageTablet}
-            alt="featured-product-image-tablet"
+            alt="home-feature-one-image-tablet"
           />
           <CustomImage
-            className="featured-product-one-image featured-product-one-image-desktop image-desktop"
+            className="home-feature-one-image image-desktop"
             src={featuredProductImageDesktop}
-            alt="featured-product-image-desktop"
+            alt="home-feature-one-image-desktop"
           />
         </div>
         <FeaturedProductInfo
@@ -36,10 +36,10 @@ const HomeFeatureOne = (props) => {
           featuredProductDescription
           teaserOnly
           customClasses={{
-            containerClasses: "featured-product-one-info col",
-            headerClasses: "featured-product-one-header white-text",
+            containerClasses: "home-feature-one-info col",
+            headerClasses: "home-feature-one-header white-text",
             productDescriptionClasses:
-              "featured-product-description featured-product-one-description",
+              "home-feature-description home-feature-one-description",
             buttonData: {
               buttonColor: "black",
               buttonDestination: `product-${slug}`,

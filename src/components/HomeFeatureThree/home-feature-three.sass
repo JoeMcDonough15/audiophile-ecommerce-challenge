@@ -1,6 +1,6 @@
 @import ../../sass/global
 
-.featured-product-three-container
+.home-feature-three-container
     display: flex
     flex-direction: column
     gap: 24px
@@ -14,7 +14,7 @@
     +all-large-screen
         gap: 30px
     
-.featured-product-three-image-container
+.home-feature-three-image-container
     @include set-background-image-from-file("./images/image-earphones-yx1-mobile.jpg")
     border-radius: 8px
     height: 200px
@@ -29,11 +29,11 @@
         @include set-background-image-from-file("./images/image-earphones-yx1-desktop.jpg")
         height: 320px
 
-.featured-product-three-image
+.home-feature-three-image
     @include set-image-component-as-background
     border-radius: 8px
 
-.featured-product-three-text-container
+.home-feature-three-text-container
     padding: 50px 0 41px 25px
 
     +all-screen-bigger-than-mobile
@@ -49,7 +49,7 @@
     +all-large-screen
        padding-left: 96px
 
-.featured-product-info.featured-product-three-info.col
+.home-feature-three-container .featured-product-info.home-feature-three-info.col
     align-items: flex-start
     gap: 23px
     text-align: left

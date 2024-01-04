@@ -4,32 +4,32 @@ import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 import featuredProductImageMobile from "./images/image-speaker-zx7-mobile.jpg";
 import featuredProductImageTablet from "./images/image-speaker-zx7-tablet.jpg";
 import featuredProductImageDesktop from "./images/image-speaker-zx7-desktop.jpg";
-import "./featured-product-two.sass";
+import "./home-feature-two.sass";
 
 const HomeFeatureTwo = (props) => {
   const { featuredProduct } = props;
   const { slug } = featuredProduct;
   return (
-    <section className="featured-product-two-container">
+    <section className="home-feature-two-container">
       <CustomImage
-        className="featured-product-two-image featured-product-two-image-mobile image-mobile"
+        className="home-feature-two-image image-mobile"
         src={featuredProductImageMobile}
-        alt="featured-product-image-mobile"
+        alt="home-feature-two-image-mobile"
       />
       <CustomImage
-        className="featured-product-two-image featured-product-two-image-tablet image-tablet"
+        className="home-feature-two-image image-tablet"
         src={featuredProductImageTablet}
-        alt="featured-product-image-tablet"
+        alt="home-feature-two-image-tablet"
       />
       <CustomImage
-        className="featured-product-two-image featured-product-two-image-desktop image-desktop"
+        className="home-feature-two-image image-desktop"
         src={featuredProductImageDesktop}
-        alt="featured-product-image-desktop"
+        alt="home-feature-two-image-desktop"
       />
       <FeaturedProductInfo
         featuredProduct={featuredProduct}
         customClasses={{
-          containerClasses: "featured-product-two-info col",
+          containerClasses: "home-feature-two-info col",
           headerClasses: "black-text",
           buttonData: {
             buttonColor: "transparent",

@@ -1,19 +1,19 @@
 import React from "react";
-import "./featured-product-three.sass";
+import "./home-feature-three.sass";
 import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 
 const HomeFeatureThree = (props) => {
   const { featuredProduct } = props;
   const { slug } = featuredProduct;
   return (
-    <section className="featured-product-three-container">
-      <div className="featured-product-three-image-container"></div>
-      <div className="featured-product-three-text-container content-slab">
+    <section className="home-feature-three-container">
+      <div className="home-feature-three-image-container"></div>
+      <div className="home-feature-three-text-container content-slab">
         <FeaturedProductInfo
           featuredProduct={featuredProduct}
           customHeaderText="YX1 earphones"
           customClasses={{
-            containerClasses: "featured-product-three-info col",
+            containerClasses: "home-feature-three-info col",
             headerClasses: "black-text",
             buttonData: {
               buttonColor: "transparent",
