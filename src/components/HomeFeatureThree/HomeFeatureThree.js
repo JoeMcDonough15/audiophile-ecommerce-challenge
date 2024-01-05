@@ -13,7 +13,7 @@ const HomeFeatureThree = (props) => {
           featuredProduct={featuredProduct}
           customHeaderText="YX1 earphones"
           customClasses={{
-            containerClasses: "home-feature-three-info col",
+            containerClasses: "home-feature-three-info",
             headerClasses: "black-text",
             buttonData: {
               buttonColor: "transparent",

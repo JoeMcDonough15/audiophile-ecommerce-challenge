@@ -44,6 +44,14 @@
         background: $black
         color: $white
 
+.button-go-back
+    background: transparent
+    border: none
+    color: $button-three-text-color
+    font-size: 15px
+    text-transform: capitalize
+    padding: 22px 0 28px
+
 .button-with-arrow-icon
     @extend %default-button-styles
     align-items: center
@@ -66,3 +74,9 @@
 
     &:hover
         @include hover-orange
+
+
+a
+    & .button-dark-orange, .button-black, .button-transparent, .button-go-back
+        div.right-arrow
+            display: none

@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../../components/Header/Header";
+import Button from "../../../components/Button/Button";
 import FeaturedProduct from "../../../components/FeaturedProduct/FeaturedProduct";
 import ProductCategoryMenu from "../../../components/ProductCategoryMenu/ProductCategoryMenu";
 import AboutUs from "../../../components/AboutUs/AboutUs";
@@ -8,6 +9,7 @@ import data from "../../../data.json";
 import markTwoMobileImage from "../../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg";
 import markTwoTabletImage from "../../../assets/product-xx99-mark-two-headphones/tablet/image-product.jpg";
 import markTwoDesktopImage from "../../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg";
+import "../product-pages.sass";
 
 const featuredProductSlugs = ["xx99-mark-two-headphones"];
 
@@ -30,17 +32,24 @@ const featureOneImageData = {
   tabletImageSrc: markTwoTabletImage,
   desktopImageSrc: markTwoDesktopImage,
   imageAltText: "mark-two-headphones-image",
-  customImageStyles: "mark-two-image-width",
+  customImageStyles: "product-page-image mark-two-image-width",
 };
 
 const ProductXx99MarkTwoHeadphones = () => {
   return (
-    <main className="product-xx99-mark-two-headphones-page">
+    <main className="product-page product-xx99-mark-two-headphones-page">
       <Header />
+      <div className="main-container">
+        <Button
+          className={"button-go-back"}
+          buttonText="go back"
+          buttonDestination=""
+        />
+      </div>
       <FeaturedProduct
         imageData={featureOneImageData}
         featuredProduct={featuredProductOne}
-        isProductPageDetails
+        isProductPage
         newProduct
       />
       <ProductCategoryMenu />

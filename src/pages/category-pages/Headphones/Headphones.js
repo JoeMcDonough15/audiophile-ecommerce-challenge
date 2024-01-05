@@ -63,7 +63,7 @@ const featureThreeImageData = {
 
 const Headphones = () => {
   return (
-    <main className="headphones-page">
+    <main className="category-page headphones-page">
       <Header withBanner bannerText="Headphones" />
       <section className="category-features col">
         <FeaturedProduct

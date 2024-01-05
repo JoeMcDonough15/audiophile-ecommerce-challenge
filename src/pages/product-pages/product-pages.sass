@@ -1,1 +1,16 @@
 @import ../../sass/global
+
+main.product-page section.main-container div.featured-product-container
+    +all-screen-bigger-than-mobile
+        flex-direction: row
+
+
+.featured-product-container .content-slab.featured-product-image-container.product-page-image-container
+    +all-phone
+        height: 327px
+
+    +all-tablets
+        height: 480px
+
+        & .featured-product-image.image-tablet
+            height: auto

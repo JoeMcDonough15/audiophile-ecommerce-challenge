@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
-import "./button.sass";
 
 const Button = (props) => {
   const { buttonDestination, buttonText, className } = props;
@@ -19,7 +18,7 @@ const Button = (props) => {
   };
 
   return (
-    <NavLink to={`/${buttonDestination}`}>
+    <NavLink to={`/${buttonDestination}`} exact>
       <button className={className}>
         <span className="button-text">{buttonText}</span>
         <IconAsSvg className="right-arrow" svgDetails={arrowIconProps} />

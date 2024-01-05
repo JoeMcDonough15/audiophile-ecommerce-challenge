@@ -1,7 +1,6 @@
 @import ../../sass/global
 
-
-.main-container .featured-product-container
+main.category-page section.main-container.featured-product-container, main.product-page section.main-container.featured-product-container
     display: flex
     flex-direction: column
     gap: 36px
@@ -19,15 +18,12 @@
             justify-content: center
             width: 40%
 
-.featured-product-info.col
-    gap: 24px
 
+main.product-page section.main-container.featured-product-container
     +all-screen-bigger-than-mobile
-        gap: 0
-    
-    +all-large-screen
-        align-items: flex-start
-        text-align: left
+        flex-direction: row
+
+
 
 .content-slab.featured-product-image-container
     align-items: center
@@ -71,11 +67,26 @@
         width: 296px
 
 
+.content-slab.featured-product-image-container.product-page-image-container
+    +all-phone
+        height: 327px
+
+    +all-tablets
+        height: 480px
+
+        & .featured-product-image.image-tablet
+            height: auto
+
+
+
     
 .featured-product-info.col .featured-product-header
 
     +all-tablets
         margin: 24px 0 44px
+
+
+main.product-page section.main-container.featured-product-container .featured-product-info.col .featured-product-header
 
 
 .featured-product-info.col .featured-product-description
@@ -86,3 +97,9 @@
 
     +all-large-screen
         padding: 40px 0
+
+
+main.product-page section.main-container.featured-product-container .featured-product-info.col .featured-product-description
+    
+    +all-tablets
+        padding: 0 15% 0 0

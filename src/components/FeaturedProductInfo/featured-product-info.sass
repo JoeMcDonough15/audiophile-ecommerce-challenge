@@ -1,4 +1,28 @@
 @import ../../sass/global
 
 
+.featured-product-info.col
+    align-items: center
+    gap: 24px
+
+    +all-screen-bigger-than-mobile
+        gap: 0
+    
+    +all-large-screen
+        align-items: flex-start
+        text-align: left
+
+    justify-content: center
+    text-align: center
+
+
+.featured-product-info.col.product-page-info
+    align-items: flex-start
+    text-align: left
+
+
+.featured-product-info.col.product-page-info .purchase-buttons.row
+    justify-content: space-between
+    width: 90.51%
+
 

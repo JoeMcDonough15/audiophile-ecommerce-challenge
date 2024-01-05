@@ -36,7 +36,7 @@ const featureOneImageData = {
 
 const Earphones = () => {
   return (
-    <main className="earphones-page">
+    <main className="category-page earphones-page">
       <Header withBanner bannerText="Earphones" />
       <section className="category-features col">
         <FeaturedProduct

@@ -50,7 +50,7 @@ const featureTwoImageData = {
 
 const Speakers = () => {
   return (
-    <main className="speakers-page">
+    <main className="category-page speakers-page">
       <Header withBanner bannerText="Speakers" />
       <section className="category-features col">
         <FeaturedProduct

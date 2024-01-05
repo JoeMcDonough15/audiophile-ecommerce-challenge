@@ -15,12 +15,11 @@ const HeroSection = (props) => {
         featuredProductDescription
         teaserOnly
         customClasses={{
-          containerClasses: "featured-product-hero-info col",
+          containerClasses: "featured-product-hero-info",
           headerClasses: "featured-product-hero-header white-text",
           newProductIntroClasses:
             "overline new-product-intro-text new-product-grey-text",
-          productDescriptionClasses:
-            "featured-product-description featured-product-description-hero",
+          productDescriptionClasses: "featured-product-description-hero",
           buttonData: {
             buttonColor: "dark-orange",
             buttonDestination: `product-${slug}`,
