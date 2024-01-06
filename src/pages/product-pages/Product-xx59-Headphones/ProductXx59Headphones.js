@@ -1,18 +1,8 @@
 import React from "react";
-import Header from "../../../components/Header/Header";
-import ProductCategoryMenu from "../../../components/ProductCategoryMenu/ProductCategoryMenu";
-import AboutUs from "../../../components/AboutUs/AboutUs";
-import Footer from "../../../components/Footer/Footer";
+import ProductPage from "../ProductPage";
 
 const ProductXx59Headphones = () => {
-  return (
-    <main className="product-xx59-headphones-page">
-      <Header />
-      <ProductCategoryMenu />
-      <AboutUs />
-      <Footer />
-    </main>
-  );
+  return <ProductPage productId={2} />;
 };
 
 export default ProductXx59Headphones;

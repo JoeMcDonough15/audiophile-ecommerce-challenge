@@ -1,18 +1,8 @@
 import React from "react";
-import Header from "../../../components/Header/Header";
-import ProductCategoryMenu from "../../../components/ProductCategoryMenu/ProductCategoryMenu";
-import AboutUs from "../../../components/AboutUs/AboutUs";
-import Footer from "../../../components/Footer/Footer";
+import ProductPage from "../ProductPage";
 
 const ProductXx99MarkOneHeadphones = () => {
-  return (
-    <main className="product-xx99-mark-one-headphones-page">
-      <Header />
-      <ProductCategoryMenu />
-      <AboutUs />
-      <Footer />
-    </main>
-  );
+  return <ProductPage productId={3} />;
 };
 
 export default ProductXx99MarkOneHeadphones;

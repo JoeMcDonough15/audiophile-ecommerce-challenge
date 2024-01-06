@@ -1,18 +1,8 @@
 import React from "react";
-import Header from "../../../components/Header/Header";
-import ProductCategoryMenu from "../../../components/ProductCategoryMenu/ProductCategoryMenu";
-import AboutUs from "../../../components/AboutUs/AboutUs";
-import Footer from "../../../components/Footer/Footer";
+import ProductPage from "../ProductPage";
 
 const ProductZx9Speaker = () => {
-  return (
-    <main className="product-zx9-speaker-page">
-      <Header />
-      <ProductCategoryMenu />
-      <AboutUs />
-      <Footer />
-    </main>
-  );
+  return <ProductPage productId={6} />;
 };
 
 export default ProductZx9Speaker;
