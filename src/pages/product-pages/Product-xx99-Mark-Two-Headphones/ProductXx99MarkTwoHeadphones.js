@@ -50,7 +50,6 @@ const ProductXx99MarkTwoHeadphones = () => {
         imageData={featureOneImageData}
         featuredProduct={featuredProductOne}
         isProductPage
-        newProduct
       />
       <ProductCategoryMenu />
       <AboutUs />

@@ -6,14 +6,15 @@ import "./featured-product-info.sass";
 const FeaturedProductInfo = (props) => {
   const {
     isProductPage,
+    isCategoryPage,
     featuredProduct,
-    newProduct,
-    featuredProductDescription,
+    includesProductDescription,
     teaserOnly,
     customHeaderText,
     customClasses,
   } = props;
-  const { name, teaserDescription, description, price } = featuredProduct;
+  const { name, teaserDescription, description, price, isNewProduct } =
+    featuredProduct;
   const {
     containerClasses,
     newProductIntroClasses,
@@ -25,7 +26,7 @@ const FeaturedProductInfo = (props) => {
   const { buttonColor, buttonDestination } = buttonData;
   return (
     <div>
-      {isProductPage && newProduct ? (
+      {isProductPage && isNewProduct ? (
         <div
           className={
             containerClasses
@@ -33,8 +34,16 @@ const FeaturedProductInfo = (props) => {
               : "product-page-info featured-product-info col"
           }
         >
-          <p className={newProductIntroClasses}>New Product</p>
-          <h1 className={headerClasses}>
+          <p
+            className={
+              newProductIntroClasses
+                ? `${newProductIntroClasses} overline new-product-intro`
+                : "overline new-product-intro"
+            }
+          >
+            New Product
+          </p>
+          <h1 className="small-featured-product-header product-page-header">
             {customHeaderText ? customHeaderText : name}
           </h1>
           <p className={productDescriptionClasses}>
@@ -59,7 +68,7 @@ const FeaturedProductInfo = (props) => {
               : "product-page-info featured-product-info col"
           }
         >
-          <h1 className={headerClasses}>
+          <h1 className="small-featured-product-header product-page-header">
             {customHeaderText ? customHeaderText : name}
           </h1>
           <p className={productDescriptionClasses}>
@@ -76,7 +85,7 @@ const FeaturedProductInfo = (props) => {
             />
           </div>
         </div>
-      ) : newProduct && featuredProductDescription ? (
+      ) : isNewProduct && includesProductDescription ? (
         <div
           className={
             containerClasses
@@ -84,8 +93,22 @@ const FeaturedProductInfo = (props) => {
               : "featured-product-info col"
           }
         >
-          <p className={newProductIntroClasses}>New Product</p>
-          <h1 className={headerClasses}>
+          <p
+            className={
+              newProductIntroClasses
+                ? `${newProductIntroClasses} overline new-product-intro`
+                : "overline new-product-intro"
+            }
+          >
+            New Product
+          </p>
+          <h1
+            className={
+              isCategoryPage
+                ? "small-featured-product-header"
+                : `white-text ${headerClasses}`
+            }
+          >
             {customHeaderText ? customHeaderText : name}
           </h1>
           <p className={productDescriptionClasses}>
@@ -97,7 +120,7 @@ const FeaturedProductInfo = (props) => {
             buttonDestination={buttonDestination}
           />
         </div>
-      ) : featuredProductDescription ? (
+      ) : includesProductDescription ? (
         <div
           className={
             containerClasses
@@ -105,7 +128,13 @@ const FeaturedProductInfo = (props) => {
               : "featured-product-info col"
           }
         >
-          <h1 className={headerClasses}>
+          <h1
+            className={
+              isCategoryPage
+                ? "small-featured-product-header"
+                : `white-text ${headerClasses}`
+            }
+          >
             {customHeaderText ? customHeaderText : name}
           </h1>
           <p className={productDescriptionClasses}>
@@ -125,7 +154,7 @@ const FeaturedProductInfo = (props) => {
               : "featured-product-info col"
           }
         >
-          <h4 className={headerClasses}>
+          <h4 className={"black-text"}>
             {customHeaderText ? customHeaderText : name}
           </h4>
           <Button

@@ -30,7 +30,6 @@ const HomeFeatureTwo = (props) => {
         featuredProduct={featuredProduct}
         customClasses={{
           containerClasses: "home-feature-two-info",
-          headerClasses: "black-text",
           buttonData: {
             buttonColor: "transparent",
             buttonDestination: `product-${slug}`,

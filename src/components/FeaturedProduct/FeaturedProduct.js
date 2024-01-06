@@ -40,10 +40,7 @@ const FeaturedProduct = (props) => {
       <div className="featured-product-text-container">
         <FeaturedProductInfo
           customClasses={{
-            newProductIntroClasses:
-              "dark-orange-text overline new-product-intro",
-            headerClasses:
-              "featured-product-header small-featured-product-header black-text",
+            newProductIntroClasses: "dark-orange-text",
             productDescriptionClasses:
               "featured-product-description darker-grey-text",
             buttonData: {

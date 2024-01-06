@@ -11,14 +11,12 @@ const HeroSection = (props) => {
       <ThinRule customStyle="thin-rule-header" />
       <FeaturedProductInfo
         featuredProduct={featuredProduct}
-        newProduct
-        featuredProductDescription
+        includesProductDescription
         teaserOnly
         customClasses={{
           containerClasses: "featured-product-hero-info",
-          headerClasses: "featured-product-hero-header white-text",
-          newProductIntroClasses:
-            "overline new-product-intro-text new-product-grey-text",
+          headerClasses: "featured-product-hero-header",
+          newProductIntroClasses: "new-product-grey-text",
           productDescriptionClasses: "featured-product-description-hero",
           buttonData: {
             buttonColor: "dark-orange",
