@@ -13,8 +13,10 @@ const FeaturedProductInfo = (props) => {
     customHeaderText,
     customClasses,
   } = props;
+
   const { name, teaserDescription, description, price, isNewProduct } =
     featuredProduct;
+
   const {
     containerClasses,
     newProductIntroClasses,
