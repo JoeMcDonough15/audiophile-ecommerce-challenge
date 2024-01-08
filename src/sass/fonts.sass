@@ -63,7 +63,11 @@ h5
     @extend %header-font
     font-size: 1.5rem
     letter-spacing: 0.07083333em
-    line-height: 1.375em
+    line-height: 1.5em
+
+    +all-screen-bigger-than-mobile
+        font-size: 2rem
+        line-height: 1.125em
 
 h6
     @extend %header-font

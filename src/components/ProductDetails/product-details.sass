@@ -1,9 +1,15 @@
 @import ../../sass/global
 
-div.product-details
+div.product-details.col
     align-items: flex-start
+    gap: 36px
     text-align: left
 
+    +all-tablets
+        gap: 40px
+    
+    +all-large-screen
+        width: 57%
+
 .details-text
-    margin-top: 40px
     white-space: pre-wrap

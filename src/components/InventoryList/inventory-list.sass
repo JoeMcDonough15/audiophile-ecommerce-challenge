@@ -1,15 +1,23 @@
 @import ../../sass/global
 
-.product-includes-list
-    margin-top: 38px
 
 .inventory-list-row.row
     gap: 24px
+    margin-bottom: 18px
     width: 199px
+
+    +all-large-screen
+        margin-bottom: 10px
+
+    &:last-of-type
+        margin-bottom: 0
 
 .inventory-item-one
     width: 15px
 
 
-.inventory-item
+
+
+.inventory-item  
     text-transform: capitalize
+
