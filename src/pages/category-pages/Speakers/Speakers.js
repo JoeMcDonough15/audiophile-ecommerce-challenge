@@ -1,11 +1,11 @@
 import React from "react";
 import CategoryPage from "../CategoryPage";
-import zxNineMobileImage from "../../../assets/product-zx9-speaker/mobile/image-product.jpg";
-import zxNineTabletImage from "../../../assets/product-zx9-speaker/tablet/image-product.jpg";
-import zxNineDesktopImage from "../../../assets/product-zx9-speaker/desktop/image-product.jpg";
-import zxSevenMobileImage from "../../../assets/product-zx7-speaker/mobile/image-product.jpg";
-import zxSevenTabletImage from "../../../assets/product-zx7-speaker/tablet/image-product.jpg";
-import zxSevenDesktopImage from "../../../assets/product-zx7-speaker/desktop/image-product.jpg";
+import zxNineMobileImage from "../../../assets/product-zx9-speaker/mobile/image-category-page-preview.jpg";
+import zxNineTabletImage from "../../../assets/product-zx9-speaker/tablet/image-category-page-preview.jpg";
+import zxNineDesktopImage from "../../../assets/product-zx9-speaker/desktop/image-category-page-preview.jpg";
+import zxSevenMobileImage from "../../../assets/product-zx7-speaker/mobile/image-category-page-preview.jpg";
+import zxSevenTabletImage from "../../../assets/product-zx7-speaker/tablet/image-category-page-preview.jpg";
+import zxSevenDesktopImage from "../../../assets/product-zx7-speaker/desktop/image-category-page-preview.jpg";
 
 const featureOneImageData = {
   mobileImageSrc: zxNineMobileImage,

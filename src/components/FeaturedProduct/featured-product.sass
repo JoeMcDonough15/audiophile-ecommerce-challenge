@@ -18,6 +18,11 @@ main.category-page section.main-container.featured-product-container, main.produ
             justify-content: center
             width: 40%
 
+main.category-page section.main-container.featured-product-container:nth-of-type(2) .content-slab.featured-product-image-container
+    
+    +all-large-screen
+        order: 2
+
 
 main.product-page section.main-container.featured-product-container
     +all-screen-bigger-than-mobile
@@ -38,33 +43,7 @@ main.product-page section.main-container.featured-product-container
 
 .content-slab.featured-product-image-container .featured-product-image
     height: auto
-
-    +all-tablets
-        height: 100%
-
-.content-slab.featured-product-image-container .featured-product-image.mark-two-image-width, .content-slab.featured-product-image-container .featured-product-image.mark-one-image-width, .content-slab.featured-product-image-container .featured-product-image.xx59-image-width 
-    width: 220px
-
-    +all-large-screen
-        width: 349.24px
-
-.content-slab.featured-product-image-container .featured-product-image.zx9-speaker-image-width
-    width: 202.2px
-
-    +all-large-screen
-        width: 291.24px
-
-.content-slab.featured-product-image-container .featured-product-image.zx7-speaker-image-width
-    width: 169.17px
-
-    +all-large-screen
-        width: 268.02px
-
-.content-slab.featured-product-image-container .featured-product-image.yx1-earphones-image-width
-    width: 242px
-
-    +all-large-screen
-        width: 296px
+    width: 100%
 
 
 .content-slab.featured-product-image-container.product-page-image-container
@@ -80,26 +59,3 @@ main.product-page section.main-container.featured-product-container
 
 
     
-.featured-product-info.col .featured-product-header
-
-    +all-tablets
-        margin: 24px 0 44px
-
-
-main.product-page section.main-container.featured-product-container .featured-product-info.col .featured-product-header
-
-
-.featured-product-info.col .featured-product-description
-
-    +all-tablets
-        margin-bottom: 28px
-        padding: 0 9%
-
-    +all-large-screen
-        padding: 40px 0
-
-
-main.product-page section.main-container.featured-product-container .featured-product-info.col .featured-product-description
-    
-    +all-tablets
-        padding: 0 15% 0 0

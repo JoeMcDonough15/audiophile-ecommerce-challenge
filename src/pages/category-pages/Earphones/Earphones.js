@@ -1,8 +1,8 @@
 import React from "react";
 import CategoryPage from "../CategoryPage";
-import yxOneMobileImage from "../../../assets/product-yx1-earphones/mobile/image-product.jpg";
-import yxOneTabletImage from "../../../assets/product-yx1-earphones/tablet/image-product.jpg";
-import yxOneDesktopImage from "../../../assets/product-yx1-earphones/desktop/image-product.jpg";
+import yxOneMobileImage from "../../../assets/product-yx1-earphones/mobile/image-category-page-preview.jpg";
+import yxOneTabletImage from "../../../assets/product-yx1-earphones/tablet/image-category-page-preview.jpg";
+import yxOneDesktopImage from "../../../assets/product-yx1-earphones/desktop/image-category-page-preview.jpg";
 
 const featureOneImageData = {
   mobileImageSrc: yxOneMobileImage,

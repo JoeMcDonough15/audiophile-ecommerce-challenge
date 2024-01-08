@@ -107,7 +107,7 @@ const FeaturedProductInfo = (props) => {
           <h1
             className={
               isCategoryPage
-                ? "small-featured-product-header"
+                ? "small-featured-product-header category-page-featured-product-header"
                 : `white-text ${headerClasses}`
             }
           >
@@ -133,7 +133,7 @@ const FeaturedProductInfo = (props) => {
           <h1
             className={
               isCategoryPage
-                ? "small-featured-product-header"
+                ? "small-featured-product-header category-page-featured-product-header"
                 : `white-text ${headerClasses}`
             }
           >

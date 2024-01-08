@@ -39,7 +39,7 @@ const HomeFeatureOne = (props) => {
             containerClasses: "home-feature-one-info",
             headerClasses: "home-feature-one-header",
             productDescriptionClasses:
-              "featured-product-description home-feature-one-description",
+              "featured-product-description home-feature-one-description light-grey-text",
             buttonData: {
               buttonColor: "black",
               buttonDestination: `product-${slug}`,

@@ -20,8 +20,7 @@
     align-items: flex-start
     text-align: left
 
-.small-featured-product-header
-    @extend %small-header
+.small-featured-product-header.category-page-featured-product-header
     color: $black
     letter-spacing: 1px
     padding: 0 9%
@@ -30,6 +29,11 @@
         font-size: 40px
         letter-spacing: 2px
         line-height: 44px
+        padding: 28px 9% 44px
+    
+    +all-large-screen
+        font-size: 40px
+        padding-left: 0
 
 .featured-product-info.col.product-page-info .small-featured-product-header.product-page-header
     padding: 0 16% 0 0 
@@ -38,5 +42,30 @@
 .featured-product-info.col.product-page-info .purchase-buttons.row
     justify-content: space-between
     width: 90.51%
+
+
+.featured-product-info.col .featured-product-header
+
+    +all-tablets
+        margin: 24px 0 44px
+
+
+main.product-page section.main-container.featured-product-container .featured-product-info.col .featured-product-header
+
+
+.featured-product-info.col .featured-product-description
+
+    +all-tablets
+        margin-bottom: 28px
+        padding: 0 9%
+
+    +all-large-screen
+        padding: 40px 0
+
+
+main.product-page section.main-container.featured-product-container .featured-product-info.col .featured-product-description
+    
+    +all-tablets
+        padding: 0 15% 0 0
 
 

@@ -41,8 +41,7 @@ const FeaturedProduct = (props) => {
         <FeaturedProductInfo
           customClasses={{
             newProductIntroClasses: "dark-orange-text",
-            productDescriptionClasses:
-              "featured-product-description darker-grey-text",
+            productDescriptionClasses: "featured-product-description",
             buttonData: {
               buttonColor: "dark-orange",
               buttonDestination: buttonDestination,
