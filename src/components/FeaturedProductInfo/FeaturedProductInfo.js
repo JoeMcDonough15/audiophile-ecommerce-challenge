@@ -156,7 +156,11 @@ const FeaturedProductInfo = (props) => {
               : "featured-product-info col"
           }
         >
-          <h4 className={"black-text"}>
+          <h4
+            className={
+              headerClasses ? `${headerClasses} black-text` : "black-text"
+            }
+          >
             {customHeaderText ? customHeaderText : name}
           </h4>
           <Button

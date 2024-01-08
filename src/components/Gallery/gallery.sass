@@ -1,0 +1,45 @@
+@import ../../sass/global
+
+.gallery.main-container
+    display: flex
+    flex-direction: column
+    margin-bottom: 125px
+
+    +all-screen-bigger-than-mobile
+        flex-direction: row
+    
+    +all-large-screen
+        margin-bottom: 164px
+
+.gallery.main-container, .gallery-section-one.col
+    gap: 20px
+
+    +all-large-screen
+        gap: 30px
+
+.gallery-section-one.col, .gallery-section-two, .gallery-image-one-container, .gallery-image-two-container, .gallery-image
+    width: 100%
+
+.gallery-section-one.col
+    +all-screen-bigger-than-mobile
+        width: 69.5%
+
+.gallery-image-one-container, .gallery-image-two-container
+    height: 174px
+    position: relative
+
+    +all-large-screen
+        height: 280px
+
+.gallery-image-three-container
+    height: 368px
+
+    +all-large-screen
+        height: 592px
+    
+.gallery-image
+    border-radius: 8px
+    height: auto
+
+    +all-screen-bigger-than-mobile
+        height: 100%

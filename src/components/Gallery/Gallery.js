@@ -13,7 +13,7 @@ const Gallery = (props) => {
           {galleryImageOneData.map((imageObject) => {
             return (
               <CustomImage
-                className={`gallery-image-one image-${imageObject.imageSize}`}
+                className={`gallery-image gallery-image-one image-${imageObject.imageSize}`}
                 key={imageObject.id}
                 src={imageObject.imageSrc}
                 alt={imageObject.imageAltText}
@@ -25,7 +25,7 @@ const Gallery = (props) => {
           {galleryImageTwoData.map((imageObject) => {
             return (
               <CustomImage
-                className={`gallery-image-two image-${imageObject.imageSize}`}
+                className={`gallery-image gallery-image-two image-${imageObject.imageSize}`}
                 key={imageObject.id}
                 src={imageObject.imageSrc}
                 alt={imageObject.imageAltText}
@@ -39,7 +39,7 @@ const Gallery = (props) => {
           {galleryImageThreeData.map((imageObject) => {
             return (
               <CustomImage
-                className={`gallery-image-three image-${imageObject.imageSize}`}
+                className={`gallery-image gallery-image-three image-${imageObject.imageSize}`}
                 key={imageObject.id}
                 src={imageObject.imageSrc}
                 alt={imageObject.imageAltText}
