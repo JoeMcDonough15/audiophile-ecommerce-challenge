@@ -18,7 +18,7 @@ const Button = (props) => {
   };
 
   return (
-    <NavLink to={`/${buttonDestination}`} exact>
+    <NavLink className="button-container" to={`/${buttonDestination}`} exact>
       <button className={className}>
         <span className="button-text">{buttonText}</span>
         <IconAsSvg className="right-arrow" svgDetails={arrowIconProps} />

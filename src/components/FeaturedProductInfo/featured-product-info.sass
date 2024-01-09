@@ -4,6 +4,8 @@
 .featured-product-info.col
     align-items: center
     gap: 24px
+    justify-content: center
+    text-align: center
 
     +all-screen-bigger-than-mobile
         gap: 0
@@ -12,13 +14,17 @@
         align-items: flex-start
         text-align: left
 
-    justify-content: center
-    text-align: center
-
-
+    
 .featured-product-info.col.product-page-info
     align-items: flex-start
     text-align: left
+
+    +all-tablets
+        padding: 36px 0 34px
+        
+
+.overline.new-product-intro.product-page-intro 
+    font-size: 12px       
 
 .small-featured-product-header.category-page-featured-product-header
     color: $black
@@ -38,22 +44,11 @@
 .featured-product-info.col.product-page-info .small-featured-product-header.product-page-header
     padding: 0 16% 0 0 
 
-
-.featured-product-info.col.product-page-info .purchase-buttons.row
-    justify-content: space-between
-    width: 90.51%
-
-
-.featured-product-info.col .featured-product-header
-
     +all-tablets
-        margin: 24px 0 44px
+        padding: 10px 30% 20px 0
 
 
-main.product-page section.main-container.featured-product-container .featured-product-info.col .featured-product-header
-
-
-.featured-product-info.col .featured-product-description
+.featured-product-info.col .category-page-featured-product-description
 
     +all-tablets
         margin-bottom: 28px
@@ -63,9 +58,30 @@ main.product-page section.main-container.featured-product-container .featured-pr
         padding: 40px 0
 
 
-main.product-page section.main-container.featured-product-container .featured-product-info.col .featured-product-description
+.featured-product-info.col .product-page-description
     
     +all-tablets
-        padding: 0 15% 0 0
+        margin-bottom: 20px
+        padding: 0 20% 0 0
 
 
+.featured-product-info.col.product-page-info .product-price
+    font-size: 18px
+    font-weight: bold
+    letter-spacing: 1.29px
+    margin-bottom: 20px
+
+
+.featured-product-info.col.product-page-info .purchase-buttons.row
+    gap: 16px
+    width: 90.51%
+
+    +all-tablets
+        width: 87.18%
+
+.featured-product-info.col.product-page-info .purchase-buttons.row .button-container
+    max-width: 160px
+    width: 54.05%
+
+.featured-product-info.col.product-page-info .purchase-buttons.row .button-container .button-dark-orange
+    width: 100%

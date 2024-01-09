@@ -3,6 +3,17 @@ import Button from "../Button/Button";
 import SpecifyQuantity from "../SpecifyQuantity/SpecifyQuantity";
 import "./featured-product-info.sass";
 
+// const fixPrice = (price) => {
+//   let fixedPrice = "$ ";
+//   const priceString = price.toString();
+//   if (priceString.length > 3) {
+//     fixedPrice += `${priceString[0]},${priceString.slice(1)}`;
+//   } else {
+//     fixedPrice += priceString;
+//   }
+//   return fixedPrice;
+// };
+
 const FeaturedProductInfo = (props) => {
   const {
     isProductPage,
@@ -16,6 +27,9 @@ const FeaturedProductInfo = (props) => {
 
   const { name, teaserDescription, description, price, isNewProduct } =
     featuredProduct;
+
+  // const fixedPrice = fixPrice(price);
+  // console.log("fixed price after calling fixPrice(): ", fixedPrice);
 
   const {
     containerClasses,
@@ -39,16 +53,16 @@ const FeaturedProductInfo = (props) => {
           <p
             className={
               newProductIntroClasses
-                ? `${newProductIntroClasses} overline new-product-intro`
-                : "overline new-product-intro"
+                ? `${newProductIntroClasses} overline new-product-intro product-page-intro`
+                : "overline new-product-intro product-page-intro"
             }
           >
             New Product
           </p>
-          <h1 className="small-featured-product-header product-page-header">
+          <h1 className="small-featured-product-header product-page-header black-text">
             {customHeaderText ? customHeaderText : name}
           </h1>
-          <p className={productDescriptionClasses}>
+          <p className="product-page-description">
             {teaserOnly ? teaserDescription : description}
           </p>
           <p className="product-price black-text">{`$${price}`}</p>
@@ -70,14 +84,14 @@ const FeaturedProductInfo = (props) => {
               : "product-page-info featured-product-info col"
           }
         >
-          <h1 className="small-featured-product-header product-page-header">
+          <h1 className="small-featured-product-header product-page-header black-text">
             {customHeaderText ? customHeaderText : name}
           </h1>
-          <p className={productDescriptionClasses}>
+          <p className="product-page-description">
             {teaserOnly ? teaserDescription : description}
           </p>
           <p className="product-price black-text">{`$${price}`}</p>
-          <div className="purchase-buttons">
+          <div className="purchase-buttons row">
             {" "}
             <SpecifyQuantity />
             <Button
@@ -113,7 +127,13 @@ const FeaturedProductInfo = (props) => {
           >
             {customHeaderText ? customHeaderText : name}
           </h1>
-          <p className={productDescriptionClasses}>
+          <p
+            className={
+              isCategoryPage
+                ? "category-page-featured-product-description"
+                : productDescriptionClasses
+            }
+          >
             {teaserOnly ? teaserDescription : description}
           </p>
           <Button
@@ -139,7 +159,13 @@ const FeaturedProductInfo = (props) => {
           >
             {customHeaderText ? customHeaderText : name}
           </h1>
-          <p className={productDescriptionClasses}>
+          <p
+            className={
+              isCategoryPage
+                ? "category-page-featured-product-description"
+                : productDescriptionClasses
+            }
+          >
             {teaserOnly ? teaserDescription : description}
           </p>
           <Button
