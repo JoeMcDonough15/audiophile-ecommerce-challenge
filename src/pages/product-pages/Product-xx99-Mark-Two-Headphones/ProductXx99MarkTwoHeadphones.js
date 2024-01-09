@@ -1,23 +1,33 @@
 import React from "react";
 import ProductPage from "../ProductPage";
+
+// featured product images
 import markTwoMobileImage from "../../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg";
 import markTwoTabletImage from "../../../assets/product-xx99-mark-two-headphones/tablet/image-product.jpg";
 import markTwoDesktopImage from "../../../assets/product-xx99-mark-two-headphones/desktop/image-product.jpg";
+
+// gallery images
 import galleryImageOneMobile from "../../../assets/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg";
 import galleryImageOneTablet from "../../../assets/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg";
 import galleryImageOneDesktop from "../../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg";
+
 import galleryImageTwoMobile from "../../../assets/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg";
 import galleryImageTwoTablet from "../../../assets/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg";
 import galleryImageTwoDesktop from "../../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg";
+
 import galleryImageThreeMobile from "../../../assets/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg";
 import galleryImageThreeTablet from "../../../assets/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg";
 import galleryImageThreeDesktop from "../../../assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg";
-import xx59ImageMobile from "../../../assets/shared/mobile/image-xx59-headphones.jpg";
-import xx59ImageTablet from "../../../assets/shared/tablet/image-xx59-headphones.jpg";
-import xx59ImageDesktop from "../../../assets/shared/desktop/image-xx59-headphones.jpg";
+
+// related product images
 import markOneImageMobile from "../../../assets/shared/mobile/image-xx99-mark-one-headphones.jpg";
 import markOneImageTablet from "../../../assets/shared/tablet/image-xx99-mark-one-headphones.jpg";
 import markOneImageDesktop from "../../../assets/shared/desktop/image-xx99-mark-one-headphones.jpg";
+
+import xx59ImageMobile from "../../../assets/shared/mobile/image-xx59-headphones.jpg";
+import xx59ImageTablet from "../../../assets/shared/tablet/image-xx59-headphones.jpg";
+import xx59ImageDesktop from "../../../assets/shared/desktop/image-xx59-headphones.jpg";
+
 import zx9ImageMobile from "../../../assets/shared/mobile/image-zx9-speaker.jpg";
 import zx9ImageTablet from "../../../assets/shared/tablet/image-zx9-speaker.jpg";
 import zx9ImageDesktop from "../../../assets/shared/desktop/image-zx9-speaker.jpg";

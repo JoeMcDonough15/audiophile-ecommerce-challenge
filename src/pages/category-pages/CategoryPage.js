@@ -34,7 +34,17 @@ const CategoryPage = (props) => {
               featuredProduct={product}
               isCategoryPage
               includesProductDescription
-              buttonDestination={`product-${product.slug}`}
+              customClasses={{
+                newProductIntroClasses: "dark-orange-text",
+                headerClasses:
+                  "small-featured-product-header black-text category-page-featured-product-header",
+                productDescriptionClasses:
+                  "category-page-featured-product-description",
+                buttonData: {
+                  buttonColor: "dark-orange",
+                  buttonDestination: `product-${product.slug}`,
+                },
+              }}
             />
           );
         })}

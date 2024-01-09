@@ -36,10 +36,11 @@ const HomeFeatureOne = (props) => {
           includesProductDescription
           teaserOnly
           customClasses={{
-            containerClasses: "home-feature-one-info",
-            headerClasses: "home-feature-one-header",
+            containerClass: "home-feature-one-info",
+            newProductIntroClasses: "hide",
+            headerClasses: "home-feature-one-header white-text",
             productDescriptionClasses:
-              "featured-product-description home-feature-one-description light-grey-text",
+              "home-feature-one-description light-grey-text",
             buttonData: {
               buttonColor: "black",
               buttonDestination: `product-${slug}`,

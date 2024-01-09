@@ -4,7 +4,7 @@ import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 import "./featured-product.sass";
 
 const FeaturedProduct = (props) => {
-  const { imageData, buttonDestination, isProductPage } = props;
+  const { imageData, isProductPage } = props;
   const {
     mobileImageSrc,
     tabletImageSrc,
@@ -38,16 +38,7 @@ const FeaturedProduct = (props) => {
         />{" "}
       </div>
       <div className="featured-product-text-container">
-        <FeaturedProductInfo
-          customClasses={{
-            newProductIntroClasses: "dark-orange-text",
-            buttonData: {
-              buttonColor: "dark-orange",
-              buttonDestination: buttonDestination,
-            },
-          }}
-          {...props}
-        />
+        <FeaturedProductInfo {...props} />
       </div>
     </section>
   );

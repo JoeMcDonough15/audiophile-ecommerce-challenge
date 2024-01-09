@@ -32,10 +32,11 @@ const FeaturedProductInfo = (props) => {
   // console.log("fixed price after calling fixPrice(): ", fixedPrice);
 
   const {
-    containerClasses,
+    containerClass,
     newProductIntroClasses,
     headerClasses,
     productDescriptionClasses,
+    productPriceClasses,
     buttonData,
   } = customClasses;
 
@@ -43,29 +44,13 @@ const FeaturedProductInfo = (props) => {
   return (
     <div>
       {isProductPage && isNewProduct ? (
-        <div
-          className={
-            containerClasses
-              ? `product-page-info featured-product-info col ${containerClasses}`
-              : "product-page-info featured-product-info col"
-          }
-        >
-          <p
-            className={
-              newProductIntroClasses
-                ? `${newProductIntroClasses} overline new-product-intro product-page-intro`
-                : "overline new-product-intro product-page-intro"
-            }
-          >
+        <div className={`featured-product-info col ${containerClass}`}>
+          <p className={`overline new-product-intro ${newProductIntroClasses}`}>
             New Product
           </p>
-          <h1 className="small-featured-product-header product-page-header black-text">
-            {customHeaderText ? customHeaderText : name}
-          </h1>
-          <p className="product-page-description">
-            {teaserOnly ? teaserDescription : description}
-          </p>
-          <p className="product-price black-text">{`$${price}`}</p>
+          <h1 className={headerClasses}>{name}</h1>
+          <p className={productDescriptionClasses}>{description}</p>
+          <p className={productPriceClasses}>{`$${price}`}</p>
           <div className="purchase-buttons row">
             {" "}
             <SpecifyQuantity />
@@ -77,20 +62,10 @@ const FeaturedProductInfo = (props) => {
           </div>
         </div>
       ) : isProductPage ? (
-        <div
-          className={
-            containerClasses
-              ? `product-page-info featured-product-info col ${containerClasses}`
-              : "product-page-info featured-product-info col"
-          }
-        >
-          <h1 className="small-featured-product-header product-page-header black-text">
-            {customHeaderText ? customHeaderText : name}
-          </h1>
-          <p className="product-page-description">
-            {teaserOnly ? teaserDescription : description}
-          </p>
-          <p className="product-price black-text">{`$${price}`}</p>
+        <div className={`featured-product-info col ${containerClass}`}>
+          <h1 className={headerClasses}>{name}</h1>
+          <p className={productDescriptionClasses}>{description}</p>
+          <p className={productPriceClasses}>{`$${price}`}</p>
           <div className="purchase-buttons row">
             {" "}
             <SpecifyQuantity />
@@ -101,39 +76,19 @@ const FeaturedProductInfo = (props) => {
             />
           </div>
         </div>
-      ) : isNewProduct && includesProductDescription ? (
+      ) : includesProductDescription && isNewProduct ? (
         <div
           className={
-            containerClasses
-              ? `featured-product-info col ${containerClasses}`
-              : "featured-product-info col"
+            isCategoryPage
+              ? "featured-product-info col"
+              : `featured-product-info col ${containerClass}`
           }
         >
-          <p
-            className={
-              newProductIntroClasses
-                ? `${newProductIntroClasses} overline new-product-intro`
-                : "overline new-product-intro"
-            }
-          >
+          <p className={`overline new-product-intro ${newProductIntroClasses}`}>
             New Product
           </p>
-          <h1
-            className={
-              isCategoryPage
-                ? "small-featured-product-header category-page-featured-product-header"
-                : `white-text ${headerClasses}`
-            }
-          >
-            {customHeaderText ? customHeaderText : name}
-          </h1>
-          <p
-            className={
-              isCategoryPage
-                ? "category-page-featured-product-description"
-                : productDescriptionClasses
-            }
-          >
+          <h1 className={`${headerClasses}`}>{name}</h1>
+          <p className={productDescriptionClasses}>
             {teaserOnly ? teaserDescription : description}
           </p>
           <Button
@@ -145,29 +100,13 @@ const FeaturedProductInfo = (props) => {
       ) : includesProductDescription ? (
         <div
           className={
-            containerClasses
-              ? `featured-product-info col ${containerClasses}`
-              : "featured-product-info col"
+            isCategoryPage
+              ? "featured-product-info col"
+              : `featured-product-info col ${containerClass}`
           }
         >
-          <h1
-            className={
-              isCategoryPage
-                ? "small-featured-product-header category-page-featured-product-header"
-                : `white-text ${headerClasses}`
-            }
-          >
-            {customHeaderText ? customHeaderText : name}
-          </h1>
-          <p
-            className={
-              isCategoryPage
-                ? "category-page-featured-product-description"
-                : productDescriptionClasses
-            }
-          >
-            {teaserOnly ? teaserDescription : description}
-          </p>
+          <h1 className={`${headerClasses}`}>{name}</h1>
+          <p className={productDescriptionClasses}>{description}</p>
           <Button
             buttonText="see product"
             className={`button-${buttonColor}`}
@@ -175,18 +114,8 @@ const FeaturedProductInfo = (props) => {
           />
         </div>
       ) : (
-        <div
-          className={
-            containerClasses
-              ? `featured-product-info col ${containerClasses}`
-              : "featured-product-info col"
-          }
-        >
-          <h4
-            className={
-              headerClasses ? `${headerClasses} black-text` : "black-text"
-            }
-          >
+        <div className={`featured-product-info col ${containerClass}`}>
+          <h4 className={`${headerClasses}`}>
             {customHeaderText ? customHeaderText : name}
           </h4>
           <Button

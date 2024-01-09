@@ -14,8 +14,8 @@ import "./product-page.sass";
 
 const ProductPage = (props) => {
   const { productId, imageData } = props;
-  const featuredProduct = data[productId - 1];
-  const { features, includes, others } = featuredProduct;
+  const pageProduct = data[productId - 1];
+  const { features, includes, others } = pageProduct;
   const {
     featuredProductImageData,
     galleryImageData,
@@ -33,9 +33,21 @@ const ProductPage = (props) => {
         />
       </div>
       <FeaturedProduct
-        featuredProduct={featuredProduct}
+        featuredProduct={pageProduct}
         isProductPage
         imageData={featuredProductImageData}
+        customClasses={{
+          containerClass: "product-page-info",
+          newProductIntroClasses: "dark-orange-text product-page-intro",
+          headerClasses:
+            "small-featured-product-header black-text product-page-header",
+          productDescriptionClasses: "product-page-description",
+          productPriceClasses: "product-price black-text",
+          buttonData: {
+            buttonColor: "dark-orange",
+            buttonDestination: `product-${pageProduct.slug}`,
+          },
+        }}
       />
       <section className="product-details-and-accessories main-container">
         <ProductDetails detailsText={features} />

@@ -35,8 +35,8 @@ const YouMayAlsoLike = (props) => {
               <FeaturedProductInfo
                 featuredProduct={relatedProductObject}
                 customClasses={{
-                  containerClasses: "related-product-info",
-                  headerClasses: "related-product-info-header",
+                  containerClass: "related-product-info",
+                  headerClasses: "related-product-info-header black-text",
                   buttonData: {
                     buttonColor: "dark-orange",
                     buttonDestination: `product-${relatedProductObject.slug}`,
