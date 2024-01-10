@@ -2,17 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import SpecifyQuantity from "../SpecifyQuantity/SpecifyQuantity";
 import "./featured-product-info.sass";
-
-// const fixPrice = (price) => {
-//   let fixedPrice = "$ ";
-//   const priceString = price.toString();
-//   if (priceString.length > 3) {
-//     fixedPrice += `${priceString[0]},${priceString.slice(1)}`;
-//   } else {
-//     fixedPrice += priceString;
-//   }
-//   return fixedPrice;
-// };
+import fixPrice from "./fixPrice";
 
 const FeaturedProductInfo = (props) => {
   const {
@@ -27,9 +17,6 @@ const FeaturedProductInfo = (props) => {
 
   const { name, teaserDescription, description, price, isNewProduct } =
     featuredProduct;
-
-  // const fixedPrice = fixPrice(price);
-  // console.log("fixed price after calling fixPrice(): ", fixedPrice);
 
   const {
     containerClass,
@@ -50,7 +37,7 @@ const FeaturedProductInfo = (props) => {
           </p>
           <h1 className={headerClasses}>{name}</h1>
           <p className={productDescriptionClasses}>{description}</p>
-          <p className={productPriceClasses}>{`$${price}`}</p>
+          <p className={productPriceClasses}>{`${fixPrice(price)}`}</p>
           <div className="purchase-buttons row">
             {" "}
             <SpecifyQuantity />
@@ -65,7 +52,7 @@ const FeaturedProductInfo = (props) => {
         <div className={`featured-product-info col ${containerClass}`}>
           <h1 className={headerClasses}>{name}</h1>
           <p className={productDescriptionClasses}>{description}</p>
-          <p className={productPriceClasses}>{`$${price}`}</p>
+          <p className={productPriceClasses}>{`${fixPrice(price)}`}</p>
           <div className="purchase-buttons row">
             {" "}
             <SpecifyQuantity />
