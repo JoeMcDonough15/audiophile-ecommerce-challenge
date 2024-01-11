@@ -1,14 +1,28 @@
 @import ../../sass/global
 
-.form-container 
-    padding: 1em
-    width: 75%
+.form-section-one, .form-section-two
+    background: $white
+    border-radius: 8px
+    gap: 32px
+    padding: 13px 23px 31px
 
-.form-field-big
-    width: 100%
+    
+.form-section-two
+    margin-top: 50px
 
-.form-field-small
-    width: 45%
+
+.form-section-one-header
+    color: $black
+    letter-spacing: 1px
+    
+
+.form-sub-section-header
+    font-weight: bold
+    margin-bottom: 16px
+
+.form-field-shrink
+    +all-screen-bigger-than-mobile
+        width: 45%
 
 .form-field-row, .form-field-col
     display: flex
@@ -16,11 +30,41 @@
 .form-field-col 
     flex-direction: column
 
+.form-field-col, .form-field-row
+    margin-bottom: 24px
+
+.form-sub-section-container > .form-field-col:last-of-type
+    margin-bottom: 0
+
 .form-field-row 
     justify-content: flex-start
 
 .top-row-text-field 
+    display: flex
     justify-content: space-between
+
+label, .warning-text
+    font-size: 0.75rem
+
+label, .payment-method-header
+    color: $black
+    font-weight: bold
+    line-height: 16px
+    margin-bottom: 9px
+
+.form-field-row label
+    margin-bottom: 0
+
+.payment-method-header
+    margin-bottom: 16px
+
+.warning-text
+    color: red
+    visibility: hidden
+
+input
+    @extend %custom-font
+    font-size: 0.875rem
 
 .warning-border.warning-border.warning-border
     outline: 2px solid red
@@ -29,7 +73,10 @@
         outline: 2px solid red
 
 ::placeholder 
-    color: $light-grey
+    color: $placeholder-grey
+    letter-spacing: -0.25px
+    font-size: 14px
+    font-weight: bold
 
 %default-input-styles
     border: none
