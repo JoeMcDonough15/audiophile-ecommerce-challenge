@@ -10,7 +10,7 @@ const YouMayAlsoLike = (props) => {
   return (
     <section className="related-products-section main-container col">
       <h5 className="related-products-header black-text">You may also like</h5>
-      <div className="all-related-products-container">
+      <nav className="all-related-products-container">
         {relatedProducts.map((relatedProductObject) => {
           keyCount++;
           index++;
@@ -46,7 +46,7 @@ const YouMayAlsoLike = (props) => {
             </div>
           );
         })}
-      </div>
+      </nav>
     </section>
   );
 };

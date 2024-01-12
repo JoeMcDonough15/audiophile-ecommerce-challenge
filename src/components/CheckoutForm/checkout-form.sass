@@ -43,16 +43,19 @@
     display: flex
     justify-content: space-between
 
-label, .warning-text
+.input-label, .warning-text
     font-size: 0.75rem
 
-label, .payment-method-header
+.radio-input-label
+    font-size: 0.875rem
+
+.input-label, .payment-method-header
     color: $black
     font-weight: bold
     line-height: 16px
     margin-bottom: 9px
 
-.form-field-row label
+.form-field-row .input-label
     margin-bottom: 0
 
 .payment-method-header
@@ -61,10 +64,6 @@ label, .payment-method-header
 .warning-text
     color: red
     visibility: hidden
-
-input
-    @extend %custom-font
-    font-size: 0.875rem
 
 .warning-border.warning-border.warning-border
     outline: 2px solid red
@@ -90,8 +89,10 @@ input
         caret-color: $dark-orange
         outline: 1px solid $dark-orange
 
-.text-input
+input
+    @extend %custom-font
     @extend %default-input-styles
+
 
 .radio-container 
     @extend %default-input-styles

@@ -5,9 +5,16 @@ import headphonesPreviewImage from "./images/image-category-thumbnail-headphones
 import speakerPreviewImage from "./images/image-category-thumbnail-speakers.png";
 import earphonesPreviewImage from "./images/image-category-thumbnail-earphones.png";
 
-const ProductCategoryMenu = () => {
+const ProductCategoryMenu = (props) => {
+  const { hideMenu } = props;
   return (
-    <section className="main-container product-category-menu col">
+    <nav
+      className={
+        hideMenu
+          ? "main-container product-category-menu col hide"
+          : "main-container product-category-menu col"
+      }
+    >
       <CategorySlab
         categoryName="headphones"
         imageSrc={headphonesPreviewImage}
@@ -26,7 +33,7 @@ const ProductCategoryMenu = () => {
         thumbnailName="earphones-thumbnail thumbnail-image"
         buttonDestination="earphones"
       />
-    </section>
+    </nav>
   );
 };
 
