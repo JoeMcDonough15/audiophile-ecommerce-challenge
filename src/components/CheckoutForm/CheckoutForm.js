@@ -1,4 +1,5 @@
 import React from "react";
+import CheckoutSectionHeader from "./CheckoutSectionHeader";
 import FormField from "../FormField/FormField";
 import "./checkout-form.sass";
 
@@ -12,14 +13,9 @@ const CheckoutForm = () => {
       <section className="form-section-one col">
         <h4 className="form-section-one-header">Checkout</h4>
         <div className="billing-details-container form-sub-section-container">
-          <h6 className="dark-orange-text subheading form-sub-section-header billing-details-header">
-            Billing Details
-          </h6>
+          <CheckoutSectionHeader headerText="Billing Details" />
           <div className="name-and-email-container">
             <FormField
-              customClasses={{
-                containerClass: "name-container",
-              }}
               inputData={{
                 inputName: "name-input",
                 inputType: "text",
@@ -30,9 +26,6 @@ const CheckoutForm = () => {
               warningText="Wrong format"
             />
             <FormField
-              customClasses={{
-                containerClass: "email-container",
-              }}
               inputData={{
                 inputName: "email-input",
                 inputType: "email",
@@ -44,9 +37,7 @@ const CheckoutForm = () => {
             />
           </div>
           <FormField
-            customClasses={{
-              containerClass: "phone-container form-field-shrink",
-            }}
+            isFormFieldShrink
             inputData={{
               inputName: "phone-input",
               inputType: "tel",
@@ -58,13 +49,8 @@ const CheckoutForm = () => {
           />
         </div>
         <div className="shipping-info-container form-sub-section-container">
-          <h6 className="dark-orange-text form-sub-section-header subheading shipping-info-header">
-            Shipping Info
-          </h6>{" "}
+          <CheckoutSectionHeader headerText="Shipping Info" />
           <FormField
-            customClasses={{
-              containerClass: "address-container",
-            }}
             inputData={{
               inputName: "address-input",
               inputType: "text",
@@ -76,9 +62,6 @@ const CheckoutForm = () => {
           />
           <div className="zip-and-city-container">
             <FormField
-              customClasses={{
-                containerClass: "zip-container",
-              }}
               inputData={{
                 inputName: "zip-input",
                 inputType: "number",
@@ -89,9 +72,6 @@ const CheckoutForm = () => {
               warningText="Wrong format"
             />
             <FormField
-              customClasses={{
-                containerClass: "city-container",
-              }}
               inputData={{
                 inputName: "city-input",
                 inputType: "text",
@@ -99,13 +79,11 @@ const CheckoutForm = () => {
                 inputOnChangeHandler: handleChange,
               }}
               labelText="City"
-              warningText="Wrong format"
+              warningText="Can't be blank"
             />
           </div>
           <FormField
-            customClasses={{
-              containerClass: "country-container form-field-shrink",
-            }}
+            isFormFieldShrink
             inputData={{
               inputName: "country-input",
               inputType: "text",
@@ -117,23 +95,22 @@ const CheckoutForm = () => {
           />
         </div>
         <div className="payment-details-container form-sub-section-container">
-          <h6 className="dark-orange-text form-sub-section-header subheading payment-details-header">
-            Payment Details
-          </h6>{" "}
+          <CheckoutSectionHeader headerText="Payment Details" />
           <div className="payment-method-container">
             <p className="payment-method-header">Payment Method</p>
             <div className="radio-inputs-container">
               <FormField
-                customClasses={{ radioInputClass: "radio-input" }}
+                isRadioInput
                 inputData={{
                   inputName: "payment-type",
                   inputType: "radio",
                   inputOnChangeHandler: handleChange,
                 }}
                 labelText="e-Money"
+                warningText="Please select"
               />
               <FormField
-                customClasses={{ radioInputClass: "radio-input" }}
+                isRadioInput
                 inputData={{
                   inputName: "payment-type",
                   inputType: "radio",
@@ -145,9 +122,6 @@ const CheckoutForm = () => {
           </div>
           <div className="optional-emoney-details">
             <FormField
-              customClasses={{
-                containerClass: "e-money-number-container",
-              }}
               inputData={{
                 inputName: "e-money-number-input",
                 inputType: "number",
@@ -158,9 +132,6 @@ const CheckoutForm = () => {
               warningText="Wrong format"
             />
             <FormField
-              customClasses={{
-                containerClass: "e-money-pin-container",
-              }}
               inputData={{
                 inputName: "e-money-pin-input",
                 inputType: "number",

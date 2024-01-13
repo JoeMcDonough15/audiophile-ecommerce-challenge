@@ -1,89 +1,16 @@
 @import ../../sass/global
 
-.form-section-one, .form-section-two
-    background: $white
-    border-radius: 8px
-    gap: 32px
-    padding: 13px 23px 31px
-
-    
-.form-section-two
-    margin-top: 50px
-
-
-.form-section-one-header
-    color: $black
-    letter-spacing: 1px
-    
-
-.form-sub-section-header
-    font-weight: bold
-    margin-bottom: 16px
-
-.form-field-shrink
-    +all-screen-bigger-than-mobile
-        width: 45%
-
-.form-field-row, .form-field-col
-    display: flex
-
-.form-field-col 
-    flex-direction: column
-
-.form-field-col, .form-field-row
-    margin-bottom: 24px
-
-.form-sub-section-container > .form-field-col:last-of-type
-    margin-bottom: 0
-
-.form-field-row 
-    justify-content: flex-start
-
-.top-row-text-field 
-    display: flex
-    justify-content: space-between
-
-.input-label, .warning-text
-    font-size: 0.75rem
-
-.radio-input-label
-    font-size: 0.875rem
-
-.input-label, .payment-method-header
-    color: $black
-    font-weight: bold
-    line-height: 16px
-    margin-bottom: 9px
-
-.form-field-row .input-label
-    margin-bottom: 0
-
-.payment-method-header
-    margin-bottom: 16px
-
-.warning-text
-    color: red
-    visibility: hidden
-
-.warning-border.warning-border.warning-border
-    outline: 2px solid red
-
-    &:focus
-        outline: 2px solid red
-
-::placeholder 
-    color: $placeholder-grey
-    letter-spacing: -0.25px
-    font-size: 14px
-    font-weight: bold
-
 %default-input-styles
     border: none
     border-radius: 4px
     color: $black
+    display: block
     font-size: 0.875rem
+    line-height: 19px
+    margin-top: 9px
     outline: 1px solid $light-grey
-    padding: 0.4em 1em
+    padding: 17px 24px 18px
+    width: 100%
 
     &:focus
         caret-color: $dark-orange
@@ -92,6 +19,121 @@
 input
     @extend %custom-font
     @extend %default-input-styles
+
+
+::placeholder 
+    color: $placeholder-grey
+    letter-spacing: -0.25px
+    font-size: 14px
+    font-weight: bold
+
+
+.form-container.main-container
+    +all-large-screen
+        display: flex
+        gap: 30px
+
+.form-section-one, .form-section-two
+    background: $white
+    border-radius: 8px
+    gap: 32px
+    padding: 24px 7% 31px
+
+    +all-screen-bigger-than-mobile
+        gap: 0
+
+    +all-tablets 
+        padding: 31px 4% 30px
+    
+    +all-large-screen
+        padding: 54px 48px 48px
+
+.form-section-one
+    +all-large-screen
+        width: 65.76%
+    
+.form-section-two
+    margin-top: 50px
+
+    +all-large-screen
+        margin-top: 0
+        width: 31.53%
+
+
+.form-section-one-header
+    color: $black
+    letter-spacing: 1px
+
+    +all-screen-bigger-than-mobile
+        font-size: 2rem
+        letter-spacing: 1.14px
+        line-height: 36px
+        margin-bottom: 41px
+
+.billing-details-container
+    +all-screen-bigger-than-mobile
+        margin-bottom: 53px
+
+.shipping-info-container
+    +all-screen-bigger-than-mobile
+        margin-bottom: 61px
+
+.subheading.form-sub-section-header
+    letter-spacing: 0.96px
+    margin-bottom: 16px
+
+.form-field
+    margin-bottom: 24px
+    position: relative
+
+.form-sub-section-container > .form-field:last-of-type, .optional-emoney-details > .form-field:last-of-type
+    margin-bottom: 0
+
+.form-field-shrink, .radio-inputs-container
+    +all-screen-bigger-than-mobile
+        width: 48.75%
+
+.name-and-email-container, .zip-and-city-container, .payment-method-container, .optional-emoney-details
+    +all-screen-bigger-than-mobile
+        display: flex
+        gap: 16px
+
+.payment-method-container
+    justify-content: space-between
+
+.input-label, .warning-text, .payment-method-header
+    font-size: 0.75rem
+    line-height: 16px
+
+.radio-input-label
+    display: flex
+    font-size: 0.875rem
+    margin-bottom: 0
+
+.radio-input-label .input-label-text
+    order: 2
+
+.input-label, .payment-method-header
+    color: $black
+    font-weight: bold
+
+.payment-method-header
+    margin-bottom: 16px
+
+.warning-text
+    color: red
+    position: absolute
+    right: 0
+    top: 0
+
+.payment-type-warning-text
+    top: -32px
+
+.warning-border.warning-border.warning-border
+    outline: 2px solid red
+
+    &:focus
+        outline: 2px solid red
 
 
 .radio-container 
@@ -104,24 +146,11 @@ input
 .radio-input
     @extend %default-input-styles
     accent-color: $dark-orange
-    margin-right: 1em
+    height: 20px
+    margin: 0 1em 0 0
     outline: none
+    width: 20px
 
     &:focus
         outline: none
-
-.quantity-container 
-    align-items: center
-    background: $quantity-container-grey
-    display: flex
-    height: 48px
-    justify-content: center
-    width: 120px
-
-.quantity-buttons-container 
-    display: flex
-    justify-content: space-between
-    width: 80%
-
-
 

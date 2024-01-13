@@ -1,40 +1,40 @@
 import React from "react";
 
 const FormField = (props) => {
-  const { customClasses, inputData, labelText, warningText } = props;
-  const { containerClass, radioInputClass } = customClasses;
+  const { inputData, labelText, warningText, isRadioInput, isFormFieldShrink } =
+    props;
   const { inputName, inputType, placeholderText, inputOnChangeHandler } =
     inputData;
   return (
-    <div>
-      {inputType !== "radio" ? (
-        <div className={`form-field-col form-field ${containerClass}`}>
-          <div className="top-row-text-field">
-            <label className="input-label" htmlFor={inputName}>
-              {labelText}
-            </label>
-            <p className="warning-text hide">{warningText}</p>
-          </div>
-          <input
-            name={inputName}
-            type={inputType}
-            placeholder={placeholderText}
-            onChange={inputOnChangeHandler}
-          />
-        </div>
-      ) : (
-        <div className="form-field-row form-field radio-container">
-          <input
-            name={inputName}
-            type="radio"
-            onChange={inputOnChangeHandler}
-            className={radioInputClass}
-          />
-          <label className="input-label" htmlFor={inputName}>
-            {labelText}
-          </label>
-        </div>
-      )}
+    <div
+      className={
+        isRadioInput
+          ? "form-field col radio-container"
+          : isFormFieldShrink
+          ? "form-field col form-field-shrink"
+          : "form-field col"
+      }
+    >
+      <p
+        id={`${inputName}-warning-text`}
+        className={`${inputName}-warning-text warning-text hide`}
+      >
+        {warningText}
+      </p>
+      <label
+        className={
+          isRadioInput ? "radio-input-label input-label" : "input-label"
+        }
+      >
+        <span className="input-label-text">{labelText}</span>
+        <input
+          name={inputName}
+          type={inputType}
+          placeholder={placeholderText}
+          onChange={inputOnChangeHandler}
+          className={isRadioInput ? "radio-input" : null}
+        />
+      </label>
     </div>
   );
 };
