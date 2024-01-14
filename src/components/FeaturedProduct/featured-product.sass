@@ -1,65 +1,24 @@
 @import ../../sass/global
 
-main.category-page section.main-container.featured-product-container, main.product-page section.main-container.featured-product-container
-    display: flex
-    flex-direction: column
+.main-container.col.featured-product-container
     gap: 36px
 
     +all-tablets
         gap: 52px
 
     +all-large-screen
+        align-items: center
         flex-direction: row
+        gap: 0
         justify-content: space-between
+
+        & .featured-product-image-container
+            width: 48.65%
     
         & .featured-product-text-container
-            display: flex
-            flex-direction: column
-            justify-content: center
             width: 40%
-
-main.category-page section.main-container.featured-product-container:nth-of-type(2) .featured-product-text-container
     
-    +all-large-screen
-        order: -1
 
 
-main.category-page .content-slab.featured-product-image-container
-    height: 352px
-    max-width: 470px
-    width: 100%
-
-    +all-tablets
-        height: 100%
-        max-width: 820px
-
-    +all-large-screen
-        height: 100%
-        max-height: 560px
-        max-width: 540px
-
-    & .featured-product-image
-        border-radius: 8px
-        height: 100%
-        max-height: 100%
-        width: 100%
-
-
-.content-slab.featured-product-image-container.product-page-image-container
-
-    +all-tablets
-        height: 480px
-        width: 100%
-
-        & .featured-product-image.image-tablet
-            height: auto
-
-    +all-large-screen
-        height: 100%
-        max-height: 560px
-        max-width: 540px
-    
-    & .featured-product-image
-        height: 100%
-
-    
+.main-container.col.featured-product-container .featured-product-text-container.col
+    justify-content: center

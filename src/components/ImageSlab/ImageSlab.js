@@ -2,24 +2,14 @@ import React from "react";
 import CustomImage from "../CustomImage/CustomImage";
 
 const ImageSlab = (props) => {
-  const { imageData, deviceSize, isProductPage } = props;
-  const { imageSrc, imageAltText } = imageData;
+  const { imageData, deviceSize } = props;
+  const { className, imageSrc, imageAltText } = imageData;
   return (
-    <div
-      className={
-        isProductPage
-          ? `content-slab featured-product-image-container product-page-image-container image-${deviceSize}`
-          : `content-slab featured-product-image-container image-${deviceSize}`
-      }
-    >
+    <div className={`content-slab image-${deviceSize}`}>
       <CustomImage
+        className={className ? `${className}` : null}
         src={imageSrc}
-        alt={imageAltText}
-        className={
-          isProductPage
-            ? "featured-product-image product-page-image"
-            : "featured-product-image"
-        }
+        altText={imageAltText}
       />
     </div>
   );
