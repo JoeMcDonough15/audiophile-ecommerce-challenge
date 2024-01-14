@@ -14,13 +14,18 @@
 
     +all-tablets
         gap: 11px
+        margin-bottom: 22px
 
     +all-large-screen
         gap: 30px
+        margin-bottom: 40px
 
 .related-product-container.col
     margin-bottom: 56px
     width: 100%
+
+    +all-screen-bigger-than-mobile
+        margin-bottom: 0
 
     &:nth-of-type(3)
         margin-bottom: 0
@@ -29,29 +34,14 @@
     height: 120px
 
     +all-screen-bigger-than-mobile
-        height: 318px
+        height: auto
     
-
-.related-product-image-container
-    align-items: center
-    display: flex
-    height: 100%
-    margin: auto
-    max-width: 325px
-    position: relative
-    width: 100%
-
-    +all-tablets
-        max-width: 223px
-    
-    +all-large-screen
-        max-width: 350px
+    & img.featured-product-image
+        height: 100%
+        width: 100%
 
 
-.related-product-image.thumbnail-image
-    
-    max-height: 100%
-    width: 100%
+
 
 .featured-product-info.col.related-product-info
     align-items: center

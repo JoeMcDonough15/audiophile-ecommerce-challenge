@@ -1,5 +1,5 @@
 import React from "react";
-import CustomImage from "../CustomImage/CustomImage";
+import ImageSlab from "../ImageSlab/ImageSlab";
 import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 import "./you-may-also-like.sass";
 
@@ -16,22 +16,19 @@ const YouMayAlsoLike = (props) => {
           index++;
           return (
             <div className="related-product-container col" key={keyCount}>
-              <div className="content-slab ">
-                {relatedProductsImages[index].map((imageObject) => {
-                  return (
-                    <div
-                      key={imageObject.id}
-                      className={`related-product-image-container image-${imageObject.imageSize}`}
-                    >
-                      <CustomImage
-                        className={`related-product-image thumbnail-image`}
-                        src={imageObject.imageSrc}
-                        alt={imageObject.imageAltText}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
+              {relatedProductsImages[index].map((imageObject) => {
+                return (
+                  <ImageSlab
+                    key={imageObject.id}
+                    deviceSize={imageObject.imageSize}
+                    imageData={{
+                      imageSrc: imageObject.imageSrc,
+                      imageAltText: imageObject.imageAltText,
+                    }}
+                  />
+                );
+              })}
+
               <FeaturedProductInfo
                 featuredProduct={relatedProductObject}
                 customClasses={{

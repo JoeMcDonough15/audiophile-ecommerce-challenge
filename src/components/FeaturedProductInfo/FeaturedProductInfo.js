@@ -32,9 +32,7 @@ const FeaturedProductInfo = (props) => {
     <div>
       {isProductPage && isNewProduct ? (
         <div className={`featured-product-info col ${containerClass}`}>
-          <p className={`overline new-product-intro ${newProductIntroClasses}`}>
-            New Product
-          </p>
+          <p className={`overline ${newProductIntroClasses}`}>New Product</p>
           <h1 className={headerClasses}>{name}</h1>
           <p className={productDescriptionClasses}>{description}</p>
           <p className={productPriceClasses}>{`${fixPrice(price)}`}</p>
@@ -71,9 +69,7 @@ const FeaturedProductInfo = (props) => {
               : `featured-product-info col ${containerClass}`
           }
         >
-          <p className={`overline new-product-intro ${newProductIntroClasses}`}>
-            New Product
-          </p>
+          <p className={`overline ${newProductIntroClasses}`}>New Product</p>
           <h1 className={`${headerClasses}`}>{name}</h1>
           <p className={productDescriptionClasses}>
             {teaserOnly ? teaserDescription : description}

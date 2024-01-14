@@ -1,56 +1,60 @@
 @import ../../sass/global
 
-main.product-page section.main-container div.featured-product-container
+main.product-page section.main-container.featured-product-container
     +all-screen-bigger-than-mobile
         flex-direction: row
-
-
-.featured-product-container .content-slab.featured-product-image-container.product-page-image-container
-    +all-phone
-        height: 327px
-
+    
     +all-tablets
-        height: 480px
+        gap: 68px
 
-        & .featured-product-image.image-tablet
-            height: auto
-
-
-.product-details-and-accessories.main-container
-    display: flex
-    flex-direction: column
-    gap: 96px
-    margin: 96px auto 86px
+        & .content-slab.featured-product-image-container.product-page-image-container
+            width: 100%
+    
+        & .featured-product-text-container
+            display: flex
+            flex-direction: column
+            justify-content: center
+            width: 49.27%
 
     +all-large-screen
-        flex-direction: row
-        gap: 0
-        justify-content: space-between
+        gap: 123px
+
 
 
 .featured-product-info.col.product-page-info
     align-items: flex-start
     text-align: left
 
-    +all-tablets
-        padding: 36px 0 34px
 
+    & .overline.product-page-intro
+        +all-tablets
+            font-size: 12px
+            letter-spacing: 8.57px
+            line-height: 16px
 
-.overline.new-product-intro.product-page-intro 
-    font-size: 12px
 
 .featured-product-info.col.product-page-info .small-featured-product-header.product-page-header
-    padding: 0 16% 0 0 
+    padding-right: 16% 
 
     +all-tablets
-        padding: 10px 30% 20px 0
+        line-height: 32px
+        margin: 17px 0 32px
+        padding-right: 30% 
+    
+    +all-large-screen
+        font-size: 40px
+        letter-spacing: 1.43px
+        line-height: 44px
+        margin: 16px 0 32px
     
 
 .featured-product-info.col .product-page-description
     
     +all-tablets
-        margin-bottom: 20px
-        padding: 0 20% 0 0
+        padding-right: 20%
+    
+    +all-screen-bigger-than-mobile
+        margin-bottom: 32px
 
 
 .featured-product-info.col.product-page-info .product-price
@@ -58,6 +62,12 @@ main.product-page section.main-container div.featured-product-container
     font-weight: bold
     letter-spacing: 1.29px
     margin-bottom: 20px
+
+    +all-tablets
+        margin-bottom: 31px
+
+    +all-large-screen
+        margin-bottom: 47px
 
 
 .featured-product-info.col.product-page-info .purchase-buttons.row
@@ -73,3 +83,15 @@ main.product-page section.main-container div.featured-product-container
 
 .featured-product-info.col.product-page-info .purchase-buttons.row .button-container .button-dark-orange
     width: 100%
+
+
+.product-details-and-accessories.main-container
+    display: flex
+    flex-direction: column
+    gap: 96px
+    margin: 96px auto 86px
+
+    +all-large-screen
+        flex-direction: row
+        gap: 0
+        justify-content: space-between

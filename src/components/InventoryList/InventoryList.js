@@ -1,4 +1,5 @@
 import React from "react";
+import Quantity from "../Quantity/Quantity";
 import "./inventory-list.sass";
 
 const InventoryList = (props) => {
@@ -10,10 +11,12 @@ const InventoryList = (props) => {
         keyCount++;
         return (
           <li key={keyCount} className="row inventory-list-row">
-            <p className="inventory-item dark-orange-text inventory-item-one">
-              {listItem.quantity}x
-            </p>
-            <p className="inventory-item inventory-item-two">{listItem.item}</p>
+            <Quantity
+              quantity={listItem.quantity}
+              customClass="dark-orange-text"
+              withTimes
+            />
+            <p className="inventory-item-text">{listItem.item}</p>
           </li>
         );
       })}

@@ -1,4 +1,5 @@
 import React from "react";
+import Quantity from "../Quantity/Quantity";
 import "./specify-quantity.sass";
 
 const SpecifyQuantity = () => {
@@ -6,7 +7,7 @@ const SpecifyQuantity = () => {
     <div className="quantity-container">
       <div className="quantity-buttons-container">
         <span className="button-minus">-</span>
-        <span className="quantity">1</span>
+        <Quantity quantity={1} />
         <span className="button-plus">+</span>
       </div>
     </div>
