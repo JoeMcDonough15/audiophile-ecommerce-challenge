@@ -1,0 +1,32 @@
+@import ../../sass/global
+
+.item-in-cart
+    justify-content: space-between
+
+.item-image-and-details
+    gap: 16px
+    width: 55.11%
+
+    & .content-slab
+
+        +small-phone
+            height: 50px
+            width: 50px
+
+        +tiny-phone
+            height: 45px
+            width: 45px
+
+    & .content-slab img     
+        border-radius: 8px
+
+.item-in-cart .quantity-with-times 
+    order: 2
+
+.quantity-row > span 
+
+    +small-phone
+        font-size: 12px
+    
+    +tiny-phone
+        font-size: 10px

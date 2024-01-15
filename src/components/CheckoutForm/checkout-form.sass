@@ -28,17 +28,20 @@ input
     font-weight: bold
 
 
-.form-container.main-container
+.form-container.main-container.col
+    gap: 50px
+
     +all-large-screen
-        display: flex
+        flex-direction: row
         gap: 30px
 
 .form-section-one, .form-section-two
     background: $white
     border-radius: 8px
     gap: 32px
-    padding: 24px 7% 31px
+    padding: 24px 7.25% 31px
 
+.form-section-one
     +all-screen-bigger-than-mobile
         gap: 0
 
@@ -46,22 +49,26 @@ input
         padding: 31px 4% 30px
     
     +all-large-screen
-        padding: 54px 48px 48px
-
-.form-section-one
-    +all-large-screen
+        padding: 54px 4.32% 48px
         width: 65.76%
+
     
 .form-section-two
-    margin-top: 50px
+    align-self: flex-start
+    width: 100%
+    
+    +all-tablets
+        padding: 32px 4.79%
 
     +all-large-screen
-        margin-top: 0
+        padding: 2.88% 2.97%
         width: 31.53%
 
 
-.form-section-one-header
+.form-section-one-header, .summary-header
     color: $black
+
+.form-section-one-header
     letter-spacing: 1px
 
     +all-screen-bigger-than-mobile
@@ -69,6 +76,10 @@ input
         letter-spacing: 1.14px
         line-height: 36px
         margin-bottom: 41px
+
+.summary-header
+    letter-spacing: 1.29px
+    line-height: 24px
 
 .billing-details-container
     +all-screen-bigger-than-mobile

@@ -1,6 +1,7 @@
 import React from "react";
 import CheckoutSectionHeader from "./CheckoutSectionHeader";
 import FormField from "../FormField/FormField";
+import SummaryDetails from "../SummaryDetails/SummaryDetails";
 import "./checkout-form.sass";
 
 const handleChange = () => {
@@ -9,7 +10,7 @@ const handleChange = () => {
 
 const CheckoutForm = () => {
   return (
-    <form action="" className="form-container main-container">
+    <form action="" className="form-container main-container col">
       <section className="form-section-one col">
         <h4 className="form-section-one-header">Checkout</h4>
         <div className="billing-details-container form-sub-section-container">
@@ -144,7 +145,8 @@ const CheckoutForm = () => {
           </div>
         </div>
       </section>
-      <section className="form-section-two">Section Two</section>
+
+      <SummaryDetails />
     </form>
   );
 };

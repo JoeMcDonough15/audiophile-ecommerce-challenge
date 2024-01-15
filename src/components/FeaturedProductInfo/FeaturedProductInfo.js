@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import SpecifyQuantity from "../SpecifyQuantity/SpecifyQuantity";
 import "./featured-product-info.sass";
-import fixPrice from "./fixPrice";
+import fixPrice from "../../fixPrice";
 
 const FeaturedProductInfo = (props) => {
   const {
@@ -23,7 +23,6 @@ const FeaturedProductInfo = (props) => {
     newProductIntroClasses,
     headerClasses,
     productDescriptionClasses,
-    productPriceClasses,
     buttonData,
   } = customClasses;
 
@@ -35,7 +34,7 @@ const FeaturedProductInfo = (props) => {
           <p className={`overline ${newProductIntroClasses}`}>New Product</p>
           <h1 className={headerClasses}>{name}</h1>
           <p className={productDescriptionClasses}>{description}</p>
-          <p className={productPriceClasses}>{`${fixPrice(price)}`}</p>
+          <p className="product-price black-text">{`${fixPrice(price)}`}</p>
           <div className="purchase-buttons row">
             {" "}
             <SpecifyQuantity />
@@ -50,7 +49,7 @@ const FeaturedProductInfo = (props) => {
         <div className={`featured-product-info col ${containerClass}`}>
           <h1 className={headerClasses}>{name}</h1>
           <p className={productDescriptionClasses}>{description}</p>
-          <p className={productPriceClasses}>{`${fixPrice(price)}`}</p>
+          <p className="product-price black-text">{`${fixPrice(price)}`}</p>
           <div className="purchase-buttons row">
             {" "}
             <SpecifyQuantity />

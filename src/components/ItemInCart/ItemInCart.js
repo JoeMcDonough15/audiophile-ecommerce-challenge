@@ -1,27 +1,45 @@
 import React from "react";
 import ImageSlab from "../ImageSlab/ImageSlab";
-import ItemAndPriceCol from "../ItemAndPriceCol/ItemAndPriceCol";
+import ItemNameAndPrice from "../ItemNameAndPrice/ItemNameAndPrice";
 import Quantity from "../Quantity/Quantity";
 import SpecifyQuantity from "../SpecifyQuantity/SpecifyQuantity";
-import data from "../../data.json";
+import "./item-in-cart.sass";
 
-// grab products from json
-// import image (I think one image file will suffice since the thumbnail on the ImageSlab is sized to 64px x 64px at all device sizes)
+// SummaryDetails component will call this ItemInCart component as many times as there are items in the cart
 
 const ItemInCart = (props) => {
-  const { withSpecifyQuantity } = props;
-  return (
+  const { itemData, withSpecifyQuantity } = props;
+  console.log("item data:", itemData);
+  const { quantity, product, imageData } = itemData;
+  const { imageSrc, imageAltText } = imageData;
+  return withSpecifyQuantity ? (
     <div className="row item-in-cart">
       <ImageSlab
-        deviceSize="one-size"
-        imageData={{ imageSrc: "", imageAltText: "" }}
+        slabSize="thumbnail"
+        imageData={{
+          imageSrc: imageSrc,
+          imageAltText: imageAltText,
+        }}
       />
-      <ItemAndPriceCol product={product} />
-      {withSpecifyQuantity ? <SpecifyQuantity /> : <Quantity withTimes />}
+      <ItemNameAndPrice product={product} />
+      <SpecifyQuantity />
+    </div>
+  ) : (
+    <div className="row item-in-cart">
+      {" "}
+      <div className="item-image-and-details row">
+        <ImageSlab
+          slabSize="thumbnail"
+          imageData={{
+            imageSrc: imageSrc,
+            imageAltText: imageAltText,
+          }}
+        />
+        <ItemNameAndPrice product={product} />
+      </div>
+      <Quantity quantity={quantity} withTimes />
     </div>
   );
 };
 
 export default ItemInCart;
-
-// SummaryDetails component will call this ItemInCart component as many times as there are items in the cart

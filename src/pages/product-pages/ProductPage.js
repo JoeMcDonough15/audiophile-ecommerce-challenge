@@ -42,7 +42,6 @@ const ProductPage = (props) => {
           headerClasses:
             "small-featured-product-header black-text product-page-header",
           productDescriptionClasses: "product-page-description",
-          productPriceClasses: "product-price black-text",
           buttonData: {
             buttonColor: "dark-orange",
             buttonDestination: `product-${pageProduct.slug}`,

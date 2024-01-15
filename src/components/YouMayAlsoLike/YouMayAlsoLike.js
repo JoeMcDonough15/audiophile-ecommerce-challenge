@@ -20,7 +20,7 @@ const YouMayAlsoLike = (props) => {
                 return (
                   <ImageSlab
                     key={imageObject.id}
-                    deviceSize={imageObject.imageSize}
+                    slabSize={imageObject.imageSize}
                     imageData={{
                       imageSrc: imageObject.imageSrc,
                       imageAltText: imageObject.imageAltText,

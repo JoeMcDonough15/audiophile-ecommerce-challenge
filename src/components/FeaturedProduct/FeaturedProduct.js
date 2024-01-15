@@ -12,15 +12,15 @@ const FeaturedProduct = (props) => {
       <div className="featured-product-image-container">
         {" "}
         <ImageSlab
-          deviceSize="mobile"
+          slabSize="mobile"
           imageData={{ imageSrc: mobileImageSrc, imageAltText: imageAltText }}
         />
         <ImageSlab
-          deviceSize="tablet"
+          slabSize="tablet"
           imageData={{ imageSrc: tabletImageSrc, imageAltText: imageAltText }}
         />
         <ImageSlab
-          deviceSize="desktop"
+          slabSize="desktop"
           imageData={{
             imageSrc: desktopImageSrc,
             imageAltText: imageAltText,
