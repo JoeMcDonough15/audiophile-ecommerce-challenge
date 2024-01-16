@@ -41,7 +41,6 @@ const FeaturedProductInfo = (props) => {
             <Button
               buttonText="Add to cart"
               className={`button-${buttonColor}`}
-              buttonDestination={buttonDestination}
             />
           </div>
         </div>
@@ -56,7 +55,6 @@ const FeaturedProductInfo = (props) => {
             <Button
               buttonText="Add to cart"
               className={`button-${buttonColor}`}
-              buttonDestination={buttonDestination}
             />
           </div>
         </div>

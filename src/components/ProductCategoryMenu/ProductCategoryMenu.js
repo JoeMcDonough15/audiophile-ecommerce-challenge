@@ -16,18 +16,21 @@ const ProductCategoryMenu = (props) => {
       }
     >
       <CategorySlab
+        key={1}
         categoryName="headphones"
         imageSrc={headphonesPreviewImage}
         thumbnailName="headphones-thumbnail thumbnail-image"
         buttonDestination="headphones"
       />
       <CategorySlab
+        key={2}
         categoryName="speakers"
         imageSrc={speakerPreviewImage}
         thumbnailName="speaker-thumbnail thumbnail-image"
         buttonDestination="speakers"
       />
       <CategorySlab
+        key={3}
         categoryName="earphones"
         imageSrc={earphonesPreviewImage}
         thumbnailName="earphones-thumbnail thumbnail-image"

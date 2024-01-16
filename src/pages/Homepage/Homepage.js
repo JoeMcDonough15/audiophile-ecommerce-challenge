@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import MobileMenu from "../../components/MobileMenu/MobileMenu";
+import Cart from "../../components/Cart/Cart";
 import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCategoryMenu";
 import HomeFeatureOne from "../../components/HomeFeatureOne/HomeFeatureOne";
 import HomeFeatureTwo from "../../components/HomeFeatureTwo/HomeFeatureTwo";
@@ -40,7 +41,8 @@ const Homepage = () => {
   return (
     <div>
       <Header withHero featuredProduct={featuredProductHero} />
-      {/* <MobileMenu /> */}
+      <MobileMenu />
+      <Cart />
       <main className="homepage">
         <ProductCategoryMenu />
         <section className="featured-products-section main-container col">

@@ -27,7 +27,7 @@ const ProductPage = (props) => {
       <Header />
       <div className="main-container">
         <Button
-          className={"button-go-back"}
+          className={"button-text-only"}
           buttonText="go back"
           buttonDestination=""
         />
@@ -44,7 +44,6 @@ const ProductPage = (props) => {
           productDescriptionClasses: "product-page-description",
           buttonData: {
             buttonColor: "dark-orange",
-            buttonDestination: `product-${pageProduct.slug}`,
           },
         }}
       />

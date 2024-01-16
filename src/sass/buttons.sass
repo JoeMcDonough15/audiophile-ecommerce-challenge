@@ -14,12 +14,20 @@
     &:hover
         cursor: pointer
 
+%full-width-button
+    @extend %default-button-styles 
+    width: 100%
+
+.button-dark-orange, .button-black, .button-transparent, .button-with-arrow-icon
+    @extend %default-button-styles
+
+.button-submit, .button-checkout
+    @extend %full-width-button
 
 .button-dark-orange, .button-black 
     color: $white
 
 .button-dark-orange
-    @extend %default-button-styles 
     background: $dark-orange
     border-color: $dark-orange
 
@@ -28,14 +36,12 @@
         border-color: $pale-orange
 
 .button-black
-    @extend %default-button-styles
     background: $black
 
     &:hover
         background: $black-button-hover
 
 .button-transparent
-    @extend %default-button-styles 
     background: transparent
     border: 1px solid $black
     color: $black
@@ -44,19 +50,18 @@
         background: $black
         color: $white
 
-.button-go-back
+.button-text-only
     background: transparent
     border: none
-    color: $button-three-text-color
+    color: $button-grey
     font-size: 15px
     text-transform: capitalize
     padding: 22px 0 28px
 
 .button-with-arrow-icon
-    @extend %default-button-styles
     align-items: center
     border: none
-    color: $button-three-text-color
+    color: $button-grey
     display: flex
     height: 18px
     justify-content: space-between
@@ -66,17 +71,17 @@
     &:hover
         @include hover-orange
 
-.button-plus, .button-minus 
+.specify-quantity-button
     @include subheading-font
     background: transparent
-    color: $plus-minus-buttons-grey
+    color: $quantity-buttons-grey
     transition: color .5s 
 
     &:hover
         @include hover-orange
 
+.button-submit
+    margin-top: 32px
+    
 
-a
-    & .button-dark-orange, .button-black, .button-transparent, .button-go-back
-        div.right-arrow
-            display: none
+    

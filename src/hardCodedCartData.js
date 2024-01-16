@@ -1,9 +1,3 @@
-import React from "react";
-import ItemInCart from "../ItemInCart/ItemInCart";
-import FeeInformation from "../FeeInformation/FeeInformation";
-import Button from "../Button/Button";
-import "./summary-details.sass";
-import fixPrice from "../../fixPrice";
 import data from "../../data.json";
 import markTwoImage from "../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg";
 import xx59Image from "../../assets/product-xx59-headphones/mobile/image-product.jpg";
@@ -35,8 +29,14 @@ const findSelectedProducts = (productList, productSlugs) => {
   return selectedProducts;
 };
 
-const [selectedProductOne, selectedProductTwo, selectedProductThree] =
-  findSelectedProducts(data, selectedProductSlugs);
+const [
+  selectedProductOne,
+  selectedProductTwo,
+  selectedProductThree,
+  selectedProductFour,
+  selectedProductFive,
+  selectedProductSix,
+] = findSelectedProducts(data, selectedProductSlugs);
 
 // All product images
 const allProductImages = {
@@ -88,6 +88,21 @@ const itemsInCart = [
     product: selectedProductThree,
     imageData: allProductImages.yxOneImageData,
   },
+  {
+    quantity: 2,
+    product: selectedProductFour,
+    imageData: allProductImages.zxNineImageData,
+  },
+  {
+    quantity: 1,
+    product: selectedProductFive,
+    imageData: allProductImages.zxSevenImageData,
+  },
+  {
+    quantity: 2,
+    product: selectedProductSix,
+    imageData: allProductImages.markOneImageData,
+  },
 ];
 
 const calculateSubtotal = (items) => {
@@ -98,54 +113,3 @@ const calculateSubtotal = (items) => {
 
 const subtotal = calculateSubtotal(itemsInCart);
 const shipping = 50;
-
-let key = 0;
-
-const SummaryDetails = (props) => {
-  return (
-    <section className="form-section-two">
-      <h6 className="summary-header">Summary</h6>
-      <div className="items-in-cart col">
-        {itemsInCart.map((itemInCart) => {
-          key++;
-          return (
-            <ItemInCart
-              key={key}
-              itemData={itemInCart}
-              quantity={itemInCart.quantity}
-            />
-          );
-        })}
-      </div>
-      <div className="fees-container col">
-        <FeeInformation
-          key={1}
-          feeName="Total"
-          amountAsString={fixPrice(subtotal)}
-        />
-        <FeeInformation
-          key={2}
-          feeName="Shipping"
-          amountAsString={fixPrice(shipping)}
-        />
-        <FeeInformation
-          key={3}
-          feeName="VAT (included)"
-          amountAsString={fixPrice(1079)}
-        />
-      </div>
-      <FeeInformation
-        feeName="grand total"
-        amountAsString={fixPrice(subtotal + shipping)}
-        customPriceColor="dark-orange-text"
-      />
-      <Button
-        isSubmitButton
-        className="button-dark-orange"
-        buttonText="continue & pay"
-      />
-    </section>
-  );
-};
-
-export default SummaryDetails;

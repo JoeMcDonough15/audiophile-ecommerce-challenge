@@ -13,7 +13,7 @@ const ItemInCart = (props) => {
   const { quantity, product, imageData } = itemData;
   const { imageSrc, imageAltText } = imageData;
   return withSpecifyQuantity ? (
-    <div className="row item-in-cart">
+    <div className="row item-in-cart with-specify-quantity">
       <ImageSlab
         slabSize="thumbnail"
         imageData={{

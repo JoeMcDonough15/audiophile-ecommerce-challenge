@@ -1,0 +1,32 @@
+@import ../../sass/global
+
+.cart-modal
+    background: $white
+    border-radius: 8px
+    gap: 32px
+    left: 24px
+    padding: 32px 28px 31px
+    position: fixed
+    right: 24px
+    top: 114px
+    width: 327px
+    z-index: 2
+
+    +all-screen-bigger-than-mobile
+        width: 377px
+    
+    +all-tablets
+        left: 351px
+        right: 40px
+
+    +all-large-screen
+        left: 898px
+        right: 165px
+        top: 129px
+
+.cart-top-row
+    justify-content: space-between
+
+
+.cart-modal .cart-top-row .button-text-only
+    padding: 0

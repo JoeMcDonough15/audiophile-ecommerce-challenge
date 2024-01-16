@@ -11,7 +11,7 @@ const Checkout = () => {
       <Header />
       <div className="main-container">
         <Button
-          className={"button-go-back"}
+          className={"button-text-only"}
           buttonText="go back"
           buttonDestination=""
         />

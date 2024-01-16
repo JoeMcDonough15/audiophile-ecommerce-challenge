@@ -1,5 +1,6 @@
 @import breakpoints
 @import mixins
+@import fonts
 
 *, *::before, *::after
     box-sizing: border-box
@@ -14,6 +15,10 @@ div.auto-width
     
 a 
     text-decoration: none
+
+button
+    @extend %custom-font
+    border: none
 
 img 
     max-height: 100%
@@ -78,3 +83,38 @@ img
 
 .hide
     display: none
+
+
+////////// inputs ///////////
+
+%default-input-styles
+    border: none
+    border-radius: 4px
+    color: $black
+    display: block
+    font-size: 0.875rem
+    line-height: 19px
+    margin-top: 9px
+    outline: 1px solid $light-grey
+    padding: 17px 24px 18px
+    width: 100%
+
+    &:focus
+        caret-color: $dark-orange
+        outline: 1px solid $dark-orange
+
+input
+    @extend %custom-font
+    @extend %default-input-styles
+
+
+::placeholder 
+    color: $placeholder-grey
+    letter-spacing: -0.25px
+    font-size: 14px
+    font-weight: bold
+
+
+.input-hidden
+    position: absolute
+    visibility: hidden
