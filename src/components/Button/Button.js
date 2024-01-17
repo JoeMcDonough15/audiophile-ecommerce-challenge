@@ -13,7 +13,7 @@ const Button = (props) => {
   } = props;
 
   return buttonDestination ? (
-    <NavLink className="button-container" to={`/${buttonDestination}`} exact>
+    <NavLink className="button-container" to={`/${buttonDestination}`}>
       <button className={className}>
         <span className="button-text">{buttonText}</span>
         {withArrowIcon ? (

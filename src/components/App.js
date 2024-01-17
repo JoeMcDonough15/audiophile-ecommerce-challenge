@@ -11,7 +11,7 @@ import ProductXx99MarkOneHeadphones from "../pages/product-pages/Product-xx99-Ma
 import ProductXx99MarkTwoHeadphones from "../pages/product-pages/Product-xx99-Mark-Two-Headphones/ProductXx99MarkTwoHeadphones";
 import ProductZx7Speaker from "../pages/product-pages/Product-zx7-Speaker/ProductZx7Speaker";
 import ProductZx9Speaker from "../pages/product-pages/Product-zx9-Speaker/ProductZx9Speaker";
-import "../sass/global.sass";
+import PageNotFound from "../pages/PageNotFound";
 
 function App() {
   return (
@@ -37,6 +37,7 @@ function App() {
         <Route path="/product-zx9-speaker" component={ProductZx9Speaker} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/product-yx1-earphones" component={ProductEarphones} />
+        <Route component={PageNotFound} />
       </Switch>
     </div>
   );

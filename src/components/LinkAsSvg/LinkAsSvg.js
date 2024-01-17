@@ -18,7 +18,7 @@ const LinkAsSvg = (props) => {
   return (
     <div className={className}>
       {internalLink ? (
-        <NavLink to={linkDestination}>
+        <NavLink to={linkDestination} exact={linkDestination === "/"}>
           <svg width={width} height={height} xmlns={src}>
             {gElement ? (
               <g fill={fill} fillRule={fillRule}>

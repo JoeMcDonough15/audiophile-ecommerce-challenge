@@ -111,7 +111,7 @@ let key = 0;
 
 const Cart = () => {
   return (
-    <section id="cart-modal" className="cart-modal col">
+    <section id="cart-modal" className="cart-modal hide col">
       <div className="row cart-top-row">
         <h6>Cart (3)</h6>
         <Button
