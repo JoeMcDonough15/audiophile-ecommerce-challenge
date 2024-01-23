@@ -45,8 +45,8 @@ interface FeaturedProductObject {
 
 const findFeaturedProducts = (productList, productSlugs) => {
   const featuredProducts: FeaturedProductObject[] = [];
-  productSlugs.forEach((productSlug) => {
-    productList.forEach((productObject) => {
+  productSlugs.forEach((productSlug: string) => {
+    productList.forEach((productObject: FeaturedProductObject) => {
       if (productObject.slug === productSlug) {
         featuredProducts.push(productObject);
       }
