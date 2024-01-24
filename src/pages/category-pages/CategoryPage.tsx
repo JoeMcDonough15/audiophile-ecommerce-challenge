@@ -7,31 +7,6 @@ import Footer from "../../components/Footer/Footer";
 import data from "../../data.json";
 import "./category-page.sass";
 
-interface FeaturedProductObject {
-  id: number;
-  slug: string;
-  name: string;
-  abbreviatedName: string;
-  image: { mobile: string; tablet: string; desktop: string };
-  category: string;
-  categoryImage: { mobile: string; tablet: string; desktop: string };
-  isNewProduct: boolean;
-  price: number;
-  description: string;
-  features: string;
-  includes: { quantity: number; item: string }[];
-  gallery: {
-    first: { mobile: string; tablet: string; desktop: string };
-    second: { mobile: string; tablet: string; desktop: string };
-    third: { mobile: string; tablet: string; desktop: string };
-    others: {
-      slug: string;
-      name: string;
-      image: { mobile: string; tablet: string; desktop: string };
-    }[];
-  };
-}
-
 interface ImageData {
   mobileImageSrc: string;
   tabletImageSrc: string;
@@ -46,8 +21,7 @@ interface Props {
 }
 
 const CategoryPage = ({ imageData, categoryName }: Props) => {
-  // const { imageData, categoryName } = props;
-  const featuredProducts = data // const featuredProducts: FeaturedProductObject[] = data.filter is not working
+  const featuredProducts = data
     .filter((product) => {
       return product.category === categoryName;
     })
@@ -88,8 +62,8 @@ const CategoryPage = ({ imageData, categoryName }: Props) => {
         })}
       </section>
       <ProductCategoryMenu />
-      <AboutUs />
-      <Footer />
+      {/* <AboutUs /> */}
+      {/* <Footer /> */}
     </main>
   );
 };

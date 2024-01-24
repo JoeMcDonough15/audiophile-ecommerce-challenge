@@ -75,8 +75,8 @@ const Homepage = () => {
           <HomeFeatureTwo featuredProduct={featuredProductTwo} />
           <HomeFeatureThree featuredProduct={featuredProductThree} />
         </section>
-        <AboutUs />
-        <Footer />
+        {/* <AboutUs /> */}
+        {/* <Footer /> */}
       </main>
     </div>
   );
