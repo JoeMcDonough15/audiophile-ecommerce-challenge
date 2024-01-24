@@ -12,10 +12,21 @@ import ProductXx99MarkTwoHeadphones from "../pages/product-pages/Product-xx99-Ma
 import ProductZx7Speaker from "../pages/product-pages/Product-zx7-Speaker/ProductZx7Speaker";
 import ProductZx9Speaker from "../pages/product-pages/Product-zx9-Speaker/ProductZx9Speaker";
 import PageNotFound from "../pages/PageNotFound";
+import Header from "../components/Header/Header";
+import AboutUs from "../components/AboutUs/AboutUs";
+import Footer from "../components/Footer/Footer";
+import svgDetails from "./svg-details.json";
 
+const [logo, twitter, facebook, instagram, hamburgerMenu, shoppingCart] =
+  svgDetails;
 function App() {
   return (
     <>
+      <Header
+        logo={logo}
+        hamburgerMenu={hamburgerMenu}
+        shoppingCart={shoppingCart}
+      />
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/earphones" component={Earphones} />
@@ -39,6 +50,13 @@ function App() {
         <Route path="/product-yx1-earphones" component={ProductEarphones} />
         <Route component={PageNotFound} />
       </Switch>
+      <AboutUs />
+      <Footer
+        logo={logo}
+        twitter={twitter}
+        facebook={facebook}
+        instagram={instagram}
+      />
     </>
   );
 }

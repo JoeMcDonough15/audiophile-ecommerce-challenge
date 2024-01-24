@@ -36,7 +36,7 @@ const CategoryPage = ({ imageData, categoryName }: Props) => {
     });
   return (
     <main className="category-page">
-      <Header withBanner bannerText={categoryName} />
+      {/* <Header withBanner bannerText={categoryName} /> */}
       <section className="category-features col">
         {featuredProducts.map((product, productIndex) => {
           return (

@@ -2,8 +2,10 @@ import React from "react";
 import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 const LinkAsSvg = (props) => {
-  const { className, svgDetails, internalLink, linkDestination } = props;
+  const { className, svgDetails } = props;
   const {
+    internalLink,
+    linkDestination,
     width,
     height,
     src,

@@ -65,7 +65,7 @@ const [
 const Homepage = () => {
   return (
     <div>
-      <Header withHero featuredProduct={featuredProductHero} />
+      {/* <Header withHero featuredProduct={featuredProductHero} /> */}
       <MobileMenu />
       <Cart />
       <main className="homepage">
