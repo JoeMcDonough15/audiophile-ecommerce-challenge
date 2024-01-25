@@ -1,9 +1,6 @@
 import React from "react";
-import Header from "../../components/Header/Header";
 import FeaturedProduct from "../../components/FeaturedProduct/FeaturedProduct";
 import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCategoryMenu";
-import AboutUs from "../../components/AboutUs/AboutUs";
-import Footer from "../../components/Footer/Footer";
 import data from "../../data.json";
 import "./category-page.sass";
 
@@ -36,7 +33,6 @@ const CategoryPage = ({ imageData, categoryName }: Props) => {
     });
   return (
     <main className="category-page">
-      {/* <Header withBanner bannerText={categoryName} /> */}
       <section className="category-features col">
         {featuredProducts.map((product, productIndex) => {
           return (
@@ -62,8 +58,6 @@ const CategoryPage = ({ imageData, categoryName }: Props) => {
         })}
       </section>
       <ProductCategoryMenu />
-      {/* <AboutUs /> */}
-      {/* <Footer /> */}
     </main>
   );
 };

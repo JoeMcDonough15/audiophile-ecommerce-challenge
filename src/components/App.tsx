@@ -46,8 +46,8 @@ function App() {
         />
         <Route path="/product-zx7-speaker" component={ProductZx7Speaker} />
         <Route path="/product-zx9-speaker" component={ProductZx9Speaker} />
-        <Route path="/checkout" component={Checkout} />
         <Route path="/product-yx1-earphones" component={ProductEarphones} />
+        <Route path="/checkout" component={Checkout} />
         <Route component={PageNotFound} />
       </Switch>
       <AboutUs />
