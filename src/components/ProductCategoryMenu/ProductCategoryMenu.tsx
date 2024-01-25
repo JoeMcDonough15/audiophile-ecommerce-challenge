@@ -1,0 +1,40 @@
+import React from "react";
+import CategorySlab from "../CategorySlab/CategorySlab";
+import "./product-category-menu.sass";
+// import headphonesPreviewImage from "./images/image-category-thumbnail-headphones.png";
+// import speakerPreviewImage from "./images/image-category-thumbnail-speakers.png";
+// import earphonesPreviewImage from "./images/image-category-thumbnail-earphones.png";
+
+const ProductCategoryMenu = () => {
+  return (
+    <nav className={"main-container product-category-menu col"}>
+      <CategorySlab
+        key={1}
+        categoryName="headphones"
+        imageSrc={require("./images/image-category-thumbnail-headphones.png")}
+        thumbnailName="headphones-thumbnail thumbnail-image"
+        buttonDestination="headphones"
+      />
+      <CategorySlab
+        key={2}
+        categoryName="speakers"
+        imageSrc={require("./images/image-category-thumbnail-speakers.png")}
+        thumbnailName="speaker-thumbnail thumbnail-image"
+        buttonDestination="speakers"
+      />
+      <CategorySlab
+        key={3}
+        categoryName="earphones"
+        imageSrc={require("./images/image-category-thumbnail-earphones.png")}
+        thumbnailName="earphones-thumbnail thumbnail-image"
+        buttonDestination="earphones"
+      />
+    </nav>
+  );
+};
+
+export default ProductCategoryMenu;
+
+// importing images creates TS error (2307) "cannot find module" so I looked it up on SO
+// and the recommended way to fix this is to just use require() inside the image
+// src attribute
