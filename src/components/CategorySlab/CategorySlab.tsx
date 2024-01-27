@@ -3,9 +3,19 @@ import Button from "../Button/Button";
 import "./category-slab.sass";
 import svgDetails from "../svg-details.json";
 
-const arrowIconDetails = svgDetails.filter((svgDetailObject) => {
-  return svgDetailObject.slug === "arrow-icon";
-})[0]; // this array will be one item long because only one svgDetailObject will have a slug === 'arrow-icon' --> this is a stupid way of doing this.
+// const arrowIconDetails = svgDetails.filter((svgDetailObject) => {
+//   return svgDetailObject.slug === "arrow-icon";
+// })[0]; // this array will be one item long because only one svgDetailObject will have a slug === 'arrow-icon' --> this is a stupid way of doing this.
+
+const [
+  logo,
+  twitter,
+  facebook,
+  instagram,
+  hamburgerMenu,
+  shoppingCart,
+  arrowIconDetails,
+] = svgDetails;
 
 interface Props {
   key: number; // do we need to annotate this?

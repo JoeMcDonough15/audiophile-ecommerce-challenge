@@ -1,8 +1,28 @@
 import React from "react";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink } from "react-router-dom";
 
-const LinkAsSvg = (props) => {
-  const { className, svgDetails } = props;
+interface SvgDetails {
+  id: number;
+  slug: string;
+  stroke?: string;
+  strokeWidth?: string;
+  internalLink?: boolean;
+  linkDestination?: string;
+  width: string;
+  height: string;
+  src: string;
+  gElement: boolean;
+  fill: string;
+  fillRule: string;
+  d: string;
+}
+
+interface Props {
+  className?: string;
+  svgDetails: SvgDetails;
+}
+
+const LinkAsSvg = ({ className, svgDetails }: Props) => {
   const {
     internalLink,
     linkDestination,

@@ -16,9 +16,9 @@ const Button = (props) => {
     <NavLink className="button-container" to={`/${buttonDestination}`}>
       <button className={className}>
         <span className="button-text">{buttonText}</span>
-        {withArrowIcon ? (
+        {withArrowIcon && (
           <IconAsSvg className="right-arrow" svgDetails={arrowIconDetails} />
-        ) : null}
+        )}
       </button>
     </NavLink>
   ) : isSubmitButton ? (
@@ -31,9 +31,6 @@ const Button = (props) => {
   ) : (
     <button className={className}>
       <span className="button-text">{buttonText}</span>
-      {withArrowIcon ? (
-        <IconAsSvg className="right-arrow" svgDetails={arrowIconDetails} />
-      ) : null}
     </button>
   );
 };

@@ -47,7 +47,7 @@ interface Props {
   featuredProduct: FeaturedProductObject;
   includesProductDescription?: boolean;
   teaserOnly?: boolean;
-  customHeaderText?: boolean;
+  customHeaderText?: string;
   customClasses: CustomClasses;
 }
 

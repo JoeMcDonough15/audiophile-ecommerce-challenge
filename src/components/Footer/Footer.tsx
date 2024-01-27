@@ -8,6 +8,8 @@ import "./footer.sass";
 interface SvgDetails {
   id: number;
   slug: string;
+  stroke?: string;
+  strokeWidth?: string;
   internalLink?: boolean;
   linkDestination?: string;
   width: string;

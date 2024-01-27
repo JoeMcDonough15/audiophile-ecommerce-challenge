@@ -1,10 +1,12 @@
 import React from "react";
-import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink } from "react-router-dom";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
 
 interface SvgDetails {
   id: number;
   slug: string;
+  stroke?: string;
+  strokeWidth?: string;
   internalLink?: boolean;
   linkDestination?: string;
   width: string;
@@ -19,7 +21,7 @@ interface SvgDetails {
 interface Props {
   buttonDestination?: string;
   buttonText: string;
-  withArrowIcon: boolean;
+  withArrowIcon?: boolean;
   arrowIconDetails?: SvgDetails;
   isSubmitButton?: boolean;
   className: string;
@@ -39,9 +41,9 @@ const Button = (props: Props) => {
     <NavLink className="button-container" to={`/${buttonDestination}`}>
       <button className={className}>
         <span className="button-text">{buttonText}</span>
-        {withArrowIcon ? (
+        {withArrowIcon && (
           <IconAsSvg className="right-arrow" svgDetails={arrowIconDetails} />
-        ) : null}
+        )}
       </button>
     </NavLink>
   ) : isSubmitButton ? (
@@ -54,9 +56,6 @@ const Button = (props: Props) => {
   ) : (
     <button className={className}>
       <span className="button-text">{buttonText}</span>
-      {withArrowIcon ? (
-        <IconAsSvg className="right-arrow" svgDetails={arrowIconDetails} />
-      ) : null}
     </button>
   );
 };

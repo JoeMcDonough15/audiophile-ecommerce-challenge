@@ -7,6 +7,8 @@ import NavBar from "../NavBar/NavBar";
 interface SvgDetails {
   id: number;
   slug: string;
+  stroke?: string;
+  strokeWidth?: string;
   internalLink?: boolean;
   linkDestination?: string;
   width: string;
