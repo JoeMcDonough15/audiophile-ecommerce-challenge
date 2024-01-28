@@ -4,7 +4,7 @@ import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCat
 import data from "../../data.json";
 import "./category-page.sass";
 
-interface ImageData {
+interface FeaturedProductImageData {
   mobileImageSrc: string;
   tabletImageSrc: string;
   desktopImageSrc: string;
@@ -13,7 +13,7 @@ interface ImageData {
 }
 
 interface Props {
-  imageData: ImageData[];
+  imageData: FeaturedProductImageData[];
   categoryName: string;
 }
 

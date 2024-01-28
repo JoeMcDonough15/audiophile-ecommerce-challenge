@@ -40,17 +40,17 @@ const HomeFeatureTwo = ({ featuredProduct }: Props) => {
       <CustomImage
         className="home-feature-two-image image-mobile"
         src={require("./images/image-speaker-zx7-mobile.jpg")}
-        alt="home-feature-two-image-mobile"
+        altText="home-feature-two-image-mobile"
       />
       <CustomImage
         className="home-feature-two-image image-tablet"
         src={require("./images/image-speaker-zx7-tablet.jpg")}
-        alt="home-feature-two-image-tablet"
+        altText="home-feature-two-image-tablet"
       />
       <CustomImage
         className="home-feature-two-image image-desktop"
         src={require("./images/image-speaker-zx7-desktop.jpg")}
-        alt="home-feature-two-image-desktop"
+        altText="home-feature-two-image-desktop"
       />
       <FeaturedProductInfo
         featuredProduct={featuredProduct}

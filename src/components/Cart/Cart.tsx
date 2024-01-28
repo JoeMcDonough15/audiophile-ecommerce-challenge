@@ -32,6 +32,18 @@ interface FeaturedProductObject {
   }[];
 }
 
+interface CartImageData {
+  imageSrc: string;
+  imageAltText: string;
+  className?: string;
+}
+
+interface CartItemData {
+  quantity: number;
+  product: FeaturedProductObject;
+  imageData: CartImageData;
+}
+
 // Hard coding it to temporarily grab products from json to match design.  This will all come from state eventually.
 
 const selectedProductSlugs = [
@@ -99,12 +111,6 @@ const allProductImages = {
 
 // Put the products in the cart with a hard-coded quantity property and hard-coded image data
 
-interface ItemInCart {
-  quantity: number;
-  product: FeaturedProductObject;
-  imageData: string;
-}
-
 const itemsInCart = [
   {
     quantity: 1,
@@ -128,8 +134,7 @@ const itemsInCart = [
   },
 ];
 
-// I'll need to make a new interface for items based on itemsInCart
-const calculateSubtotal = (items: ItemInCart[]) => {
+const calculateSubtotal = (items: CartItemData[]) => {
   return items.reduce((total, currentItem) => {
     return (total += currentItem.product.price * currentItem.quantity);
   }, 0);
@@ -154,15 +159,10 @@ const Cart = () => {
               withSpecifyQuantity
               key={itemInCart.product.slug}
               itemData={itemInCart}
-              quantity={itemInCart.quantity}
             />
           );
         })}
-        <FeeInformation
-          key={1}
-          feeName="Total"
-          amountAsString={fixPrice(subtotal)}
-        />
+        <FeeInformation feeName="Total" amountAsString={fixPrice(subtotal)} />
         <Button
           className="button-checkout button-dark-orange"
           buttonText="checkout"
