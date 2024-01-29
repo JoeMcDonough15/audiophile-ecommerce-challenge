@@ -48,7 +48,7 @@ interface Props {
   includesProductDescription?: boolean;
   teaserOnly?: boolean;
   customHeaderText?: string;
-  customClasses: CustomClasses;
+  customClasses?: CustomClasses;
 }
 
 const FeaturedProductInfo = (props: Props) => {
@@ -72,6 +72,13 @@ const FeaturedProductInfo = (props: Props) => {
     productDescriptionClasses,
     buttonData,
   } = customClasses;
+
+  // put each class directly on the html rendered inside this component
+  //  based on where this component is being called.  Add isHeroSection and
+  // isHomeFeatureOne, Two, or Three (possibly?).
+  // Get rid of customClasses prop.  Take in buttonData
+  // and make it a required prop.  Make buttonDestination optional but buttonColor
+  // required.
 
   const { buttonColor, buttonDestination } = buttonData;
   return (
