@@ -36,16 +36,7 @@ const ProductPage = (props) => {
         featuredProduct={pageProduct}
         isProductPage
         imageData={featuredProductImageData}
-        customClasses={{
-          containerClass: "product-page-info",
-          newProductIntroClasses: "dark-orange-text product-page-intro",
-          headerClasses:
-            "small-featured-product-header black-text product-page-header",
-          productDescriptionClasses: "product-page-description",
-          buttonData: {
-            buttonColor: "dark-orange",
-          },
-        }}
+        buttonData={{ buttonColor: "dark-orange" }}
       />
       <section className="product-details-and-accessories main-container">
         <ProductDetails detailsText={features} />

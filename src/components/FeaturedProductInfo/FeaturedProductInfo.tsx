@@ -5,89 +5,84 @@ import "./featured-product-info.sass";
 import fixPrice from "../../fixPrice";
 
 interface FeaturedProductObject {
-  id: number;
+  id?: number;
   slug: string;
   name: string;
-  abbreviatedName: string;
+  abbreviatedName?: string;
   image: { mobile: string; tablet: string; desktop: string };
-  category: string;
-  categoryImage: { mobile: string; tablet: string; desktop: string };
-  isNewProduct: boolean;
-  price: number;
-  description: string;
+  category?: string;
+  categoryImage?: { mobile: string; tablet: string; desktop: string };
+  isNewProduct?: boolean;
+  price?: number;
+  description?: string;
   teaserDescription?: string;
-  features: string;
-  includes: { quantity: number; item: string }[];
-  gallery: {
+  features?: string;
+  includes?: { quantity: number; item: string }[];
+  gallery?: {
     first: { mobile: string; tablet: string; desktop: string };
     second: { mobile: string; tablet: string; desktop: string };
     third: { mobile: string; tablet: string; desktop: string };
   };
-  others: {
+  others?: {
     slug: string;
     name: string;
     image: { mobile: string; tablet: string; desktop: string };
   }[];
 }
 
-interface CustomClasses {
-  containerClass?: string;
-  newProductIntroClasses?: string;
-  headerClasses: string;
-  productDescriptionClasses?: string;
-  buttonData: {
-    buttonColor: string;
-    buttonDestination?: string;
-  };
+interface ButtonData {
+  buttonColor: string;
+  buttonDestination?: string;
 }
 
 interface Props {
   isProductPage?: boolean;
   isCategoryPage?: boolean;
+  isHeroSection?: boolean;
+  isHomeFeatureOne?: boolean;
+  isHomeFeatureTwo?: boolean;
+  isHomeFeatureThree?: boolean;
+  isRelatedProduct?: boolean;
   featuredProduct: FeaturedProductObject;
   includesProductDescription?: boolean;
   teaserOnly?: boolean;
   customHeaderText?: string;
-  customClasses?: CustomClasses;
+  buttonData: ButtonData;
 }
 
 const FeaturedProductInfo = (props: Props) => {
   const {
     isProductPage,
     isCategoryPage,
+    isHeroSection,
+    isHomeFeatureOne,
+    isHomeFeatureTwo,
+    isHomeFeatureThree,
+    isRelatedProduct,
     featuredProduct,
     includesProductDescription,
     teaserOnly,
     customHeaderText,
-    customClasses,
+    buttonData,
   } = props;
 
   const { name, teaserDescription, description, price, isNewProduct } =
     featuredProduct;
 
-  const {
-    containerClass,
-    newProductIntroClasses,
-    headerClasses,
-    productDescriptionClasses,
-    buttonData,
-  } = customClasses;
-
-  // put each class directly on the html rendered inside this component
-  //  based on where this component is being called.  Add isHeroSection and
-  // isHomeFeatureOne, Two, or Three (possibly?).
-  // Get rid of customClasses prop.  Take in buttonData
-  // and make it a required prop.  Make buttonDestination optional but buttonColor
-  // required.
-
   const { buttonColor, buttonDestination } = buttonData;
   return (
-    <>
+    <div>
       {isProductPage && isNewProduct ? (
-        <div className={`featured-product-info col ${containerClass}`}>
-          <p className={`overline ${newProductIntroClasses}`}>New Product</p>
-          <h1 className={headerClasses}>{name}</h1>
-          <p className={productDescriptionClasses}>{description}</p>
+        <div className={"featured-product-info col product-page-info"}>
+          <p className={"overline dark-orange-text"}>New Product</p>
+          <h1
+            className={
+              "small-featured-product-header black-text product-page-header"
+            }
+          >
+            {name}
+          </h1>
+          <p className={"product-page-description"}>{description}</p>
           <p className="product-price black-text">{`${fixPrice(price)}`}</p>
           <div className="purchase-buttons row">
             {" "}
@@ -99,9 +94,15 @@ const FeaturedProductInfo = (props: Props) => {
           </div>
         </div>
       ) : isProductPage ? (
-        <div className={`featured-product-info col ${containerClass}`}>
-          <h1 className={headerClasses}>{name}</h1>
-          <p className={productDescriptionClasses}>{description}</p>
+        <div className={"featured-product-info col product-page-info"}>
+          <h1
+            className={
+              "small-featured-product-header black-text product-page-header"
+            }
+          >
+            {name}
+          </h1>
+          <p className={"product-page-description"}>{description}</p>
           <p className="product-price black-text">{`${fixPrice(price)}`}</p>
           <div className="purchase-buttons row">
             {" "}
@@ -115,14 +116,46 @@ const FeaturedProductInfo = (props: Props) => {
       ) : includesProductDescription && isNewProduct ? (
         <div
           className={
-            isCategoryPage
-              ? "featured-product-info col"
-              : `featured-product-info col ${containerClass}`
+            isHeroSection
+              ? "featured-product-info col featured-product-hero-info"
+              : isHomeFeatureOne
+              ? "featured-product-info col home-feature-one-info"
+              : "featured-product-info col"
           }
         >
-          <p className={`overline ${newProductIntroClasses}`}>New Product</p>
-          <h1 className={`${headerClasses}`}>{name}</h1>
-          <p className={productDescriptionClasses}>
+          <p
+            className={
+              isHeroSection
+                ? "overline new-product-grey-text"
+                : isHomeFeatureOne
+                ? "hide overline"
+                : isCategoryPage
+                ? "dark-orange-text overline"
+                : "overline"
+            }
+          >
+            New Product
+          </p>
+          <h1
+            className={
+              isHeroSection
+                ? "white-text featured-product-hero-header"
+                : isHomeFeatureOne
+                ? "home-feature-one-header white-text"
+                : "small-featured-product-header black-text category-page-featured-product-header"
+            }
+          >
+            {name}
+          </h1>
+          <p
+            className={
+              isHeroSection
+                ? "featured-product-description-hero"
+                : isHomeFeatureOne
+                ? "home-feature-one-description light-grey-text"
+                : "category-page-featured-product-description"
+            }
+          >
             {teaserOnly ? teaserDescription : description}
           </p>
           <Button
@@ -134,13 +167,35 @@ const FeaturedProductInfo = (props: Props) => {
       ) : includesProductDescription ? (
         <div
           className={
-            isCategoryPage
-              ? "featured-product-info col"
-              : `featured-product-info col ${containerClass}`
+            isHeroSection
+              ? "featured-product-info col featured-product-hero-info"
+              : isHomeFeatureOne
+              ? "featured-product-info col home-feature-one-info"
+              : "featured-product-info col"
           }
         >
-          <h1 className={`${headerClasses}`}>{name}</h1>
-          <p className={productDescriptionClasses}>{description}</p>
+          <h1
+            className={
+              isHeroSection
+                ? "white-text featured-product-hero-header"
+                : isHomeFeatureOne
+                ? "home-feature-one-header white-text"
+                : "small-featured-product-header black-text category-page-featured-product-header"
+            }
+          >
+            {name}
+          </h1>
+          <p
+            className={
+              isHeroSection
+                ? "featured-product-description-hero"
+                : isHomeFeatureOne
+                ? "home-feature-one-description light-grey-text"
+                : "category-page-featured-product-description"
+            }
+          >
+            {teaserOnly ? teaserDescription : description}
+          </p>
           <Button
             buttonText="see product"
             className={`button-${buttonColor}`}
@@ -148,8 +203,22 @@ const FeaturedProductInfo = (props: Props) => {
           />
         </div>
       ) : (
-        <div className={`featured-product-info col ${containerClass}`}>
-          <h4 className={`${headerClasses}`}>
+        <div
+          className={
+            isHomeFeatureTwo
+              ? "featured-product-info col home-feature-two-info"
+              : isHomeFeatureThree
+              ? "featured-product-info col home-feature-three-info"
+              : "featured-product-info col related-product-info"
+          }
+        >
+          <h4
+            className={
+              isRelatedProduct
+                ? "related-product-info-header black-text"
+                : "black-text"
+            }
+          >
             {customHeaderText ? customHeaderText : name}
           </h4>
           <Button
@@ -159,7 +228,7 @@ const FeaturedProductInfo = (props: Props) => {
           />
         </div>
       )}
-    </>
+    </div>
   );
 };
 export default FeaturedProductInfo;

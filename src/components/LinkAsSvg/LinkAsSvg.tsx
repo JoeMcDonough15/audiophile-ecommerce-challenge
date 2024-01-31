@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-interface SvgDetails {
+interface SvgLinkDetails {
   id: number;
   slug: string;
   stroke?: string;
   strokeWidth?: string;
   internalLink?: boolean;
-  linkDestination?: string;
+  linkDestination: string;
   width: string;
   height: string;
   src: string;
@@ -19,7 +19,7 @@ interface SvgDetails {
 
 interface Props {
   className?: string;
-  svgDetails: SvgDetails;
+  svgDetails: SvgLinkDetails;
 }
 
 const LinkAsSvg = ({ className, svgDetails }: Props) => {
@@ -43,7 +43,7 @@ const LinkAsSvg = ({ className, svgDetails }: Props) => {
         <NavLink to={linkDestination} exact={linkDestination === "/"}>
           <svg width={width} height={height} xmlns={src}>
             {gElement ? (
-              <g fill={fill} fillRule={fillRule}>
+              <g fill={fill}>
                 <path d={d} stroke={stroke} strokeWidth={strokeWidth}></path>
               </g>
             ) : (
@@ -52,7 +52,6 @@ const LinkAsSvg = ({ className, svgDetails }: Props) => {
                 stroke={stroke}
                 strokeWidth={strokeWidth}
                 fill={fill}
-                fillRule={fillRule}
               />
             )}
           </svg>
@@ -62,7 +61,7 @@ const LinkAsSvg = ({ className, svgDetails }: Props) => {
           {" "}
           <svg className={className} width={width} height={height} xmlns={src}>
             {gElement ? (
-              <g fill={fill} fillRule={fillRule}>
+              <g fill={fill}>
                 <path d={d} stroke={stroke} strokeWidth={strokeWidth}></path>
               </g>
             ) : (
@@ -71,7 +70,6 @@ const LinkAsSvg = ({ className, svgDetails }: Props) => {
                 stroke={stroke}
                 strokeWidth={strokeWidth}
                 fill={fill}
-                fillRule={fillRule}
               />
             )}
           </svg>

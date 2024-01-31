@@ -40,18 +40,10 @@ const CategoryPage = ({ imageData, categoryName }: Props) => {
               key={productIndex}
               imageData={imageData[productIndex]}
               featuredProduct={product}
-              isCategoryPage
               includesProductDescription
-              customClasses={{
-                newProductIntroClasses: "dark-orange-text",
-                headerClasses:
-                  "small-featured-product-header black-text category-page-featured-product-header",
-                productDescriptionClasses:
-                  "category-page-featured-product-description",
-                buttonData: {
-                  buttonColor: "dark-orange",
-                  buttonDestination: `product-${product.slug}`,
-                },
+              buttonData={{
+                buttonColor: "dark-orange",
+                buttonDestination: `product-${product.slug}`,
               }}
             />
           );

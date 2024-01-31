@@ -1,12 +1,10 @@
 import React from "react";
 
-interface SvgDetails {
+interface SvgIconDetails {
   id: number;
   slug: string;
   stroke?: string;
   strokeWidth?: string;
-  internalLink?: boolean;
-  linkDestination?: string;
   width: string;
   height: string;
   src: string;
@@ -18,7 +16,7 @@ interface SvgDetails {
 
 interface Props {
   className?: string;
-  svgDetails: SvgDetails;
+  svgDetails: SvgIconDetails;
 }
 
 const IconAsSvg = ({ className, svgDetails }: Props) => {
@@ -38,17 +36,11 @@ const IconAsSvg = ({ className, svgDetails }: Props) => {
     <div className={className}>
       <svg width={width} height={height} xmlns={src}>
         {gElement ? (
-          <g fill={fill} fillRule={fillRule}>
+          <g fill={fill}>
             <path d={d} stroke={stroke} strokeWidth={strokeWidth}></path>
           </g>
         ) : (
-          <path
-            d={d}
-            stroke={stroke}
-            strokeWidth={strokeWidth}
-            fill={fill}
-            fillRule={fillRule}
-          />
+          <path d={d} stroke={stroke} strokeWidth={strokeWidth} fill={fill} />
         )}
       </svg>
     </div>

@@ -37,26 +37,25 @@ interface FeaturedProductImageData {
   customImageStyles: string;
 }
 
-interface CustomClasses {
-  containerClass?: string;
-  newProductIntroClasses?: string;
-  headerClasses: string;
-  productDescriptionClasses?: string;
-  buttonData: {
-    buttonColor: string;
-    buttonDestination?: string;
-  };
+interface ButtonData {
+  buttonColor: string;
+  buttonDestination?: string;
 }
 
 interface Props {
   imageData: FeaturedProductImageData;
   featuredProduct: FeaturedProductObject;
-  isCategoryPage?: boolean;
+  isProductPage?: boolean;
   includesProductDescription?: boolean;
-  customClasses?: CustomClasses;
+  buttonData: ButtonData;
 }
 
-const FeaturedProduct = ({ imageData, featuredProduct }: Props) => {
+const FeaturedProduct = ({
+  imageData,
+  buttonData,
+  isProductPage,
+  featuredProduct,
+}: Props) => {
   const { mobileImageSrc, tabletImageSrc, desktopImageSrc, imageAltText } =
     imageData;
   return (
@@ -80,7 +79,19 @@ const FeaturedProduct = ({ imageData, featuredProduct }: Props) => {
         />
       </div>
       <div className="featured-product-text-container col">
-        <FeaturedProductInfo featuredProduct={featuredProduct} />
+        {isProductPage ? (
+          <FeaturedProductInfo
+            featuredProduct={featuredProduct}
+            isProductPage
+            buttonData={buttonData}
+          />
+        ) : (
+          <FeaturedProductInfo
+            featuredProduct={featuredProduct}
+            isCategoryPage
+            buttonData={buttonData}
+          />
+        )}
       </div>
     </section>
   );

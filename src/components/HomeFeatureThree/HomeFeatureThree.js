@@ -11,14 +11,11 @@ const HomeFeatureThree = (props) => {
       <div className="home-feature-three-text-container content-slab">
         <FeaturedProductInfo
           featuredProduct={featuredProduct}
+          isHomeFeatureThree
           customHeaderText="YX1 earphones"
-          customClasses={{
-            containerClass: "home-feature-three-info",
-            headerClasses: "black-text",
-            buttonData: {
-              buttonColor: "transparent",
-              buttonDestination: `product-${slug}`,
-            },
+          buttonData={{
+            buttonColor: "transparent",
+            buttonDestination: `product-${slug}`,
           }}
         />
       </div>

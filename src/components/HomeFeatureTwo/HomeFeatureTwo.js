@@ -28,13 +28,10 @@ const HomeFeatureTwo = (props) => {
       />
       <FeaturedProductInfo
         featuredProduct={featuredProduct}
-        customClasses={{
-          containerClass: "home-feature-two-info",
-          headerClasses: "black-text",
-          buttonData: {
-            buttonColor: "transparent",
-            buttonDestination: `product-${slug}`,
-          },
+        isHomeFeatureTwo
+        buttonData={{
+          buttonColor: "transparent",
+          buttonDestination: `product-${slug}`,
         }}
       />
     </section>
