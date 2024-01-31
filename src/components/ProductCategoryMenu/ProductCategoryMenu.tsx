@@ -31,7 +31,3 @@ const ProductCategoryMenu = () => {
 };
 
 export default ProductCategoryMenu;
-
-// importing images creates TS error (2307) "cannot find module" so I looked it up on SO
-// and the recommended way to fix this is to just use require() inside the image
-// src attribute

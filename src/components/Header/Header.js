@@ -52,7 +52,7 @@ const Header = (props) => {
               svgDetails={logoProps}
             />
             <IconAsSvg
-              className="shopping-cart-icon"
+              className="shopping-cart-icon "
               svgDetails={shoppingCartProps}
             />
           </section>

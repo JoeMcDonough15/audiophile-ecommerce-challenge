@@ -25,23 +25,21 @@ header .header-black-background
     justify-content: space-between
     padding: 32.5px 0
      
-.shopping-cart-icon, logo-icon, .hamburger-menu-icon
+.shopping-cart-icon, .logo-icon, .hamburger-menu-icon
     align-items: center
     display: flex
+
+.logo-icon
+    a 
+        display: flex
 
 .shopping-cart-icon
     justify-content: flex-end
 
-.logo-icon
-    height: 25px
-        
-
 .mobile-header.row.main-container
-    & .logo-icon
-        height: 25px
-    
+
     +all-screen-bigger-than-mobile
-        display:  none
+        display: none
 
 
 .tablet-header.row.main-container

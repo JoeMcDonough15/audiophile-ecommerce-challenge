@@ -118,3 +118,29 @@ input
 .input-hidden
     position: absolute
     visibility: hidden
+
+
+////////// SVGs ///////////
+
+
+.logo-icon, .shopping-cart-icon, .hamburger-menu-icon, .social-icon
+    & path
+        fill: #fff
+        fill-rule: nonzero
+    &:hover
+        cursor: pointer
+        & path
+            fill: $dark-orange
+
+
+.hamburger-menu-icon
+    & path
+        fill-rule: evenodd
+
+
+.right-arrow
+    & path
+        fill: none
+        fill-rule: evenodd
+
+

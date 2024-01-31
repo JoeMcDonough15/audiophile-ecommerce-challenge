@@ -49,7 +49,7 @@ const Footer = () => {
         <div className="footer-section-one col">
           <ThinRule customStyle="thin-rule-footer" />
           <LinkAsSvg
-            className="logo-icon"
+            className="logo-icon fill-white fill-rule-non-zero"
             internalLink
             linkDestination="/"
             svgDetails={logoProps}
@@ -68,14 +68,17 @@ const Footer = () => {
           </p>
           <div className="social-row">
             <LinkAsSvg
+              className="social-icon"
               linkDestination="https://www.facebook.com"
               svgDetails={facebookProps}
             />
             <LinkAsSvg
+              className="social-icon"
               linkDestination="https://www.twitter.com"
               svgDetails={twitterProps}
             />
             <LinkAsSvg
+              className="social-icon"
               linkDestination="https://www.instagram.com"
               svgDetails={instagramProps}
             />
@@ -105,14 +108,17 @@ const Footer = () => {
           <NavBar className="footer-navigation" />
           <div className="social-row">
             <LinkAsSvg
+              className="social-icon"
               linkDestination="https://www.facebook.com"
               svgDetails={facebookProps}
             />
             <LinkAsSvg
+              className="social-icon"
               linkDestination="https://www.twitter.com"
               svgDetails={twitterProps}
             />
             <LinkAsSvg
+              className="social-icon"
               linkDestination="https://www.instagram.com"
               svgDetails={instagramProps}
             />

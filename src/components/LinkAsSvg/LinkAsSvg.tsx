@@ -12,8 +12,6 @@ interface SvgLinkDetails {
   height: string;
   src: string;
   gElement: boolean;
-  fill: string;
-  fillRule: string;
   d: string;
 }
 
@@ -30,8 +28,6 @@ const LinkAsSvg = ({ className, svgDetails }: Props) => {
     height,
     src,
     stroke,
-    fill,
-    fillRule,
     gElement,
     strokeWidth,
     d,
@@ -43,16 +39,11 @@ const LinkAsSvg = ({ className, svgDetails }: Props) => {
         <NavLink to={linkDestination} exact={linkDestination === "/"}>
           <svg width={width} height={height} xmlns={src}>
             {gElement ? (
-              <g fill={fill}>
+              <g>
                 <path d={d} stroke={stroke} strokeWidth={strokeWidth}></path>
               </g>
             ) : (
-              <path
-                d={d}
-                stroke={stroke}
-                strokeWidth={strokeWidth}
-                fill={fill}
-              />
+              <path d={d} stroke={stroke} strokeWidth={strokeWidth} />
             )}
           </svg>
         </NavLink>
@@ -61,16 +52,11 @@ const LinkAsSvg = ({ className, svgDetails }: Props) => {
           {" "}
           <svg className={className} width={width} height={height} xmlns={src}>
             {gElement ? (
-              <g fill={fill}>
+              <g>
                 <path d={d} stroke={stroke} strokeWidth={strokeWidth}></path>
               </g>
             ) : (
-              <path
-                d={d}
-                stroke={stroke}
-                strokeWidth={strokeWidth}
-                fill={fill}
-              />
+              <path d={d} stroke={stroke} strokeWidth={strokeWidth} />
             )}
           </svg>
         </a>

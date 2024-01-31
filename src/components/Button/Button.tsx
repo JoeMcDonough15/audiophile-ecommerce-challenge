@@ -11,8 +11,6 @@ interface SvgIconDetails {
   height: string;
   src: string;
   gElement: boolean;
-  fill: string;
-  fillRule: string;
   d: string;
 }
 
@@ -39,7 +37,7 @@ const Button = (props: Props) => {
     <NavLink className="button-container" to={`/${buttonDestination}`}>
       <button className={className}>
         <span className="button-text">{buttonText}</span>
-        {withArrowIcon && (
+        {withArrowIcon && arrowIconDetails && (
           <IconAsSvg className="right-arrow" svgDetails={arrowIconDetails} />
         )}
       </button>

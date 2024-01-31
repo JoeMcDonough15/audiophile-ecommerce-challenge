@@ -61,7 +61,11 @@
 
 
 .mobile-and-tablet-footer .footer-section-one .logo-icon
+    justify-content: center
     margin: 48px 0
+
+    +all-tablets
+        justify-content: flex-start
 
 .footer-text
     color: $footer-text-grey
@@ -98,10 +102,6 @@
 
     +all-screen-bigger-than-mobile
         margin-top: 0
-    
-    & svg.social-icon:hover
-        cursor: pointer
-        fill: $dark-orange
 
 
 .desktop-footer.row .footer-section-one.col

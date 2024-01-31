@@ -5,26 +5,24 @@ import NavBar from "../NavBar/NavBar";
 import CurrentYear from "../CurrentYear/CurrentYear";
 import "./footer.sass";
 
-interface SvgDetails {
+interface SvgLinkDetails {
   id: number;
   slug: string;
   stroke?: string;
   strokeWidth?: string;
   internalLink?: boolean;
-  linkDestination?: string;
+  linkDestination: string;
   width: string;
   height: string;
   src: string;
   gElement: boolean;
-  fill: string;
-  fillRule: string;
   d: string;
 }
 interface Props {
-  logo: SvgDetails;
-  twitter: SvgDetails;
-  instagram: SvgDetails;
-  facebook: SvgDetails;
+  logo: SvgLinkDetails;
+  twitter: SvgLinkDetails;
+  instagram: SvgLinkDetails;
+  facebook: SvgLinkDetails;
 }
 
 const Footer = ({ logo, twitter, facebook, instagram }: Props) => {
@@ -47,9 +45,9 @@ const Footer = ({ logo, twitter, facebook, instagram }: Props) => {
             Copyright <CurrentYear />. All Rights Reserved
           </p>
           <div className="social-row">
-            <LinkAsSvg svgDetails={facebook} />
-            <LinkAsSvg svgDetails={twitter} />
-            <LinkAsSvg svgDetails={instagram} />
+            <LinkAsSvg className="social-icon" svgDetails={facebook} />
+            <LinkAsSvg className="social-icon" svgDetails={twitter} />
+            <LinkAsSvg className="social-icon" svgDetails={instagram} />
           </div>
         </div>
       </div>
@@ -70,9 +68,9 @@ const Footer = ({ logo, twitter, facebook, instagram }: Props) => {
         <div className="footer-section-two col">
           <NavBar className="footer-navigation" />
           <div className="social-row">
-            <LinkAsSvg svgDetails={facebook} />
-            <LinkAsSvg svgDetails={twitter} />
-            <LinkAsSvg svgDetails={instagram} />
+            <LinkAsSvg className="social-icon" svgDetails={facebook} />
+            <LinkAsSvg className="social-icon" svgDetails={twitter} />
+            <LinkAsSvg className="social-icon" svgDetails={instagram} />
           </div>
         </div>
       </div>

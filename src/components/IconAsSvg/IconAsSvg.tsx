@@ -9,8 +9,6 @@ interface SvgIconDetails {
   height: string;
   src: string;
   gElement: boolean;
-  fill: string;
-  fillRule: string;
   d: string;
 }
 
@@ -20,27 +18,17 @@ interface Props {
 }
 
 const IconAsSvg = ({ className, svgDetails }: Props) => {
-  const {
-    width,
-    height,
-    src,
-    stroke,
-    fill,
-    fillRule,
-    gElement,
-    strokeWidth,
-    d,
-  } = svgDetails;
+  const { width, height, src, stroke, gElement, strokeWidth, d } = svgDetails;
 
   return (
     <div className={className}>
       <svg width={width} height={height} xmlns={src}>
         {gElement ? (
-          <g fill={fill}>
+          <g>
             <path d={d} stroke={stroke} strokeWidth={strokeWidth}></path>
           </g>
         ) : (
-          <path d={d} stroke={stroke} strokeWidth={strokeWidth} fill={fill} />
+          <path d={d} stroke={stroke} strokeWidth={strokeWidth} />
         )}
       </svg>
     </div>
