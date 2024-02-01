@@ -4,8 +4,6 @@ import "./category-slab.sass";
 import svgDetails from "../svg-details.json";
 
 interface SvgIconDetails {
-  id: number;
-  slug: string;
   stroke?: string;
   strokeWidth?: string;
   width: string;
@@ -15,11 +13,7 @@ interface SvgIconDetails {
   d: string;
 }
 
-const arrowIconDetails: SvgIconDetails = svgDetails.filter(
-  (svgDetailObject) => {
-    return svgDetailObject.slug === "arrow-icon";
-  }
-)[0]; // this array will be one item long because only one svgDetailObject will have a slug === 'arrow-icon' --> this is a stupid way of doing this.
+const arrowIconDetails: SvgIconDetails = svgDetails.arrowIcon;
 
 interface Props {
   key: number; // do we need to annotate this?

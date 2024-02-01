@@ -1,8 +1,6 @@
 import React from "react";
 
 interface SvgIconDetails {
-  id: number;
-  slug: string;
   stroke?: string;
   strokeWidth?: string;
   width: string;

@@ -6,8 +6,6 @@ import CurrentYear from "../CurrentYear/CurrentYear";
 import "./footer.sass";
 
 interface SvgLinkDetails {
-  id: number;
-  slug: string;
   stroke?: string;
   strokeWidth?: string;
   internalLink?: boolean;

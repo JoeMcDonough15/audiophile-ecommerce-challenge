@@ -5,8 +5,6 @@ import IconAsSvg from "../IconAsSvg/IconAsSvg";
 import NavBar from "../NavBar/NavBar";
 
 interface SvgLinkDetails {
-  id: number;
-  slug: string;
   stroke?: string;
   strokeWidth?: string;
   internalLink?: boolean;
@@ -19,8 +17,6 @@ interface SvgLinkDetails {
 }
 
 interface SvgIconDetails {
-  id: number;
-  slug: string;
   stroke?: string;
   strokeWidth?: string;
   width: string;

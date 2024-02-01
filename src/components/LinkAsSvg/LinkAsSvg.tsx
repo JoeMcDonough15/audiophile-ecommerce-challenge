@@ -2,8 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 interface SvgLinkDetails {
-  id: number;
-  slug: string;
   stroke?: string;
   strokeWidth?: string;
   internalLink?: boolean;

@@ -3,8 +3,6 @@ import { NavLink } from "react-router-dom";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
 
 interface SvgIconDetails {
-  id: number;
-  slug: string;
   stroke?: string;
   strokeWidth?: string;
   width: string;
