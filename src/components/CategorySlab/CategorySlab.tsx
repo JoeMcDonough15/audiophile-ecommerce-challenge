@@ -3,19 +3,23 @@ import Button from "../Button/Button";
 import "./category-slab.sass";
 import svgDetails from "../svg-details.json";
 
-// const arrowIconDetails = svgDetails.filter((svgDetailObject) => {
-//   return svgDetailObject.slug === "arrow-icon";
-// })[0]; // this array will be one item long because only one svgDetailObject will have a slug === 'arrow-icon' --> this is a stupid way of doing this.
+interface SvgIconDetails {
+  id: number;
+  slug: string;
+  stroke?: string;
+  strokeWidth?: string;
+  width: string;
+  height: string;
+  src: string;
+  gElement: boolean;
+  d: string;
+}
 
-const [
-  logo,
-  twitter,
-  facebook,
-  instagram,
-  hamburgerMenu,
-  shoppingCart,
-  arrowIconDetails,
-] = svgDetails;
+const arrowIconDetails: SvgIconDetails = svgDetails.filter(
+  (svgDetailObject) => {
+    return svgDetailObject.slug === "arrow-icon";
+  }
+)[0]; // this array will be one item long because only one svgDetailObject will have a slug === 'arrow-icon' --> this is a stupid way of doing this.
 
 interface Props {
   key: number; // do we need to annotate this?
@@ -25,7 +29,7 @@ interface Props {
   buttonDestination: string;
 }
 
-const CategorySlab = (props: Props) => {
+const CategorySlab = (props: Props): JSX.Element => {
   const { imageSrc, categoryName, thumbnailName, buttonDestination } = props;
   return (
     <div className="category-slab content-slab col">

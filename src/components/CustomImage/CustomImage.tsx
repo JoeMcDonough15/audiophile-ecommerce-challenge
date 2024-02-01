@@ -6,7 +6,7 @@ interface Props {
   altText: string;
 }
 
-const CustomImage = ({ className, src, altText }: Props) => {
+const CustomImage = ({ className, src, altText }: Props): JSX.Element => {
   return <img className={className && className} src={src} alt={altText}></img>;
 };
 

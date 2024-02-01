@@ -49,7 +49,7 @@ const Footer = () => {
         <div className="footer-section-one col">
           <ThinRule customStyle="thin-rule-footer" />
           <LinkAsSvg
-            className="logo-icon fill-white fill-rule-non-zero"
+            className="logo-icon"
             internalLink
             linkDestination="/"
             svgDetails={logoProps}

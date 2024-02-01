@@ -21,7 +21,10 @@ interface Props {
   relatedProductsImages: RelatedProductsImageData[][];
 }
 
-const YouMayAlsoLike = ({ relatedProducts, relatedProductsImages }: Props) => {
+const YouMayAlsoLike = ({
+  relatedProducts,
+  relatedProductsImages,
+}: Props): JSX.Element => {
   let index = -1;
   return (
     <section className="related-products-section main-container col">

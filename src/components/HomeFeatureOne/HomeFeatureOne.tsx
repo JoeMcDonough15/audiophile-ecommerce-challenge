@@ -34,7 +34,7 @@ interface Props {
   featuredProduct: FeaturedProductObject;
 }
 
-const HomeFeatureOne = ({ featuredProduct }: Props) => {
+const HomeFeatureOne = ({ featuredProduct }: Props): JSX.Element => {
   const { slug } = featuredProduct;
   return (
     <section className="home-feature-one">

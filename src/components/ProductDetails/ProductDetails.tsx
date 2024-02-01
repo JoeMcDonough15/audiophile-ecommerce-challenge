@@ -5,7 +5,7 @@ interface Props {
   detailsText: string;
 }
 
-const ProductDetails = ({ detailsText }: Props) => {
+const ProductDetails = ({ detailsText }: Props): JSX.Element => {
   return (
     <div className="product-details col">
       <h5 className="black-text">Features</h5>

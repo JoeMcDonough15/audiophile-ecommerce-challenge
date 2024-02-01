@@ -7,7 +7,7 @@ interface Props {
   withTimes?: boolean;
 }
 
-const Quantity = ({ customClass, quantity, withTimes }: Props) => {
+const Quantity = ({ customClass, quantity, withTimes }: Props): JSX.Element => {
   return withTimes ? (
     <p
       className={

@@ -8,7 +8,7 @@ interface Props {
   quantityAsProp?: number;
 }
 
-const SpecifyQuantity = (props: Props) => {
+const SpecifyQuantity = (props: Props): JSX.Element => {
   let openingState: number;
   if (props.quantityAsProp) {
     openingState = props.quantityAsProp;

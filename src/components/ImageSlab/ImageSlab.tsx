@@ -12,7 +12,7 @@ interface Props {
   slabSize: string;
 }
 
-const ImageSlab = ({ imageData, slabSize }: Props) => {
+const ImageSlab = ({ imageData, slabSize }: Props): JSX.Element => {
   const { className, imageSrc, imageAltText } = imageData;
   return (
     <div className={`content-slab image-${slabSize}`}>

@@ -50,7 +50,7 @@ interface Props {
   buttonData: ButtonData;
 }
 
-const FeaturedProductInfo = (props: Props) => {
+const FeaturedProductInfo = (props: Props): JSX.Element => {
   const {
     isProductPage,
     isCategoryPage,

@@ -2,7 +2,7 @@ import React from "react";
 import CategorySlab from "../CategorySlab/CategorySlab";
 import "./product-category-menu.sass";
 
-const ProductCategoryMenu = () => {
+const ProductCategoryMenu = (): JSX.Element => {
   return (
     <nav className={"main-container product-category-menu col"}>
       <CategorySlab

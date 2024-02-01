@@ -27,7 +27,7 @@ interface Props {
   imageData: GalleryImageData;
 }
 
-const Gallery = ({ imageData }: Props) => {
+const Gallery = ({ imageData }: Props): JSX.Element => {
   const { galleryImageOneData, galleryImageTwoData, galleryImageThreeData } =
     imageData;
   return (

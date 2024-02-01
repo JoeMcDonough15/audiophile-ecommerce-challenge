@@ -47,7 +47,7 @@ interface Props {
   itemData: CartItemData;
   withSpecifyQuantity?: boolean;
 }
-const ItemInCart = ({ itemData, withSpecifyQuantity }: Props) => {
+const ItemInCart = ({ itemData, withSpecifyQuantity }: Props): JSX.Element => {
   const { quantity, product, imageData } = itemData;
   const { imageSrc, imageAltText } = imageData;
   return withSpecifyQuantity ? (

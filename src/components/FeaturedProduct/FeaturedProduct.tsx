@@ -55,7 +55,7 @@ const FeaturedProduct = ({
   buttonData,
   isProductPage,
   featuredProduct,
-}: Props) => {
+}: Props): JSX.Element => {
   const { mobileImageSrc, tabletImageSrc, desktopImageSrc, imageAltText } =
     imageData;
   return (

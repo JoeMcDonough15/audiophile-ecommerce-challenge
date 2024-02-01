@@ -32,7 +32,7 @@ interface Props {
   product: FeaturedProductObject;
 }
 
-const ItemNameAndPrice = ({ product }: Props) => {
+const ItemNameAndPrice = ({ product }: Props): JSX.Element => {
   const { abbreviatedName, price } = product;
   return (
     <div className="col item-name-and-price">

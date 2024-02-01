@@ -32,7 +32,7 @@ interface Props {
   featuredProduct: FeaturedProductObject;
 }
 
-const HomeFeatureThree = ({ featuredProduct }: Props) => {
+const HomeFeatureThree = ({ featuredProduct }: Props): JSX.Element => {
   const { slug } = featuredProduct;
   return (
     <section className="home-feature-three-container">

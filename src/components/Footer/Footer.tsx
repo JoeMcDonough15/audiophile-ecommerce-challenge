@@ -25,7 +25,7 @@ interface Props {
   facebook: SvgLinkDetails;
 }
 
-const Footer = ({ logo, twitter, facebook, instagram }: Props) => {
+const Footer = ({ logo, twitter, facebook, instagram }: Props): JSX.Element => {
   return (
     <section className="footer">
       <div className="mobile-and-tablet-footer main-container">

@@ -5,7 +5,7 @@ interface Props {
   customStyle: string;
 }
 
-const ThinRule = ({ customStyle }: Props) => {
+const ThinRule = ({ customStyle }: Props): JSX.Element => {
   return <hr className={`thin-rule ${customStyle}`}></hr>;
 };
 

@@ -9,7 +9,7 @@ import HomeFeatureThree from "../../components/HomeFeatureThree/HomeFeatureThree
 import data from "../../data.json";
 import "./homepage.sass";
 
-const featuredProductSlugs = [
+const featuredProductSlugs: string[] = [
   "xx99-mark-two-headphones",
   "zx9-speaker",
   "zx7-speaker",

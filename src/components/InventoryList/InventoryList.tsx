@@ -6,7 +6,7 @@ interface Props {
   productIncludes: { quantity: number; item: string }[];
 }
 
-const InventoryList = ({ productIncludes }: Props) => {
+const InventoryList = ({ productIncludes }: Props): JSX.Element => {
   return (
     <ul className="product-includes-list">
       {productIncludes.map((listItem) => {

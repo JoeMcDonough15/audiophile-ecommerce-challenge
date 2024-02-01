@@ -36,7 +36,7 @@ interface Props {
   shoppingCart: SvgIconDetails;
 }
 
-const Header = ({ logo, hamburgerMenu, shoppingCart }: Props) => {
+const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
   return (
     <header className="header-black-background">
       <section className="mobile-header main-container row">

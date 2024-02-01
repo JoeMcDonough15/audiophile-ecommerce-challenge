@@ -11,7 +11,7 @@ const FeeInformation = ({
   feeName,
   amountAsString,
   customPriceColor,
-}: Props) => {
+}: Props): JSX.Element => {
   return (
     <div className="fee-information row">
       <p className="fee-name">{feeName}</p>

@@ -6,7 +6,7 @@ interface Props {
   productIncludes: { quantity: number; item: string }[];
 }
 
-const InTheBox = ({ productIncludes }: Props) => {
+const InTheBox = ({ productIncludes }: Props): JSX.Element => {
   return (
     <div className="in-the-box">
       {" "}

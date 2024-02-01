@@ -23,7 +23,7 @@ interface Props {
   className: string;
 }
 
-const Button = (props: Props) => {
+const Button = (props: Props): JSX.Element => {
   const {
     buttonDestination,
     buttonText,

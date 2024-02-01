@@ -17,7 +17,7 @@ interface Props {
   svgDetails: SvgIconDetails;
 }
 
-const IconAsSvg = ({ className, svgDetails }: Props) => {
+const IconAsSvg = ({ className, svgDetails }: Props): JSX.Element => {
   const { width, height, src, stroke, gElement, strokeWidth, d } = svgDetails;
 
   return (

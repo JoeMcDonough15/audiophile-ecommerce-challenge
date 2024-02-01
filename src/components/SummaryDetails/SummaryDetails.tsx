@@ -1,10 +1,10 @@
 import React from "react";
-import Button from "../Button/Button";
 import ItemInCart from "../ItemInCart/ItemInCart";
 import FeeInformation from "../FeeInformation/FeeInformation";
-import data from "../../data.json";
+import Button from "../Button/Button";
+import "./summary-details.sass";
 import fixPrice from "../../fixPrice";
-import "./cart.sass";
+import data from "../../data.json";
 
 interface FeaturedProductObject {
   id: number;
@@ -32,21 +32,9 @@ interface FeaturedProductObject {
   }[];
 }
 
-interface CartImageData {
-  imageSrc: string;
-  imageAltText: string;
-  className?: string;
-}
-
-interface CartItemData {
-  quantity: number;
-  product: FeaturedProductObject;
-  imageData: CartImageData;
-}
-
 // Hard coding it to temporarily grab products from json to match design.  This will all come from state eventually.
 
-const selectedProductSlugs = [
+const selectedProductSlugs: string[] = [
   "xx99-mark-two-headphones",
   "xx59-headphones",
   "yx1-earphones",
@@ -74,8 +62,7 @@ const [
   selectedProductOne,
   selectedProductTwo,
   selectedProductThree,
-  selectedProductFour,
-] = findSelectedProducts(data, selectedProductSlugs);
+]: FeaturedProductObject[] = findSelectedProducts(data, selectedProductSlugs);
 
 // All product images
 const allProductImages = {
@@ -127,50 +114,58 @@ const itemsInCart = [
     product: selectedProductThree,
     imageData: allProductImages.yxOneImageData,
   },
-  {
-    quantity: 1,
-    product: selectedProductFour,
-    imageData: allProductImages.zxNineImageData,
-  },
 ];
 
-const calculateSubtotal = (items: CartItemData[]) => {
+const calculateSubtotal = (items) => {
   return items.reduce((total, currentItem) => {
     return (total += currentItem.product.price * currentItem.quantity);
   }, 0);
 };
 
-const subtotal = calculateSubtotal(itemsInCart);
+const subtotal: number = calculateSubtotal(itemsInCart);
+const shipping: number = 50;
 
-const Cart = (): JSX.Element => {
+let key = 0;
+
+const SummaryDetails = (): JSX.Element => {
   return (
-    <section id="cart-modal" className="cart-modal hide col">
-      <div className="row cart-top-row">
-        <h6>Cart (3)</h6>
-        <Button
-          className="button-text-only with-underline"
-          buttonText="Remove all"
-        />
-      </div>
+    <section className="form-section-two">
+      <h6 className="summary-header">Summary</h6>
       <div className="items-in-cart col">
         {itemsInCart.map((itemInCart) => {
-          return (
-            <ItemInCart
-              withSpecifyQuantity
-              key={itemInCart.product.slug}
-              itemData={itemInCart}
-            />
-          );
+          key++;
+          return <ItemInCart key={key} itemData={itemInCart} />;
         })}
-        <FeeInformation feeName="Total" amountAsString={fixPrice(subtotal)} />
-        <Button
-          className="button-checkout button-dark-orange"
-          buttonText="checkout"
-          buttonDestination="checkout"
+      </div>
+      <div className="fees-container col">
+        <FeeInformation
+          key={1}
+          feeName="Total"
+          amountAsString={fixPrice(subtotal)}
+        />
+        <FeeInformation
+          key={2}
+          feeName="Shipping"
+          amountAsString={fixPrice(shipping)}
+        />
+        <FeeInformation
+          key={3}
+          feeName="VAT (included)"
+          amountAsString={fixPrice(1079)}
         />
       </div>
+      <FeeInformation
+        feeName="grand total"
+        amountAsString={fixPrice(subtotal + shipping)}
+        customPriceColor="dark-orange-text"
+      />
+      <Button
+        isSubmitButton
+        className="button-dark-orange"
+        buttonText="continue & pay"
+      />
     </section>
   );
 };
 
-export default Cart;
+export default SummaryDetails;
