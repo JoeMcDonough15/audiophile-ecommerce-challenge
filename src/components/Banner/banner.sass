@@ -1,16 +1,19 @@
 @import ../../sass/global
 
-
 .banner 
-    align-items: center
+    @include set-as-header-background
     background-color: $header-black-background
+
+
+.banner-contents-container
+    align-items: center
     display: flex
     flex-direction: column
     justify-content: flex-start
     margin: 0
 
 
-.banner .banner-text
+.banner-contents-container .banner-text
     color: $white
     padding: 31.5px 0
 

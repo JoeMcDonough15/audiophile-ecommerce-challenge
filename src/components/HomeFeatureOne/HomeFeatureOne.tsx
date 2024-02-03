@@ -35,7 +35,7 @@ interface Props {
 }
 
 const HomeFeatureOne = ({ featuredProduct }: Props): JSX.Element => {
-  const { slug, image } = featuredProduct;
+  const { slug } = featuredProduct;
   return (
     <section className="home-feature-one">
       <CirclePatternSvg />
@@ -48,7 +48,7 @@ const HomeFeatureOne = ({ featuredProduct }: Props): JSX.Element => {
             //   require("../../assets/product-zx9-speaker/mobile/image-product.jpg")
             //     .default
             // }
-            // src={require(`${image.mobile}`).default}
+            // src={require(`${image.mobile}`).default} not working with props
             altText="home-feature-one-image-mobile"
           />
           <CustomImage

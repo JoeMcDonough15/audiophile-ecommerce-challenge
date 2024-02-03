@@ -1,4 +1,5 @@
 import React from "react";
+import Banner from "../../components/Banner/Banner";
 import Button from "../../components/Button/Button";
 import FeaturedProduct from "../../components/FeaturedProduct/FeaturedProduct";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
@@ -60,6 +61,7 @@ const ProductPage = ({ productId, productImageData }: Props) => {
 
   return (
     <main className="product-page">
+      <Banner />
       <div className="main-container">
         <Button
           className={"button-text-only"}

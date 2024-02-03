@@ -1,4 +1,5 @@
 import React from "react";
+import Banner from "../../components/Banner/Banner";
 import FeaturedProduct from "../../components/FeaturedProduct/FeaturedProduct";
 import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCategoryMenu";
 import data from "../../data.json";
@@ -64,6 +65,7 @@ const CategoryPage = ({ imageData, categoryName }: Props) => {
     );
   return (
     <main className="category-page">
+      <Banner bannerText={categoryName} />
       <section className="category-features col">
         {featuredProducts.map(
           (product: FeaturedProductObject, productIndex: number) => {

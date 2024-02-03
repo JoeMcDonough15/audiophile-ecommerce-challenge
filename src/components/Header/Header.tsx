@@ -27,7 +27,7 @@ interface Props {
 
 const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
   return (
-    <header id="header" className="header-black-background">
+    <header id="header" className="header-transparent-background">
       <section className="mobile-header main-container row">
         <IconAsSvg className="hamburger-menu-icon" svgDetails={hamburgerMenu} />
         <LinkAsSvg className="logo-icon" svgDetails={logo} />
