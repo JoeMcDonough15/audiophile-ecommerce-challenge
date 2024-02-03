@@ -59,32 +59,34 @@ const ProductPage = ({ productId, productImageData }: Props) => {
   } = productImageData;
 
   return (
-    <main className="product-page">
+    <>
       <Banner />
-      <div className="main-container">
-        <Button
-          className={"button-text-only"}
-          buttonText="go back"
-          buttonDestination=""
+      <main className="product-page">
+        <div className="main-container">
+          <Button
+            className={"button-text-only"}
+            buttonText="go back"
+            buttonDestination=""
+          />
+        </div>
+        <FeaturedProduct
+          featuredProduct={pageProduct}
+          isProductPage
+          imageData={featuredProductImageData}
+          buttonData={{ buttonColor: "dark-orange" }}
         />
-      </div>
-      <FeaturedProduct
-        featuredProduct={pageProduct}
-        isProductPage
-        imageData={featuredProductImageData}
-        buttonData={{ buttonColor: "dark-orange" }}
-      />
-      <section className="product-details-and-accessories main-container">
-        <ProductDetails detailsText={features} />
-        <InTheBox productIncludes={includes} />
-      </section>
-      <Gallery imageData={galleryImageData} />
-      <YouMayAlsoLike
-        relatedProductsImages={relatedProductsImageData}
-        relatedProducts={others}
-      />
-      <ProductCategoryMenu />
-    </main>
+        <section className="product-details-and-accessories main-container">
+          <ProductDetails detailsText={features} />
+          <InTheBox productIncludes={includes} />
+        </section>
+        <Gallery imageData={galleryImageData} />
+        <YouMayAlsoLike
+          relatedProductsImages={relatedProductsImageData}
+          relatedProducts={others}
+        />
+        {/* <ProductCategoryMenu /> */}
+      </main>
+    </>
   );
 };
 

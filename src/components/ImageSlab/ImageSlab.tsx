@@ -9,12 +9,23 @@ interface ImageData {
 interface Props {
   imageData: ImageData;
   slabSize: string;
+  containerClassName?: string;
 }
 
-const ImageSlab = ({ imageData, slabSize }: Props): JSX.Element => {
+const ImageSlab = ({
+  containerClassName,
+  imageData,
+  slabSize,
+}: Props): JSX.Element => {
   const { className, imageSrc, imageAltText } = imageData;
   return (
-    <div className={`content-slab image-${slabSize}`}>
+    <div
+      className={
+        containerClassName
+          ? `${containerClassName} content-slab image-${slabSize}`
+          : `content-slab image-${slabSize}`
+      }
+    >
       <CustomImage
         className={className && `${className}`}
         src={imageSrc}

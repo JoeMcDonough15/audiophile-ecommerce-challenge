@@ -4,7 +4,7 @@
     align-items: center
 
 .related-products-header
-    margin-bottom: 48px
+    margin-bottom: 40px
 
 .all-related-products-container
     width: 100%
@@ -14,11 +14,9 @@
 
     +all-tablets
         gap: 11px
-        margin-bottom: 22px
 
     +all-large-screen
         gap: 30px
-        margin-bottom: 40px
 
 .related-product-container.col
     margin-bottom: 56px
@@ -30,24 +28,34 @@
     &:nth-of-type(3)
         margin-bottom: 0
 
+.related-product-image-container.content-slab
+
+    height: 120px
+
+    +all-screen-bigger-than-mobile
+        height: 318px
+    
+    & img
+        height: 100%
+
 
 .featured-product-info.col.related-product-info
     align-items: center
-    margin-top: 40px
+    gap: 39px
+    margin-top: 32px
     text-align: center
 
-    +all-tablets
-        margin-top: 48px
+    +all-screen-bigger-than-mobile
+        gap: 32px
 
-    +all-large-screen
-        gap: 40px
+    +all-tablets
+        margin-top: 40px
     
 
 .related-product-info-header
     font-size: 24px
+    line-height: 33px
 
-    +all-tablets
-        margin-bottom: 38px
 
 .related-products-header, .related-product-info-header
     +tiny-phone

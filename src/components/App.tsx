@@ -12,6 +12,7 @@ import ProductZx7Speaker from "../pages/product-pages/Product-zx7-Speaker/Produc
 import ProductZx9Speaker from "../pages/product-pages/Product-zx9-Speaker/ProductZx9Speaker";
 import PageNotFound from "../pages/PageNotFound";
 import Header from "../components/Header/Header";
+import ProductCategoryMenu from "./ProductCategoryMenu/ProductCategoryMenu";
 import AboutUs from "../components/AboutUs/AboutUs";
 import Footer from "../components/Footer/Footer";
 import svgDetails from "./svg-details.json";
@@ -50,6 +51,7 @@ function App(): JSX.Element {
         <Route path="/checkout" component={Checkout} />
         <Route component={PageNotFound} />
       </Switch>
+      <ProductCategoryMenu />
       <AboutUs />
       <Footer
         logo={logo}

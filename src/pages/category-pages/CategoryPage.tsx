@@ -63,27 +63,29 @@ const CategoryPage = ({ imageData, categoryName }: Props) => {
       }
     );
   return (
-    <main className="category-page">
+    <>
       <Banner bannerText={categoryName} />
-      <section className="category-features col">
-        {featuredProducts.map(
-          (product: FeaturedProductObject, productIndex: number) => {
-            return (
-              <FeaturedProduct
-                key={productIndex}
-                imageData={imageData[productIndex]}
-                featuredProduct={product}
-                buttonData={{
-                  buttonColor: "dark-orange",
-                  buttonDestination: `product-${product.slug}`,
-                }}
-              />
-            );
-          }
-        )}
-      </section>
-      <ProductCategoryMenu />
-    </main>
+      <main className="category-page">
+        <section className="category-features col">
+          {featuredProducts.map(
+            (product: FeaturedProductObject, productIndex: number) => {
+              return (
+                <FeaturedProduct
+                  key={productIndex}
+                  imageData={imageData[productIndex]}
+                  featuredProduct={product}
+                  buttonData={{
+                    buttonColor: "dark-orange",
+                    buttonDestination: `product-${product.slug}`,
+                  }}
+                />
+              );
+            }
+          )}
+        </section>
+        {/* <ProductCategoryMenu /> */}
+      </main>
+    </>
   );
 };
 

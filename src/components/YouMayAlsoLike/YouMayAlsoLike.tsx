@@ -39,6 +39,7 @@ const YouMayAlsoLike = ({
               {relatedProductsImages[index].map((imageObject) => {
                 return (
                   <ImageSlab
+                    containerClassName="related-product-image-container"
                     key={imageObject.id}
                     slabSize={imageObject.imageSize}
                     imageData={{
