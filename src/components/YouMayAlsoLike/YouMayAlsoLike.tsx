@@ -1,5 +1,5 @@
 import ImageSlab from "../ImageSlab/ImageSlab";
-import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
+import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./you-may-also-like.sass";
 
 interface RelatedProduct {
@@ -49,8 +49,8 @@ const YouMayAlsoLike = ({
                 );
               })}
 
-              <FeaturedProductInfo
-                featuredProduct={relatedProductObject}
+              <HeadingAndButton
+                productName={relatedProductObject.name}
                 isRelatedProduct
                 buttonData={{
                   buttonColor: "dark-orange",

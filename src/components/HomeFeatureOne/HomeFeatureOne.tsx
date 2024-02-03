@@ -63,7 +63,6 @@ const HomeFeatureOne = ({ featuredProduct }: Props): JSX.Element => {
         </div>
         <FeaturedProductInfo
           featuredProduct={featuredProduct}
-          includesProductDescription
           teaserOnly
           isHomeFeatureOne
           buttonData={{

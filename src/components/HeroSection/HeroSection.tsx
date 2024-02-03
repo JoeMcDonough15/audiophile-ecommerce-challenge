@@ -40,7 +40,6 @@ const HeroSection = ({ featuredProduct }: Props): JSX.Element => {
         <ThinRule customStyle="thin-rule-header" />
         <FeaturedProductInfo
           featuredProduct={featuredProduct}
-          includesProductDescription
           teaserOnly
           isHeroSection
           buttonData={{

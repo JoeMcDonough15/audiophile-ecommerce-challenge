@@ -73,7 +73,6 @@ const CategoryPage = ({ imageData, categoryName }: Props) => {
                 key={productIndex}
                 imageData={imageData[productIndex]}
                 featuredProduct={product}
-                includesProductDescription
                 buttonData={{
                   buttonColor: "dark-orange",
                   buttonDestination: `product-${product.slug}`,

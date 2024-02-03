@@ -1,5 +1,5 @@
 import CustomImage from "../CustomImage/CustomImage";
-import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
+import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./home-feature-two.sass";
 
 interface FeaturedProductObject {
@@ -33,7 +33,7 @@ interface Props {
 }
 
 const HomeFeatureTwo = ({ featuredProduct }: Props): JSX.Element => {
-  const { slug } = featuredProduct;
+  const { slug, name } = featuredProduct;
   return (
     <section className="home-feature-two-container">
       <CustomImage
@@ -51,8 +51,8 @@ const HomeFeatureTwo = ({ featuredProduct }: Props): JSX.Element => {
         src={require("./images/image-speaker-zx7-desktop.jpg").default}
         altText="home-feature-two-image-desktop"
       />
-      <FeaturedProductInfo
-        featuredProduct={featuredProduct}
+      <HeadingAndButton
+        productName={name}
         isHomeFeatureTwo
         buttonData={{
           buttonColor: "transparent",

@@ -1,5 +1,5 @@
 import "./home-feature-three.sass";
-import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
+import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 
 interface FeaturedProductObject {
   id: number;
@@ -37,9 +37,8 @@ const HomeFeatureThree = ({ featuredProduct }: Props): JSX.Element => {
     <section className="home-feature-three-container">
       <div className="home-feature-three-image-container"></div>
       <div className="home-feature-three-text-container content-slab">
-        <FeaturedProductInfo
-          featuredProduct={featuredProduct}
-          customHeaderText="YX1 earphones"
+        <HeadingAndButton
+          productName="YX1 earphones"
           isHomeFeatureThree
           buttonData={{
             buttonColor: "transparent",

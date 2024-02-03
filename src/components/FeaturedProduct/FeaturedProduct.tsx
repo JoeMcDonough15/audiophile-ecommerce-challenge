@@ -45,7 +45,6 @@ interface Props {
   imageData: FeaturedProductImageData;
   featuredProduct: FeaturedProductObject;
   isProductPage?: boolean;
-  includesProductDescription?: boolean;
   buttonData: ButtonData;
 }
 
