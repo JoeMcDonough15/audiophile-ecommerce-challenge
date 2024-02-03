@@ -1,4 +1,3 @@
-import React from "react";
 import CustomImage from "../CustomImage/CustomImage";
 
 interface ImageData {

@@ -1,4 +1,3 @@
-import React from "react";
 import "./quantity.sass";
 
 interface Props {

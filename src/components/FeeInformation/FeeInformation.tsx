@@ -1,4 +1,3 @@
-import React from "react";
 import "./fee-information.sass";
 
 interface Props {

@@ -1,4 +1,3 @@
-import React from "react";
 import "./mobile-menu.sass";
 import ProductCategoryMenu from "../ProductCategoryMenu/ProductCategoryMenu";
 const MobileMenu = (): JSX.Element => {

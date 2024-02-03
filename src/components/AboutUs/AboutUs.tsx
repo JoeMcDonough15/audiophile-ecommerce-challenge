@@ -1,4 +1,3 @@
-import React from "react";
 import "./about-us.sass";
 
 const AboutUs = () => {

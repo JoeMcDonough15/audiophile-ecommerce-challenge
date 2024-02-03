@@ -1,5 +1,3 @@
-import React from "react";
-
 const CurrentYear = (): JSX.Element => {
   const date: Date = new Date();
   const currentYear: string = date.getFullYear().toString();

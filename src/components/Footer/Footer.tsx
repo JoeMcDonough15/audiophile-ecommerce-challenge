@@ -1,4 +1,3 @@
-import React from "react";
 import ThinRule from "../ThinRule/ThinRule";
 import LinkAsSvg from "../LinkAsSvg/LinkAsSvg";
 import NavBar from "../NavBar/NavBar";

@@ -1,4 +1,3 @@
-import React from "react";
 import ThinRule from "../ThinRule/ThinRule";
 import "./hero-section.sass";
 import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";

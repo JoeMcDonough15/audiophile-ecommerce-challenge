@@ -1,4 +1,3 @@
-import React from "react";
 import CheckoutSectionHeader from "./CheckoutSectionHeader";
 import FormField from "../FormField/FormField";
 import SummaryDetails from "../SummaryDetails/SummaryDetails";

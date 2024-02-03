@@ -1,4 +1,3 @@
-import React from "react";
 import ThinRule from "../ThinRule/ThinRule";
 import "./banner.sass";
 

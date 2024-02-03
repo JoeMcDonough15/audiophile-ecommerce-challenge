@@ -1,4 +1,3 @@
-import React from "react";
 import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 import CirclePatternSvg from "../CirclePatternSvg/CirclePatternSvg";
 import CustomImage from "../CustomImage/CustomImage";

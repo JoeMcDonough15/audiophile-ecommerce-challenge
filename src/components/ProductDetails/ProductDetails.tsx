@@ -1,4 +1,3 @@
-import React from "react";
 import "./product-details.sass";
 
 interface Props {

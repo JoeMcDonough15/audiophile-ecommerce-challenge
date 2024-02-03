@@ -1,4 +1,3 @@
-import React from "react";
 import InventoryList from "../InventoryList/InventoryList";
 import "./in-the-box.sass";
 

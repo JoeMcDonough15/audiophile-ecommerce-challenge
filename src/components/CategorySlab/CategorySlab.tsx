@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../Button/Button";
 import "./category-slab.sass";
 import svgDetails from "../svg-details.json";

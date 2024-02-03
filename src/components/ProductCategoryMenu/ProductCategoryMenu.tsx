@@ -1,4 +1,3 @@
-import React from "react";
 import CategorySlab from "../CategorySlab/CategorySlab";
 import "./product-category-menu.sass";
 

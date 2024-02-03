@@ -1,4 +1,3 @@
-import React from "react";
 import ImageSlab from "../ImageSlab/ImageSlab";
 import ItemNameAndPrice from "../ItemNameAndPrice/ItemNameAndPrice";
 import Quantity from "../Quantity/Quantity";

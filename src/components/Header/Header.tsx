@@ -1,4 +1,3 @@
-import React from "react";
 import "./header.sass";
 import LinkAsSvg from "../LinkAsSvg/LinkAsSvg";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";

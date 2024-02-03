@@ -1,4 +1,3 @@
-import React from "react";
 import Quantity from "../Quantity/Quantity";
 import "./inventory-list.sass";
 

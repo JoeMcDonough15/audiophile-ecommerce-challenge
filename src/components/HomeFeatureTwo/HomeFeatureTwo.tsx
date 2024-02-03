@@ -1,4 +1,3 @@
-import React from "react";
 import CustomImage from "../CustomImage/CustomImage";
 import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 import "./home-feature-two.sass";

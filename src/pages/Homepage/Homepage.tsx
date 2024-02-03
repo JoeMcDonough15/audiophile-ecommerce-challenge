@@ -1,4 +1,3 @@
-import React from "react";
 import MobileMenu from "../../components/MobileMenu/MobileMenu";
 import Cart from "../../components/Cart/Cart";
 import HeroSection from "../../components/HeroSection/HeroSection";

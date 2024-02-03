@@ -1,4 +1,3 @@
-import React from "react";
 import ImageSlab from "../ImageSlab/ImageSlab";
 import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 import "./you-may-also-like.sass";

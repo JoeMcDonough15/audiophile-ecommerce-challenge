@@ -1,4 +1,3 @@
-import React from "react";
 import fixPrice from "../../fixPrice";
 import "./item-name-and-price.sass";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import "./home-feature-three.sass";
 import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import ItemInCart from "../ItemInCart/ItemInCart";
 import FeeInformation from "../FeeInformation/FeeInformation";
 import Button from "../Button/Button";

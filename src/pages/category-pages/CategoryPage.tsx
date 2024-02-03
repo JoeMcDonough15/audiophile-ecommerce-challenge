@@ -1,4 +1,3 @@
-import React from "react";
 import Banner from "../../components/Banner/Banner";
 import FeaturedProduct from "../../components/FeaturedProduct/FeaturedProduct";
 import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCategoryMenu";

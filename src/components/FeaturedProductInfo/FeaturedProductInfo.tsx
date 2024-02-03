@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../Button/Button";
 import SpecifyQuantity from "../SpecifyQuantity/SpecifyQuantity";
 import "./featured-product-info.sass";
