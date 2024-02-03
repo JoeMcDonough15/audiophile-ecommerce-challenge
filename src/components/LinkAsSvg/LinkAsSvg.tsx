@@ -1,16 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-interface SvgLinkDetails {
+interface SvgDetails {
   stroke?: string;
   strokeWidth?: string;
-  internalLink?: boolean;
-  linkDestination: string;
   width: string;
   height: string;
   src: string;
-  gElement: boolean;
+  gElement?: boolean;
   d: string;
+}
+
+interface SvgLinkDetails extends SvgDetails {
+  internalLink?: boolean;
+  linkDestination: string;
 }
 
 interface Props {
@@ -36,12 +39,18 @@ const LinkAsSvg = ({ className, svgDetails }: Props): JSX.Element => {
       {internalLink ? (
         <NavLink to={linkDestination} exact={linkDestination === "/"}>
           <svg width={width} height={height} xmlns={src}>
-            {gElement ? (
+            {gElement && stroke && strokeWidth ? (
               <g>
                 <path d={d} stroke={stroke} strokeWidth={strokeWidth}></path>
               </g>
-            ) : (
+            ) : gElement ? (
+              <g>
+                <path d={d}></path>
+              </g>
+            ) : stroke && strokeWidth ? (
               <path d={d} stroke={stroke} strokeWidth={strokeWidth} />
+            ) : (
+              <path d={d}></path>
             )}
           </svg>
         </NavLink>
@@ -49,12 +58,18 @@ const LinkAsSvg = ({ className, svgDetails }: Props): JSX.Element => {
         <a href={linkDestination}>
           {" "}
           <svg className={className} width={width} height={height} xmlns={src}>
-            {gElement ? (
+            {gElement && stroke && strokeWidth ? (
               <g>
                 <path d={d} stroke={stroke} strokeWidth={strokeWidth}></path>
               </g>
-            ) : (
+            ) : gElement ? (
+              <g>
+                <path d={d}></path>
+              </g>
+            ) : stroke && strokeWidth ? (
               <path d={d} stroke={stroke} strokeWidth={strokeWidth} />
+            ) : (
+              <path d={d}></path>
             )}
           </svg>
         </a>

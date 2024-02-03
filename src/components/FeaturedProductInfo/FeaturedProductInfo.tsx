@@ -72,7 +72,7 @@ const FeaturedProductInfo = (props: Props): JSX.Element => {
   const { buttonColor, buttonDestination } = buttonData;
   return (
     <div>
-      {isProductPage && isNewProduct ? (
+      {isProductPage && isNewProduct && price ? (
         <div className={"featured-product-info col product-page-info"}>
           <p className={"overline dark-orange-text"}>New Product</p>
           <h1
@@ -93,7 +93,7 @@ const FeaturedProductInfo = (props: Props): JSX.Element => {
             />
           </div>
         </div>
-      ) : isProductPage ? (
+      ) : isProductPage && price ? (
         <div className={"featured-product-info col product-page-info"}>
           <h1
             className={

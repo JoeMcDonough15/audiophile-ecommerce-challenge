@@ -5,17 +5,21 @@ import NavBar from "../NavBar/NavBar";
 import CurrentYear from "../CurrentYear/CurrentYear";
 import "./footer.sass";
 
-interface SvgLinkDetails {
+interface SvgDetails {
   stroke?: string;
   strokeWidth?: string;
-  internalLink?: boolean;
-  linkDestination: string;
   width: string;
   height: string;
   src: string;
-  gElement: boolean;
+  gElement?: boolean;
   d: string;
 }
+
+interface SvgLinkDetails extends SvgDetails {
+  internalLink?: boolean;
+  linkDestination: string;
+}
+
 interface Props {
   logo: SvgLinkDetails;
   twitter: SvgLinkDetails;

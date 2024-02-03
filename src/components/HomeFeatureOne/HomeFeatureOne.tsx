@@ -35,7 +35,7 @@ interface Props {
 }
 
 const HomeFeatureOne = ({ featuredProduct }: Props): JSX.Element => {
-  const { slug } = featuredProduct;
+  const { slug, image } = featuredProduct;
   return (
     <section className="home-feature-one">
       <CirclePatternSvg />
@@ -43,17 +43,22 @@ const HomeFeatureOne = ({ featuredProduct }: Props): JSX.Element => {
         <div className="home-feature-one-image-container">
           <CustomImage
             className="home-feature-one-image image-mobile"
-            src={require("./images/image-speaker-zx9-mobile.png")}
+            src={require("./images/image-speaker-zx9-mobile.png").default}
+            // src={
+            //   require("../../assets/product-zx9-speaker/mobile/image-product.jpg")
+            //     .default
+            // }
+            // src={require(`${image.mobile}`).default}
             altText="home-feature-one-image-mobile"
           />
           <CustomImage
             className="home-feature-one-image image-tablet"
-            src={require("./images/image-speaker-zx9-tablet.png")}
+            src={require("./images/image-speaker-zx9-tablet.png").default}
             altText="home-feature-one-image-tablet"
           />
           <CustomImage
             className="home-feature-one-image image-desktop"
-            src={require("./images/image-speaker-zx9-desktop.png")}
+            src={require("./images/image-speaker-zx9-desktop.png").default}
             altText="home-feature-one-image-desktop"
           />
         </div>

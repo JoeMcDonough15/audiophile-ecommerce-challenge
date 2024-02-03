@@ -4,37 +4,30 @@ import LinkAsSvg from "../LinkAsSvg/LinkAsSvg";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
 import NavBar from "../NavBar/NavBar";
 
-interface SvgLinkDetails {
+interface SvgDetails {
   stroke?: string;
   strokeWidth?: string;
-  internalLink?: boolean;
-  linkDestination: string;
   width: string;
   height: string;
   src: string;
-  gElement: boolean;
+  gElement?: boolean;
   d: string;
 }
 
-interface SvgIconDetails {
-  stroke?: string;
-  strokeWidth?: string;
-  width: string;
-  height: string;
-  src: string;
-  gElement: boolean;
-  d: string;
+interface SvgLinkDetails extends SvgDetails {
+  internalLink?: boolean;
+  linkDestination: string;
 }
 
 interface Props {
   logo: SvgLinkDetails;
-  hamburgerMenu: SvgIconDetails;
-  shoppingCart: SvgIconDetails;
+  hamburgerMenu: SvgDetails;
+  shoppingCart: SvgDetails;
 }
 
 const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
   return (
-    <header className="header-black-background">
+    <header id="header" className="header-black-background">
       <section className="mobile-header main-container row">
         <IconAsSvg className="hamburger-menu-icon" svgDetails={hamburgerMenu} />
         <LinkAsSvg className="logo-icon" svgDetails={logo} />

@@ -36,18 +36,20 @@ interface Props {
 const HeroSection = ({ featuredProduct }: Props): JSX.Element => {
   const { slug } = featuredProduct;
   return (
-    <section className="hero-section col main-container">
-      <ThinRule customStyle="thin-rule-header" />
-      <FeaturedProductInfo
-        featuredProduct={featuredProduct}
-        includesProductDescription
-        teaserOnly
-        isHeroSection
-        buttonData={{
-          buttonColor: "dark-orange",
-          buttonDestination: `product-${slug}`,
-        }}
-      />
+    <section className="hero-section-container">
+      <section className="hero-section col main-container">
+        <ThinRule customStyle="thin-rule-header" />
+        <FeaturedProductInfo
+          featuredProduct={featuredProduct}
+          includesProductDescription
+          teaserOnly
+          isHeroSection
+          buttonData={{
+            buttonColor: "dark-orange",
+            buttonDestination: `product-${slug}`,
+          }}
+        />
+      </section>
     </section>
   );
 };

@@ -32,9 +32,20 @@ interface FeaturedProductObject {
   }[];
 }
 
+interface ImageOfItemInCart {
+  imageSrc: string;
+  imageAltText: string;
+}
+
+interface ItemInCart {
+  quantity: number;
+  product: FeaturedProductObject;
+  imageData: ImageOfItemInCart;
+}
+
 // Hard coding it to temporarily grab products from json to match design.  This will all come from state eventually.
 
-const selectedProductSlugs: string[] = [
+const selectedProductSlugs = [
   "xx99-mark-two-headphones",
   "xx59-headphones",
   "yx1-earphones",
@@ -116,14 +127,14 @@ const itemsInCart = [
   },
 ];
 
-const calculateSubtotal = (items) => {
+const calculateSubtotal = (items: ItemInCart[]) => {
   return items.reduce((total, currentItem) => {
     return (total += currentItem.product.price * currentItem.quantity);
   }, 0);
 };
 
-const subtotal: number = calculateSubtotal(itemsInCart);
-const shipping: number = 50;
+const subtotal = calculateSubtotal(itemsInCart);
+const shipping = 50;
 
 let key = 0;
 

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
 
-interface SvgIconDetails {
+interface SvgDetails {
   stroke?: string;
   strokeWidth?: string;
   width: string;
@@ -16,7 +16,7 @@ interface Props {
   buttonDestination?: string;
   buttonText: string;
   withArrowIcon?: boolean;
-  arrowIconDetails?: SvgIconDetails;
+  arrowIconDetails?: SvgDetails;
   isSubmitButton?: boolean;
   className: string;
 }

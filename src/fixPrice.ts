@@ -1,4 +1,4 @@
-const fixPrice = (priceToFix) => {
+const fixPrice = (priceToFix: number) => {
   let numCommas = Math.floor(Math.log10(priceToFix) / 3);
   let fixedPrice = "";
   while (numCommas > 0) {

@@ -8,21 +8,27 @@ const ProductCategoryMenu = (): JSX.Element => {
       <CategorySlab
         key={1}
         categoryName="headphones"
-        imageSrc={require("./images/image-category-thumbnail-headphones.png")}
+        imageSrc={
+          require("./images/image-category-thumbnail-headphones.png").default
+        }
         thumbnailName="headphones-thumbnail thumbnail-image"
         buttonDestination="headphones"
       />
       <CategorySlab
         key={2}
         categoryName="speakers"
-        imageSrc={require("./images/image-category-thumbnail-speakers.png")}
+        imageSrc={
+          require("./images/image-category-thumbnail-speakers.png").default
+        }
         thumbnailName="speaker-thumbnail thumbnail-image"
         buttonDestination="speakers"
       />
       <CategorySlab
         key={3}
         categoryName="earphones"
-        imageSrc={require("./images/image-category-thumbnail-earphones.png")}
+        imageSrc={
+          require("./images/image-category-thumbnail-earphones.png").default
+        }
         thumbnailName="earphones-thumbnail thumbnail-image"
         buttonDestination="earphones"
       />

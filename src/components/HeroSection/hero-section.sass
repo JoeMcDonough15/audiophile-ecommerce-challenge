@@ -1,11 +1,31 @@
 @import ../../sass/global
 
+.hero-section-container
+    
+    @include set-background-image-from-file('./images/image-header-mobile.jpg')
+    height: 600px
+    padding-top: 90px
+    position: relative
+    top: -90px
+    z-index: -1
+
+    +all-screen-bigger-than-mobile
+        height: 729px
+    +all-tablets
+        @include set-background-image-from-file('./images/image-header-tablet.jpg')
+    +all-large-screen
+        @include set-background-image-from-file('./images/image-header-desktop.jpg')   
+
+
+
 .hero-section
     align-items: center
     justify-content: space-between
     
     +all-large-screen
         align-items: flex-start
+
+   
 
 .hero-section .featured-product-info.featured-product-hero-info.col  
     gap: 0

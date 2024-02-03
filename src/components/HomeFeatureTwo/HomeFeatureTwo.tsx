@@ -39,17 +39,17 @@ const HomeFeatureTwo = ({ featuredProduct }: Props): JSX.Element => {
     <section className="home-feature-two-container">
       <CustomImage
         className="home-feature-two-image image-mobile"
-        src={require("./images/image-speaker-zx7-mobile.jpg")}
+        src={require("./images/image-speaker-zx7-mobile.jpg").default}
         altText="home-feature-two-image-mobile"
       />
       <CustomImage
         className="home-feature-two-image image-tablet"
-        src={require("./images/image-speaker-zx7-tablet.jpg")}
+        src={require("./images/image-speaker-zx7-tablet.jpg").default}
         altText="home-feature-two-image-tablet"
       />
       <CustomImage
         className="home-feature-two-image image-desktop"
-        src={require("./images/image-speaker-zx7-desktop.jpg")}
+        src={require("./images/image-speaker-zx7-desktop.jpg").default}
         altText="home-feature-two-image-desktop"
       />
       <FeaturedProductInfo

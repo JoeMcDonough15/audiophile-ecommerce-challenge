@@ -66,7 +66,7 @@ const [
 
 const Homepage = () => {
   return (
-    <div>
+    <>
       <MobileMenu />
       <Cart />
       <main className="homepage">
@@ -78,7 +78,7 @@ const Homepage = () => {
           <HomeFeatureThree featuredProduct={featuredProductThree} />
         </section>
       </main>
-    </div>
+    </>
   );
 };
 
