@@ -2,3 +2,18 @@
 
 main.checkout-page
     background: $very-light-grey
+    margin-top: -90px
+    padding-bottom: 96px
+
+    +all-tablets
+        padding-bottom: 116px
+    
+    +all-large-screen
+        padding-bottom: 140px
+
+    & + nav.main-container.product-category-menu.col, ~ section.about-us-container.main-container
+        display: none
+    
+    & ~ section.footer
+        margin-top: 0
+
