@@ -33,12 +33,13 @@ interface Props {
 
 const HomeFeatureThree = ({ featuredProduct }: Props): JSX.Element => {
   const { slug } = featuredProduct;
+  const customProductName = "YX1 earphones";
   return (
     <section className="home-feature-three-container">
       <div className="home-feature-three-image-container"></div>
       <div className="home-feature-three-text-container content-slab">
         <HeadingAndButton
-          productName="YX1 earphones"
+          productName={customProductName}
           isHomeFeatureThree
           buttonData={{
             buttonColor: "transparent",
