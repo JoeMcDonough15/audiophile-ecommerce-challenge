@@ -2,6 +2,8 @@ import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 import CirclePatternSvg from "../CirclePatternSvg/CirclePatternSvg";
 import CustomImage from "../CustomImage/CustomImage";
 import "./home-feature-one.sass";
+// @ts-ignore
+import image from "./images/image-speaker-zx9-desktop.png";
 
 interface FeaturedProductObject {
   id: number;
@@ -62,7 +64,6 @@ const HomeFeatureOne = ({ featuredProduct }: Props): JSX.Element => {
           />
         </div>
         <FeaturedProductInfo
-          featuredProduct={featuredProduct}
           teaserOnly
           isHomeFeatureOne
           buttonData={{

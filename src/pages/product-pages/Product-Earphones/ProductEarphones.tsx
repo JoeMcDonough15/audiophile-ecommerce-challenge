@@ -1,4 +1,5 @@
 import ProductPage from "../ProductPage";
+// import allProductImages from "../../../imageData";
 
 interface ProductImageData {
   featuredProductImageData: {
@@ -8,6 +9,12 @@ interface ProductImageData {
     imageAltText: string;
     customImageStyles: string;
   };
+  // categoryImageData: {
+  //   mobileImageSrc: string;
+  //   tabletImageSrc: string;
+  //   desktopImageSrc: string;
+  //   imageAltText: string;
+  // };
   galleryImageData: {
     galleryImageOneData: {
       id: number;
@@ -209,6 +216,8 @@ const imageData: ProductImageData = {
     ],
   ],
 };
+
+// const yx1EarphoneImageData = allProductImages.yx1Earphones;
 
 const ProductEarphones = () => {
   return <ProductPage productId={1} productImageData={imageData} />;

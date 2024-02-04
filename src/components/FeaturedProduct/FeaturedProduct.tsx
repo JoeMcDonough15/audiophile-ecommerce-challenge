@@ -78,17 +78,9 @@ const FeaturedProduct = ({
       </div>
       <div className="featured-product-text-container col">
         {isProductPage ? (
-          <FeaturedProductInfo
-            featuredProduct={featuredProduct}
-            isProductPage
-            buttonData={buttonData}
-          />
+          <FeaturedProductInfo isProductPage buttonData={buttonData} />
         ) : (
-          <FeaturedProductInfo
-            featuredProduct={featuredProduct}
-            isCategoryPage
-            buttonData={buttonData}
-          />
+          <FeaturedProductInfo isCategoryPage buttonData={buttonData} />
         )}
       </div>
     </section>

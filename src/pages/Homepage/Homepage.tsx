@@ -41,7 +41,7 @@ interface FeaturedProductObject {
   }[];
 }
 
-const findFeaturedProducts = (
+export const findFeaturedProducts = (
   productList: FeaturedProductObject[],
   productSlugs: string[]
 ) => {

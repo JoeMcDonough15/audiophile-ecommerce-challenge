@@ -75,6 +75,8 @@ const ProductPage = ({ productId, productImageData }: Props) => {
           imageData={featuredProductImageData}
           buttonData={{ buttonColor: "dark-orange" }}
         />
+        {/* <SpecifyQuantity />
+        <Button buttonText="Add to cart" className={`button-${buttonColor}`} /> */}
         <section className="product-details-and-accessories main-container">
           <ProductDetails detailsText={features} />
           <InTheBox productIncludes={includes} />

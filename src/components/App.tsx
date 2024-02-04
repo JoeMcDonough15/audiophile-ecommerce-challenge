@@ -16,13 +16,52 @@ import ProductCategoryMenu from "./ProductCategoryMenu/ProductCategoryMenu";
 import AboutUs from "../components/AboutUs/AboutUs";
 import Footer from "../components/Footer/Footer";
 import svgDetails from "./svg-details.json";
+import { PropsWithChildren, createContext, useState } from "react";
+import data from "../data.json";
+
+interface FeaturedProductObject {
+  id?: number;
+  slug: string;
+  name: string;
+  abbreviatedName?: string;
+  image: { mobile: string; tablet: string; desktop: string };
+  category?: string;
+  categoryImage?: { mobile: string; tablet: string; desktop: string };
+  isNewProduct?: boolean;
+  price: number;
+  description?: string;
+  teaserDescription?: string;
+  features?: string;
+  includes?: { quantity: number; item: string }[];
+  gallery?: {
+    first: { mobile: string; tablet: string; desktop: string };
+    second: { mobile: string; tablet: string; desktop: string };
+    third: { mobile: string; tablet: string; desktop: string };
+  };
+  others?: {
+    slug: string;
+    name: string;
+    image: { mobile: string; tablet: string; desktop: string };
+  }[];
+}
 
 const { logo, twitter, facebook, instagram, hamburgerMenu, shoppingCart } =
   svgDetails;
 
+export const FeaturedProductContext =
+  createContext<FeaturedProductObject[]>(data);
+
+const ProductsProvider = ({ children }: PropsWithChildren) => {
+  return (
+    <FeaturedProductContext.Provider value={data}>
+      {children}
+    </FeaturedProductContext.Provider>
+  );
+};
+
 function App(): JSX.Element {
   return (
-    <>
+    <ProductsProvider>
       <Header
         logo={logo}
         hamburgerMenu={hamburgerMenu}
@@ -59,7 +98,7 @@ function App(): JSX.Element {
         facebook={facebook}
         instagram={instagram}
       />
-    </>
+    </ProductsProvider>
   );
 }
 
