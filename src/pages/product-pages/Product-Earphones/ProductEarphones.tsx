@@ -220,7 +220,9 @@ const imageData: ProductImageData = {
 // const yx1EarphoneImageData = allProductImages.yx1Earphones;
 
 const ProductEarphones = () => {
-  return <ProductPage productId={1} productImageData={imageData} />;
+  return (
+    <ProductPage productSlug="yx1-earphones" productImageData={imageData} />
+  );
 };
 
 export default ProductEarphones;

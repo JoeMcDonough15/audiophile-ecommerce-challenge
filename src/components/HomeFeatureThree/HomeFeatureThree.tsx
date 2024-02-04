@@ -1,38 +1,11 @@
 import "./home-feature-three.sass";
 import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 
-interface FeaturedProductObject {
-  id: number;
-  slug: string;
-  name: string;
-  abbreviatedName: string;
-  image: { mobile: string; tablet: string; desktop: string };
-  category: string;
-  categoryImage: { mobile: string; tablet: string; desktop: string };
-  isNewProduct: boolean;
-  price: number;
-  description: string;
-  teaserDescription?: string;
-  features: string;
-  includes: { quantity: number; item: string }[];
-  gallery: {
-    first: { mobile: string; tablet: string; desktop: string };
-    second: { mobile: string; tablet: string; desktop: string };
-    third: { mobile: string; tablet: string; desktop: string };
-  };
-  others: {
-    slug: string;
-    name: string;
-    image: { mobile: string; tablet: string; desktop: string };
-  }[];
-}
-
 interface Props {
-  featuredProduct: FeaturedProductObject;
+  productSlug: string;
 }
 
-const HomeFeatureThree = ({ featuredProduct }: Props): JSX.Element => {
-  const { slug } = featuredProduct;
+const HomeFeatureThree = ({ productSlug }: Props): JSX.Element => {
   const customProductName = "YX1 earphones";
   return (
     <section className="home-feature-three-container">
@@ -43,7 +16,7 @@ const HomeFeatureThree = ({ featuredProduct }: Props): JSX.Element => {
           isHomeFeatureThree
           buttonData={{
             buttonColor: "transparent",
-            buttonDestination: `product-${slug}`,
+            buttonDestination: `product-${productSlug}`,
           }}
         />
       </div>

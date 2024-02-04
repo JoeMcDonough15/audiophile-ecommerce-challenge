@@ -175,7 +175,12 @@ const imageData = {
 };
 
 const ProductXx99MarkOneHeadphones = () => {
-  return <ProductPage productId={3} productImageData={imageData} />;
+  return (
+    <ProductPage
+      productSlug="xx99-mark-one-headphones"
+      productImageData={imageData}
+    />
+  );
 };
 
 export default ProductXx99MarkOneHeadphones;

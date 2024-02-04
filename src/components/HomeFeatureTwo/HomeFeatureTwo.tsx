@@ -1,39 +1,23 @@
+import { useContext } from "react";
+import { FeaturedProductContext } from "../App";
 import CustomImage from "../CustomImage/CustomImage";
+import { findFeaturedProduct } from "../FeaturedProductInfo/FeaturedProductInfo";
 import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./home-feature-two.sass";
 
-interface FeaturedProductObject {
-  id: number;
-  slug: string;
-  name: string;
-  abbreviatedName: string;
-  image: { mobile: string; tablet: string; desktop: string };
-  category: string;
-  categoryImage: { mobile: string; tablet: string; desktop: string };
-  isNewProduct: boolean;
-  price: number;
-  description: string;
-  teaserDescription?: string;
-  features: string;
-  includes: { quantity: number; item: string }[];
-  gallery: {
-    first: { mobile: string; tablet: string; desktop: string };
-    second: { mobile: string; tablet: string; desktop: string };
-    third: { mobile: string; tablet: string; desktop: string };
-  };
-  others: {
-    slug: string;
-    name: string;
-    image: { mobile: string; tablet: string; desktop: string };
-  }[];
-}
-
 interface Props {
-  featuredProduct: FeaturedProductObject;
+  productSlug: string;
 }
 
-const HomeFeatureTwo = ({ featuredProduct }: Props): JSX.Element => {
-  const { slug, name } = featuredProduct;
+const HomeFeatureTwo = ({ productSlug }: Props): JSX.Element => {
+  const allProducts = useContext(FeaturedProductContext);
+  const featuredProduct = findFeaturedProduct(allProducts, productSlug);
+
+  if (!featuredProduct) {
+    return <div></div>;
+  }
+
+  const { name } = featuredProduct;
   return (
     <section className="home-feature-two-container">
       <CustomImage
@@ -56,7 +40,7 @@ const HomeFeatureTwo = ({ featuredProduct }: Props): JSX.Element => {
         isHomeFeatureTwo
         buttonData={{
           buttonColor: "transparent",
-          buttonDestination: `product-${slug}`,
+          buttonDestination: `product-${productSlug}`,
         }}
       />
     </section>

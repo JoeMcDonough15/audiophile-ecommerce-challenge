@@ -5,38 +5,11 @@ import "./home-feature-one.sass";
 // @ts-ignore
 import image from "./images/image-speaker-zx9-desktop.png";
 
-interface FeaturedProductObject {
-  id: number;
-  slug: string;
-  name: string;
-  abbreviatedName: string;
-  image: { mobile: string; tablet: string; desktop: string };
-  category: string;
-  categoryImage: { mobile: string; tablet: string; desktop: string };
-  isNewProduct: boolean;
-  price: number;
-  description: string;
-  teaserDescription?: string;
-  features: string;
-  includes: { quantity: number; item: string }[];
-  gallery: {
-    first: { mobile: string; tablet: string; desktop: string };
-    second: { mobile: string; tablet: string; desktop: string };
-    third: { mobile: string; tablet: string; desktop: string };
-  };
-  others: {
-    slug: string;
-    name: string;
-    image: { mobile: string; tablet: string; desktop: string };
-  }[];
-}
-
 interface Props {
-  featuredProduct: FeaturedProductObject;
+  productSlug: string;
 }
 
-const HomeFeatureOne = ({ featuredProduct }: Props): JSX.Element => {
-  const { slug } = featuredProduct;
+const HomeFeatureOne = ({ productSlug }: Props): JSX.Element => {
   return (
     <section className="home-feature-one">
       <CirclePatternSvg />
@@ -64,11 +37,12 @@ const HomeFeatureOne = ({ featuredProduct }: Props): JSX.Element => {
           />
         </div>
         <FeaturedProductInfo
+          productSlug={productSlug}
           teaserOnly
           isHomeFeatureOne
           buttonData={{
             buttonColor: "black",
-            buttonDestination: `product-${slug}`,
+            buttonDestination: `product-${productSlug}`,
           }}
         />
       </div>

@@ -211,7 +211,9 @@ const imageData: ProductImageData = {
 };
 
 const ProductXx59Headphones = () => {
-  return <ProductPage productId={2} productImageData={imageData} />;
+  return (
+    <ProductPage productSlug="xx59-headphones" productImageData={imageData} />
+  );
 };
 
 export default ProductXx59Headphones;

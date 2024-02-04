@@ -175,7 +175,7 @@ const imageData = {
 };
 
 const ProductZx9Speaker = () => {
-  return <ProductPage productId={6} productImageData={imageData} />;
+  return <ProductPage productSlug="zx9-speaker" productImageData={imageData} />;
 };
 
 export default ProductZx9Speaker;

@@ -19,8 +19,8 @@ import svgDetails from "./svg-details.json";
 import { PropsWithChildren, createContext, useState } from "react";
 import data from "../data.json";
 
-interface FeaturedProductObject {
-  id?: number;
+export interface FeaturedProductObject {
+  id: number;
   slug: string;
   name: string;
   abbreviatedName?: string;
@@ -31,14 +31,14 @@ interface FeaturedProductObject {
   price: number;
   description?: string;
   teaserDescription?: string;
-  features?: string;
-  includes?: { quantity: number; item: string }[];
-  gallery?: {
+  features: string;
+  includes: { quantity: number; item: string }[];
+  gallery: {
     first: { mobile: string; tablet: string; desktop: string };
     second: { mobile: string; tablet: string; desktop: string };
     third: { mobile: string; tablet: string; desktop: string };
   };
-  others?: {
+  others: {
     slug: string;
     name: string;
     image: { mobile: string; tablet: string; desktop: string };

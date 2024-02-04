@@ -5,9 +5,11 @@ import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import InTheBox from "../../components/InTheBox/InTheBox";
 import Gallery from "../../components/Gallery/Gallery";
 import YouMayAlsoLike from "../../components/YouMayAlsoLike/YouMayAlsoLike";
-import ProductCategoryMenu from "../../components/ProductCategoryMenu/ProductCategoryMenu";
-import data from "../../data.json";
 import "./product-page.sass";
+import { useContext } from "react";
+import { findFeaturedProduct } from "../../components/FeaturedProductInfo/FeaturedProductInfo";
+import { FeaturedProductContext } from "../../components/App";
+import PageNotFound from "../PageNotFound";
 
 interface ProductImageData {
   featuredProductImageData: {
@@ -45,12 +47,19 @@ interface ProductImageData {
   }[][];
 }
 interface Props {
-  productId: number;
   productImageData: ProductImageData;
+  productSlug: string;
 }
 
-const ProductPage = ({ productId, productImageData }: Props) => {
-  const pageProduct = data[productId - 1];
+const ProductPage = ({ productSlug, productImageData }: Props) => {
+  const allProducts = useContext(FeaturedProductContext);
+
+  const pageProduct = findFeaturedProduct(allProducts, productSlug);
+
+  if (!pageProduct) {
+    return <PageNotFound />;
+  }
+
   const { features, includes, others } = pageProduct;
   const {
     featuredProductImageData,
@@ -70,7 +79,7 @@ const ProductPage = ({ productId, productImageData }: Props) => {
           />
         </div>
         <FeaturedProduct
-          featuredProduct={pageProduct}
+          productSlug={productSlug}
           isProductPage
           imageData={featuredProductImageData}
           buttonData={{ buttonColor: "dark-orange" }}
@@ -86,7 +95,6 @@ const ProductPage = ({ productId, productImageData }: Props) => {
           relatedProductsImages={relatedProductsImageData}
           relatedProducts={others}
         />
-        {/* <ProductCategoryMenu /> */}
       </main>
     </>
   );
