@@ -11,7 +11,7 @@ const ProductCategoryMenu = (): JSX.Element => {
           require("./images/image-category-thumbnail-headphones.png").default
         }
         thumbnailName="headphones-thumbnail thumbnail-image"
-        buttonDestination="headphones"
+        buttonDestination="/category/headphones"
       />
       <CategorySlab
         key={2}
@@ -20,7 +20,7 @@ const ProductCategoryMenu = (): JSX.Element => {
           require("./images/image-category-thumbnail-speakers.png").default
         }
         thumbnailName="speaker-thumbnail thumbnail-image"
-        buttonDestination="speakers"
+        buttonDestination="/category/speakers"
       />
       <CategorySlab
         key={3}
@@ -29,7 +29,7 @@ const ProductCategoryMenu = (): JSX.Element => {
           require("./images/image-category-thumbnail-earphones.png").default
         }
         thumbnailName="earphones-thumbnail thumbnail-image"
-        buttonDestination="earphones"
+        buttonDestination="/category/earphones"
       />
     </nav>
   );

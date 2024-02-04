@@ -31,7 +31,7 @@ const Button = (props: Props): JSX.Element => {
   } = props;
 
   return buttonDestination ? (
-    <NavLink className="button-container" to={`/${buttonDestination}`}>
+    <NavLink className="button-container" to={buttonDestination}>
       <button className={className}>
         <span className="button-text">{buttonText}</span>
         {withArrowIcon && arrowIconDetails && (

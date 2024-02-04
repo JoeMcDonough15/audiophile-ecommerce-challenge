@@ -1,9 +1,9 @@
 import { Route, Switch } from "react-router-dom";
 import Homepage from "../pages/Homepage/Homepage";
 import Checkout from "../pages/Checkout/Checkout";
-import Earphones from "../pages/category-pages/Earphones/Earphones";
-import Headphones from "../pages/category-pages/Headphones/Headphones";
-import Speakers from "../pages/category-pages/Speakers/Speakers";
+// import Earphones from "../pages/category-pages/Earphones/Earphones";
+// import Headphones from "../pages/category-pages/Headphones/Headphones";
+// import Speakers from "../pages/category-pages/Speakers/Speakers";
 import ProductEarphones from "../pages/product-pages/Product-Earphones/ProductEarphones";
 import ProductXx59Headphones from "../pages/product-pages/Product-xx59-Headphones/ProductXx59Headphones";
 import ProductXx99MarkOneHeadphones from "../pages/product-pages/Product-xx99-Mark-One-Headphones/ProductXx99MarkOneHeadphones";
@@ -18,6 +18,7 @@ import Footer from "../components/Footer/Footer";
 import svgDetails from "./svg-details.json";
 import { PropsWithChildren, createContext, useState } from "react";
 import data from "../data.json";
+import CategoryPage from "../pages/category-pages/CategoryPage";
 
 export interface FeaturedProductObject {
   id: number;
@@ -69,9 +70,7 @@ function App(): JSX.Element {
       />
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route path="/earphones" component={Earphones} />
-        <Route path="/headphones" component={Headphones} />
-        <Route path="/speakers" component={Speakers} />
+        <Route path="/category/:categoryName" component={CategoryPage} />
         <Route
           path="/product-xx59-headphones"
           component={ProductXx59Headphones}
