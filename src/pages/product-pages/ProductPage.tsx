@@ -10,6 +10,7 @@ import { useContext } from "react";
 import { findFeaturedProduct } from "../../components/FeaturedProductInfo/FeaturedProductInfo";
 import { FeaturedProductContext } from "../../components/App";
 import PageNotFound from "../PageNotFound";
+import { useParams } from "react-router";
 
 interface ProductImageData {
   featuredProductImageData: {
@@ -46,58 +47,56 @@ interface ProductImageData {
     imageSize: string;
   }[][];
 }
-interface Props {
-  productImageData: ProductImageData;
-  productSlug: string;
-}
 
-const ProductPage = ({ productSlug, productImageData }: Props) => {
+const ProductPage = () => {
+  const { productName: productSlug } = useParams<{ productName: string }>();
   const allProducts = useContext(FeaturedProductContext);
 
   const pageProduct = findFeaturedProduct(allProducts, productSlug);
-
   if (!pageProduct) {
     return <PageNotFound />;
   }
 
-  const { features, includes, others } = pageProduct;
-  const {
-    featuredProductImageData,
-    galleryImageData,
-    relatedProductsImageData,
-  } = productImageData;
+  return <div></div>;
 
-  return (
-    <>
-      <Banner />
-      <main className="product-page">
-        <div className="main-container">
-          <Button
-            className={"button-text-only"}
-            buttonText="go back"
-            buttonDestination=""
-          />
-        </div>
-        <FeaturedProduct
-          productSlug={productSlug}
-          isProductPage
-          imageData={featuredProductImageData}
-          buttonData={{ buttonColor: "dark-orange" }}
-        />
-        {/* <SpecifyQuantity />
-        <Button buttonText="Add to cart" className={`button-${buttonColor}`} /> */}
-        <section className="product-details-and-accessories main-container">
-          <ProductDetails detailsText={features} />
-          <InTheBox productIncludes={includes} />
-        </section>
-        <Gallery imageData={galleryImageData} />
-        <YouMayAlsoLike
-          relatedProductsImages={relatedProductsImageData}
-          relatedProducts={others}
-        />
-      </main>
-    </>
-  );
+  //   const { features, includes, others } = pageProduct;
+  //   const {
+  //     featuredProductImageData,
+  //     galleryImageData,
+  //     relatedProductsImageData,
+  //   } = productImageData;
+
+  //   return (
+  //     <>
+  //       <Banner />
+  //       <main className="product-page">
+  //         <div className="main-container">
+  //           <Button
+  //             className={"button-text-only"}
+  //             buttonText="go back"
+  //             buttonDestination=""
+  //           />
+  //         </div>
+  //         <FeaturedProduct
+  //           productSlug={productSlug}
+  //           isProductPage
+  //           imageData={featuredProductImageData}
+  //           buttonData={{ buttonColor: "dark-orange" }}
+  //         />
+  //         {/* <SpecifyQuantity />
+  //         <Button buttonText="Add to cart" className={`button-${buttonColor}`} /> */}
+  //         <section className="product-details-and-accessories main-container">
+  //           <ProductDetails detailsText={features} />
+  //           <InTheBox productIncludes={includes} />
+  //         </section>
+  //         <Gallery imageData={galleryImageData} />
+  //         <YouMayAlsoLike
+  //           relatedProductsImages={relatedProductsImageData}
+  //           relatedProducts={others}
+  //         />
+  //       </main>
+  //     </>
+  //   );
 };
 
 export default ProductPage;
