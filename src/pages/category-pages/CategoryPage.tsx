@@ -45,7 +45,7 @@ const CategoryPage = () => {
         <section className="category-features col">
           {featuredProducts.map(
             (product: FeaturedProductObject, productIndex: number) => {
-              return <div></div>;
+              return <div key={productIndex}></div>;
               // return (
               // <FeaturedProduct
               //   key={productIndex}

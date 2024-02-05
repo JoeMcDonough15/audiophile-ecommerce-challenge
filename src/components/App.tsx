@@ -1,24 +1,16 @@
 import { Route, Switch } from "react-router-dom";
-import Homepage from "../pages/Homepage/Homepage";
-import Checkout from "../pages/Checkout/Checkout";
-// import Earphones from "../pages/category-pages/Earphones/Earphones";
-// import Headphones from "../pages/category-pages/Headphones/Headphones";
-// import Speakers from "../pages/category-pages/Speakers/Speakers";
-import ProductEarphones from "../pages/product-pages/Product-Earphones/ProductEarphones";
-import ProductXx59Headphones from "../pages/product-pages/Product-xx59-Headphones/ProductXx59Headphones";
-import ProductXx99MarkOneHeadphones from "../pages/product-pages/Product-xx99-Mark-One-Headphones/ProductXx99MarkOneHeadphones";
-import ProductXx99MarkTwoHeadphones from "../pages/product-pages/Product-xx99-Mark-Two-Headphones/ProductXx99MarkTwoHeadphones";
-import ProductZx7Speaker from "../pages/product-pages/Product-zx7-Speaker/ProductZx7Speaker";
-import ProductZx9Speaker from "../pages/product-pages/Product-zx9-Speaker/ProductZx9Speaker";
-import PageNotFound from "../pages/PageNotFound";
+import { PropsWithChildren, createContext } from "react";
 import Header from "../components/Header/Header";
+import Homepage from "../pages/Homepage/Homepage";
+import CategoryPage from "../pages/category-pages/CategoryPage";
+import ProductPage from "../pages/product-pages/ProductPage";
+import Checkout from "../pages/Checkout/Checkout";
+import PageNotFound from "../pages/PageNotFound";
 import ProductCategoryMenu from "./ProductCategoryMenu/ProductCategoryMenu";
 import AboutUs from "../components/AboutUs/AboutUs";
 import Footer from "../components/Footer/Footer";
 import svgDetails from "./svg-details.json";
-import { PropsWithChildren, createContext, useState } from "react";
 import data from "../data.json";
-import CategoryPage from "../pages/category-pages/CategoryPage";
 
 export interface FeaturedProductObject {
   id: number;
@@ -71,21 +63,7 @@ function App(): JSX.Element {
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/category/:categoryName" component={CategoryPage} />
-        <Route
-          path="/product-xx59-headphones"
-          component={ProductXx59Headphones}
-        />
-        <Route
-          path="/product-xx99-mark-one-headphones"
-          component={ProductXx99MarkOneHeadphones}
-        />
-        <Route
-          path="/product-xx99-mark-two-headphones"
-          component={ProductXx99MarkTwoHeadphones}
-        />
-        <Route path="/product-zx7-speaker" component={ProductZx7Speaker} />
-        <Route path="/product-zx9-speaker" component={ProductZx9Speaker} />
-        <Route path="/product-yx1-earphones" component={ProductEarphones} />
+        <Route path="/product/:productName" component={ProductPage} />
         <Route path="/checkout" component={Checkout} />
         <Route component={PageNotFound} />
       </Switch>
