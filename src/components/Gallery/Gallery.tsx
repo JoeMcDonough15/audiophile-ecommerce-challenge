@@ -1,25 +1,11 @@
 import CustomImage from "../CustomImage/CustomImage";
+import { FeaturedProductImageData } from "../FeaturedProduct/FeaturedProduct";
 import "./gallery.sass";
 
 interface GalleryImageData {
-  galleryImageOneData: {
-    id: number;
-    imageSrc: string;
-    imageAltText: string;
-    imageSize: string;
-  }[];
-  galleryImageTwoData: {
-    id: number;
-    imageSrc: string;
-    imageAltText: string;
-    imageSize: string;
-  }[];
-  galleryImageThreeData: {
-    id: number;
-    imageSrc: string;
-    imageAltText: string;
-    imageSize: string;
-  }[];
+  first: FeaturedProductImageData;
+  second: FeaturedProductImageData;
+  third: FeaturedProductImageData;
 }
 
 interface Props {
@@ -27,48 +13,61 @@ interface Props {
 }
 
 const Gallery = ({ imageData }: Props): JSX.Element => {
-  const { galleryImageOneData, galleryImageTwoData, galleryImageThreeData } =
-    imageData;
   return (
     <section className="gallery main-container">
       <div className="gallery-section-one col">
         <div className="gallery-image-one-container">
-          {galleryImageOneData.map((imageObject) => {
-            return (
-              <CustomImage
-                className={`gallery-image gallery-image-one image-${imageObject.imageSize}`}
-                key={imageObject.id}
-                src={imageObject.imageSrc}
-                altText={imageObject.imageAltText}
-              />
-            );
-          })}
+          <CustomImage
+            className={"gallery-image gallery-image-one image-mobile"}
+            src={imageData.first.mobile}
+            altText={"imageObject.imageAltText"}
+          />
+          <CustomImage
+            className={"gallery-image gallery-image-one image-tablet"}
+            src={imageData.first.tablet}
+            altText={"imageObject.imageAltText"}
+          />
+          <CustomImage
+            className={"gallery-image gallery-image-one image-desktop"}
+            src={imageData.first.desktop}
+            altText={"imageObject.imageAltText"}
+          />
         </div>
         <div className="gallery-image-two-container">
-          {galleryImageTwoData.map((imageObject) => {
-            return (
-              <CustomImage
-                className={`gallery-image gallery-image-two image-${imageObject.imageSize}`}
-                key={imageObject.id}
-                src={imageObject.imageSrc}
-                altText={imageObject.imageAltText}
-              />
-            );
-          })}
+          <CustomImage
+            className={"gallery-image gallery-image-one image-mobile"}
+            src={imageData.second.mobile}
+            altText={"imageObject.imageAltText"}
+          />
+          <CustomImage
+            className={"gallery-image gallery-image-one image-tablet"}
+            src={imageData.second.tablet}
+            altText={"imageObject.imageAltText"}
+          />
+          <CustomImage
+            className={"gallery-image gallery-image-one image-desktop"}
+            src={imageData.second.desktop}
+            altText={"imageObject.imageAltText"}
+          />
         </div>
       </div>
       <div className="gallery-section-two">
         <div className="gallery-image-three-container">
-          {galleryImageThreeData.map((imageObject) => {
-            return (
-              <CustomImage
-                className={`gallery-image gallery-image-three image-${imageObject.imageSize}`}
-                key={imageObject.id}
-                src={imageObject.imageSrc}
-                altText={imageObject.imageAltText}
-              />
-            );
-          })}
+          <CustomImage
+            className={"gallery-image gallery-image-one image-mobile"}
+            src={imageData.third.mobile}
+            altText={"imageObject.imageAltText"}
+          />
+          <CustomImage
+            className={"gallery-image gallery-image-one image-tablet"}
+            src={imageData.third.tablet}
+            altText={"imageObject.imageAltText"}
+          />
+          <CustomImage
+            className={"gallery-image gallery-image-one image-desktop"}
+            src={imageData.third.desktop}
+            altText={"imageObject.imageAltText"}
+          />
         </div>
       </div>
     </section>

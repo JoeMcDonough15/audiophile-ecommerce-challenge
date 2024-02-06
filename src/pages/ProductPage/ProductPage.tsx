@@ -12,41 +12,41 @@ import { FeaturedProductContext } from "../../components/App";
 import PageNotFound from "../PageNotFound";
 import { useParams } from "react-router";
 
-interface ProductImageData {
-  featuredProductImageData: {
-    mobileImageSrc: string;
-    tabletImageSrc: string;
-    desktopImageSrc: string;
-    imageAltText: string;
-    customImageStyles: string;
-  };
-  galleryImageData: {
-    galleryImageOneData: {
-      id: number;
-      imageSrc: string;
-      imageAltText: string;
-      imageSize: string;
-    }[];
-    galleryImageTwoData: {
-      id: number;
-      imageSrc: string;
-      imageAltText: string;
-      imageSize: string;
-    }[];
-    galleryImageThreeData: {
-      id: number;
-      imageSrc: string;
-      imageAltText: string;
-      imageSize: string;
-    }[];
-  };
-  relatedProductsImageData: {
-    id: number;
-    imageSrc: string;
-    imageAltText: string;
-    imageSize: string;
-  }[][];
-}
+// interface ProductImageData {
+//   featuredProductImageData: {
+//     mobileImageSrc: string;
+//     tabletImageSrc: string;
+//     desktopImageSrc: string;
+//     imageAltText: string;
+//     customImageStyles: string;
+//   };
+//   galleryImageData: {
+//     galleryImageOneData: {
+//       id: number;
+//       imageSrc: string;
+//       imageAltText: string;
+//       imageSize: string;
+//     }[];
+//     galleryImageTwoData: {
+//       id: number;
+//       imageSrc: string;
+//       imageAltText: string;
+//       imageSize: string;
+//     }[];
+//     galleryImageThreeData: {
+//       id: number;
+//       imageSrc: string;
+//       imageAltText: string;
+//       imageSize: string;
+//     }[];
+//   };
+//   relatedProductsImageData: {
+//     id: number;
+//     imageSrc: string;
+//     imageAltText: string;
+//     imageSize: string;
+//   }[][];
+// }
 
 const ProductPage = () => {
   const { productName: productSlug } = useParams<{
@@ -59,46 +59,39 @@ const ProductPage = () => {
     return <PageNotFound />;
   }
 
-  return <div></div>;
+  const { features, includes, others } = pageProduct;
 
-  //   const { features, includes, others } = pageProduct;
-  //   const {
-  //     featuredProductImageData,
-  //     galleryImageData,
-  //     relatedProductsImageData,
-  //   } = productImageData;
-
-  //   return (
-  //     <>
-  //       <Banner />
-  //       <main className="product-page">
-  //         <div className="main-container">
-  //           <Button
-  //             className={"button-text-only"}
-  //             buttonText="go back"
-  //             buttonDestination=""
-  //           />
-  //         </div>
-  //         <FeaturedProduct
-  //           productSlug={productSlug}
-  //           isProductPage
-  //           imageData={featuredProductImageData}
-  //           buttonData={{ buttonColor: "dark-orange" }}
-  //         />
-  //         {/* <SpecifyQuantity />
-  //         <Button buttonText="Add to cart" className={`button-${buttonColor}`} /> */}
-  //         <section className="product-details-and-accessories main-container">
-  //           <ProductDetails detailsText={features} />
-  //           <InTheBox productIncludes={includes} />
-  //         </section>
-  //         <Gallery imageData={galleryImageData} />
-  //         <YouMayAlsoLike
-  //           relatedProductsImages={relatedProductsImageData}
-  //           relatedProducts={others}
-  //         />
-  //       </main>
-  //     </>
-  //   );
+  return (
+    <>
+      <Banner />
+      <main className="product-page">
+        <div className="main-container">
+          <Button
+            className={"button-text-only"}
+            buttonText="go back"
+            buttonDestination=""
+          />
+        </div>
+        <FeaturedProduct
+          productSlug={productSlug}
+          isProductPage
+          imageData={pageProduct.image}
+          buttonData={{ buttonColor: "dark-orange" }}
+        />
+        {/* <SpecifyQuantity />
+          <Button buttonText="Add to cart" className={`button-${buttonColor}`} /> */}
+        <section className="product-details-and-accessories main-container">
+          <ProductDetails detailsText={features} />
+          <InTheBox productIncludes={includes} />
+        </section>
+        <Gallery imageData={pageProduct.gallery} />
+        {/* <YouMayAlsoLike
+          relatedProductsImages={relatedProductsImageData}
+          relatedProducts={others}
+        /> */}
+      </main>
+    </>
+  );
 };
 
 export default ProductPage;

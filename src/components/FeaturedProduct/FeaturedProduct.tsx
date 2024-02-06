@@ -2,7 +2,7 @@ import ImageSlab from "../ImageSlab/ImageSlab";
 import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 import "./featured-product.sass";
 
-interface FeaturedProductImageData {
+export interface FeaturedProductImageData {
   mobile: string;
   tablet: string;
   desktop: string;
