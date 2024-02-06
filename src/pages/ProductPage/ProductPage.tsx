@@ -12,42 +12,6 @@ import { FeaturedProductContext } from "../../components/App";
 import PageNotFound from "../PageNotFound";
 import { useParams } from "react-router";
 
-// interface ProductImageData {
-//   featuredProductImageData: {
-//     mobileImageSrc: string;
-//     tabletImageSrc: string;
-//     desktopImageSrc: string;
-//     imageAltText: string;
-//     customImageStyles: string;
-//   };
-//   galleryImageData: {
-//     galleryImageOneData: {
-//       id: number;
-//       imageSrc: string;
-//       imageAltText: string;
-//       imageSize: string;
-//     }[];
-//     galleryImageTwoData: {
-//       id: number;
-//       imageSrc: string;
-//       imageAltText: string;
-//       imageSize: string;
-//     }[];
-//     galleryImageThreeData: {
-//       id: number;
-//       imageSrc: string;
-//       imageAltText: string;
-//       imageSize: string;
-//     }[];
-//   };
-//   relatedProductsImageData: {
-//     id: number;
-//     imageSrc: string;
-//     imageAltText: string;
-//     imageSize: string;
-//   }[][];
-// }
-
 const ProductPage = () => {
   const { productName: productSlug } = useParams<{
     productName: string;
@@ -85,10 +49,7 @@ const ProductPage = () => {
           <InTheBox productIncludes={includes} />
         </section>
         <Gallery imageData={pageProduct.gallery} />
-        {/* <YouMayAlsoLike
-          relatedProductsImages={relatedProductsImageData}
-          relatedProducts={others}
-        /> */}
+        <YouMayAlsoLike relatedProducts={others} />
       </main>
     </>
   );

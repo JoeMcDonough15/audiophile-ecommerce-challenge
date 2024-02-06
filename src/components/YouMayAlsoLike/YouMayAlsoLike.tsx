@@ -1,54 +1,53 @@
 import ImageSlab from "../ImageSlab/ImageSlab";
 import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./you-may-also-like.sass";
+import { FeaturedProductImageData } from "../FeaturedProduct/FeaturedProduct";
 
 interface RelatedProduct {
   slug: string;
   name: string;
-  image: { mobile: string; tablet: string; desktop: string };
-}
-
-interface RelatedProductsImageData {
-  id: number;
-  imageSrc: string;
-  imageAltText: string;
-  imageSize: string;
+  image: FeaturedProductImageData;
 }
 
 interface Props {
   relatedProducts: RelatedProduct[];
-  relatedProductsImages: RelatedProductsImageData[][];
 }
 
-const YouMayAlsoLike = ({
-  relatedProducts,
-  relatedProductsImages,
-}: Props): JSX.Element => {
-  let index = -1;
+const YouMayAlsoLike = ({ relatedProducts }: Props): JSX.Element => {
   return (
     <section className="related-products-section main-container col">
       <h5 className="related-products-header black-text">You may also like</h5>
       <nav className="all-related-products-container">
         {relatedProducts.map((relatedProductObject) => {
-          index++;
           return (
             <div
               className="related-product-container col"
               key={relatedProductObject.slug}
             >
-              {relatedProductsImages[index].map((imageObject) => {
-                return (
-                  <ImageSlab
-                    containerClassName="related-product-image-container"
-                    key={imageObject.id}
-                    slabSize={imageObject.imageSize}
-                    imageData={{
-                      imageSrc: imageObject.imageSrc,
-                      imageAltText: imageObject.imageAltText,
-                    }}
-                  />
-                );
-              })}
+              <ImageSlab
+                containerClassName="related-product-image-container"
+                slabSize={"mobile"}
+                imageData={{
+                  imageSrc: relatedProductObject.image.mobile,
+                  imageAltText: "",
+                }}
+              />
+              <ImageSlab
+                containerClassName="related-product-image-container"
+                slabSize={"tablet"}
+                imageData={{
+                  imageSrc: relatedProductObject.image.tablet,
+                  imageAltText: "",
+                }}
+              />
+              <ImageSlab
+                containerClassName="related-product-image-container"
+                slabSize={"desktop"}
+                imageData={{
+                  imageSrc: relatedProductObject.image.desktop,
+                  imageAltText: "",
+                }}
+              />
 
               <HeadingAndButton
                 productName={relatedProductObject.name}
