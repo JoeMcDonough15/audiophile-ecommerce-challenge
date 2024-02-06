@@ -7,7 +7,7 @@ interface FeaturedProductImageData {
   tabletImageSrc: string;
   desktopImageSrc: string;
   imageAltText: string;
-  customImageStyles: string;
+  customImageStyles?: string;
 }
 
 interface ButtonData {

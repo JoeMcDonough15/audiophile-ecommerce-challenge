@@ -17,7 +17,7 @@ const HeroSection = ({ productSlug }: Props): JSX.Element => {
           isHeroSection
           buttonData={{
             buttonColor: "dark-orange",
-            buttonDestination: `product-${productSlug}`,
+            buttonDestination: `/product/${productSlug}`,
           }}
         />
       </section>

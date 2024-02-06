@@ -42,7 +42,7 @@ const HomeFeatureOne = ({ productSlug }: Props): JSX.Element => {
           isHomeFeatureOne
           buttonData={{
             buttonColor: "black",
-            buttonDestination: `product-${productSlug}`,
+            buttonDestination: `product/${productSlug}`,
           }}
         />
       </div>

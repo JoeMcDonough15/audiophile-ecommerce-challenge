@@ -16,7 +16,7 @@ const HomeFeatureThree = ({ productSlug }: Props): JSX.Element => {
           isHomeFeatureThree
           buttonData={{
             buttonColor: "transparent",
-            buttonDestination: `product-${productSlug}`,
+            buttonDestination: `product/${productSlug}`,
           }}
         />
       </div>

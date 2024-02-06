@@ -1,5 +1,17 @@
 const allProductImages = {
-  yx1Earphones: {
+  "yx1-earphones": {
+    categoryImageData: {
+      mobileImgSrc:
+        require("./assets/product-yx1-earphones/mobile/image-category-page-preview.jpg")
+          .default,
+      tabletImgSrc:
+        require("./assets/product-yx1-earphones/tablet/image-category-page-preview.jpg")
+          .default,
+      desktopImgSrc:
+        require("./assets/product-yx1-earphones/desktop/image-category-page-preview.jpg")
+          .default,
+      imageAltText: "yx-1-earphones-category-image",
+    },
     productImageData: {
       mobileImageSrc:
         require("./assets/product-yx1-earphones/mobile/image-product.jpg")
@@ -12,18 +24,6 @@ const allProductImages = {
           .default,
       imageAltText: "yx-1-earphones-image",
       customImageStyles: "product-page-image yx1-earphones-image-width",
-    },
-    categoryImageData: {
-      mobileImgSrc:
-        require("./assets/product-yx1-earphones/mobile/image-category-page-preview.jpg")
-          .default,
-      tabletImgSrc:
-        require("./assets/product-yx1-earphones/tablet/image-category-page-preview.jpg")
-          .default,
-      desktopImgSrc:
-        require("./assets/product-yx1-earphones/desktop/image-category-page-preview.jpg")
-          .default,
-      imageAltText: "yx-1-earphones-category-image",
     },
     galleryImageData: {
       galleryImageOneData: [
@@ -180,7 +180,19 @@ const allProductImages = {
       ],
     ],
   },
-  xx59Headphones: {
+  "xx59-headphones": {
+    categoryImageData: {
+      mobileImageSrc:
+        require("./assets/product-xx59-headphones/mobile/image-category-page-preview.jpg")
+          .default,
+      tabletImageSrc:
+        require("./assets/product-xx59-headphones/tablet/image-category-page-preview.jpg")
+          .default,
+      desktopImageSrc:
+        require("./assets/product-xx59-headphones/desktop/image-category-page-preview.jpg")
+          .default,
+      imageAltText: "xx59-headphones-category-image",
+    },
     productImageData: {
       mobileImageSrc:
         require("./assets/product-xx59-headphones/mobile/image-product.jpg")
@@ -194,18 +206,7 @@ const allProductImages = {
       imageAltText: "xx59-headphones-image",
       customImageStyles: "product-page-image xx59-headphones-image-width",
     },
-    categoryImageData: {
-      mobileImageSrc:
-        require("./assets/product-xx59-headphones/mobile/image-category-page-preview.jpg")
-          .default,
-      tabletImageSrc:
-        require("./assets/product-xx59-headphones/tablet/image-category-page-preview.jpg")
-          .default,
-      desktopImageSrc:
-        require("./assets/product-xx59-headphones/desktop/image-category-page-preview.jpg")
-          .default,
-      imageAltText: "xx59-headphones-category-image",
-    },
+
     galleryImageData: {
       galleryImageOneData: [
         {
@@ -364,7 +365,19 @@ const allProductImages = {
       ],
     ],
   },
-  xx99MarkOneHeadphones: {
+  "xx99-mark-one-headphones": {
+    categoryImageData: {
+      mobileImageSrc:
+        require("./assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg")
+          .default,
+      tabletImageSrc:
+        require("./assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg")
+          .default,
+      desktopImageSrc:
+        require("./assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg")
+          .default,
+      imageAltText: "mark-one-headphones-category-image",
+    },
     productImageData: {
       mobileImageSrc:
         require("./assets/product-xx99-mark-one-headphones/mobile/image-product.jpg")
@@ -378,18 +391,7 @@ const allProductImages = {
       imageAltText: "mark-one-headphones-image",
       customImageStyles: "product-page-image mark-one-image-width",
     },
-    categoryImageData: {
-      mobileImageSrc:
-        require("./assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg")
-          .default,
-      tabletImageSrc:
-        require("./assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg")
-          .default,
-      desktopImageSrc:
-        require("./assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg")
-          .default,
-      imageAltText: "mark-one-headphones-category-image",
-    },
+
     galleryImageData: {
       galleryImageOneData: [
         {
@@ -545,7 +547,19 @@ const allProductImages = {
       ],
     ],
   },
-  xx99MarkTwoHeadphones: {
+  "xx99-mark-two-headphones": {
+    categoryImageData: {
+      mobileImageSrc:
+        require("./assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg")
+          .default,
+      tabletImageSrc:
+        require("./assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg")
+          .default,
+      desktopImageSrc:
+        require("./assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg")
+          .default,
+      imageAltText: "mark-two-headphones-category-image",
+    },
     productImageData: {
       mobileImageSrc:
         require("./assets/product-xx99-mark-two-headphones/mobile/image-product.jpg")
@@ -558,18 +572,6 @@ const allProductImages = {
           .default,
       imageAltText: "mark-two-headphones-image",
       customImageStyles: "product-page-image mark-two-image-width",
-    },
-    categoryImageData: {
-      mobileImageSrc:
-        require("./assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg")
-          .default,
-      tabletImageSrc:
-        require("./assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg")
-          .default,
-      desktopImageSrc:
-        require("./assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg")
-          .default,
-      imageAltText: "mark-two-headphones-category-image",
     },
     galleryImageData: {
       galleryImageOneData: [
@@ -726,7 +728,19 @@ const allProductImages = {
       ],
     ],
   },
-  zx7Speaker: {
+  "zx7-speaker": {
+    categoryImageData: {
+      mobileImageSrc:
+        require("./assets/product-zx7-speaker/mobile/image-category-page-preview.jpg")
+          .default,
+      tabletImageSrc:
+        require("./assets/product-zx7-speaker/tablet/image-category-page-preview.jpg")
+          .default,
+      desktopImageSrc:
+        require("./assets/product-zx7-speaker/desktop/image-category-page-preview.jpg")
+          .default,
+      imageAltText: "zx-7-speaker-category-image",
+    },
     productImageData: {
       mobileImageSrc:
         require("./assets/product-zx7-speaker/mobile/image-product.jpg")
@@ -739,18 +753,6 @@ const allProductImages = {
           .default,
       imageAltText: "zx7-speaker-image",
       customImageStyles: "product-page-image zx7-image-width",
-    },
-    categoryImageData: {
-      mobileImageSrc:
-        require("./assets/product-zx7-speaker/mobile/image-category-page-preview.jpg")
-          .default,
-      tabletImageSrc:
-        require("./assets/product-zx7-speaker/tablet/image-category-page-preview.jpg")
-          .default,
-      desktopImageSrc:
-        require("./assets/product-zx7-speaker/desktop/image-category-page-preview.jpg")
-          .default,
-      imageAltText: "zx-7-speaker-category-image",
     },
     galleryImageData: {
       galleryImageOneData: [
@@ -907,7 +909,19 @@ const allProductImages = {
       ],
     ],
   },
-  zx9Speaker: {
+  "zx9-speaker": {
+    categoryImageData: {
+      mobileImageSrc:
+        require("./assets/product-zx9-speaker/mobile/image-category-page-preview.jpg")
+          .default,
+      tabletImageSrc:
+        require("./assets/product-zx9-speaker/tablet/image-category-page-preview.jpg")
+          .default,
+      desktopImageSrc:
+        require("./assets/product-zx9-speaker/desktop/image-category-page-preview.jpg")
+          .default,
+      imageAltText: "zx-9-speaker-category-image",
+    },
     featuredProductImageData: {
       mobileImageSrc:
         require("./assets/product-zx9-speaker/mobile/image-product.jpg")
@@ -920,18 +934,6 @@ const allProductImages = {
           .default,
       imageAltText: "zx9-speaker-image",
       customImageStyles: "product-page-image zx9-image-width",
-    },
-    categoryImageData: {
-      mobileImageSrc:
-        require("./assets/product-zx9-speaker/mobile/image-category-page-preview.jpg")
-          .default,
-      tabletImageSrc:
-        require("./assets/product-zx9-speaker/tablet/image-category-page-preview.jpg")
-          .default,
-      desktopImageSrc:
-        require("./assets/product-zx9-speaker/desktop/image-category-page-preview.jpg")
-          .default,
-      imageAltText: "zx-9-speaker-category-image",
     },
     galleryImageData: {
       galleryImageOneData: [

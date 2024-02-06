@@ -1,9 +1,13 @@
 import { useParams } from "react-router";
 import Banner from "../../components/Banner/Banner";
 import FeaturedProduct from "../../components/FeaturedProduct/FeaturedProduct";
-import data from "../../data.json";
 import "./category-page.sass";
-import { FeaturedProductObject } from "../../components/App";
+import {
+  FeaturedProductContext,
+  FeaturedProductObject,
+} from "../../components/App";
+import { useContext } from "react";
+import allProductImages from "../../imageData";
 
 interface FeaturedProductImageData {
   mobileImageSrc: string;
@@ -13,14 +17,10 @@ interface FeaturedProductImageData {
   customImageStyles: string;
 }
 
-interface Props {
-  imageData: FeaturedProductImageData[];
-  categoryName: string;
-}
-
 const CategoryPage = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
-  const featuredProducts = data
+  const allProducts = useContext(FeaturedProductContext);
+  const categoryPageProducts = allProducts
     .filter((product: FeaturedProductObject) => {
       return product.category === categoryName;
     })
@@ -38,25 +38,34 @@ const CategoryPage = () => {
         }
       }
     );
+
+  const categoryPageImageData = categoryPageProducts.map(
+    (pageProduct): FeaturedProductImageData[] => {
+      const pageProductSlug = pageProduct.slug;
+      // @ts-ignore
+      return allProductImages[pageProductSlug].categoryImageData;
+    }
+  );
+
   return (
     <>
       <Banner bannerText={categoryName} />
       <main className="category-page">
         <section className="category-features col">
-          {featuredProducts.map(
+          {categoryPageProducts.map(
             (product: FeaturedProductObject, productIndex: number) => {
-              return <div key={productIndex}></div>;
-              // return (
-              // <FeaturedProduct
-              //   key={productIndex}
-              //   // imageData={imageData[productIndex]}
-              //   productSlug={product.slug}
-              //   buttonData={{
-              //     buttonColor: "dark-orange",
-              //     buttonDestination: `product-${product.slug}`,
-              //   }}
-              // />
-              // );
+              return (
+                <FeaturedProduct
+                  key={productIndex}
+                  //@ts-ignore
+                  imageData={categoryPageImageData[productIndex]}
+                  productSlug={product.slug}
+                  buttonData={{
+                    buttonColor: "dark-orange",
+                    buttonDestination: `/product/${product.slug}`,
+                  }}
+                />
+              );
             }
           )}
         </section>

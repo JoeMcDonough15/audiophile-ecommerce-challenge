@@ -40,7 +40,7 @@ const HomeFeatureTwo = ({ productSlug }: Props): JSX.Element => {
         isHomeFeatureTwo
         buttonData={{
           buttonColor: "transparent",
-          buttonDestination: `product-${productSlug}`,
+          buttonDestination: `product/${productSlug}`,
         }}
       />
     </section>

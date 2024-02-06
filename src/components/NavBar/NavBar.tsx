@@ -11,13 +11,13 @@ const NavBar = ({ className }: Props): JSX.Element => {
       <NavLink className="nav-link" to={"/"} exact>
         Home
       </NavLink>
-      <NavLink className="nav-link" to={"/headphones"}>
+      <NavLink className="nav-link" to={"/category/headphones"}>
         Headphones
       </NavLink>
-      <NavLink className="nav-link" to={"/speakers"}>
+      <NavLink className="nav-link" to={"/category/speakers"}>
         Speakers
       </NavLink>
-      <NavLink className="nav-link" to={"/earphones"}>
+      <NavLink className="nav-link" to={"/category/earphones"}>
         Earphones
       </NavLink>
     </nav>

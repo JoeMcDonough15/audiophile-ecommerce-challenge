@@ -49,7 +49,9 @@ interface ProductImageData {
 }
 
 const ProductPage = () => {
-  const { productName: productSlug } = useParams<{ productName: string }>();
+  const { productName: productSlug } = useParams<{
+    productName: string;
+  }>();
   const allProducts = useContext(FeaturedProductContext);
 
   const pageProduct = findFeaturedProduct(allProducts, productSlug);
