@@ -17,7 +17,12 @@ export interface FeaturedProductObject {
   slug: string;
   name: string;
   abbreviatedName?: string;
-  image: { mobile: string; tablet: string; desktop: string };
+  image: {
+    mobile: string;
+    tablet: string;
+    desktop: string;
+    imageAltText: string;
+  };
   category?: string;
   categoryImage?: { mobile: string; tablet: string; desktop: string };
   isNewProduct?: boolean;
@@ -27,14 +32,34 @@ export interface FeaturedProductObject {
   features: string;
   includes: { quantity: number; item: string }[];
   gallery: {
-    first: { mobile: string; tablet: string; desktop: string };
-    second: { mobile: string; tablet: string; desktop: string };
-    third: { mobile: string; tablet: string; desktop: string };
+    first: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+      imageAltText: string;
+    };
+    second: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+      imageAltText: string;
+    };
+    third: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+      imageAltText: string;
+    };
   };
   others: {
     slug: string;
     name: string;
-    image: { mobile: string; tablet: string; desktop: string };
+    image: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+      imageAltText: string;
+    };
   }[];
 }
 

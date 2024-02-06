@@ -20,34 +20,34 @@ const Gallery = ({ imageData }: Props): JSX.Element => {
           <CustomImage
             className={"gallery-image gallery-image-one image-mobile"}
             src={imageData.first.mobile}
-            altText={"imageObject.imageAltText"}
+            altText={imageData.first.imageAltText}
           />
           <CustomImage
             className={"gallery-image gallery-image-one image-tablet"}
             src={imageData.first.tablet}
-            altText={"imageObject.imageAltText"}
+            altText={imageData.first.imageAltText}
           />
           <CustomImage
             className={"gallery-image gallery-image-one image-desktop"}
             src={imageData.first.desktop}
-            altText={"imageObject.imageAltText"}
+            altText={imageData.first.imageAltText}
           />
         </div>
         <div className="gallery-image-two-container">
           <CustomImage
             className={"gallery-image gallery-image-one image-mobile"}
             src={imageData.second.mobile}
-            altText={"imageObject.imageAltText"}
+            altText={imageData.second.imageAltText}
           />
           <CustomImage
             className={"gallery-image gallery-image-one image-tablet"}
             src={imageData.second.tablet}
-            altText={"imageObject.imageAltText"}
+            altText={imageData.second.imageAltText}
           />
           <CustomImage
             className={"gallery-image gallery-image-one image-desktop"}
             src={imageData.second.desktop}
-            altText={"imageObject.imageAltText"}
+            altText={imageData.second.imageAltText}
           />
         </div>
       </div>
@@ -56,17 +56,17 @@ const Gallery = ({ imageData }: Props): JSX.Element => {
           <CustomImage
             className={"gallery-image gallery-image-one image-mobile"}
             src={imageData.third.mobile}
-            altText={"imageObject.imageAltText"}
+            altText={imageData.third.imageAltText}
           />
           <CustomImage
             className={"gallery-image gallery-image-one image-tablet"}
             src={imageData.third.tablet}
-            altText={"imageObject.imageAltText"}
+            altText={imageData.third.imageAltText}
           />
           <CustomImage
             className={"gallery-image gallery-image-one image-desktop"}
             src={imageData.third.desktop}
-            altText={"imageObject.imageAltText"}
+            altText={imageData.third.imageAltText}
           />
         </div>
       </div>

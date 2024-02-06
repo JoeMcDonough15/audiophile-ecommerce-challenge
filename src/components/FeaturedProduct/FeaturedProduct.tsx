@@ -6,7 +6,7 @@ export interface FeaturedProductImageData {
   mobile: string;
   tablet: string;
   desktop: string;
-  imageAltText?: string;
+  imageAltText: string;
   customImageStyles?: string;
 }
 
@@ -35,17 +35,17 @@ const FeaturedProduct = ({
         {" "}
         <ImageSlab
           slabSize="mobile"
-          imageData={{ imageSrc: mobile, imageAltText: "mobile" }}
+          imageData={{ imageSrc: mobile, imageAltText: imageAltText }}
         />
         <ImageSlab
           slabSize="tablet"
-          imageData={{ imageSrc: tablet, imageAltText: "tablet" }}
+          imageData={{ imageSrc: tablet, imageAltText: imageAltText }}
         />
         <ImageSlab
           slabSize="desktop"
           imageData={{
             imageSrc: desktop,
-            imageAltText: "desktop",
+            imageAltText: imageAltText,
           }}
         />
       </div>

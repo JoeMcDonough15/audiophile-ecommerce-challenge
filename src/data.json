@@ -7,7 +7,8 @@
     "image": {
       "mobile": "http://www.localhost:3000/src/assets/product-yx1-earphones/mobile/image-product.jpg",
       "tablet": "http://www.localhost:3000/src/assets/product-yx1-earphones/tablet/image-product.jpg",
-      "desktop": "http://www.localhost:3000/src/assets/product-yx1-earphones/desktop/image-product.jpg"
+      "desktop": "http://www.localhost:3000/src/assets/product-yx1-earphones/desktop/image-product.jpg",
+      "imageAltText": "yx1-earphones-product-image"
     },
     "category": "earphones",
     "categoryImage": {
@@ -45,17 +46,20 @@
       "first": {
         "mobile": "http://www.localhost:3000/src/assets/product-yx1-earphones/mobile/image-gallery-1.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-yx1-earphones/tablet/image-gallery-1.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-yx1-earphones/desktop/image-gallery-1.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-yx1-earphones/desktop/image-gallery-1.jpg",
+        "imageAltText": "yx1-earphones-gallery-image-one"
       },
       "second": {
         "mobile": "http://www.localhost:3000/src/assets/product-yx1-earphones/mobile/image-gallery-2.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-yx1-earphones/tablet/image-gallery-2.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-yx1-earphones/desktop/image-gallery-2.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-yx1-earphones/desktop/image-gallery-2.jpg",
+        "imageAltText": "yx1-earphones-gallery-image-two"
       },
       "third": {
         "mobile": "http://www.localhost:3000/src/assets/product-yx1-earphones/mobile/image-gallery-3.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-yx1-earphones/tablet/image-gallery-3.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-yx1-earphones/desktop/image-gallery-3.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-yx1-earphones/desktop/image-gallery-3.jpg",
+        "imageAltText": "yx1-earphones-gallery-image-three"
       }
     },
     "others": [
@@ -65,7 +69,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx99-mark-one-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-one-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-one-headphones.jpg",
+          "imageAltText": "xx99-mark-one-headphones-product-image"
         }
       },
       {
@@ -74,7 +79,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx59-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx59-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx59-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx59-headphones.jpg",
+          "imageAltText": "xx59-headphones-product-image"
         }
       },
       {
@@ -83,7 +89,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-zx9-speaker.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-zx9-speaker.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx9-speaker.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx9-speaker.jpg",
+          "imageAltText": "zx9-speaker-product-image"
         }
       }
     ]
@@ -96,7 +103,8 @@
     "image": {
       "mobile": "http://www.localhost:3000/src/assets/product-xx59-headphones/mobile/image-product.jpg",
       "tablet": "http://www.localhost:3000/src/assets/product-xx59-headphones/tablet/image-product.jpg",
-      "desktop": "http://www.localhost:3000/src/assets/product-xx59-headphones/desktop/image-product.jpg"
+      "desktop": "http://www.localhost:3000/src/assets/product-xx59-headphones/desktop/image-product.jpg",
+      "imageAltText": "xx59-headphones-product-image"
     },
     "category": "headphones",
     "categoryImage": {
@@ -130,17 +138,20 @@
       "first": {
         "mobile": "http://www.localhost:3000/src/assets/product-xx59-headphones/mobile/image-gallery-1.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-xx59-headphones/tablet/image-gallery-1.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-xx59-headphones/desktop/image-gallery-1.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-xx59-headphones/desktop/image-gallery-1.jpg",
+        "imageAltText": "xx59-headphones-gallery-image-one"
       },
       "second": {
         "mobile": "http://www.localhost:3000/src/assets/product-xx59-headphones/mobile/image-gallery-2.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-xx59-headphones/tablet/image-gallery-2.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-xx59-headphones/desktop/image-gallery-2.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-xx59-headphones/desktop/image-gallery-2.jpg",
+        "imageAltText": "xx59-headphones-gallery-image-two"
       },
       "third": {
         "mobile": "http://www.localhost:3000/src/assets/product-xx59-headphones/mobile/image-gallery-3.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-xx59-headphones/tablet/image-gallery-3.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-xx59-headphones/desktop/image-gallery-3.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-xx59-headphones/desktop/image-gallery-3.jpg",
+        "imageAltText": "xx59-headphones-gallery-image-three"
       }
     },
     "others": [
@@ -150,7 +161,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx99-mark-two-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx99-mark-two-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-two-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-two-headphones.jpg",
+          "imageAltText": "xx99-mark-two-headphones-product-image"
         }
       },
       {
@@ -159,7 +171,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx99-mark-one-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-one-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-one-headphones.jpg",
+          "imageAltText": "xx99-mark-one-headphones-product-image"
         }
       },
       {
@@ -168,7 +181,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-zx9-speaker.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-zx9-speaker.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx9-speaker.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx9-speaker.jpg",
+          "imageAltText": "zx9-speaker-product-image"
         }
       }
     ]
@@ -181,7 +195,8 @@
     "image": {
       "mobile": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/mobile/image-product.jpg",
       "tablet": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/tablet/image-product.jpg",
-      "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg"
+      "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg",
+      "imageAltText": "xx99-mark-one-headphones-product-image"
     },
     "category": "headphones",
     "categoryImage": {
@@ -215,17 +230,20 @@
       "first": {
         "mobile": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/mobile/image-gallery-1.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/tablet/image-gallery-1.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg",
+        "imageAltText": "xx99-mark-one-headphones-gallery-image-one"
       },
       "second": {
         "mobile": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/mobile/image-gallery-2.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/tablet/image-gallery-2.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg",
+        "imageAltText": "xx99-mark-one-headphones-gallery-image-two"
       },
       "third": {
         "mobile": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/mobile/image-gallery-3.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/tablet/image-gallery-3.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg",
+        "imageAltText": "xx99-mark-one-headphones-gallery-image-three"
       }
     },
     "others": [
@@ -235,7 +253,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx99-mark-two-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx99-mark-two-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-two-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-two-headphones.jpg",
+          "imageAltText": "xx99-mark-two-headphones-product-image"
         }
       },
       {
@@ -244,7 +263,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx59-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx59-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx59-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx59-headphones.jpg",
+          "imageAltText": "xx59-headphones-product-image"
         }
       },
       {
@@ -253,7 +273,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-zx9-speaker.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-zx9-speaker.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx9-speaker.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx9-speaker.jpg",
+          "imageAltText": "zx9-speaker-product-image"
         }
       }
     ]
@@ -266,12 +287,14 @@
     "headerImage": {
       "mobile": "./images/image-header-mobile.jpg",
       "tablet": "./images/image-header-tablet.jpg",
-      "desktop": "./images/image-header-desktop.jpg"
+      "desktop": "./images/image-header-desktop.jpg",
+      "imageAltText": "xx99-mark-one-headphones-header-image"
     },
     "image": {
       "mobile": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/mobile/image-product.jpg",
       "tablet": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/tablet/image-product.jpg",
-      "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg"
+      "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg",
+      "imageAltText": "xx99-mark-one-headphones-product-image"
     },
     "category": "headphones",
     "categoryImage": {
@@ -310,17 +333,20 @@
       "first": {
         "mobile": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/mobile/image-gallery-1.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg",
+        "imageAltText": "xx99-mark-two-headphones-gallery-image-one"
       },
       "second": {
         "mobile": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/mobile/image-gallery-2.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg",
+        "imageAltText": "xx99-mark-two-headphones-gallery-image-two"
       },
       "third": {
         "mobile": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/mobile/image-gallery-3.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg",
+        "imageAltText": "xx99-mark-two-headphones-gallery-image-three"
       }
     },
     "others": [
@@ -330,7 +356,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx99-mark-one-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-one-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-one-headphones.jpg",
+          "imageAltText": "xx99-mark-one-headphones-product-image"
         }
       },
       {
@@ -339,7 +366,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx59-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx59-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx59-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx59-headphones.jpg",
+          "imageAltText": "xx59-headphones-product-image"
         }
       },
       {
@@ -348,7 +376,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-zx9-speaker.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-zx9-speaker.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx9-speaker.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx9-speaker.jpg",
+          "imageAltText": "zx9-speaker-product-image"
         }
       }
     ]
@@ -361,7 +390,8 @@
     "image": {
       "mobile": "http://www.localhost:3000/src/assets/product-zx7-speaker/mobile/image-product.jpg",
       "tablet": "http://www.localhost:3000/src/assets/product-zx7-speaker/tablet/image-product.jpg",
-      "desktop": "http://www.localhost:3000/src/assets/product-zx7-speaker/desktop/image-product.jpg"
+      "desktop": "http://www.localhost:3000/src/assets/product-zx7-speaker/desktop/image-product.jpg",
+      "imageAltText": "zx7-speaker-product-image"
     },
     "category": "speakers",
     "categoryImage": {
@@ -399,17 +429,20 @@
       "first": {
         "mobile": "http://www.localhost:3000/src/assets/product-zx7-speaker/mobile/image-gallery-1.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-zx7-speaker/tablet/image-gallery-1.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-zx7-speaker/desktop/image-gallery-1.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-zx7-speaker/desktop/image-gallery-1.jpg",
+        "imageAltText": "zx7-speaker-gallery-image-one"
       },
       "second": {
         "mobile": "http://www.localhost:3000/src/assets/product-zx7-speaker/mobile/image-gallery-2.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-zx7-speaker/tablet/image-gallery-2.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-zx7-speaker/desktop/image-gallery-2.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-zx7-speaker/desktop/image-gallery-2.jpg",
+        "imageAltText": "zx7-speaker-gallery-image-two"
       },
       "third": {
         "mobile": "http://www.localhost:3000/src/assets/product-zx7-speaker/mobile/image-gallery-3.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-zx7-speaker/tablet/image-gallery-3.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-zx7-speaker/desktop/image-gallery-3.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-zx7-speaker/desktop/image-gallery-3.jpg",
+        "imageAltText": "zx7-speaker-gallery-image-three"
       }
     },
     "others": [
@@ -419,7 +452,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-zx9-speaker.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-zx9-speaker.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx9-speaker.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx9-speaker.jpg",
+          "imageAltText": "zx9-speaker-product-image"
         }
       },
       {
@@ -428,7 +462,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx99-mark-one-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-one-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-one-headphones.jpg",
+          "imageAltText": "xx99-mark-one-headphones-product-image"
         }
       },
       {
@@ -437,7 +472,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx59-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx59-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx59-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx59-headphones.jpg",
+          "imageAltText": "xx59-headphones-product-image"
         }
       }
     ]
@@ -450,7 +486,8 @@
     "image": {
       "mobile": "http://www.localhost:3000/src/assets/product-zx9-speaker/mobile/image-product.jpg",
       "tablet": "http://www.localhost:3000/src/assets/product-zx9-speaker/tablet/image-product.jpg",
-      "desktop": "http://www.localhost:3000/src/assets/product-zx9-speaker/desktop/image-product.jpg"
+      "desktop": "http://www.localhost:3000/src/assets/product-zx9-speaker/desktop/image-product.jpg",
+      "imageAltText": "zx9-speaker-product-image"
     },
     "category": "speakers",
     "categoryImage": {
@@ -489,17 +526,20 @@
       "first": {
         "mobile": "http://www.localhost:3000/src/assets/product-zx9-speaker/mobile/image-gallery-1.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-zx9-speaker/tablet/image-gallery-1.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-zx9-speaker/desktop/image-gallery-1.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-zx9-speaker/desktop/image-gallery-1.jpg",
+        "imageAltText": "zx9-speaker-gallery-image-one"
       },
       "second": {
         "mobile": "http://www.localhost:3000/src/assets/product-zx9-speaker/mobile/image-gallery-2.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-zx9-speaker/tablet/image-gallery-2.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-zx9-speaker/desktop/image-gallery-2.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-zx9-speaker/desktop/image-gallery-2.jpg",
+        "imageAltText": "zx9-speaker-gallery-image-two"
       },
       "third": {
         "mobile": "http://www.localhost:3000/src/assets/product-zx9-speaker/mobile/image-gallery-3.jpg",
         "tablet": "http://www.localhost:3000/src/assets/product-zx9-speaker/tablet/image-gallery-3.jpg",
-        "desktop": "http://www.localhost:3000/src/assets/product-zx9-speaker/desktop/image-gallery-3.jpg"
+        "desktop": "http://www.localhost:3000/src/assets/product-zx9-speaker/desktop/image-gallery-3.jpg",
+        "imageAltText": "zx9-speaker-gallery-image-three"
       }
     },
     "others": [
@@ -509,7 +549,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-zx7-speaker.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-zx7-speaker.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx7-speaker.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-zx7-speaker.jpg",
+          "imageAltText": "zx7-speaker-product-image"
         }
       },
       {
@@ -518,7 +559,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx99-mark-one-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx99-mark-one-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-one-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx99-mark-one-headphones.jpg",
+          "imageAltText": "xx99-mark-one-headphones-product-image"
         }
       },
       {
@@ -527,7 +569,8 @@
         "image": {
           "mobile": "http://www.localhost:3000/src/assets/shared/mobile/image-xx59-headphones.jpg",
           "tablet": "http://www.localhost:3000/src/assets/shared/tablet/image-xx59-headphones.jpg",
-          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx59-headphones.jpg"
+          "desktop": "http://www.localhost:3000/src/assets/shared/desktop/image-xx59-headphones.jpg",
+          "imageAltText": "xx59-headphones-product-image"
         }
       }
     ]
