@@ -3,10 +3,10 @@ import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
 import "./featured-product.sass";
 
 interface FeaturedProductImageData {
-  mobileImageSrc: string;
-  tabletImageSrc: string;
-  desktopImageSrc: string;
-  imageAltText: string;
+  mobile: string;
+  tablet: string;
+  desktop: string;
+  imageAltText?: string;
   customImageStyles?: string;
 }
 
@@ -28,25 +28,24 @@ const FeaturedProduct = ({
   buttonData,
   isProductPage,
 }: Props): JSX.Element => {
-  const { mobileImageSrc, tabletImageSrc, desktopImageSrc, imageAltText } =
-    imageData;
+  const { mobile, tablet, desktop, imageAltText } = imageData; // imageAltText will be added to JSON data
   return (
     <section className="main-container featured-product-container col">
       <div className="featured-product-image-container">
         {" "}
         <ImageSlab
           slabSize="mobile"
-          imageData={{ imageSrc: mobileImageSrc, imageAltText: imageAltText }}
+          imageData={{ imageSrc: mobile, imageAltText: "mobile" }}
         />
         <ImageSlab
           slabSize="tablet"
-          imageData={{ imageSrc: tabletImageSrc, imageAltText: imageAltText }}
+          imageData={{ imageSrc: tablet, imageAltText: "tablet" }}
         />
         <ImageSlab
           slabSize="desktop"
           imageData={{
-            imageSrc: desktopImageSrc,
-            imageAltText: imageAltText,
+            imageSrc: desktop,
+            imageAltText: "desktop",
           }}
         />
       </div>

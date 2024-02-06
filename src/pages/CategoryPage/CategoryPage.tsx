@@ -7,15 +7,14 @@ import {
   FeaturedProductObject,
 } from "../../components/App";
 import { useContext } from "react";
-import allProductImages from "../../imageData";
 
-interface FeaturedProductImageData {
-  mobileImageSrc: string;
-  tabletImageSrc: string;
-  desktopImageSrc: string;
-  imageAltText: string;
-  customImageStyles: string;
-}
+// interface FeaturedProductImageData {
+//   mobileImageSrc: string;
+//   tabletImageSrc: string;
+//   desktopImageSrc: string;
+//   imageAltText: string;
+//   customImageStyles: string;
+// }
 
 const CategoryPage = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
@@ -39,14 +38,6 @@ const CategoryPage = () => {
       }
     );
 
-  const categoryPageImageData = categoryPageProducts.map(
-    (pageProduct): FeaturedProductImageData[] => {
-      const pageProductSlug = pageProduct.slug;
-      // @ts-ignore
-      return allProductImages[pageProductSlug].categoryImageData;
-    }
-  );
-
   return (
     <>
       <Banner bannerText={categoryName} />
@@ -57,8 +48,8 @@ const CategoryPage = () => {
               return (
                 <FeaturedProduct
                   key={productIndex}
-                  //@ts-ignore
-                  imageData={categoryPageImageData[productIndex]}
+                  // @ts-ignore
+                  imageData={product.categoryImage}
                   productSlug={product.slug}
                   buttonData={{
                     buttonColor: "dark-orange",
