@@ -1,175 +1,107 @@
-import Button from "../Button/Button";
-import ItemInCart from "../ItemInCart/ItemInCart";
-import FeeInformation from "../FeeInformation/FeeInformation";
-import data from "../../data.json";
-import fixPrice from "../../fixPrice";
-import "./cart.sass";
+// import Button from "../Button/Button";
+// import ItemRow from "../ItemRow/ItemRow";
+// import FeeInformation from "../FeeInformation/FeeInformation";
+// import fixPrice from "../../fixPrice";
+// import {
+//   FeaturedProductContext,
+//   FeaturedProductImage,
+//   FeaturedProductObject,
+//   findFeaturedProduct,
+// } from "../App";
+// import { useContext } from "react";
+// import "./cart.sass";
 
-interface FeaturedProductObject {
-  id: number;
-  slug: string;
-  name: string;
-  abbreviatedName: string;
-  image: { mobile: string; tablet: string; desktop: string };
-  category: string;
-  categoryImage: { mobile: string; tablet: string; desktop: string };
-  isNewProduct: boolean;
-  price: number;
-  description: string;
-  teaserDescription?: string;
-  features: string;
-  includes: { quantity: number; item: string }[];
-  gallery: {
-    first: { mobile: string; tablet: string; desktop: string };
-    second: { mobile: string; tablet: string; desktop: string };
-    third: { mobile: string; tablet: string; desktop: string };
-  };
-  others: {
-    slug: string;
-    name: string;
-    image: { mobile: string; tablet: string; desktop: string };
-  }[];
-}
+// export interface ItemInCart {
+//   quantity: number;
+//   product: FeaturedProductObject;
+//   imageData: FeaturedProductImage;
+// }
 
-interface CartImageData {
-  imageSrc: string;
-  imageAltText: string;
-  className?: string;
-}
+// // These slugs will be passed in as props eventually
 
-interface CartItemData {
-  quantity: number;
-  product: FeaturedProductObject;
-  imageData: CartImageData;
-}
+// const selectedProductSlugs = [
+//   "xx99-mark-two-headphones",
+//   "xx59-headphones",
+//   "yx1-earphones",
+//   "zx9-speaker",
+//   "zx7-speaker",
+//   "xx99-mark-one-headphones",
+// ];
 
-// Hard coding it to temporarily grab products from json to match design.  This will all come from state eventually.
+// const allProducts = useContext(FeaturedProductContext);
 
-const selectedProductSlugs = [
-  "xx99-mark-two-headphones",
-  "xx59-headphones",
-  "yx1-earphones",
-  "zx9-speaker",
-  "zx7-speaker",
-  "xx99-mark-one-headphones",
-];
+// const findSelectedProducts = (productSlugs: string[]) => {
+//   const selectedProducts: FeaturedProductObject[] = [];
+//   productSlugs.forEach((productSlug: string) => {
+//     // @ts-ignore
+//     selectedProducts.push(findFeaturedProduct(allProducts, productSlug));
+//   });
+//   return selectedProducts;
+// };
 
-const findSelectedProducts = (
-  productList: FeaturedProductObject[],
-  productSlugs: string[]
-) => {
-  const selectedProducts: FeaturedProductObject[] = [];
-  productSlugs.forEach((productSlug: string) => {
-    productList.forEach((productObject: FeaturedProductObject) => {
-      if (productObject.slug === productSlug) {
-        selectedProducts.push(productObject);
-      }
-    });
-  });
-  return selectedProducts;
-};
+// const [
+//   selectedProductOne,
+//   selectedProductTwo,
+//   selectedProductThree,
+// ]: FeaturedProductObject[] = findSelectedProducts(selectedProductSlugs);
 
-const [
-  selectedProductOne,
-  selectedProductTwo,
-  selectedProductThree,
-  selectedProductFour,
-] = findSelectedProducts(data, selectedProductSlugs);
+// // Put the products in the cart with a hard-coded quantity property and hard-coded image data
 
-// All product images
-const allProductImages = {
-  markOneImageData: {
-    imageSrc: require("../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg"),
-    imageAltText: "mark-one-headphones-image",
-  },
+// const itemsInCart = [
+//   {
+//     quantity: 1,
+//     product: selectedProductOne,
+//     imageData: selectedProductOne.image,
+//   },
+//   {
+//     quantity: 2,
+//     product: selectedProductTwo,
+//     imageData: selectedProductTwo.image,
+//   },
+//   {
+//     quantity: 1,
+//     product: selectedProductThree,
+//     imageData: selectedProductThree.image,
+//   },
+// ];
 
-  markTwoImageData: {
-    imageSrc: require("../../assets/product-xx99-mark-two-headphones/mobile/image-product.jpg"),
-    imageAltText: "mark-two-headphones-image",
-  },
+// const calculateSubtotal = (items: ItemInCart[]) => {
+//   return items.reduce((total, currentItem) => {
+//     return (total += currentItem.product.price * currentItem.quantity);
+//   }, 0);
+// };
 
-  xxFiveNineImageData: {
-    imageSrc: require("../../assets/product-xx59-headphones/mobile/image-product.jpg"),
-    imageAltText: "xx59-headphones-image",
-  },
+// const subtotal = calculateSubtotal(itemsInCart);
 
-  yxOneImageData: {
-    imageSrc: require("../../assets/product-yx1-earphones/mobile/image-product.jpg"),
-    imageAltText: "yx-1-earphones-image",
-  },
+// const Cart = (): JSX.Element => {
+//   return (
+//     <section id="cart-modal" className="cart-modal hide col">
+//       <div className="row cart-top-row">
+//         <h6>Cart (3)</h6>
+//         <Button
+//           className="button-text-only with-underline"
+//           buttonText="Remove all"
+//         />
+//       </div>
+//       <div className="items-in-cart col">
+//         {itemsInCart.map((itemInCart) => {
+//           return (
+//             <ItemRow
+//               withSpecifyQuantity
+//               key={itemInCart.product.slug}
+//               itemData={itemInCart}
+//             />
+//           );
+//         })}
+//         <FeeInformation feeName="Total" amountAsString={fixPrice(subtotal)} />
+//         <Button
+//           className="button-checkout button-dark-orange"
+//           buttonText="checkout"
+//           buttonDestination="checkout"
+//         />
+//       </div>
+//     </section>
+//   );
+// };
 
-  zxSevenImageData: {
-    imageSrc: require("../../assets/product-zx7-speaker/mobile/image-product.jpg"),
-    imageAltText: "zx7-speaker-image",
-  },
-  zxNineImageData: {
-    imageSrc: require("../../assets/product-zx9-speaker/mobile/image-product.jpg"),
-    imageAltText: "zx9-speaker-image",
-  },
-};
-
-// Put the products in the cart with a hard-coded quantity property and hard-coded image data
-
-const itemsInCart = [
-  {
-    quantity: 1,
-    product: selectedProductOne,
-    imageData: allProductImages.markTwoImageData,
-  },
-  {
-    quantity: 2,
-    product: selectedProductTwo,
-    imageData: allProductImages.xxFiveNineImageData,
-  },
-  {
-    quantity: 1,
-    product: selectedProductThree,
-    imageData: allProductImages.yxOneImageData,
-  },
-  {
-    quantity: 1,
-    product: selectedProductFour,
-    imageData: allProductImages.zxNineImageData,
-  },
-];
-
-const calculateSubtotal = (items: CartItemData[]) => {
-  return items.reduce((total, currentItem) => {
-    return (total += currentItem.product.price * currentItem.quantity);
-  }, 0);
-};
-
-const subtotal = calculateSubtotal(itemsInCart);
-
-const Cart = (): JSX.Element => {
-  return (
-    <section id="cart-modal" className="cart-modal hide col">
-      <div className="row cart-top-row">
-        <h6>Cart (3)</h6>
-        <Button
-          className="button-text-only with-underline"
-          buttonText="Remove all"
-        />
-      </div>
-      <div className="items-in-cart col">
-        {itemsInCart.map((itemInCart) => {
-          return (
-            <ItemInCart
-              withSpecifyQuantity
-              key={itemInCart.product.slug}
-              itemData={itemInCart}
-            />
-          );
-        })}
-        <FeeInformation feeName="Total" amountAsString={fixPrice(subtotal)} />
-        <Button
-          className="button-checkout button-dark-orange"
-          buttonText="checkout"
-          buttonDestination="checkout"
-        />
-      </div>
-    </section>
-  );
-};
-
-export default Cart;
+// export default Cart;

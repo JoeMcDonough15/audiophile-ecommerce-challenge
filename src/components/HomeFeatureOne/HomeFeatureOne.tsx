@@ -1,15 +1,27 @@
-import FeaturedProductInfo from "../FeaturedProductInfo/FeaturedProductInfo";
+import FeaturedProductInfo from "../ProductInfoComponents/FeaturedProductInfo";
 import CirclePatternSvg from "../CirclePatternSvg/CirclePatternSvg";
 import CustomImage from "../CustomImage/CustomImage";
 import "./home-feature-one.sass";
-// @ts-ignore
-import image from "./images/image-speaker-zx9-desktop.png";
+import { FeaturedProductContext, findFeaturedProduct } from "../App";
+import { useContext } from "react";
+import PageNotFound from "../../pages/PageNotFound";
+import Button from "../Button/Button";
 
 interface Props {
   productSlug: string;
 }
 
 const HomeFeatureOne = ({ productSlug }: Props): JSX.Element => {
+  const allProducts = useContext(FeaturedProductContext);
+  const product = findFeaturedProduct(allProducts, productSlug);
+
+  if (!product) {
+    return <PageNotFound />;
+  }
+
+  const { homePageImage, name, teaserDescription } = product;
+  // @ts-ignore
+  const { mobile, tablet, desktop, imageAltText } = homePageImage;
   return (
     <section className="home-feature-one">
       <CirclePatternSvg />
@@ -17,34 +29,34 @@ const HomeFeatureOne = ({ productSlug }: Props): JSX.Element => {
         <div className="home-feature-one-image-container">
           <CustomImage
             className="home-feature-one-image image-mobile"
-            src={require("./images/image-speaker-zx9-mobile.png").default}
-            // src={
-            //   require("../../assets/product-zx9-speaker/mobile/image-product.jpg")
-            //     .default
-            // }
-            // src={require(`${image.mobile}`).default} not working with props
-            altText="home-feature-one-image-mobile"
+            src={mobile}
+            altText={imageAltText}
           />
           <CustomImage
             className="home-feature-one-image image-tablet"
-            src={require("./images/image-speaker-zx9-tablet.png").default}
-            altText="home-feature-one-image-tablet"
+            src={tablet}
+            altText={imageAltText}
           />
           <CustomImage
             className="home-feature-one-image image-desktop"
-            src={require("./images/image-speaker-zx9-desktop.png").default}
-            altText="home-feature-one-image-desktop"
+            src={desktop}
+            altText={imageAltText}
           />
         </div>
-        <FeaturedProductInfo
-          productSlug={productSlug}
-          teaserOnly
-          isHomeFeatureOne
-          buttonData={{
-            buttonColor: "black",
-            buttonDestination: `product/${productSlug}`,
-          }}
-        />
+        <div className={"featured-product-info col home-feature-one-info"}>
+          <FeaturedProductInfo
+            productName={name}
+            // @ts-ignore
+            productDescription={teaserDescription}
+            headerClass="home-feature-one-header"
+            descriptionClass="home-feature-one-description light-grey-text"
+          />
+          <Button
+            buttonText="see product"
+            className={`button-black`}
+            buttonDestination={`product/${productSlug}`}
+          />
+        </div>
       </div>
     </section>
   );

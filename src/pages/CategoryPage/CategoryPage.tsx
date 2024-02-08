@@ -1,20 +1,15 @@
 import { useParams } from "react-router";
 import Banner from "../../components/Banner/Banner";
-import FeaturedProduct from "../../components/FeaturedProduct/FeaturedProduct";
 import "./category-page.sass";
 import {
   FeaturedProductContext,
   FeaturedProductObject,
 } from "../../components/App";
 import { useContext } from "react";
-
-// interface FeaturedProductImageData {
-//   mobileImageSrc: string;
-//   tabletImageSrc: string;
-//   desktopImageSrc: string;
-//   imageAltText: string;
-//   customImageStyles: string;
-// }
+import Button from "../../components/Button/Button";
+import ImageSlab from "../../components/ImageSlab/ImageSlab";
+import ProductInfo from "../../components/ProductInfoComponents/ProductInfo";
+import NewProductIntro from "../../components/NewProductIntro/NewProductIntro";
 
 const CategoryPage = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
@@ -43,22 +38,56 @@ const CategoryPage = () => {
       <Banner bannerText={categoryName} />
       <main className="category-page">
         <section className="category-features col">
-          {categoryPageProducts.map(
-            (product: FeaturedProductObject, productIndex: number) => {
-              return (
-                <FeaturedProduct
-                  key={productIndex}
-                  // @ts-ignore
-                  imageData={product.categoryImage}
-                  productSlug={product.slug}
-                  buttonData={{
-                    buttonColor: "dark-orange",
-                    buttonDestination: `/product/${product.slug}`,
-                  }}
-                />
-              );
-            }
-          )}
+          {categoryPageProducts.map((product: FeaturedProductObject) => {
+            return (
+              <section
+                className="main-container featured-product-container col"
+                key={product.id}
+              >
+                <div className="featured-product-image-container">
+                  <ImageSlab
+                    slabSize="mobile"
+                    imageData={{
+                      imageSrc: product.categoryImage.mobile,
+                      imageAltText: product.categoryImage.imageAltText,
+                    }}
+                  />
+                  <ImageSlab
+                    slabSize="tablet"
+                    imageData={{
+                      imageSrc: product.categoryImage.tablet,
+                      imageAltText: product.categoryImage.imageAltText,
+                    }}
+                  />
+                  <ImageSlab
+                    slabSize="desktop"
+                    imageData={{
+                      imageSrc: product.categoryImage.desktop,
+                      imageAltText: product.categoryImage.imageAltText,
+                    }}
+                  />
+                </div>
+                <div className="featured-product-text-container col">
+                  <div className="featured-product-info col">
+                    {product.isNewProduct && (
+                      <NewProductIntro className="dark-orange-text" />
+                    )}
+                    <ProductInfo
+                      productName={product.name}
+                      productDescription={product.description}
+                      headerClass="category-page-featured-product-header"
+                      descriptionClass="category-page-featured-product-description"
+                    />
+                    <Button
+                      className="button-dark-orange"
+                      buttonText="See Product"
+                      buttonDestination={`/product/${product.slug}`}
+                    />
+                  </div>
+                </div>
+              </section>
+            );
+          })}
         </section>
       </main>
     </>

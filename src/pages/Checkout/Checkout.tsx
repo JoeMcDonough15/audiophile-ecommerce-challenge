@@ -1,6 +1,6 @@
 import Banner from "../../components/Banner/Banner";
 import Button from "../../components/Button/Button";
-import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
+// import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 import "./checkout.sass";
 
 const Checkout = () => {
@@ -15,7 +15,7 @@ const Checkout = () => {
             buttonDestination=""
           />
         </div>
-        <CheckoutForm />
+        {/* <CheckoutForm /> */}
       </main>
     </>
   );

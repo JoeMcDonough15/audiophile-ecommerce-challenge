@@ -11,56 +11,44 @@ import AboutUs from "../components/AboutUs/AboutUs";
 import Footer from "../components/Footer/Footer";
 import svgDetails from "./svg-details.json";
 import data from "../data.json";
+import MobileMenu from "./MobileMenu/MobileMenu";
+// import Cart from "./Cart/Cart";
+
+export interface FeaturedProductImage {
+  mobile: string;
+  tablet: string;
+  desktop: string;
+  imageAltText: string;
+}
+
+export interface RelatedProduct {
+  slug: string;
+  name: string;
+  image: FeaturedProductImage;
+}
 
 export interface FeaturedProductObject {
   id: number;
   slug: string;
   name: string;
   abbreviatedName?: string;
-  image: {
-    mobile: string;
-    tablet: string;
-    desktop: string;
-    imageAltText: string;
-  };
-  category?: string;
-  categoryImage?: { mobile: string; tablet: string; desktop: string };
-  isNewProduct?: boolean;
+  image: FeaturedProductImage;
+  headerImage?: FeaturedProductImage;
+  homePageImage?: FeaturedProductImage;
+  category: string;
+  categoryImage: FeaturedProductImage;
+  isNewProduct: boolean;
   price: number;
-  description?: string;
+  description: string;
   teaserDescription?: string;
   features: string;
   includes: { quantity: number; item: string }[];
   gallery: {
-    first: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-      imageAltText: string;
-    };
-    second: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-      imageAltText: string;
-    };
-    third: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-      imageAltText: string;
-    };
+    first: FeaturedProductImage;
+    second: FeaturedProductImage;
+    third: FeaturedProductImage;
   };
-  others: {
-    slug: string;
-    name: string;
-    image: {
-      mobile: string;
-      tablet: string;
-      desktop: string;
-      imageAltText: string;
-    };
-  }[];
+  others: RelatedProduct[];
 }
 
 const { logo, twitter, facebook, instagram, hamburgerMenu, shoppingCart } =
@@ -68,6 +56,15 @@ const { logo, twitter, facebook, instagram, hamburgerMenu, shoppingCart } =
 
 export const FeaturedProductContext =
   createContext<FeaturedProductObject[]>(data);
+
+export const findFeaturedProduct = (
+  productList: FeaturedProductObject[],
+  productSlug: string
+) => {
+  return productList.find((product) => {
+    return product.slug === productSlug;
+  });
+};
 
 const ProductsProvider = ({ children }: PropsWithChildren) => {
   return (
@@ -80,6 +77,8 @@ const ProductsProvider = ({ children }: PropsWithChildren) => {
 function App(): JSX.Element {
   return (
     <ProductsProvider>
+      <MobileMenu />
+      {/* <Cart /> */}
       <Header
         logo={logo}
         hamburgerMenu={hamburgerMenu}

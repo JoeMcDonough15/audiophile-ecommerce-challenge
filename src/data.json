@@ -10,6 +10,12 @@
       "desktop": "http://www.localhost:3000/src/assets/product-yx1-earphones/desktop/image-product.jpg",
       "imageAltText": "yx1-earphones-product-image"
     },
+    "homePageImage": {
+      "mobile": "http://www.localhost:3000/src/assets/home/mobile/image-earphones-yx1.jpg",
+      "tablet": "http://www.localhost:3000/src/assets/home/tablet/image-earphones-yx1.jpg",
+      "desktop": "http://www.localhost:3000/src/assets/home/desktop/image-earphones-yx1.jpg",
+      "imageAltText": "yx1-earphones-product-image"
+    },
     "category": "earphones",
     "categoryImage": {
       "mobile": "http://www.localhost:3000/src/assets/product-yx1-earphones/mobile/image-category-page-preview.jpg",
@@ -397,6 +403,12 @@
       "desktop": "http://www.localhost:3000/src/assets/product-zx7-speaker/desktop/image-product.jpg",
       "imageAltText": "zx7-speaker-product-image"
     },
+    "homePageImage": {
+      "mobile": "http://www.localhost:3000/src/assets/home/mobile/image-speaker-zx7.jpg",
+      "tablet": "http://www.localhost:3000/src/assets/home/tablet/image-speaker-zx7.jpg",
+      "desktop": "http://www.localhost:3000/src/assets/home/desktop/image-speaker-zx7.jpg",
+      "imageAltText": "zx7-speaker-product-image"
+    },
     "category": "speakers",
     "categoryImage": {
       "mobile": "http://www.localhost:3000/src/assets/product-zx7-speaker/mobile/image-category-page-preview.jpg",
@@ -492,6 +504,12 @@
       "mobile": "http://www.localhost:3000/src/assets/product-zx9-speaker/mobile/image-product.jpg",
       "tablet": "http://www.localhost:3000/src/assets/product-zx9-speaker/tablet/image-product.jpg",
       "desktop": "http://www.localhost:3000/src/assets/product-zx9-speaker/desktop/image-product.jpg",
+      "imageAltText": "zx9-speaker-product-image"
+    },
+    "homePageImage": {
+      "mobile": "http://www.localhost:3000/src/assets/home/mobile/image-speaker-zx9-mobile.png",
+      "tablet": "http://www.localhost:3000/src/assets/home/tablet/image-speaker-zx9-tablet.png",
+      "desktop": "http://www.localhost:3000/src/assets/home/desktop/image-speaker-zx9-desktop.png",
       "imageAltText": "zx9-speaker-product-image"
     },
     "category": "speakers",

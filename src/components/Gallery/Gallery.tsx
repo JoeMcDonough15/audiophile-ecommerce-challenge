@@ -1,11 +1,11 @@
+import { FeaturedProductImage } from "../App";
 import CustomImage from "../CustomImage/CustomImage";
-import { FeaturedProductImageData } from "../FeaturedProduct/FeaturedProduct";
 import "./gallery.sass";
 
 interface GalleryImageData {
-  first: FeaturedProductImageData;
-  second: FeaturedProductImageData;
-  third: FeaturedProductImageData;
+  first: FeaturedProductImage;
+  second: FeaturedProductImage;
+  third: FeaturedProductImage;
 }
 
 interface Props {

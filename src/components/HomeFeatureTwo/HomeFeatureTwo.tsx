@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { FeaturedProductContext } from "../App";
+import { FeaturedProductContext, findFeaturedProduct } from "../App";
 import CustomImage from "../CustomImage/CustomImage";
-import { findFeaturedProduct } from "../FeaturedProductInfo/FeaturedProductInfo";
 import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./home-feature-two.sass";
+import PageNotFound from "../../pages/PageNotFound";
 
 interface Props {
   productSlug: string;
@@ -14,26 +14,29 @@ const HomeFeatureTwo = ({ productSlug }: Props): JSX.Element => {
   const featuredProduct = findFeaturedProduct(allProducts, productSlug);
 
   if (!featuredProduct) {
-    return <div></div>;
+    return <PageNotFound />;
   }
 
-  const { name } = featuredProduct;
+  const { name, homePageImage } = featuredProduct;
+
+  // @ts-ignore
+  const { mobile, tablet, desktop, altImageText } = homePageImage;
   return (
     <section className="home-feature-two-container">
       <CustomImage
         className="home-feature-two-image image-mobile"
-        src={require("./images/image-speaker-zx7-mobile.jpg").default}
-        altText="home-feature-two-image-mobile"
+        src={mobile}
+        altText={altImageText}
       />
       <CustomImage
         className="home-feature-two-image image-tablet"
-        src={require("./images/image-speaker-zx7-tablet.jpg").default}
-        altText="home-feature-two-image-tablet"
+        src={tablet}
+        altText={altImageText}
       />
       <CustomImage
         className="home-feature-two-image image-desktop"
-        src={require("./images/image-speaker-zx7-desktop.jpg").default}
-        altText="home-feature-two-image-desktop"
+        src={desktop}
+        altText={altImageText}
       />
       <HeadingAndButton
         productName={name}

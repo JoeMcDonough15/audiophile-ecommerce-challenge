@@ -1,16 +1,21 @@
+import { useContext } from "react";
+import { useParams } from "react-router";
+import {
+  FeaturedProductContext,
+  findFeaturedProduct,
+} from "../../components/App";
 import Banner from "../../components/Banner/Banner";
 import Button from "../../components/Button/Button";
-import FeaturedProduct from "../../components/FeaturedProduct/FeaturedProduct";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import InTheBox from "../../components/InTheBox/InTheBox";
 import Gallery from "../../components/Gallery/Gallery";
 import YouMayAlsoLike from "../../components/YouMayAlsoLike/YouMayAlsoLike";
-import "./product-page.sass";
-import { useContext } from "react";
-import { findFeaturedProduct } from "../../components/FeaturedProductInfo/FeaturedProductInfo";
-import { FeaturedProductContext } from "../../components/App";
 import PageNotFound from "../PageNotFound";
-import { useParams } from "react-router";
+import "./product-page.sass";
+import ImageSlab from "../../components/ImageSlab/ImageSlab";
+import ProductInfo from "../../components/ProductInfoComponents/ProductInfo";
+import SpecifyQuantity from "../../components/SpecifyQuantity/SpecifyQuantity";
+import NewProductIntro from "../../components/NewProductIntro/NewProductIntro";
 
 const ProductPage = () => {
   const { productName: productSlug } = useParams<{
@@ -23,7 +28,19 @@ const ProductPage = () => {
     return <PageNotFound />;
   }
 
-  const { features, includes, others } = pageProduct;
+  const {
+    image,
+    isNewProduct,
+    features,
+    includes,
+    gallery,
+    others,
+    name,
+    price,
+    description,
+  } = pageProduct;
+
+  const { mobile, tablet, desktop, imageAltText } = image;
 
   return (
     <>
@@ -36,19 +53,50 @@ const ProductPage = () => {
             buttonDestination=""
           />
         </div>
-        <FeaturedProduct
-          productSlug={productSlug}
-          isProductPage
-          imageData={pageProduct.image}
-          buttonData={{ buttonColor: "dark-orange" }}
-        />
-        {/* <SpecifyQuantity />
-          <Button buttonText="Add to cart" className={`button-${buttonColor}`} /> */}
+        <section className="main-container featured-product-container col">
+          <div className="featured-product-image-container">
+            <ImageSlab
+              slabSize="mobile"
+              imageData={{ imageSrc: mobile, imageAltText: imageAltText }}
+            />
+            <ImageSlab
+              slabSize="tablet"
+              imageData={{ imageSrc: tablet, imageAltText: imageAltText }}
+            />
+            <ImageSlab
+              slabSize="desktop"
+              imageData={{
+                imageSrc: desktop,
+                imageAltText: imageAltText,
+              }}
+            />
+          </div>
+          <div className="featured-product-text-container col">
+            <div className={"featured-product-info col product-page-info"}>
+              {isNewProduct && <NewProductIntro className="dark-orange-text" />}
+              <ProductInfo
+                productName={name}
+                productDescription={description}
+                headerClass="product-page-header"
+                descriptionClass="product-page-description"
+                price={price}
+              />
+              <div className="purchase-buttons row">
+                <SpecifyQuantity />
+                <Button
+                  buttonText="Add to cart"
+                  className={"button-dark-orange"}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="product-details-and-accessories main-container">
           <ProductDetails detailsText={features} />
           <InTheBox productIncludes={includes} />
         </section>
-        <Gallery imageData={pageProduct.gallery} />
+        <Gallery imageData={gallery} />
         <YouMayAlsoLike relatedProducts={others} />
       </main>
     </>

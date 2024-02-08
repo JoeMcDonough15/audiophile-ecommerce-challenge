@@ -54,6 +54,44 @@ img
     position: relative
     width: 100%
 
+.main-container.col.featured-product-container
+    gap: 36px
+
+    +all-tablets
+        gap: 52px
+
+    +all-large-screen
+        align-items: center
+        flex-direction: row
+        gap: 0
+        justify-content: space-between
+
+        & .featured-product-image-container
+            width: 48.65%
+    
+        & .featured-product-text-container
+            width: 40%
+
+.featured-product-info.col
+    align-items: center
+    gap: 24px
+    justify-content: center
+    text-align: center
+
+    +all-screen-bigger-than-mobile
+        gap: 0
+    
+    +all-large-screen
+        align-items: flex-start
+        text-align: left   
+
+
+.main-container.col.featured-product-container .featured-product-text-container.col
+    justify-content: center
+
+
+
+
 
 ////////// images ///////////
 

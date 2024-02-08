@@ -1,13 +1,7 @@
 import ImageSlab from "../ImageSlab/ImageSlab";
 import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./you-may-also-like.sass";
-import { FeaturedProductImageData } from "../FeaturedProduct/FeaturedProduct";
-
-interface RelatedProduct {
-  slug: string;
-  name: string;
-  image: FeaturedProductImageData;
-}
+import { RelatedProduct } from "../App";
 
 interface Props {
   relatedProducts: RelatedProduct[];
@@ -18,43 +12,40 @@ const YouMayAlsoLike = ({ relatedProducts }: Props): JSX.Element => {
     <section className="related-products-section main-container col">
       <h5 className="related-products-header black-text">You may also like</h5>
       <nav className="all-related-products-container">
-        {relatedProducts.map((relatedProductObject) => {
+        {relatedProducts.map((product) => {
           return (
-            <div
-              className="related-product-container col"
-              key={relatedProductObject.slug}
-            >
+            <div className="related-product-container col" key={product.slug}>
               <ImageSlab
                 containerClassName="related-product-image-container"
                 slabSize={"mobile"}
                 imageData={{
-                  imageSrc: relatedProductObject.image.mobile,
-                  imageAltText: "",
+                  imageSrc: product.image.mobile,
+                  imageAltText: product.image.imageAltText,
                 }}
               />
               <ImageSlab
                 containerClassName="related-product-image-container"
                 slabSize={"tablet"}
                 imageData={{
-                  imageSrc: relatedProductObject.image.tablet,
-                  imageAltText: "",
+                  imageSrc: product.image.tablet,
+                  imageAltText: product.image.imageAltText,
                 }}
               />
               <ImageSlab
                 containerClassName="related-product-image-container"
                 slabSize={"desktop"}
                 imageData={{
-                  imageSrc: relatedProductObject.image.desktop,
-                  imageAltText: "",
+                  imageSrc: product.image.desktop,
+                  imageAltText: product.image.imageAltText,
                 }}
               />
 
               <HeadingAndButton
-                productName={relatedProductObject.name}
+                productName={product.name}
                 isRelatedProduct
                 buttonData={{
                   buttonColor: "dark-orange",
-                  buttonDestination: `product-${relatedProductObject.slug}`,
+                  buttonDestination: `${product.slug}`,
                 }}
               />
             </div>
