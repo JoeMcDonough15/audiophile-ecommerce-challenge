@@ -12,7 +12,7 @@ import Footer from "../components/Footer/Footer";
 import svgDetails from "./svg-details.json";
 import data from "../data.json";
 import MobileMenu from "./MobileMenu/MobileMenu";
-// import Cart from "./Cart/Cart";
+import Cart from "./Cart/Cart";
 
 export interface FeaturedProductImage {
   mobile: string;
@@ -78,7 +78,7 @@ function App(): JSX.Element {
   return (
     <ProductsProvider>
       <MobileMenu />
-      {/* <Cart /> */}
+      <Cart />
       <Header
         logo={logo}
         hamburgerMenu={hamburgerMenu}
