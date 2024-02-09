@@ -5,7 +5,6 @@ import FeeInformation from "../FeeInformation/FeeInformation";
 import fixPrice from "../../fixPrice";
 import {
   FeaturedProductContext,
-  FeaturedProductImage,
   FeaturedProductObject,
   findFeaturedProduct,
 } from "../App";
@@ -14,7 +13,6 @@ import "./cart.sass";
 export interface ItemInCart {
   quantity: number;
   product: FeaturedProductObject;
-  imageData: FeaturedProductImage;
 }
 
 // // These slugs will be passed in as props eventually
@@ -50,17 +48,14 @@ const Cart = (): JSX.Element => {
     {
       quantity: 1,
       product: selectedProductOne,
-      imageData: selectedProductOne.image,
     },
     {
       quantity: 2,
       product: selectedProductTwo,
-      imageData: selectedProductTwo.image,
     },
     {
       quantity: 1,
       product: selectedProductThree,
-      imageData: selectedProductThree.image,
     },
   ];
 
@@ -85,7 +80,7 @@ const Cart = (): JSX.Element => {
           return (
             <ItemRow
               withSpecifyQuantity
-              key={itemInCart.product.slug}
+              key={itemInCart.product.id}
               itemData={itemInCart}
             />
           );

@@ -10,8 +10,9 @@ interface Props {
   withSpecifyQuantity?: boolean;
 }
 const ItemRow = ({ itemData, withSpecifyQuantity }: Props): JSX.Element => {
-  const { quantity, product, imageData } = itemData;
-  const { mobile, imageAltText } = imageData;
+  const { quantity, product } = itemData;
+  const { image } = product;
+  const { mobile, imageAltText } = image;
   return withSpecifyQuantity ? (
     <div className="row item-in-cart with-specify-quantity">
       <ImageSlab

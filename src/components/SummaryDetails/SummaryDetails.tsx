@@ -48,17 +48,14 @@ const SummaryDetails = (): JSX.Element => {
     {
       quantity: 1,
       product: selectedProductOne,
-      imageData: selectedProductOne.image,
     },
     {
       quantity: 2,
       product: selectedProductTwo,
-      imageData: selectedProductTwo.image,
     },
     {
       quantity: 1,
       product: selectedProductThree,
-      imageData: selectedProductThree.image,
     },
   ];
 
