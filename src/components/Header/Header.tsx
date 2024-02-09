@@ -65,7 +65,7 @@ const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
           onClick={handleCartClick}
         />
       </section>
-      <Cart cartModalIsActive={cartModalActive} />
+      <Cart cartModalIsActive={cartModalActive} onClick={handleCartClick} />
     </header>
   );
 };

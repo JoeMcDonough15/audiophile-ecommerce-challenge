@@ -18,6 +18,7 @@ interface Props {
   arrowIconDetails?: SvgDetails;
   isSubmitButton?: boolean;
   className: string;
+  onClick?: () => void;
 }
 
 const Button = (props: Props): JSX.Element => {
@@ -28,10 +29,15 @@ const Button = (props: Props): JSX.Element => {
     arrowIconDetails,
     isSubmitButton,
     className,
+    onClick,
   } = props;
 
   return buttonDestination ? (
-    <NavLink className="button-container" to={buttonDestination}>
+    <NavLink
+      className="button-container"
+      to={buttonDestination}
+      onClick={onClick}
+    >
       <button className={className}>
         <span className="button-text">{buttonText}</span>
         {withArrowIcon && arrowIconDetails && (
