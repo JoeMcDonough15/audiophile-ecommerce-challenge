@@ -26,9 +26,15 @@ const selectedProductSlugs = [
   "xx99-mark-one-headphones",
 ];
 
-// // Put the products in the cart with a hard-coded quantity property and hard-coded image data
+interface Props {
+  cartModalIsActive: boolean;
+}
 
-const Cart = (): JSX.Element => {
+const Cart = ({ cartModalIsActive }: Props): JSX.Element => {
+  let cartModalClasses = "cart-modal col";
+  if (!cartModalIsActive) {
+    cartModalClasses += " hide";
+  }
   const allProducts = useContext(FeaturedProductContext);
   const findSelectedProducts = (productSlugs: string[]) => {
     const selectedProducts: FeaturedProductObject[] = [];
@@ -67,7 +73,7 @@ const Cart = (): JSX.Element => {
 
   const subtotal = calculateSubtotal(itemsInCart);
   return (
-    <section id="cart-modal" className="cart-modal hide col">
+    <section id="cart-modal" className={cartModalClasses}>
       <div className="row cart-top-row">
         <h6 className="black-text">Cart (3)</h6>
         <Button

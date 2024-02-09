@@ -78,7 +78,7 @@ function App(): JSX.Element {
   return (
     <ProductsProvider>
       <MobileMenu />
-      <Cart />
+      {/* <Cart /> */}
       <Header
         logo={logo}
         hamburgerMenu={hamburgerMenu}

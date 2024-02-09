@@ -2,6 +2,8 @@ import "./header.sass";
 import LinkAsSvg from "../LinkAsSvg/LinkAsSvg";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
 import NavBar from "../NavBar/NavBar";
+import Cart from "../Cart/Cart";
+import { useState } from "react";
 
 interface SvgDetails {
   stroke?: string;
@@ -25,12 +27,20 @@ interface Props {
 }
 
 const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
+  const [cartModalActive, setCartModalActive] = useState(false);
+  function handleCartClick() {
+    setCartModalActive(!cartModalActive);
+  }
   return (
     <header id="header" className="header-transparent-background">
       <section className="mobile-header main-container row">
         <IconAsSvg className="hamburger-menu-icon" svgDetails={hamburgerMenu} />
         <LinkAsSvg className="logo-icon" svgDetails={logo} />
-        <IconAsSvg className="shopping-cart-icon" svgDetails={shoppingCart} />
+        <IconAsSvg
+          className="shopping-cart-icon"
+          svgDetails={shoppingCart}
+          onClick={handleCartClick}
+        />
       </section>
       <section className="tablet-header row main-container">
         <div className="icon-group row">
@@ -40,13 +50,22 @@ const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
           />
           <LinkAsSvg className="logo-icon" svgDetails={logo} />
         </div>
-        <IconAsSvg className="shopping-cart-icon" svgDetails={shoppingCart} />
+        <IconAsSvg
+          className="shopping-cart-icon"
+          svgDetails={shoppingCart}
+          onClick={handleCartClick}
+        />
       </section>
       <section className="desktop-header row main-container">
         <LinkAsSvg className="logo-icon" svgDetails={logo} />
         <NavBar className="row navigation-bar" />
-        <IconAsSvg className="shopping-cart-icon" svgDetails={shoppingCart} />
+        <IconAsSvg
+          className="shopping-cart-icon"
+          svgDetails={shoppingCart}
+          onClick={handleCartClick}
+        />
       </section>
+      <Cart cartModalIsActive={cartModalActive} />
     </header>
   );
 };
