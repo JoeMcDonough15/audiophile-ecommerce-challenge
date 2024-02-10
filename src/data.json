@@ -18,6 +18,7 @@
     },
     "category": "earphones",
     "categoryImage": {
+      "categoryThumbnail": "http://www.localhost:3000/src/assets/shared/image-category-thumbnail-earphones.png",
       "mobile": "http://www.localhost:3000/src/assets/product-yx1-earphones/mobile/image-category-page-preview.jpg",
       "tablet": "http://www.localhost:3000/src/assets/product-yx1-earphones/tablet/image-category-page-preview.jpg",
       "desktop": "http://www.localhost:3000/src/assets/product-yx1-earphones/desktop/image-category-page-preview.jpg",
@@ -208,6 +209,7 @@
     },
     "category": "headphones",
     "categoryImage": {
+      "categoryThumbnail": "http://www.localhost:3000/src/assets/shared/image-category-thumbnail-headphones.png",
       "mobile": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg",
       "tablet": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg",
       "desktop": "http://www.localhost:3000/src/assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg",
@@ -514,6 +516,7 @@
     },
     "category": "speakers",
     "categoryImage": {
+      "categoryThumbnail": "http://www.localhost:3000/src/assets/shared/image-category-thumbnail-speakers.png",
       "mobile": "http://www.localhost:3000/src/assets/product-zx9-speaker/mobile/image-category-page-preview.jpg",
       "tablet": "http://www.localhost:3000/src/assets/product-zx9-speaker/tablet/image-category-page-preview.jpg",
       "desktop": "http://www.localhost:3000/src/assets/product-zx9-speaker/desktop/image-category-page-preview.jpg",

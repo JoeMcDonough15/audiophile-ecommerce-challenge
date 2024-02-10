@@ -15,6 +15,7 @@ import data from "../data.json";
 // import Cart from "./Cart/Cart";
 
 export interface FeaturedProductImage {
+  categoryThumbnail?: string;
   mobile: string;
   tablet: string;
   desktop: string;

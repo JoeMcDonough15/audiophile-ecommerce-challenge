@@ -1,23 +1,8 @@
 import ThinRule from "../ThinRule/ThinRule";
-import LinkAsSvg from "../LinkAsSvg/LinkAsSvg";
+import LinkAsSvg, { SvgLinkDetails } from "../LinkAsSvg/LinkAsSvg";
 import NavBar from "../NavBar/NavBar";
 import CurrentYear from "../CurrentYear/CurrentYear";
 import "./footer.sass";
-
-interface SvgDetails {
-  stroke?: string;
-  strokeWidth?: string;
-  width: string;
-  height: string;
-  src: string;
-  gElement?: boolean;
-  d: string;
-}
-
-interface SvgLinkDetails extends SvgDetails {
-  internalLink?: boolean;
-  linkDestination: string;
-}
 
 interface Props {
   logo: SvgLinkDetails;
