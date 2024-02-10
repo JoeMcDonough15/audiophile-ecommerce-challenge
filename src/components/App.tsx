@@ -11,8 +11,6 @@ import AboutUs from "../components/AboutUs/AboutUs";
 import Footer from "../components/Footer/Footer";
 import svgDetails from "./svg-details.json";
 import data from "../data.json";
-// import MobileMenu from "./MobileMenu/MobileMenu";
-// import Cart from "./Cart/Cart";
 
 export interface FeaturedProductImage {
   categoryThumbnail?: string;
@@ -78,8 +76,6 @@ const ProductsProvider = ({ children }: PropsWithChildren) => {
 function App(): JSX.Element {
   return (
     <ProductsProvider>
-      {/* <MobileMenu /> */}
-      {/* <Cart /> */}
       <Header
         logo={logo}
         hamburgerMenu={hamburgerMenu}
