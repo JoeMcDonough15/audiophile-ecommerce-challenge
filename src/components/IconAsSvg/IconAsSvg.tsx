@@ -1,4 +1,4 @@
-interface SvgDetails {
+export interface SvgDetails {
   stroke?: string;
   strokeWidth?: string;
   width: string;

@@ -1,24 +1,10 @@
 import "./header.sass";
-import LinkAsSvg from "../LinkAsSvg/LinkAsSvg";
-import IconAsSvg from "../IconAsSvg/IconAsSvg";
+import LinkAsSvg, { SvgLinkDetails } from "../LinkAsSvg/LinkAsSvg";
+import IconAsSvg, { SvgDetails } from "../IconAsSvg/IconAsSvg";
 import NavBar from "../NavBar/NavBar";
 import Cart from "../Cart/Cart";
 import { useState } from "react";
-
-interface SvgDetails {
-  stroke?: string;
-  strokeWidth?: string;
-  width: string;
-  height: string;
-  src: string;
-  gElement?: boolean;
-  d: string;
-}
-
-interface SvgLinkDetails extends SvgDetails {
-  internalLink?: boolean;
-  linkDestination: string;
-}
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 interface Props {
   logo: SvgLinkDetails;
@@ -31,10 +17,18 @@ const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
   function handleCartClick() {
     setCartModalActive(!cartModalActive);
   }
+  const [mobileMenuActive, setMobileMenuActive] = useState(false);
+  function handleMenuClick() {
+    setMobileMenuActive(!mobileMenuActive);
+  }
   return (
     <header id="header" className="header-transparent-background">
       <section className="mobile-header main-container row">
-        <IconAsSvg className="hamburger-menu-icon" svgDetails={hamburgerMenu} />
+        <IconAsSvg
+          className="hamburger-menu-icon"
+          svgDetails={hamburgerMenu}
+          onClick={handleMenuClick}
+        />
         <LinkAsSvg className="logo-icon" svgDetails={logo} />
         <IconAsSvg
           className="shopping-cart-icon"
@@ -47,6 +41,7 @@ const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
           <IconAsSvg
             className="hamburger-menu-icon"
             svgDetails={hamburgerMenu}
+            onClick={handleMenuClick}
           />
           <LinkAsSvg className="logo-icon" svgDetails={logo} />
         </div>
@@ -65,7 +60,14 @@ const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
           onClick={handleCartClick}
         />
       </section>
-      <Cart cartModalIsActive={cartModalActive} onClick={handleCartClick} />
+      <MobileMenu
+        mobileMenuActive={mobileMenuActive}
+        handleMenuClick={handleMenuClick}
+      />
+      <Cart
+        cartModalIsActive={cartModalActive}
+        handleCartClick={handleCartClick}
+      />
     </header>
   );
 };

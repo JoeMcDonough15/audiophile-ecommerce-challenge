@@ -1,16 +1,17 @@
 import { NavLink } from "react-router-dom";
+import { SvgDetails } from "../IconAsSvg/IconAsSvg";
 
-interface SvgDetails {
-  stroke?: string;
-  strokeWidth?: string;
-  width: string;
-  height: string;
-  src: string;
-  gElement?: boolean;
-  d: string;
-}
+// interface SvgDetails {
+//   stroke?: string;
+//   strokeWidth?: string;
+//   width: string;
+//   height: string;
+//   src: string;
+//   gElement?: boolean;
+//   d: string;
+// }
 
-interface SvgLinkDetails extends SvgDetails {
+export interface SvgLinkDetails extends SvgDetails {
   internalLink?: boolean;
   linkDestination: string;
 }

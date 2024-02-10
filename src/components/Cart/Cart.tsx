@@ -28,10 +28,10 @@ const selectedProductSlugs = [
 
 interface Props {
   cartModalIsActive: boolean;
-  onClick: () => void;
+  handleCartClick: () => void;
 }
 
-const Cart = ({ cartModalIsActive, onClick }: Props): JSX.Element => {
+const Cart = ({ cartModalIsActive, handleCartClick }: Props): JSX.Element => {
   let cartModalClasses = "cart-modal col";
   if (!cartModalIsActive) {
     cartModalClasses += " hide";
@@ -97,8 +97,8 @@ const Cart = ({ cartModalIsActive, onClick }: Props): JSX.Element => {
       <Button
         className="button-checkout button-dark-orange"
         buttonText="checkout"
-        buttonDestination="checkout"
-        onClick={onClick}
+        buttonDestination="/checkout"
+        onClick={handleCartClick}
       />
     </section>
   );
