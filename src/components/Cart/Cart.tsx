@@ -27,13 +27,14 @@ const selectedProductSlugs = [
 ];
 
 interface Props {
-  cartModalIsActive: boolean;
+  modalIsActive: number;
   handleCartClick: () => void;
 }
 
-const Cart = ({ cartModalIsActive, handleCartClick }: Props): JSX.Element => {
+const Cart = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
   let cartModalClasses = "cart-modal col";
-  if (!cartModalIsActive) {
+
+  if (modalIsActive === 0 || modalIsActive === 1) {
     cartModalClasses += " hide";
   }
   const allProducts = useContext(FeaturedProductContext);

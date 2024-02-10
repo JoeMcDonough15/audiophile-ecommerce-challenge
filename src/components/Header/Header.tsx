@@ -13,13 +13,22 @@ interface Props {
 }
 
 const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
-  const [cartModalActive, setCartModalActive] = useState(false);
+  const [modalIsActive, setModalIsActive] = useState(0);
+
   function handleCartClick() {
-    setCartModalActive(!cartModalActive);
+    if (modalIsActive === 0 || modalIsActive === 1) {
+      setModalIsActive(2);
+    } else {
+      setModalIsActive(0);
+    }
   }
-  const [mobileMenuActive, setMobileMenuActive] = useState(false);
+
   function handleMenuClick() {
-    setMobileMenuActive(!mobileMenuActive);
+    if (modalIsActive === 0 || modalIsActive === 2) {
+      setModalIsActive(1);
+    } else {
+      setModalIsActive(0);
+    }
   }
   return (
     <header id="header" className="header-transparent-background">
@@ -61,13 +70,10 @@ const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
         />
       </section>
       <MobileMenu
-        mobileMenuActive={mobileMenuActive}
+        modalIsActive={modalIsActive}
         handleMenuClick={handleMenuClick}
       />
-      <Cart
-        cartModalIsActive={cartModalActive}
-        handleCartClick={handleCartClick}
-      />
+      <Cart modalIsActive={modalIsActive} handleCartClick={handleCartClick} />
     </header>
   );
 };

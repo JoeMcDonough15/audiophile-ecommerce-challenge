@@ -2,15 +2,14 @@ import "./mobile-menu.sass";
 import ProductCategoryMenu from "../ProductCategoryMenu/ProductCategoryMenu";
 
 interface Props {
-  mobileMenuActive: boolean;
+  modalIsActive: number;
   handleMenuClick: () => void;
 }
-const MobileMenu = ({
-  mobileMenuActive,
-  handleMenuClick,
-}: Props): JSX.Element => {
+
+const MobileMenu = ({ modalIsActive, handleMenuClick }: Props): JSX.Element => {
   let mobileMenuClasses = "mobile-menu";
-  if (!mobileMenuActive) {
+
+  if (modalIsActive === 0 || modalIsActive === 2) {
     mobileMenuClasses += " hide";
   }
   return (
