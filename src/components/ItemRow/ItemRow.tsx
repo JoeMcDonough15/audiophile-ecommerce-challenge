@@ -2,11 +2,11 @@ import ImageSlab from "../ImageSlab/ImageSlab";
 import ItemNameAndPrice from "../ItemNameAndPrice/ItemNameAndPrice";
 import Quantity from "../Quantity/Quantity";
 import SpecifyQuantity from "../SpecifyQuantity/SpecifyQuantity";
-import { ItemInCart } from "../CartModal/CartModal";
+import { ItemToPurchase } from "../Context/CartContext";
 import "./item-in-cart.sass";
 
 interface Props {
-  itemData: ItemInCart;
+  itemData: ItemToPurchase;
   withSpecifyQuantity?: boolean;
 }
 const ItemRow = ({ itemData, withSpecifyQuantity }: Props): JSX.Element => {

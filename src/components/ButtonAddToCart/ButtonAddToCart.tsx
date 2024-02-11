@@ -1,10 +1,10 @@
-const addItemToCart = () => {
-  return;
-};
+interface Props {
+  onClick?: () => void;
+}
 
-const ButtonAddToCart = () => {
+const ButtonAddToCart = ({ onClick }: Props) => {
   return (
-    <button className="button-dark-orange" onClick={addItemToCart}>
+    <button className="button-dark-orange" onClick={onClick}>
       <span className="button-text">add to cart</span>
     </button>
   );

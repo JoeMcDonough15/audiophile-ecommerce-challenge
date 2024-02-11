@@ -17,8 +17,10 @@ import SpecifyQuantity from "../../components/SpecifyQuantity/SpecifyQuantity";
 import NewProductIntro from "../../components/NewProductIntro/NewProductIntro";
 import ButtonGoBack from "../../components/ButtonGoBack/ButtonGoBack";
 import ButtonAddToCart from "../../components/ButtonAddToCart/ButtonAddToCart";
+import { CartContext } from "../../components/Context/CartContext";
 
 const ProductPage = () => {
+  // find product
   const { productName: productSlug } = useParams<{
     productName: string;
   }>();
@@ -43,6 +45,8 @@ const ProductPage = () => {
 
   const { mobile, tablet, desktop, imageAltText } = image;
 
+  // set local state for SpecifyQuantity component
+
   const [quantity, setQuantity] = useState(1);
 
   const incrementQuantity = () => {
@@ -55,6 +59,11 @@ const ProductPage = () => {
     }
     setQuantity(quantity - 1);
   };
+
+  // access CartContext
+
+  //@ts-ignore
+  const { addItemToCart } = useContext(CartContext);
 
   return (
     <>
@@ -97,7 +106,11 @@ const ProductPage = () => {
                   incrementQuantity={incrementQuantity}
                   decrementQuantity={decrementQuantity}
                 />
-                <ButtonAddToCart />
+                <ButtonAddToCart
+                  onClick={() => {
+                    addItemToCart({ product: pageProduct, quantity: quantity });
+                  }}
+                />
               </div>
             </div>
           </div>

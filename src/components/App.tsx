@@ -11,6 +11,7 @@ import AboutUs from "../components/AboutUs/AboutUs";
 import Footer from "../components/Footer/Footer";
 import svgDetails from "./svg-details.json";
 import data from "../data.json";
+import { CartProvider } from "../components/Context/CartContext";
 
 export interface FeaturedProductImage {
   categoryThumbnail?: string;
@@ -76,26 +77,28 @@ const ProductsProvider = ({ children }: PropsWithChildren) => {
 function App(): JSX.Element {
   return (
     <ProductsProvider>
-      <Header
-        logo={logo}
-        hamburgerMenu={hamburgerMenu}
-        shoppingCart={shoppingCart}
-      />
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route path="/category/:categoryName" component={CategoryPage} />
-        <Route path="/product/:productName" component={ProductPage} />
-        <Route path="/checkout" component={Checkout} />
-        <Route component={PageNotFound} />
-      </Switch>
-      <ProductCategoryMenu />
-      <AboutUs />
-      <Footer
-        logo={logo}
-        twitter={twitter}
-        facebook={facebook}
-        instagram={instagram}
-      />
+      <CartProvider>
+        <Header
+          logo={logo}
+          hamburgerMenu={hamburgerMenu}
+          shoppingCart={shoppingCart}
+        />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route path="/category/:categoryName" component={CategoryPage} />
+          <Route path="/product/:productName" component={ProductPage} />
+          <Route path="/checkout" component={Checkout} />
+          <Route component={PageNotFound} />
+        </Switch>
+        <ProductCategoryMenu />
+        <AboutUs />
+        <Footer
+          logo={logo}
+          twitter={twitter}
+          facebook={facebook}
+          instagram={instagram}
+        />
+      </CartProvider>
     </ProductsProvider>
   );
 }

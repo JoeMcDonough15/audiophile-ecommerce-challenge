@@ -8,7 +8,7 @@ import {
   findFeaturedProduct,
 } from "../App";
 import { useContext } from "react";
-import { ItemInCart } from "../CartModal/CartModal";
+import { ItemToPurchase } from "../Context/CartContext";
 import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
 
 const SummaryDetails = (): JSX.Element => {
@@ -59,7 +59,7 @@ const SummaryDetails = (): JSX.Element => {
     },
   ];
 
-  const calculateSubtotal = (items: ItemInCart[]) => {
+  const calculateSubtotal = (items: ItemToPurchase[]) => {
     return items.reduce((total, currentItem) => {
       return (total += currentItem.product.price * currentItem.quantity);
     }, 0);
