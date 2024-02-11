@@ -1,11 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router";
 import {
   FeaturedProductContext,
   findFeaturedProduct,
 } from "../../components/App";
 import Banner from "../../components/Banner/Banner";
-import Button from "../../components/Button/Button";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import InTheBox from "../../components/InTheBox/InTheBox";
 import Gallery from "../../components/Gallery/Gallery";
@@ -16,6 +15,8 @@ import ImageSlab from "../../components/ImageSlab/ImageSlab";
 import ProductInfo from "../../components/ProductInfoComponents/ProductInfo";
 import SpecifyQuantity from "../../components/SpecifyQuantity/SpecifyQuantity";
 import NewProductIntro from "../../components/NewProductIntro/NewProductIntro";
+import ButtonGoBack from "../../components/ButtonGoBack/ButtonGoBack";
+import ButtonAddToCart from "../../components/ButtonAddToCart/ButtonAddToCart";
 
 const ProductPage = () => {
   const { productName: productSlug } = useParams<{
@@ -42,16 +43,25 @@ const ProductPage = () => {
 
   const { mobile, tablet, desktop, imageAltText } = image;
 
+  const [quantity, setQuantity] = useState(1);
+
+  const incrementQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
+  const decrementQuantity = () => {
+    if (quantity === 1) {
+      return;
+    }
+    setQuantity(quantity - 1);
+  };
+
   return (
     <>
       <Banner />
       <main className="product-page">
         <div className="main-container">
-          <Button
-            className={"button-text-only"}
-            buttonText="go back"
-            buttonDestination=""
-          />
+          <ButtonGoBack />
         </div>
         <section className="main-container featured-product-container col">
           <div className="featured-product-image-container">
@@ -82,11 +92,12 @@ const ProductPage = () => {
                 price={price}
               />
               <div className="purchase-buttons row">
-                <SpecifyQuantity />
-                <Button
-                  buttonText="Add to cart"
-                  className={"button-dark-orange"}
+                <SpecifyQuantity
+                  quantity={quantity}
+                  incrementQuantity={incrementQuantity}
+                  decrementQuantity={decrementQuantity}
                 />
+                <ButtonAddToCart />
               </div>
             </div>
           </div>

@@ -143,6 +143,8 @@ img
 
 input
     @extend %custom-font
+
+input:not([type=submit], [type=radio])
     @extend %default-input-styles
 
 
@@ -151,12 +153,6 @@ input
     letter-spacing: -0.25px
     font-size: 14px
     font-weight: bold
-
-
-.input-hidden
-    position: absolute
-    visibility: hidden
-    width: 0px
 
 
 ////////// SVGs ///////////

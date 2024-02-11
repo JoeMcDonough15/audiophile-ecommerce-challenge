@@ -4,8 +4,8 @@ import FeaturedProductInfo from "../ProductInfoComponents/FeaturedProductInfo";
 import { useContext } from "react";
 import { FeaturedProductContext, findFeaturedProduct } from "../App";
 import PageNotFound from "../../pages/PageNotFound";
-import Button from "../Button/Button";
 import NewProductIntro from "../NewProductIntro/NewProductIntro";
+import ButtonLink from "../ButtonLink/ButtonLink";
 
 interface Props {
   productSlug: string;
@@ -34,7 +34,7 @@ const HeroSection = ({ productSlug }: Props): JSX.Element => {
             headerClass="featured-product-hero-header"
             descriptionClass="featured-product-description-hero"
           />
-          <Button
+          <ButtonLink
             buttonText="see product"
             className={`button-dark-orange`}
             buttonDestination={`/product/${productSlug}`}

@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import Button from "../Button/Button";
 import ItemRow from "../ItemRow/ItemRow";
 import FeeInformation from "../FeeInformation/FeeInformation";
 import fixPrice from "../../fixPrice";
@@ -9,6 +8,8 @@ import {
   findFeaturedProduct,
 } from "../App";
 import "./cart.sass";
+import ButtonLink from "../ButtonLink/ButtonLink";
+import ButtonRemoveAll from "../ButtonRemoveAll/ButtonRemoveAll";
 
 export interface ItemInCart {
   quantity: number;
@@ -78,10 +79,7 @@ const Cart = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
     <section id="cart-modal" className={cartModalClasses}>
       <div className="row cart-top-row">
         <h6 className="black-text">Cart (3)</h6>
-        <Button
-          className="button-text-only with-underline"
-          buttonText="Remove all"
-        />
+        <ButtonRemoveAll />
       </div>
       <div className="items-in-cart col">
         {itemsInCart.map((itemInCart) => {
@@ -95,7 +93,7 @@ const Cart = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
         })}
       </div>
       <FeeInformation feeName="Total" amountAsString={fixPrice(subtotal)} />
-      <Button
+      <ButtonLink
         className="button-checkout button-dark-orange"
         buttonText="checkout"
         buttonDestination="/checkout"

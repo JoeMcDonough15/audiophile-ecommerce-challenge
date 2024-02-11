@@ -1,6 +1,6 @@
-import Button from "../Button/Button";
 import "./category-slab.sass";
 import svgDetails from "../svg-details.json";
+import ButtonLink from "../ButtonLink/ButtonLink";
 
 const arrowIconDetails = svgDetails.arrowIcon;
 
@@ -24,7 +24,7 @@ const CategorySlab = (props: Props): JSX.Element => {
     <div className="category-slab content-slab col">
       <img src={imageSrc} alt="category-image" className={thumbnailName} />
       <p className="category-name">{categoryName}</p>
-      <Button
+      <ButtonLink
         withArrowIcon
         arrowIconDetails={arrowIconDetails}
         buttonDestination={buttonDestination}

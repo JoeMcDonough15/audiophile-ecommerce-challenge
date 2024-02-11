@@ -1,6 +1,5 @@
 import ItemRow from "../ItemRow/ItemRow";
 import FeeInformation from "../FeeInformation/FeeInformation";
-import Button from "../Button/Button";
 import "./summary-details.sass";
 import fixPrice from "../../fixPrice";
 import {
@@ -10,6 +9,7 @@ import {
 } from "../App";
 import { useContext } from "react";
 import { ItemInCart } from "../Cart/Cart";
+import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
 
 const SummaryDetails = (): JSX.Element => {
   // These products will be accessed from CartContext eventually
@@ -97,11 +97,7 @@ const SummaryDetails = (): JSX.Element => {
         amountAsString={fixPrice(subtotal + shipping)}
         customPriceColor="dark-orange-text"
       />
-      <Button
-        isSubmitButton
-        className="button-dark-orange"
-        buttonText="continue & pay"
-      />
+      <ButtonSubmit />
     </section>
   );
 };

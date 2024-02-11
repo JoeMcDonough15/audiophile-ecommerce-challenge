@@ -5,7 +5,7 @@ import "./home-feature-one.sass";
 import { FeaturedProductContext, findFeaturedProduct } from "../App";
 import { useContext } from "react";
 import PageNotFound from "../../pages/PageNotFound";
-import Button from "../Button/Button";
+import ButtonLink from "../ButtonLink/ButtonLink";
 
 interface Props {
   productSlug: string;
@@ -51,7 +51,7 @@ const HomeFeatureOne = ({ productSlug }: Props): JSX.Element => {
             headerClass="home-feature-one-header"
             descriptionClass="home-feature-one-description light-grey-text"
           />
-          <Button
+          <ButtonLink
             buttonText="see product"
             className={`button-black`}
             buttonDestination={`product/${productSlug}`}

@@ -6,10 +6,10 @@ import {
   FeaturedProductObject,
 } from "../../components/App";
 import { useContext } from "react";
-import Button from "../../components/Button/Button";
 import ImageSlab from "../../components/ImageSlab/ImageSlab";
 import ProductInfo from "../../components/ProductInfoComponents/ProductInfo";
 import NewProductIntro from "../../components/NewProductIntro/NewProductIntro";
+import ButtonLink from "../../components/ButtonLink/ButtonLink";
 
 const CategoryPage = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
@@ -78,7 +78,7 @@ const CategoryPage = () => {
                       headerClass="category-page-featured-product-header"
                       descriptionClass="category-page-featured-product-description"
                     />
-                    <Button
+                    <ButtonLink
                       className="button-dark-orange"
                       buttonText="See Product"
                       buttonDestination={`/product/${product.slug}`}

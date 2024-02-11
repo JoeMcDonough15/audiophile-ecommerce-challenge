@@ -23,7 +23,7 @@ const ItemRow = ({ itemData, withSpecifyQuantity }: Props): JSX.Element => {
         }}
       />
       <ItemNameAndPrice product={product} />
-      <SpecifyQuantity />
+      <SpecifyQuantity quantity={quantity} />
     </div>
   ) : (
     <div className="row item-in-cart">

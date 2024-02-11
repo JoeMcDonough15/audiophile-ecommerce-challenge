@@ -1,4 +1,4 @@
-import Button from "../Button/Button";
+import ButtonLink from "../ButtonLink/ButtonLink";
 
 interface ButtonData {
   buttonColor: string;
@@ -39,7 +39,7 @@ const HeadingAndButton = ({
       >
         {productName}
       </h4>
-      <Button
+      <ButtonLink
         buttonText="see product"
         className={`button-${buttonColor}`}
         buttonDestination={buttonDestination}
