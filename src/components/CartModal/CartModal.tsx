@@ -38,7 +38,11 @@ const CartModal = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
     <section id="cart-modal" className={cartModalClasses}>
       <div className="row cart-top-row">
         <h6 className="black-text">Cart ({numItemsInCart()})</h6>
-        <ButtonRemoveAll />
+        <ButtonRemoveAll
+          onClick={() => {
+            removeAllItemsFromCart();
+          }}
+        />
       </div>
       <div className="items-in-cart col">
         {itemsInCart.map((itemInCart: ItemToPurchase) => {

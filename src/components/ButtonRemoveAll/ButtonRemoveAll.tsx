@@ -1,20 +1,13 @@
-const removeAllItemsFromCart = () => {
-  return;
-};
+interface Props {
+  onClick: () => void;
+}
 
-const ButtonRemoveAll = () => {
+const ButtonRemoveAll = ({ onClick }: Props) => {
   return (
-    <button
-      className="button-text-only with-underline"
-      onClick={removeAllItemsFromCart}
-    >
+    <button className="button-text-only with-underline" onClick={onClick}>
       <span className="button-text">remove all</span>
     </button>
   );
 };
 
 export default ButtonRemoveAll;
-
-// on this component the onClick handler can be hard coded because it will always do the
-// same thing: clear the cart.  The removeAllItemsFromCart function should be imported from
-// CartContext.
