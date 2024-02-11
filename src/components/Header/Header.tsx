@@ -2,7 +2,7 @@ import "./header.sass";
 import LinkAsSvg, { SvgLinkDetails } from "../LinkAsSvg/LinkAsSvg";
 import IconAsSvg, { SvgDetails } from "../IconAsSvg/IconAsSvg";
 import NavBar from "../NavBar/NavBar";
-import Cart from "../Cart/Cart";
+import CartModal from "../CartModal/CartModal";
 import { useState } from "react";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
@@ -73,7 +73,10 @@ const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
         modalIsActive={modalIsActive}
         handleMenuClick={handleMenuClick}
       />
-      <Cart modalIsActive={modalIsActive} handleCartClick={handleCartClick} />
+      <CartModal
+        modalIsActive={modalIsActive}
+        handleCartClick={handleCartClick}
+      />
     </header>
   );
 };

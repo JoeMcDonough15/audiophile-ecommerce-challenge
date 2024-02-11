@@ -2,7 +2,7 @@ import ImageSlab from "../ImageSlab/ImageSlab";
 import ItemNameAndPrice from "../ItemNameAndPrice/ItemNameAndPrice";
 import Quantity from "../Quantity/Quantity";
 import SpecifyQuantity from "../SpecifyQuantity/SpecifyQuantity";
-import { ItemInCart } from "../Cart/Cart";
+import { ItemInCart } from "../CartModal/CartModal";
 import "./item-in-cart.sass";
 
 interface Props {

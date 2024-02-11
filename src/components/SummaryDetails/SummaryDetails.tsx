@@ -8,7 +8,7 @@ import {
   findFeaturedProduct,
 } from "../App";
 import { useContext } from "react";
-import { ItemInCart } from "../Cart/Cart";
+import { ItemInCart } from "../CartModal/CartModal";
 import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
 
 const SummaryDetails = (): JSX.Element => {

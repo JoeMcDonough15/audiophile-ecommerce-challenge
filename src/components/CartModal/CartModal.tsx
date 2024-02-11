@@ -7,7 +7,7 @@ import {
   FeaturedProductObject,
   findFeaturedProduct,
 } from "../App";
-import "./cart.sass";
+import "./cart-modal.sass";
 import ButtonLink from "../ButtonLink/ButtonLink";
 import ButtonRemoveAll from "../ButtonRemoveAll/ButtonRemoveAll";
 
@@ -32,7 +32,7 @@ interface Props {
   handleCartClick: () => void;
 }
 
-const Cart = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
+const CartModal = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
   let cartModalClasses = "cart-modal col";
 
   if (modalIsActive === 0 || modalIsActive === 1) {
@@ -103,4 +103,4 @@ const Cart = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
   );
 };
 
-export default Cart;
+export default CartModal;
