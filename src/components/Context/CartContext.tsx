@@ -36,13 +36,22 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
   };
 
   const removeItemFromCart = (itemToRemove: ItemToPurchase) => {
+    // console.log("all cart items at top of function: ", itemsInCart);
     setItemsInCart(
       itemsInCart.map((itemInCart) => {
+        // console.log(
+        //   "item in cart quantity: ",
+        //   itemInCart.product,
+
+        //   "\n item to remove quantity: ",
+        //   itemToRemove.product
+        // );
         return itemInCart.product.id === itemToRemove.product.id
           ? { ...itemInCart, quantity: itemInCart.quantity - 1 }
           : itemInCart;
       })
     );
+    // console.log("all cart items at bottom of function: ", itemsInCart);
     setItemsInCart(
       itemsInCart.filter((itemInCart) => {
         return itemInCart.quantity > 0;

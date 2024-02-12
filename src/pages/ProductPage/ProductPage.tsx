@@ -11,13 +11,16 @@ import Gallery from "../../components/Gallery/Gallery";
 import YouMayAlsoLike from "../../components/YouMayAlsoLike/YouMayAlsoLike";
 import PageNotFound from "../PageNotFound";
 import "./product-page.sass";
+import "../../components/SpecifyQuantity/specify-quantity.sass"; // imported so that lines 107-119 get correct styles now that I'm not using SpecifyQuantity component
 import ImageSlab from "../../components/ImageSlab/ImageSlab";
 import ProductInfo from "../../components/ProductInfoComponents/ProductInfo";
-import SpecifyQuantity from "../../components/SpecifyQuantity/SpecifyQuantity";
+// import SpecifyQuantity from "../../components/SpecifyQuantity/SpecifyQuantity"; // commented out to maintain consistency with ItemInRow component that is not using this component
 import NewProductIntro from "../../components/NewProductIntro/NewProductIntro";
 import ButtonGoBack from "../../components/ButtonGoBack/ButtonGoBack";
 import ButtonAddToCart from "../../components/ButtonAddToCart/ButtonAddToCart";
 import { CartContext } from "../../components/Context/CartContext";
+import ButtonSpecifyQuantity from "../../components/ButtonSpecifyQuantity/ButtonSpecifyQuantity";
+import Quantity from "../../components/Quantity/Quantity";
 
 const ProductPage = () => {
   // find product
@@ -101,11 +104,19 @@ const ProductPage = () => {
                 price={price}
               />
               <div className="purchase-buttons row">
-                <SpecifyQuantity
-                  quantity={quantity}
-                  incrementQuantity={incrementQuantity}
-                  decrementQuantity={decrementQuantity}
-                />
+                <div className="quantity-container">
+                  <div className="quantity-buttons-container">
+                    <ButtonSpecifyQuantity
+                      buttonText="-"
+                      onClick={decrementQuantity}
+                    />
+                    <Quantity quantity={quantity} />
+                    <ButtonSpecifyQuantity
+                      buttonText="+"
+                      onClick={incrementQuantity}
+                    />
+                  </div>
+                </div>
                 <ButtonAddToCart
                   onClick={() => {
                     addItemToCart({ product: pageProduct, quantity: quantity });
