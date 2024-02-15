@@ -31,7 +31,7 @@ const CartModal = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
     // @ts-ignore
     removeAllItemsFromCart,
     // @ts-ignore
-    calculateTotal,
+    calculateSubtotal,
   } = useContext(CartContext);
 
   return (
@@ -57,7 +57,7 @@ const CartModal = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
       </div>
       <FeeInformation
         feeName="Total"
-        amountAsString={fixPrice(calculateTotal())}
+        amountAsString={fixPrice(calculateSubtotal())}
       />
       <ButtonLink
         className="button-checkout button-dark-orange"

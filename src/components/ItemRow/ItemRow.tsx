@@ -45,7 +45,7 @@ const ItemRow = ({ itemData, withSpecifyQuantity }: Props): JSX.Element => {
       </div>
     </div>
   ) : (
-    <div className="row item-in-cart">
+    <div className="row item-row">
       {" "}
       <div className="item-image-and-details row">
         <ImageSlab

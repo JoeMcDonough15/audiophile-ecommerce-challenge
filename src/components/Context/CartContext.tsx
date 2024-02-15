@@ -55,13 +55,28 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
     setItemsInCart([]);
   };
 
-  const calculateTotal = () => {
+  const calculateSubtotal = () => {
     if (numItemsInCart() === 0) {
       return 0;
     }
     return itemsInCart.reduce((total, currentItem) => {
       return (total += currentItem.product.price * currentItem.quantity);
-    }, 50); // 50 for shipping
+    }, 0);
+  };
+
+  const determineVat = () => {
+    return calculateSubtotal() * 0.2;
+  };
+
+  const includeVatInTotal = () => {
+    return calculateSubtotal() * 1.2;
+  };
+
+  const calculateGrandTotal = () => {
+    if (calculateSubtotal() === 0) {
+      return 0;
+    }
+    return includeVatInTotal() + 50;
   };
 
   return (
@@ -73,7 +88,10 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
         addItemToCart,
         removeItemFromCart,
         removeAllItemsFromCart,
-        calculateTotal,
+        calculateSubtotal,
+        determineVat,
+        includeVatInTotal,
+        calculateGrandTotal,
       }}
     >
       {children}
