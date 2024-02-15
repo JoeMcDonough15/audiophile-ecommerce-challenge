@@ -1,10 +1,8 @@
 import ImageSlab from "../ImageSlab/ImageSlab";
 import ItemNameAndPrice from "../ItemNameAndPrice/ItemNameAndPrice";
 import Quantity from "../Quantity/Quantity";
-// import SpecifyQuantity from "../SpecifyQuantity/SpecifyQuantity"; // commented out because I don't want to pass onClicks affecting CartContext into a sub component.
 import { CartContext, ItemToPurchase } from "../Context/CartContext";
-import "./item-in-cart.sass";
-import "../SpecifyQuantity/specify-quantity.sass"; // so that lines 31-47 get the correct styles
+import "./item-row.sass";
 import { useContext } from "react";
 import ButtonSpecifyQuantity from "../ButtonSpecifyQuantity/ButtonSpecifyQuantity";
 
@@ -19,7 +17,7 @@ const ItemRow = ({ itemData, withSpecifyQuantity }: Props): JSX.Element => {
   const { image } = product;
   const { mobile, imageAltText } = image;
   return withSpecifyQuantity ? (
-    <div className="row item-in-cart with-specify-quantity">
+    <div className="row item-row with-specify-quantity">
       <ImageSlab
         slabSize="thumbnail"
         imageData={{

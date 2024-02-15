@@ -11,10 +11,8 @@ import Gallery from "../../components/Gallery/Gallery";
 import YouMayAlsoLike from "../../components/YouMayAlsoLike/YouMayAlsoLike";
 import PageNotFound from "../PageNotFound";
 import "./product-page.sass";
-import "../../components/SpecifyQuantity/specify-quantity.sass"; // imported so that lines 107-119 get correct styles now that I'm not using SpecifyQuantity component
 import ImageSlab from "../../components/ImageSlab/ImageSlab";
 import ProductInfo from "../../components/ProductInfoComponents/ProductInfo";
-// import SpecifyQuantity from "../../components/SpecifyQuantity/SpecifyQuantity"; // commented out to maintain consistency with ItemInRow component that is not using this component
 import NewProductIntro from "../../components/NewProductIntro/NewProductIntro";
 import ButtonGoBack from "../../components/ButtonGoBack/ButtonGoBack";
 import ButtonAddToCart from "../../components/ButtonAddToCart/ButtonAddToCart";
