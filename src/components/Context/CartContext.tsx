@@ -36,6 +36,7 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
   };
 
   const removeItemFromCart = (itemToRemove: ItemToPurchase) => {
+<<<<<<< HEAD
     console.log("all cart items at top of function: ", itemsInCart);
     setItemsInCart(
       itemsInCart.map((itemInCart) => {
@@ -46,12 +47,19 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
           "\n item to remove: ",
           itemToRemove.product
         );
+=======
+    setItemsInCart(
+      itemsInCart.map((itemInCart) => {
+>>>>>>> 9592b07 (fix bug inside removeItemFromCart function by using -= instead of just - when decrementing quantity property of item object)
         return itemInCart.product.id === itemToRemove.product.id
-          ? { ...itemInCart, quantity: itemInCart.quantity - 1 }
+          ? { ...itemInCart, quantity: (itemInCart.quantity -= 1) }
           : itemInCart;
       })
     );
+<<<<<<< HEAD
     console.log("all cart items at bottom of function: ", itemsInCart);
+=======
+>>>>>>> 9592b07 (fix bug inside removeItemFromCart function by using -= instead of just - when decrementing quantity property of item object)
     setItemsInCart(
       itemsInCart.filter((itemInCart) => {
         return itemInCart.quantity > 0;
