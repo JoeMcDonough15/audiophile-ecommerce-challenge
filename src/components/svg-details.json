@@ -60,5 +60,18 @@
     "src": "http://www.w3.org/2000/svg",
     "gElement": false,
     "d": "M1.322 1l5 5-5 5"
+  },
+  "circlesPattern": {
+    "width": "944",
+    "height": "944",
+    "src": "http://www.w3.org/2000/svg",
+    "stroke": "#FFF",
+    "fill": "none",
+    "opacity": ".202",
+    "cx": "472",
+    "cy": "472",
+    "circleOneRadius": "235.5",
+    "circleTwoRadius": "270.5",
+    "circleThreeRadius": "471.5"
   }
 }

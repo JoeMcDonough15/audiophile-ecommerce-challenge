@@ -1,12 +1,4 @@
-export interface SvgDetails {
-  stroke?: string;
-  strokeWidth?: string;
-  width: string;
-  height: string;
-  src: string;
-  gElement?: boolean;
-  d: string;
-}
+import { SvgDetails } from "../Context/SvgDetailsContext";
 
 interface Props {
   className?: string;

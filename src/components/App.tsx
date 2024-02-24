@@ -8,22 +8,17 @@ import PageNotFound from "../pages/PageNotFound";
 import ProductCategoryMenu from "./ProductCategoryMenu/ProductCategoryMenu";
 import AboutUs from "../components/AboutUs/AboutUs";
 import Footer from "../components/Footer/Footer";
-import svgDetails from "./svg-details.json";
 import { CartProvider } from "../components/Context/CartContext";
 import { ProductsProvider } from "./Context/ProductsContext";
-
-const { logo, twitter, facebook, instagram, hamburgerMenu, shoppingCart } =
-  svgDetails;
+import { SvgDetailsProvider } from "./Context/SvgDetailsContext";
 
 function App(): JSX.Element {
   return (
     <ProductsProvider>
       <CartProvider>
-        <Header
-          logo={logo}
-          hamburgerMenu={hamburgerMenu}
-          shoppingCart={shoppingCart}
-        />
+        <SvgDetailsProvider>
+          <Header />
+        </SvgDetailsProvider>
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route path="/category/:categoryName" component={CategoryPage} />
@@ -33,12 +28,9 @@ function App(): JSX.Element {
         </Switch>
         <ProductCategoryMenu />
         <AboutUs />
-        <Footer
-          logo={logo}
-          twitter={twitter}
-          facebook={facebook}
-          instagram={instagram}
-        />
+        <SvgDetailsProvider>
+          <Footer />
+        </SvgDetailsProvider>
       </CartProvider>
     </ProductsProvider>
   );

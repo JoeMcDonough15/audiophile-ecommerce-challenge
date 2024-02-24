@@ -1,17 +1,14 @@
 import ThinRule from "../ThinRule/ThinRule";
-import LinkAsSvg, { SvgLinkDetails } from "../LinkAsSvg/LinkAsSvg";
+import LinkAsSvg from "../LinkAsSvg/LinkAsSvg";
 import NavBar from "../NavBar/NavBar";
 import CurrentYear from "../CurrentYear/CurrentYear";
 import "./footer.sass";
+import { useContext } from "react";
+import { AllSvgDetails } from "../Context/SvgDetailsContext";
 
-interface Props {
-  logo: SvgLinkDetails;
-  twitter: SvgLinkDetails;
-  instagram: SvgLinkDetails;
-  facebook: SvgLinkDetails;
-}
-
-const Footer = ({ logo, twitter, facebook, instagram }: Props): JSX.Element => {
+const Footer = (): JSX.Element => {
+  const AllSvgs = useContext(AllSvgDetails);
+  const { logo, facebook, twitter, instagram } = AllSvgs;
   return (
     <section className="footer">
       <div className="mobile-and-tablet-footer main-container">

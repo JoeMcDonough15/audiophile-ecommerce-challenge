@@ -6,6 +6,7 @@ import { useContext } from "react";
 import PageNotFound from "../../pages/PageNotFound";
 import ButtonLink from "../ButtonLink/ButtonLink";
 import { ProductsContext } from "../Context/ProductsContext";
+import { SvgDetailsProvider } from "../Context/SvgDetailsContext";
 
 interface Props {
   productSlug: string;
@@ -25,7 +26,9 @@ const HomeFeatureOne = ({ productSlug }: Props): JSX.Element => {
   const { mobile, tablet, desktop, imageAltText } = homePageImage;
   return (
     <section className="home-feature-one">
-      <CirclePatternSvg />
+      <SvgDetailsProvider>
+        <CirclePatternSvg />
+      </SvgDetailsProvider>
       <div className="home-feature-one-image-and-text">
         <div className="home-feature-one-image-container">
           <CustomImage

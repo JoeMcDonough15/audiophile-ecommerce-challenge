@@ -1,18 +1,15 @@
 import "./header.sass";
-import LinkAsSvg, { SvgLinkDetails } from "../LinkAsSvg/LinkAsSvg";
-import IconAsSvg, { SvgDetails } from "../IconAsSvg/IconAsSvg";
+import LinkAsSvg from "../LinkAsSvg/LinkAsSvg";
+import IconAsSvg from "../IconAsSvg/IconAsSvg";
 import NavBar from "../NavBar/NavBar";
 import CartModal from "../CartModal/CartModal";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import MobileMenu from "../MobileMenu/MobileMenu";
+import { AllSvgDetails } from "../Context/SvgDetailsContext";
 
-interface Props {
-  logo: SvgLinkDetails;
-  hamburgerMenu: SvgDetails;
-  shoppingCart: SvgDetails;
-}
-
-const Header = ({ logo, hamburgerMenu, shoppingCart }: Props): JSX.Element => {
+const Header = (): JSX.Element => {
+  const AllSvgs = useContext(AllSvgDetails);
+  const { hamburgerMenu, logo, shoppingCart } = AllSvgs;
   const [modalIsActive, setModalIsActive] = useState(0);
 
   function handleCartClick() {

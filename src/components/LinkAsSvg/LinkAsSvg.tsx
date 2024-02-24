@@ -1,14 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { SvgDetails } from "../IconAsSvg/IconAsSvg";
-
-export interface SvgLinkDetails extends SvgDetails {
-  internalLink?: boolean;
-  linkDestination: string;
-}
+import { SvgDetails } from "../Context/SvgDetailsContext";
 
 interface Props {
   className?: string;
-  svgDetails: SvgLinkDetails;
+  svgDetails: SvgDetails;
 }
 
 const LinkAsSvg = ({ className, svgDetails }: Props): JSX.Element => {
@@ -26,7 +21,7 @@ const LinkAsSvg = ({ className, svgDetails }: Props): JSX.Element => {
 
   return (
     <div className={className}>
-      {internalLink ? (
+      {linkDestination && internalLink ? (
         <NavLink to={linkDestination} exact={linkDestination === "/"}>
           <svg width={width} height={height} xmlns={src}>
             {gElement && stroke && strokeWidth ? (

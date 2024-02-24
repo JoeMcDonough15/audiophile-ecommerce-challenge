@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import IconAsSvg, { SvgDetails } from "../IconAsSvg/IconAsSvg";
+import IconAsSvg from "../IconAsSvg/IconAsSvg";
+import { SvgDetails } from "../Context/SvgDetailsContext";
 
 interface Props {
   buttonDestination: string;
