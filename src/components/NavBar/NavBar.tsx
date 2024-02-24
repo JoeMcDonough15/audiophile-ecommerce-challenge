@@ -8,7 +8,7 @@ interface Props {
 const NavBar = ({ className }: Props): JSX.Element => {
   return (
     <nav className={className}>
-      <NavLink className="nav-link" to={"/"} exact>
+      <NavLink className="nav-link" to={"/"}>
         Home
       </NavLink>
       <NavLink className="nav-link" to={"/category/headphones"}>

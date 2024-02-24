@@ -45,7 +45,7 @@ const YouMayAlsoLike = ({ relatedProducts }: Props): JSX.Element => {
                 isRelatedProduct
                 buttonData={{
                   buttonColor: "dark-orange",
-                  buttonDestination: `${product.slug}`,
+                  buttonDestination: `/product/${product.slug}`,
                 }}
               />
             </div>

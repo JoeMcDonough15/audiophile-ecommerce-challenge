@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Homepage from "../pages/Homepage/Homepage";
 import CategoryPage from "../pages/CategoryPage/CategoryPage";
@@ -19,13 +19,15 @@ function App(): JSX.Element {
         <SvgDetailsProvider>
           <Header />
         </SvgDetailsProvider>
-        <Switch>
-          <Route exact path="/" component={Homepage} />
-          <Route path="/category/:categoryName" component={CategoryPage} />
-          <Route path="/product/:productName" component={ProductPage} />
-          <Route path="/checkout" component={Checkout} />
-          <Route component={PageNotFound} />
-        </Switch>
+
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/category/:categoryName" element={<CategoryPage />} />
+          <Route path="/product/:productName" element={<ProductPage />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route element={<PageNotFound />} />
+        </Routes>
+
         <ProductCategoryMenu />
         <AboutUs />
         <SvgDetailsProvider>

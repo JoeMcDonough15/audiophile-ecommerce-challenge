@@ -22,7 +22,7 @@ const LinkAsSvg = ({ className, svgDetails }: Props): JSX.Element => {
   return (
     <div className={className}>
       {linkDestination && internalLink ? (
-        <NavLink to={linkDestination} exact={linkDestination === "/"}>
+        <NavLink to={linkDestination}>
           <svg width={width} height={height} xmlns={src}>
             {gElement && stroke && strokeWidth ? (
               <g>

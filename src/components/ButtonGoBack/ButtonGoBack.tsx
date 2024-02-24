@@ -1,12 +1,12 @@
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ButtonGoBack = () => {
-  let history = useHistory();
+  const navigate = useNavigate();
   return (
     <button
       className="button-text-only"
       onClick={() => {
-        history.goBack();
+        navigate(-1);
       }}
     >
       <span className="button-text">go back</span>
