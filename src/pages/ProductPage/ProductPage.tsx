@@ -1,9 +1,5 @@
 import { useContext, useState } from "react";
 import { useParams } from "react-router";
-import {
-  FeaturedProductContext,
-  findFeaturedProduct,
-} from "../../components/App";
 import Banner from "../../components/Banner/Banner";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
 import InTheBox from "../../components/InTheBox/InTheBox";
@@ -19,15 +15,17 @@ import ButtonAddToCart from "../../components/ButtonAddToCart/ButtonAddToCart";
 import { CartContext } from "../../components/Context/CartContext";
 import ButtonSpecifyQuantity from "../../components/ButtonSpecifyQuantity/ButtonSpecifyQuantity";
 import Quantity from "../../components/Quantity/Quantity";
+import { ProductsContext } from "../../components/Context/ProductsContext";
 
 const ProductPage = () => {
   // find product
   const { productName: productSlug } = useParams<{
     productName: string;
   }>();
-  const allProducts = useContext(FeaturedProductContext);
+  // @ts-ignore
+  const { data: allProducts, findProduct } = useContext(ProductsContext);
 
-  const pageProduct = findFeaturedProduct(allProducts, productSlug);
+  const pageProduct = findProduct(allProducts, productSlug);
   if (!pageProduct) {
     return <PageNotFound />;
   }
@@ -46,7 +44,7 @@ const ProductPage = () => {
 
   const { mobile, tablet, desktop, imageAltText } = image;
 
-  // set local state for SpecifyQuantity component
+  // set local state for Quantity and ButtonSpecifyQuantity components
 
   const [quantity, setQuantity] = useState(1);
 

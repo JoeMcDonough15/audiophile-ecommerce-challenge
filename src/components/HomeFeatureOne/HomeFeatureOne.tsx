@@ -2,18 +2,19 @@ import FeaturedProductInfo from "../ProductInfoComponents/FeaturedProductInfo";
 import CirclePatternSvg from "../CirclePatternSvg/CirclePatternSvg";
 import CustomImage from "../CustomImage/CustomImage";
 import "./home-feature-one.sass";
-import { FeaturedProductContext, findFeaturedProduct } from "../App";
 import { useContext } from "react";
 import PageNotFound from "../../pages/PageNotFound";
 import ButtonLink from "../ButtonLink/ButtonLink";
+import { ProductsContext } from "../Context/ProductsContext";
 
 interface Props {
   productSlug: string;
 }
 
 const HomeFeatureOne = ({ productSlug }: Props): JSX.Element => {
-  const allProducts = useContext(FeaturedProductContext);
-  const product = findFeaturedProduct(allProducts, productSlug);
+  //@ts-ignore
+  const { data: allProducts, findProduct } = useContext(ProductsContext);
+  const product = findProduct(allProducts, productSlug);
 
   if (!product) {
     return <PageNotFound />;

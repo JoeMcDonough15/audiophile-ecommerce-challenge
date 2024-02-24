@@ -1,17 +1,18 @@
 import { useContext } from "react";
-import { FeaturedProductContext, findFeaturedProduct } from "../App";
 import CustomImage from "../CustomImage/CustomImage";
 import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./home-feature-two.sass";
 import PageNotFound from "../../pages/PageNotFound";
+import { ProductsContext } from "../Context/ProductsContext";
 
 interface Props {
   productSlug: string;
 }
 
 const HomeFeatureTwo = ({ productSlug }: Props): JSX.Element => {
-  const allProducts = useContext(FeaturedProductContext);
-  const featuredProduct = findFeaturedProduct(allProducts, productSlug);
+  // @ts-ignore
+  const { data: allProducts, findProduct } = useContext(ProductsContext);
+  const featuredProduct = findProduct(allProducts, productSlug);
 
   if (!featuredProduct) {
     return <PageNotFound />;

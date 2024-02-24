@@ -1,44 +1,40 @@
 import { useParams } from "react-router";
 import Banner from "../../components/Banner/Banner";
 import "./category-page.sass";
-import {
-  FeaturedProductContext,
-  FeaturedProductObject,
-} from "../../components/App";
 import { useContext } from "react";
 import ImageSlab from "../../components/ImageSlab/ImageSlab";
 import ProductInfo from "../../components/ProductInfoComponents/ProductInfo";
 import NewProductIntro from "../../components/NewProductIntro/NewProductIntro";
 import ButtonLink from "../../components/ButtonLink/ButtonLink";
+import {
+  Product,
+  ProductsContext,
+} from "../../components/Context/ProductsContext";
 
 const CategoryPage = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
-  const allProducts = useContext(FeaturedProductContext);
+  // @ts-ignore
+  const { data: allProducts } = useContext(ProductsContext);
   const categoryPageProducts = allProducts
-    .filter((product: FeaturedProductObject) => {
+    .filter((product: Product) => {
       return product.category === categoryName;
     })
-    .sort(
-      (
-        featuredProduct: FeaturedProductObject,
-        nextFeaturedProduct: FeaturedProductObject
-      ) => {
-        if (featuredProduct.id > nextFeaturedProduct.id) {
-          return -1;
-        } else if (featuredProduct.id < nextFeaturedProduct.id) {
-          return 1;
-        } else {
-          return 0;
-        }
+    .sort((featuredProduct: Product, nextFeaturedProduct: Product) => {
+      if (featuredProduct.id > nextFeaturedProduct.id) {
+        return -1;
+      } else if (featuredProduct.id < nextFeaturedProduct.id) {
+        return 1;
+      } else {
+        return 0;
       }
-    );
+    });
 
   return (
     <>
       <Banner bannerText={categoryName} />
       <main className="category-page">
         <section className="category-features col">
-          {categoryPageProducts.map((product: FeaturedProductObject) => {
+          {categoryPageProducts.map((product: Product) => {
             return (
               <section
                 className="main-container featured-product-container col"

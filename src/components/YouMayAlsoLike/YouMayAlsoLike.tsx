@@ -1,7 +1,7 @@
 import ImageSlab from "../ImageSlab/ImageSlab";
 import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./you-may-also-like.sass";
-import { RelatedProduct } from "../App";
+import { RelatedProduct } from "../Context/ProductsContext";
 
 interface Props {
   relatedProducts: RelatedProduct[];

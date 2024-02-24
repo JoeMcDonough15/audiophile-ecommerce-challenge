@@ -1,9 +1,9 @@
 import fixPrice from "../../fixPrice";
-import { FeaturedProductObject } from "../App";
+import { Product } from "../Context/ProductsContext";
 import "./item-name-and-price.sass";
 
 interface Props {
-  product: FeaturedProductObject;
+  product: Product;
 }
 
 const ItemNameAndPrice = ({ product }: Props): JSX.Element => {

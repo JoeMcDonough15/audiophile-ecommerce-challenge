@@ -2,18 +2,19 @@ import ThinRule from "../ThinRule/ThinRule";
 import "./hero-section.sass";
 import FeaturedProductInfo from "../ProductInfoComponents/FeaturedProductInfo";
 import { useContext } from "react";
-import { FeaturedProductContext, findFeaturedProduct } from "../App";
 import PageNotFound from "../../pages/PageNotFound";
 import NewProductIntro from "../NewProductIntro/NewProductIntro";
 import ButtonLink from "../ButtonLink/ButtonLink";
+import { ProductsContext } from "../Context/ProductsContext";
 
 interface Props {
   productSlug: string;
 }
 
 const HeroSection = ({ productSlug }: Props): JSX.Element => {
-  const allProducts = useContext(FeaturedProductContext);
-  const product = findFeaturedProduct(allProducts, productSlug);
+  // @ts-ignore
+  const { data: allProducts, findProduct } = useContext(ProductsContext);
+  const product = findProduct(allProducts, productSlug);
 
   if (!product) {
     return <PageNotFound />;

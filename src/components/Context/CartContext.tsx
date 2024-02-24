@@ -1,9 +1,9 @@
 import { PropsWithChildren, createContext, useState } from "react";
-import { FeaturedProductObject } from "../App";
+import { Product } from "./ProductsContext";
 
 export interface ItemToPurchase {
   quantity: number;
-  product: FeaturedProductObject;
+  product: Product;
 }
 
 export const CartContext = createContext<ItemToPurchase[]>([]);

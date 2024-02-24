@@ -1,21 +1,24 @@
 import { useContext } from "react";
-import { FeaturedProductContext } from "../App";
 import CategorySlab from "../CategorySlab/CategorySlab";
 import "./product-category-menu.sass";
+import { Product, ProductsContext } from "../Context/ProductsContext";
 
 interface Props {
   handleMenuClick?: () => void;
 }
 
 const ProductCategoryMenu = ({ handleMenuClick }: Props): JSX.Element => {
-  const allProducts = useContext(FeaturedProductContext);
-  const productsWithCategoryThumbnails = allProducts.filter((product) => {
-    return product.categoryImage.categoryThumbnail;
-  });
+  //@ts-ignore
+  const { data: allProducts } = useContext(ProductsContext);
+  const productsWithCategoryThumbnails = allProducts.filter(
+    (product: Product) => {
+      return product.categoryImage.categoryThumbnail;
+    }
+  );
 
   return (
     <nav className={"main-container product-category-menu col"}>
-      {productsWithCategoryThumbnails.map((product) => {
+      {productsWithCategoryThumbnails.map((product: Product) => {
         return (
           <CategorySlab
             key={product.id}
