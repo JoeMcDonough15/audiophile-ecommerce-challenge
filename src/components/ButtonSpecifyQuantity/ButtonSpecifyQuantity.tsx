@@ -1,6 +1,6 @@
 interface Props {
   buttonText: string;
-  onClick?: () => void;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const ButtonSpecifyQuantity = ({ buttonText, onClick }: Props) => {

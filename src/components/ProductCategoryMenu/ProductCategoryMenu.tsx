@@ -4,7 +4,7 @@ import "./product-category-menu.sass";
 import { Product, ProductsContext } from "../Context/ProductsContext";
 
 interface Props {
-  handleMenuClick?: () => void;
+  handleMenuClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const ProductCategoryMenu = ({ handleMenuClick }: Props): JSX.Element => {

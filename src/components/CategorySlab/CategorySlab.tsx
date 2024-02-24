@@ -9,7 +9,7 @@ interface Props {
   categoryName: string;
   thumbnailName: string;
   buttonDestination: string;
-  handleMenuClick?: () => void;
+  handleMenuClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const CategorySlab = (props: Props): JSX.Element => {

@@ -3,7 +3,7 @@ import { SvgDetails } from "../Context/SvgDetailsContext";
 interface Props {
   className?: string;
   svgDetails: SvgDetails;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 const IconAsSvg = ({ className, svgDetails, onClick }: Props): JSX.Element => {

@@ -3,7 +3,7 @@ import ProductCategoryMenu from "../ProductCategoryMenu/ProductCategoryMenu";
 
 interface Props {
   modalIsActive: number;
-  handleMenuClick: () => void;
+  handleMenuClick: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const MobileMenu = ({ modalIsActive, handleMenuClick }: Props): JSX.Element => {

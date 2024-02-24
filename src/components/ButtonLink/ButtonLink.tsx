@@ -8,7 +8,7 @@ interface Props {
   withArrowIcon?: boolean;
   arrowIconDetails?: SvgDetails;
   className: string;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const ButtonLink = (props: Props): JSX.Element => {

@@ -1,5 +1,5 @@
 interface Props {
-  onClick?: () => void;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const ButtonAddToCart = ({ onClick }: Props) => {

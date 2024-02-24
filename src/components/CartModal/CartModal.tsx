@@ -9,7 +9,7 @@ import { CartContext, ItemToPurchase } from "../Context/CartContext";
 
 interface Props {
   modalIsActive: number;
-  handleCartClick: () => void;
+  handleCartClick: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const CartModal = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
