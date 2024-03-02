@@ -13,11 +13,19 @@ interface Props {
   isFormFieldShrink?: boolean;
 }
 
-const FormField = (props: Props): JSX.Element => {
-  const { inputData, labelText, warningText, isRadioInput, isFormFieldShrink } =
-    props;
-  const { inputName, inputType, placeholderText, inputOnChangeHandler } =
-    inputData;
+const FormField = ({
+  inputData,
+  labelText,
+  warningText = "",
+  isRadioInput = false,
+  isFormFieldShrink = false,
+}: Props): JSX.Element => {
+  const {
+    inputName,
+    inputType,
+    placeholderText = "",
+    inputOnChangeHandler,
+  } = inputData;
   return (
     <div
       className={

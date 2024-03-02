@@ -11,16 +11,14 @@ interface Props {
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-const ButtonLink = (props: Props): JSX.Element => {
-  const {
-    buttonDestination,
-    buttonText,
-    withArrowIcon,
-    arrowIconDetails,
-    className,
-    onClick,
-  } = props;
-
+const ButtonLink = ({
+  buttonDestination,
+  buttonText,
+  withArrowIcon = false,
+  arrowIconDetails,
+  className,
+  onClick = () => {},
+}: Props): JSX.Element => {
   return (
     <NavLink to={buttonDestination} onClick={onClick}>
       <button className={className}>

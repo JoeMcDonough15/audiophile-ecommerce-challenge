@@ -6,7 +6,11 @@ interface Props {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const IconAsSvg = ({ className, svgDetails, onClick }: Props): JSX.Element => {
+const IconAsSvg = ({
+  className = "",
+  svgDetails,
+  onClick = () => {},
+}: Props): JSX.Element => {
   const { width, height, src, stroke, gElement, strokeWidth, d } = svgDetails;
 
   return (

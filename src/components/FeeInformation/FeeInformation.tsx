@@ -9,17 +9,15 @@ interface Props {
 const FeeInformation = ({
   feeName,
   amountAsString,
-  customPriceColor,
+  customPriceColor = "",
 }: Props): JSX.Element => {
   return (
     <div className="fee-information row">
       <p className="fee-name">{feeName}</p>
       <p
-        className={
-          customPriceColor
-            ? `product-price ${customPriceColor}`
-            : "product-price black-text"
-        }
+        className={`product-price ${
+          customPriceColor ? customPriceColor : "black-text"
+        }`}
       >
         {amountAsString}
       </p>

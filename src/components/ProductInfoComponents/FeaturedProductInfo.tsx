@@ -5,9 +5,12 @@ interface Props {
   descriptionClass: string;
 }
 
-const FeaturedProductInfo = (props: Props): JSX.Element => {
-  const { productName, productDescription, headerClass, descriptionClass } =
-    props;
+const FeaturedProductInfo = ({
+  productName,
+  productDescription,
+  headerClass,
+  descriptionClass,
+}: Props): JSX.Element => {
   return (
     <>
       <h1 className={`white-text ${headerClass}`}>{productName}</h1>

@@ -5,7 +5,7 @@ interface Props {
   bannerText?: string;
 }
 
-const Banner = ({ bannerText }: Props): JSX.Element => {
+const Banner = ({ bannerText = "" }: Props): JSX.Element => {
   return (
     <div className="banner">
       {bannerText && (

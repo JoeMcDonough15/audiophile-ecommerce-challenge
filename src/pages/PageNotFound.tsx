@@ -1,5 +1,12 @@
+import Banner from "../components/Banner/Banner";
+
 const PageNotFound = () => {
-  return <h1>Oops! Page not found.</h1>;
+  return (
+    <>
+      <Banner />
+      <h1>Oops! Page not found.</h1>
+    </>
+  );
 };
 
 export default PageNotFound;

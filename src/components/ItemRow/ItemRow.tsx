@@ -10,7 +10,10 @@ interface Props {
   itemData: ItemToPurchase;
   withSpecifyQuantity?: boolean;
 }
-const ItemRow = ({ itemData, withSpecifyQuantity }: Props): JSX.Element => {
+const ItemRow = ({
+  itemData,
+  withSpecifyQuantity = false,
+}: Props): JSX.Element => {
   // @ts-ignore
   const { addItemToCart, removeItemFromCart } = useContext(CartContext);
   const { quantity, product } = itemData;

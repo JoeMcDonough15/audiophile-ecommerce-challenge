@@ -18,7 +18,7 @@ const CategorySlab = (props: Props): JSX.Element => {
     categoryName,
     thumbnailName,
     buttonDestination,
-    handleMenuClick,
+    handleMenuClick = () => {},
   } = props;
   return (
     <div className="category-slab content-slab col">

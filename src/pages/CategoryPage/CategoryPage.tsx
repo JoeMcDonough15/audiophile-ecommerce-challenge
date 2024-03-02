@@ -10,6 +10,7 @@ import {
   Product,
   ProductsContext,
 } from "../../components/Context/ProductsContext";
+import PageNotFound from "../PageNotFound";
 
 const CategoryPage = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
@@ -28,6 +29,14 @@ const CategoryPage = () => {
         return 0;
       }
     });
+
+  if (categoryPageProducts.length === 0) {
+    return (
+      <>
+        <PageNotFound />
+      </>
+    );
+  }
 
   return (
     <>

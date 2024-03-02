@@ -8,15 +8,13 @@ interface Props {
   price?: number;
 }
 
-const ProductInfo = (props: Props): JSX.Element => {
-  const {
-    productName,
-    productDescription,
-    price,
-    headerClass,
-    descriptionClass,
-  } = props;
-
+const ProductInfo = ({
+  productName,
+  productDescription,
+  price,
+  headerClass,
+  descriptionClass,
+}: Props): JSX.Element => {
   return (
     <>
       <h1 className={`small-featured-product-header black-text ${headerClass}`}>

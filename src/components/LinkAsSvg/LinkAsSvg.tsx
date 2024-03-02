@@ -6,7 +6,7 @@ interface Props {
   svgDetails: SvgDetails;
 }
 
-const LinkAsSvg = ({ className, svgDetails }: Props): JSX.Element => {
+const LinkAsSvg = ({ className = "", svgDetails }: Props): JSX.Element => {
   const {
     internalLink,
     linkDestination,

@@ -15,9 +15,9 @@ interface Props {
 const HeadingAndButton = ({
   buttonData,
   productName,
-  isHomeFeatureTwo,
-  isHomeFeatureThree,
-  isRelatedProduct,
+  isHomeFeatureTwo = false,
+  isHomeFeatureThree = false,
+  isRelatedProduct = false,
 }: Props) => {
   const { buttonColor, buttonDestination } = buttonData;
   return (

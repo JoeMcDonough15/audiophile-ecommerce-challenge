@@ -7,7 +7,9 @@ interface Props {
   handleMenuClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-const ProductCategoryMenu = ({ handleMenuClick }: Props): JSX.Element => {
+const ProductCategoryMenu = ({
+  handleMenuClick = () => {},
+}: Props): JSX.Element => {
   //@ts-ignore
   const { data: allProducts } = useContext(ProductsContext);
   const productsWithCategoryThumbnails = allProducts.filter(
