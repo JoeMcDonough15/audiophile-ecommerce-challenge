@@ -39,7 +39,16 @@ export interface Product {
   others: RelatedProduct[];
 }
 
-export const ProductsContext = createContext<Product[]>(data);
+interface ProductsContextType {
+  allProducts: Product[];
+  findProduct: (arg0: Product[], arg1: string) => Product;
+}
+
+export const ProductsContext = createContext<ProductsContextType>({
+  allProducts: data,
+  // @ts-ignore
+  findProduct: () => {},
+});
 
 export const ProductsProvider = ({ children }: PropsWithChildren) => {
   const findProduct = (productList: Product[], productSlug: string) => {

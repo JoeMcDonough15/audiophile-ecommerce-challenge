@@ -24,7 +24,7 @@ const ProductPage = () => {
   }>();
   // @ts-ignore
   const { data: allProducts, findProduct } = useContext(ProductsContext);
-
+  // @ts-ignore
   const pageProduct = findProduct(allProducts, productSlug);
   if (!pageProduct) {
     return <PageNotFound />;
@@ -61,7 +61,6 @@ const ProductPage = () => {
 
   // access CartContext
 
-  //@ts-ignore
   const { addItemToCart } = useContext(CartContext);
 
   return (

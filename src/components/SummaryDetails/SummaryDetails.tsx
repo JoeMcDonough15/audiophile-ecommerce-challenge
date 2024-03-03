@@ -7,19 +7,8 @@ import { CartContext, ItemToPurchase } from "../Context/CartContext";
 import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
 
 const SummaryDetails = (): JSX.Element => {
-  //@ts-ignore
-  const {
-    //@ts-ignore
-    itemsInCart,
-    //@ts-ignore
-    calculateSubtotal,
-    //@ts-ignore
-    determineVat,
-    //@ts-ignore
-    includeVatInTotal,
-    //@ts-ignore
-    calculateGrandTotal,
-  } = useContext(CartContext);
+  const { itemsInCart, determineVat, includeVatInTotal, calculateGrandTotal } =
+    useContext(CartContext);
   const subtotalWithVat = includeVatInTotal();
   const vatCharge = determineVat();
   const shipping = 50;

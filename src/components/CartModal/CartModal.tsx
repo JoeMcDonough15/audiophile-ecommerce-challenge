@@ -20,17 +20,9 @@ const CartModal = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
   }
 
   const {
-    // @ts-ignore
     itemsInCart,
-    // @ts-ignore
     numItemsInCart,
-    // @ts-ignore
-    addItemToCart,
-    // @ts-ignore,
-    removeItemFromCart,
-    // @ts-ignore
     removeAllItemsFromCart,
-    // @ts-ignore
     calculateSubtotal,
   } = useContext(CartContext);
 

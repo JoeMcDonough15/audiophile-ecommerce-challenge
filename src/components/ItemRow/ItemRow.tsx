@@ -14,7 +14,6 @@ const ItemRow = ({
   itemData,
   withSpecifyQuantity = false,
 }: Props): JSX.Element => {
-  // @ts-ignore
   const { addItemToCart, removeItemFromCart } = useContext(CartContext);
   const { quantity, product } = itemData;
   const { image } = product;

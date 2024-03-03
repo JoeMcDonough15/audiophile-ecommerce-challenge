@@ -6,7 +6,29 @@ export interface ItemToPurchase {
   product: Product;
 }
 
-export const CartContext = createContext<ItemToPurchase[]>([]);
+interface CartContextType {
+  itemsInCart: ItemToPurchase[];
+  numItemsInCart: () => number;
+  addItemToCart: (arg0: ItemToPurchase) => void;
+  removeItemFromCart: (arg0: ItemToPurchase) => void;
+  removeAllItemsFromCart: () => void;
+  calculateSubtotal: () => number;
+  determineVat: () => number;
+  includeVatInTotal: () => number;
+  calculateGrandTotal: () => number;
+}
+
+export const CartContext = createContext<CartContextType>({
+  itemsInCart: [],
+  numItemsInCart: () => 0,
+  addItemToCart: () => {},
+  removeItemFromCart: () => {},
+  removeAllItemsFromCart: () => {},
+  calculateSubtotal: () => 0,
+  determineVat: () => 0,
+  includeVatInTotal: () => 0,
+  calculateGrandTotal: () => 0,
+});
 
 export const CartProvider = ({ children }: PropsWithChildren) => {
   const [itemsInCart, setItemsInCart] = useState<ItemToPurchase[]>([]);
@@ -82,7 +104,6 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
   return (
     <CartContext.Provider
       value={{
-        //@ts-ignore
         itemsInCart,
         numItemsInCart,
         addItemToCart,
