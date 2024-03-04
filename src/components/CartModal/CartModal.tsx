@@ -6,16 +6,20 @@ import "./cart-modal.sass";
 import ButtonLink from "../ButtonLink/ButtonLink";
 import ButtonRemoveAll from "../ButtonRemoveAll/ButtonRemoveAll";
 import { CartContext, ItemToPurchase } from "../Context/CartContext";
+import { ROUTE_PATHS } from "../constants";
 
 interface Props {
-  modalIsActive: number;
+  modalIsOpen: boolean;
   handleCartClick: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-const CartModal = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
+const CartModal = ({
+  modalIsOpen = false,
+  handleCartClick,
+}: Props): JSX.Element => {
   let cartModalClasses = "cart-modal col";
 
-  if (modalIsActive === 0 || modalIsActive === 1) {
+  if (!modalIsOpen) {
     cartModalClasses += " hide";
   }
 
@@ -54,7 +58,7 @@ const CartModal = ({ modalIsActive, handleCartClick }: Props): JSX.Element => {
       <ButtonLink
         className="button-checkout button-dark-orange"
         buttonText="checkout"
-        buttonDestination="/checkout"
+        buttonDestination={`${ROUTE_PATHS.CHECKOUT}`}
         onClick={handleCartClick}
       />
     </section>

@@ -1,5 +1,6 @@
 import "./home-feature-three.sass";
 import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
+import { ROUTE_PATHS } from "../constants";
 
 interface Props {
   productSlug: string;
@@ -16,7 +17,7 @@ const HomeFeatureThree = ({ productSlug }: Props): JSX.Element => {
           isHomeFeatureThree
           buttonData={{
             buttonColor: "transparent",
-            buttonDestination: `product/${productSlug}`,
+            buttonDestination: `/${ROUTE_PATHS.PRODUCT}/${productSlug}`,
           }}
         />
       </div>

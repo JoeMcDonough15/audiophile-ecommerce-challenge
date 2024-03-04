@@ -11,6 +11,7 @@ import Footer from "../components/Footer/Footer";
 import { CartProvider } from "../components/Context/CartContext";
 import { ProductsProvider } from "./Context/ProductsContext";
 import { SvgDetailsProvider } from "./Context/SvgDetailsContext";
+import { ROUTE_PATHS } from "./constants";
 
 function App(): JSX.Element {
   return (
@@ -22,9 +23,15 @@ function App(): JSX.Element {
 
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/category/:categoryName" element={<CategoryPage />} />
-          <Route path="/product/:productName" element={<ProductPage />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path={`/${ROUTE_PATHS.CATEGORY}/:categoryName`}
+            element={<CategoryPage />}
+          />
+          <Route
+            path={`/${ROUTE_PATHS.PRODUCT}/:productName`}
+            element={<ProductPage />}
+          />
+          <Route path={`/${ROUTE_PATHS.CHECKOUT}`} element={<Checkout />} />
           <Route element={<PageNotFound />} />
         </Routes>
 

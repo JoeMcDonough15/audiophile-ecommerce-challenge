@@ -2,14 +2,17 @@ import "./mobile-menu.sass";
 import ProductCategoryMenu from "../ProductCategoryMenu/ProductCategoryMenu";
 
 interface Props {
-  modalIsActive: number;
+  modalIsOpen: boolean;
   handleMenuClick: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-const MobileMenu = ({ modalIsActive, handleMenuClick }: Props): JSX.Element => {
+const MobileMenu = ({
+  modalIsOpen = false,
+  handleMenuClick,
+}: Props): JSX.Element => {
   let mobileMenuClasses = "mobile-menu";
 
-  if (modalIsActive === 0 || modalIsActive === 2) {
+  if (!modalIsOpen) {
     mobileMenuClasses += " hide";
   }
   return (

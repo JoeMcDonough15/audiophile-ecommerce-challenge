@@ -6,6 +6,7 @@ import PageNotFound from "../../pages/PageNotFound";
 import NewProductIntro from "../NewProductIntro/NewProductIntro";
 import ButtonLink from "../ButtonLink/ButtonLink";
 import { ProductsContext } from "../Context/ProductsContext";
+import { ROUTE_PATHS } from "../constants";
 
 interface Props {
   productSlug: string;
@@ -38,7 +39,7 @@ const HeroSection = ({ productSlug }: Props): JSX.Element => {
           <ButtonLink
             buttonText="see product"
             className={`button-dark-orange`}
-            buttonDestination={`/product/${productSlug}`}
+            buttonDestination={`/${ROUTE_PATHS.PRODUCT}/${productSlug}`}
           />
         </div>
       </section>

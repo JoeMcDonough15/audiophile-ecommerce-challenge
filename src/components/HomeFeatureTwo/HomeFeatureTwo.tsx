@@ -4,6 +4,7 @@ import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./home-feature-two.sass";
 import PageNotFound from "../../pages/PageNotFound";
 import { ProductsContext } from "../Context/ProductsContext";
+import { ROUTE_PATHS } from "../constants";
 
 interface Props {
   productSlug: string;
@@ -44,7 +45,7 @@ const HomeFeatureTwo = ({ productSlug }: Props): JSX.Element => {
         isHomeFeatureTwo
         buttonData={{
           buttonColor: "transparent",
-          buttonDestination: `product/${productSlug}`,
+          buttonDestination: `/${ROUTE_PATHS.PRODUCT}/${productSlug}`,
         }}
       />
     </section>

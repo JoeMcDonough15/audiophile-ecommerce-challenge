@@ -10,21 +10,21 @@ import { AllSvgDetails } from "../Context/SvgDetailsContext";
 const Header = (): JSX.Element => {
   const AllSvgs = useContext(AllSvgDetails);
   const { hamburgerMenu, logo, shoppingCart } = AllSvgs;
-  const [modalIsActive, setModalIsActive] = useState(0);
+  const [modalVisibilityIndicator, setModalVisibilityIndicator] = useState(0);
 
   function handleCartClick() {
-    if (modalIsActive === 0 || modalIsActive === 1) {
-      setModalIsActive(2);
+    if (modalVisibilityIndicator === 0 || modalVisibilityIndicator === 1) {
+      setModalVisibilityIndicator(2);
     } else {
-      setModalIsActive(0);
+      setModalVisibilityIndicator(0);
     }
   }
 
   function handleMenuClick() {
-    if (modalIsActive === 0 || modalIsActive === 2) {
-      setModalIsActive(1);
+    if (modalVisibilityIndicator === 0 || modalVisibilityIndicator === 2) {
+      setModalVisibilityIndicator(1);
     } else {
-      setModalIsActive(0);
+      setModalVisibilityIndicator(0);
     }
   }
   return (
@@ -67,11 +67,11 @@ const Header = (): JSX.Element => {
         />
       </section>
       <MobileMenu
-        modalIsActive={modalIsActive}
+        modalIsOpen={modalVisibilityIndicator === 1}
         handleMenuClick={handleMenuClick}
       />
       <CartModal
-        modalIsActive={modalIsActive}
+        modalIsOpen={modalVisibilityIndicator === 2}
         handleCartClick={handleCartClick}
       />
     </header>

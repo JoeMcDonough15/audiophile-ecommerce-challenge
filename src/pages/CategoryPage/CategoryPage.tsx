@@ -11,6 +11,7 @@ import {
   ProductsContext,
 } from "../../components/Context/ProductsContext";
 import PageNotFound from "../PageNotFound";
+import { ROUTE_PATHS } from "../../components/constants";
 
 const CategoryPage = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
@@ -86,7 +87,7 @@ const CategoryPage = () => {
                     <ButtonLink
                       className="button-dark-orange"
                       buttonText="See Product"
-                      buttonDestination={`/product/${product.slug}`}
+                      buttonDestination={`/${ROUTE_PATHS.PRODUCT}/${product.slug}`}
                     />
                   </div>
                 </div>

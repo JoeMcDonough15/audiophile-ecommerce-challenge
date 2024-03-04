@@ -2,7 +2,7 @@ interface InputData {
   inputName: string;
   inputType: string;
   placeholderText?: string;
-  inputOnChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  inputOnChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 interface Props {

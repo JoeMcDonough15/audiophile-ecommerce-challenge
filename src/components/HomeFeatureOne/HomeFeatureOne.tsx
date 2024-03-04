@@ -7,6 +7,7 @@ import PageNotFound from "../../pages/PageNotFound";
 import ButtonLink from "../ButtonLink/ButtonLink";
 import { ProductsContext } from "../Context/ProductsContext";
 import { SvgDetailsProvider } from "../Context/SvgDetailsContext";
+import { ROUTE_PATHS } from "../constants";
 
 interface Props {
   productSlug: string;
@@ -58,12 +59,11 @@ const HomeFeatureOne = ({ productSlug }: Props): JSX.Element => {
           <ButtonLink
             buttonText="see product"
             className={`button-black`}
-            buttonDestination={`product/${productSlug}`}
+            buttonDestination={`/${ROUTE_PATHS.PRODUCT}/${productSlug}`}
           />
         </div>
       </div>
     </section>
   );
 };
-
 export default HomeFeatureOne;

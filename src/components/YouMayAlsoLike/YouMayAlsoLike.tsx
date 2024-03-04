@@ -2,6 +2,7 @@ import ImageSlab from "../ImageSlab/ImageSlab";
 import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./you-may-also-like.sass";
 import { RelatedProduct } from "../Context/ProductsContext";
+import { ROUTE_PATHS } from "../constants";
 
 interface Props {
   relatedProducts: RelatedProduct[];
@@ -45,7 +46,7 @@ const YouMayAlsoLike = ({ relatedProducts }: Props): JSX.Element => {
                 isRelatedProduct
                 buttonData={{
                   buttonColor: "dark-orange",
-                  buttonDestination: `/product/${product.slug}`,
+                  buttonDestination: `/${ROUTE_PATHS.PRODUCT}/${product.slug}`,
                 }}
               />
             </div>
