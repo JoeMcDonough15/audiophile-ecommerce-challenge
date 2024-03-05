@@ -2,12 +2,14 @@ import CheckoutSectionHeader from "./CheckoutSectionHeader";
 import FormField from "../FormField/FormField";
 import SummaryDetails from "../SummaryDetails/SummaryDetails";
 import "./checkout-form.sass";
+import { useState } from "react";
 
 const handleChange = () => {
   return;
 };
 
 const CheckoutForm = (): JSX.Element => {
+  const [paymentOption, setPaymentOption] = useState("e-money");
   return (
     <form action="" className="form-container main-container col">
       <section className="form-section-one col">
@@ -120,28 +122,30 @@ const CheckoutForm = (): JSX.Element => {
               />
             </div>
           </div>
-          <div className="optional-emoney-details">
-            <FormField
-              inputData={{
-                inputName: "e-money-number-input",
-                inputType: "number",
-                placeholderText: "238521993",
-                inputOnChangeHandler: handleChange,
-              }}
-              labelText="e-money Number"
-              warningText="Wrong format"
-            />
-            <FormField
-              inputData={{
-                inputName: "e-money-pin-input",
-                inputType: "number",
-                placeholderText: "6891",
-                inputOnChangeHandler: handleChange,
-              }}
-              labelText="e-money PIN"
-              warningText="Wrong format"
-            />
-          </div>
+          {paymentOption === "e-money" && (
+            <div className="optional-emoney-details">
+              <FormField
+                inputData={{
+                  inputName: "e-money-number-input",
+                  inputType: "number",
+                  placeholderText: "238521993",
+                  inputOnChangeHandler: handleChange,
+                }}
+                labelText="e-money Number"
+                warningText="Wrong format"
+              />
+              <FormField
+                inputData={{
+                  inputName: "e-money-pin-input",
+                  inputType: "number",
+                  placeholderText: "6891",
+                  inputOnChangeHandler: handleChange,
+                }}
+                labelText="e-money PIN"
+                warningText="Wrong format"
+              />
+            </div>
+          )}
         </div>
       </section>
 

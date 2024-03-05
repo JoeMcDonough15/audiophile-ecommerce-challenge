@@ -8,7 +8,7 @@ export interface ItemToPurchase {
 
 interface CartContextType {
   itemsInCart: ItemToPurchase[];
-  numItemsInCart: () => number;
+  numItemsInCart: number;
   addItemToCart: (arg0: ItemToPurchase) => void;
   removeItemFromCart: (arg0: ItemToPurchase) => void;
   removeAllItemsFromCart: () => void;
@@ -20,7 +20,7 @@ interface CartContextType {
 
 export const CartContext = createContext<CartContextType>({
   itemsInCart: [],
-  numItemsInCart: () => 0,
+  numItemsInCart: 0,
   addItemToCart: () => {},
   removeItemFromCart: () => {},
   removeAllItemsFromCart: () => {},
@@ -32,10 +32,6 @@ export const CartContext = createContext<CartContextType>({
 
 export const CartProvider = ({ children }: PropsWithChildren) => {
   const [itemsInCart, setItemsInCart] = useState<ItemToPurchase[]>([]);
-
-  const numItemsInCart = () => {
-    return itemsInCart.length;
-  };
 
   const addItemToCart = (itemToPurchase: ItemToPurchase) => {
     const isItemInCart = itemsInCart.find((itemInCart) => {
@@ -78,7 +74,7 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
   };
 
   const calculateSubtotal = () => {
-    if (numItemsInCart() === 0) {
+    if (itemsInCart.length === 0) {
       return 0;
     }
     return itemsInCart.reduce((total, currentItem) => {
@@ -105,7 +101,7 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
     <CartContext.Provider
       value={{
         itemsInCart,
-        numItemsInCart,
+        numItemsInCart: itemsInCart.length,
         addItemToCart,
         removeItemFromCart,
         removeAllItemsFromCart,

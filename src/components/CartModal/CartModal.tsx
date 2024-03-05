@@ -33,7 +33,7 @@ const CartModal = ({
   return (
     <section id="cart-modal" className={cartModalClasses}>
       <div className="row cart-top-row">
-        <h6 className="black-text">Cart ({numItemsInCart()})</h6>
+        <h6 className="black-text">Cart ({numItemsInCart})</h6>
         <ButtonRemoveAll
           onClick={() => {
             removeAllItemsFromCart();
