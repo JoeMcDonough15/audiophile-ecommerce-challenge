@@ -1,8 +1,9 @@
 import CheckoutSectionHeader from "./CheckoutSectionHeader";
-import FormField from "../FormField/FormField";
 import SummaryDetails from "../SummaryDetails/SummaryDetails";
 import "./checkout-form.sass";
 import { useState } from "react";
+import FormFieldRadioInput from "../FormField/FormFieldRadioInput";
+import FormFieldTextInput from "../FormField/FormFieldTextInput";
 
 const handleChange = () => {
   return;
@@ -17,7 +18,7 @@ const CheckoutForm = (): JSX.Element => {
         <div className="billing-details-container form-sub-section-container">
           <CheckoutSectionHeader headerText="Billing Details" />
           <div className="name-and-email-container">
-            <FormField
+            <FormFieldTextInput
               inputData={{
                 inputName: "name-input",
                 inputType: "text",
@@ -27,7 +28,7 @@ const CheckoutForm = (): JSX.Element => {
               labelText="Name"
               warningText="Wrong format"
             />
-            <FormField
+            <FormFieldTextInput
               inputData={{
                 inputName: "email-input",
                 inputType: "email",
@@ -38,7 +39,7 @@ const CheckoutForm = (): JSX.Element => {
               warningText="Wrong format"
             />
           </div>
-          <FormField
+          <FormFieldTextInput
             isFormFieldShrink
             inputData={{
               inputName: "phone-input",
@@ -52,7 +53,7 @@ const CheckoutForm = (): JSX.Element => {
         </div>
         <div className="shipping-info-container form-sub-section-container">
           <CheckoutSectionHeader headerText="Shipping Info" />
-          <FormField
+          <FormFieldTextInput
             inputData={{
               inputName: "address-input",
               inputType: "text",
@@ -63,7 +64,7 @@ const CheckoutForm = (): JSX.Element => {
             warningText="Wrong format"
           />
           <div className="zip-and-city-container">
-            <FormField
+            <FormFieldTextInput
               inputData={{
                 inputName: "zip-input",
                 inputType: "number",
@@ -73,7 +74,7 @@ const CheckoutForm = (): JSX.Element => {
               labelText="Zip Code"
               warningText="Wrong format"
             />
-            <FormField
+            <FormFieldTextInput
               inputData={{
                 inputName: "city-input",
                 inputType: "text",
@@ -84,7 +85,7 @@ const CheckoutForm = (): JSX.Element => {
               warningText="Can't be blank"
             />
           </div>
-          <FormField
+          <FormFieldTextInput
             isFormFieldShrink
             inputData={{
               inputName: "country-input",
@@ -101,30 +102,27 @@ const CheckoutForm = (): JSX.Element => {
           <div className="payment-method-container">
             <p className="payment-method-header">Payment Method</p>
             <div className="radio-inputs-container">
-              <FormField
-                isRadioInput
+              <FormFieldRadioInput
                 inputData={{
-                  inputName: "payment-type",
-                  inputType: "radio",
-                  inputOnChangeHandler: handleChange,
+                  inputValue: "e-money",
+                  setPaymentOption: setPaymentOption,
                 }}
                 labelText="e-Money"
-                warningText="Please select"
+                inputChecked={paymentOption === "e-money"}
               />
-              <FormField
-                isRadioInput
+              <FormFieldRadioInput
                 inputData={{
-                  inputName: "payment-type",
-                  inputType: "radio",
-                  inputOnChangeHandler: handleChange,
+                  inputValue: "cash",
+                  setPaymentOption: setPaymentOption,
                 }}
                 labelText="Cash on Delivery"
+                inputChecked={paymentOption === "cash"}
               />
             </div>
           </div>
           {paymentOption === "e-money" && (
             <div className="optional-emoney-details">
-              <FormField
+              <FormFieldTextInput
                 inputData={{
                   inputName: "e-money-number-input",
                   inputType: "number",
@@ -134,7 +132,7 @@ const CheckoutForm = (): JSX.Element => {
                 labelText="e-money Number"
                 warningText="Wrong format"
               />
-              <FormField
+              <FormFieldTextInput
                 inputData={{
                   inputName: "e-money-pin-input",
                   inputType: "number",
