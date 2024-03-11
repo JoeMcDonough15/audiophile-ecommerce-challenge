@@ -3,16 +3,24 @@ import FeeInformation from "../FeeInformation/FeeInformation";
 import "./summary-details.sass";
 import fixPrice from "../../fixPrice";
 import { useContext } from "react";
-import { CartContext, ItemToPurchase } from "../Context/CartContext";
+import {
+  CartContext,
+  ItemToPurchase,
+  SHIPPING_AND_HANDLING,
+} from "../Context/CartContext";
 import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
 
 const SummaryDetails = (): JSX.Element => {
-  const { itemsInCart, determineVat, includeVatInTotal, calculateGrandTotal } =
-    useContext(CartContext);
+  const {
+    itemsInCart,
+    numItemsInCart,
+    determineVat,
+    includeVatInTotal,
+    calculateGrandTotal,
+  } = useContext(CartContext);
   const subtotalWithVat = includeVatInTotal();
   const vatCharge = determineVat();
-  const shipping = 50;
-  const grandTotal = calculateGrandTotal();
+  const grandTotal = calculateGrandTotal(subtotalWithVat);
   return (
     <section className="form-section-two">
       <h6 className="summary-header">Summary</h6>
@@ -23,17 +31,14 @@ const SummaryDetails = (): JSX.Element => {
       </div>
       <div className="fees-container col">
         <FeeInformation
-          key={1}
           feeName="Total"
           amountAsString={fixPrice(subtotalWithVat)}
         />
         <FeeInformation
-          key={2}
           feeName="Shipping"
-          amountAsString={fixPrice(shipping)}
+          amountAsString={fixPrice(SHIPPING_AND_HANDLING)}
         />
         <FeeInformation
-          key={3}
           feeName="VAT (included)"
           amountAsString={fixPrice(vatCharge)}
         />

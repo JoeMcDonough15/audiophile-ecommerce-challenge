@@ -11,6 +11,7 @@ const handleChange = () => {
 
 const CheckoutForm = (): JSX.Element => {
   const [paymentOption, setPaymentOption] = useState("e-money");
+
   return (
     <form action="" className="form-container main-container col">
       <section className="form-section-one col">
@@ -146,7 +147,6 @@ const CheckoutForm = (): JSX.Element => {
           )}
         </div>
       </section>
-
       <SummaryDetails />
     </form>
   );

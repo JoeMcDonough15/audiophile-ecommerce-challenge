@@ -1,6 +1,9 @@
 import { PropsWithChildren, createContext, useState } from "react";
 import { Product } from "./ProductsContext";
 
+const VAT = 0.2;
+export const SHIPPING_AND_HANDLING = 50;
+
 export interface ItemToPurchase {
   quantity: number;
   product: Product;
@@ -15,7 +18,7 @@ interface CartContextType {
   calculateSubtotal: () => number;
   determineVat: () => number;
   includeVatInTotal: () => number;
-  calculateGrandTotal: () => number;
+  calculateGrandTotal: (arg0: number) => number;
 }
 
 export const CartContext = createContext<CartContextType>({
@@ -34,39 +37,35 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
   const [itemsInCart, setItemsInCart] = useState<ItemToPurchase[]>([]);
 
   const addItemToCart = (itemToPurchase: ItemToPurchase) => {
-    const isItemInCart = itemsInCart.find((itemInCart) => {
-      return itemToPurchase.product.id === itemInCart.product.id; // will find item if it's already in the cart, or else will return undefined
+    const isItemInCart = itemsInCart.some((itemInCart) => {
+      return itemToPurchase.product.id === itemInCart.product.id;
     });
     if (isItemInCart) {
-      setItemsInCart(
-        itemsInCart.map((itemInCart) => {
-          return itemInCart.product.id === itemToPurchase.product.id
-            ? {
-                ...itemInCart,
-                quantity: itemInCart.quantity + itemToPurchase.quantity,
-              }
-            : itemInCart;
-        })
+      const updatedItems = itemsInCart.map((itemInCart) =>
+        itemInCart.product.id === itemToPurchase.product.id
+          ? {
+              ...itemInCart,
+              quantity: itemInCart.quantity + itemToPurchase.quantity,
+            }
+          : itemInCart
       );
+      setItemsInCart(updatedItems);
     } else {
       setItemsInCart([...itemsInCart, itemToPurchase]);
     }
   };
 
   const removeItemFromCart = (itemToRemove: ItemToPurchase) => {
-    setItemsInCart(
-      itemsInCart.map((itemInCart) => {
+    const updatedItems = itemsInCart
+      .map((itemInCart) => {
         return itemInCart.product.id === itemToRemove.product.id
-          ? { ...itemInCart, quantity: (itemInCart.quantity -= 1) }
+          ? { ...itemInCart, quantity: itemInCart.quantity - 1 }
           : itemInCart;
       })
-    );
-
-    setItemsInCart(
-      itemsInCart.filter((itemInCart) => {
+      .filter((itemInCart) => {
         return itemInCart.quantity > 0;
-      })
-    );
+      });
+    setItemsInCart(updatedItems);
   };
 
   const removeAllItemsFromCart = () => {
@@ -74,27 +73,24 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
   };
 
   const calculateSubtotal = () => {
-    if (itemsInCart.length === 0) {
-      return 0;
-    }
     return itemsInCart.reduce((total, currentItem) => {
-      return (total += currentItem.product.price * currentItem.quantity);
+      return total + currentItem.product.price * currentItem.quantity;
     }, 0);
   };
 
   const determineVat = () => {
-    return calculateSubtotal() * 0.2;
+    return calculateSubtotal() * VAT;
   };
 
   const includeVatInTotal = () => {
-    return calculateSubtotal() * 1.2;
+    return calculateSubtotal() + determineVat();
   };
 
-  const calculateGrandTotal = () => {
-    if (calculateSubtotal() === 0) {
+  const calculateGrandTotal = (subtotalPlusVat: number) => {
+    if (subtotalPlusVat === 0) {
       return 0;
     }
-    return includeVatInTotal() + 50;
+    return subtotalPlusVat + SHIPPING_AND_HANDLING;
   };
 
   return (
