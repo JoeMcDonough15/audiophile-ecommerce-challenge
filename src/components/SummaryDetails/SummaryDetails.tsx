@@ -11,13 +11,8 @@ import {
 import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
 
 const SummaryDetails = (): JSX.Element => {
-  const {
-    itemsInCart,
-    numItemsInCart,
-    determineVat,
-    includeVatInTotal,
-    calculateGrandTotal,
-  } = useContext(CartContext);
+  const { itemsInCart, determineVat, includeVatInTotal, calculateGrandTotal } =
+    useContext(CartContext);
   const subtotalWithVat = includeVatInTotal();
   const vatCharge = determineVat();
   const grandTotal = calculateGrandTotal(subtotalWithVat);
