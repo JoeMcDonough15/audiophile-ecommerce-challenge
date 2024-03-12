@@ -1,4 +1,4 @@
-import ImageSlab from "../ImageSlab/ImageSlab";
+import ImageSlab, { SlabSize } from "../ImageSlab/ImageSlab";
 import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./you-may-also-like.sass";
 import { RelatedProduct } from "../Context/ProductsContext";
@@ -18,7 +18,7 @@ const YouMayAlsoLike = ({ relatedProducts }: Props): JSX.Element => {
             <div className="related-product-container col" key={product.slug}>
               <ImageSlab
                 containerClassName="related-product-image-container"
-                slabSize={"mobile"}
+                slabSize={SlabSize.MOBILE}
                 imageData={{
                   imageSrc: product.image.mobile,
                   imageAltText: product.image.imageAltText,
@@ -26,7 +26,7 @@ const YouMayAlsoLike = ({ relatedProducts }: Props): JSX.Element => {
               />
               <ImageSlab
                 containerClassName="related-product-image-container"
-                slabSize={"tablet"}
+                slabSize={SlabSize.TABLET}
                 imageData={{
                   imageSrc: product.image.tablet,
                   imageAltText: product.image.imageAltText,
@@ -34,7 +34,7 @@ const YouMayAlsoLike = ({ relatedProducts }: Props): JSX.Element => {
               />
               <ImageSlab
                 containerClassName="related-product-image-container"
-                slabSize={"desktop"}
+                slabSize={SlabSize.DESKTOP}
                 imageData={{
                   imageSrc: product.image.desktop,
                   imageAltText: product.image.imageAltText,

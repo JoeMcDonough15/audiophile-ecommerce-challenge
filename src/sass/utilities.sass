@@ -7,9 +7,6 @@
     margin: 0
     padding: 0
 
-div 
-    width: 100%
-
 div.auto-width
     width: auto
     
@@ -108,18 +105,18 @@ img
 
 ////////// images ///////////
 
-.image-mobile
+.image-mobile, .image-mobile.content-slab.related-product-image-container
     +all-screen-bigger-than-mobile
         display: none
 
-.image-tablet
+.image-tablet, .image-tablet.content-slab.related-product-image-container
     +all-phone
         display: none
 
     +all-large-screen
         display: none
 
-.image-desktop
+.image-desktop, .image-desktop.content-slab.related-product-image-container
     +all-phone
         display: none
 

@@ -3,12 +3,19 @@ import CustomImage from "../CustomImage/CustomImage";
 interface ImageData {
   imageSrc: string;
   imageAltText: string;
-  className?: string;
+  imageClassName?: string;
+}
+
+export enum SlabSize {
+  MOBILE = "mobile",
+  TABLET = "tablet",
+  DESKTOP = "desktop",
+  THUMBNAIL = "thumbnail",
 }
 
 interface Props {
   imageData: ImageData;
-  slabSize: string;
+  slabSize: SlabSize;
   containerClassName?: string;
 }
 
@@ -17,17 +24,13 @@ const ImageSlab = ({
   imageData,
   slabSize,
 }: Props): JSX.Element => {
-  const { className = "", imageSrc, imageAltText } = imageData;
+  const { imageClassName = "", imageSrc, imageAltText } = imageData;
   return (
     <div
-      className={
-        containerClassName
-          ? `${containerClassName} content-slab image-${slabSize}`
-          : `content-slab image-${slabSize}`
-      }
+      className={`${containerClassName || ""} content-slab image-${slabSize}`}
     >
       <CustomImage
-        className={className && `${className}`}
+        className={imageClassName && `${imageClassName}`}
         src={imageSrc}
         altText={imageAltText}
       />

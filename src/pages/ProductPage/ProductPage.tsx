@@ -7,7 +7,7 @@ import Gallery from "../../components/Gallery/Gallery";
 import YouMayAlsoLike from "../../components/YouMayAlsoLike/YouMayAlsoLike";
 import PageNotFound from "../PageNotFound";
 import "./product-page.sass";
-import ImageSlab from "../../components/ImageSlab/ImageSlab";
+import ImageSlab, { SlabSize } from "../../components/ImageSlab/ImageSlab";
 import ProductInfo from "../../components/ProductInfoComponents/ProductInfo";
 import NewProductIntro from "../../components/NewProductIntro/NewProductIntro";
 import ButtonGoBack from "../../components/ButtonGoBack/ButtonGoBack";
@@ -73,15 +73,15 @@ const ProductPage = () => {
         <section className="main-container featured-product-container col">
           <div className="featured-product-image-container">
             <ImageSlab
-              slabSize="mobile"
+              slabSize={SlabSize.MOBILE}
               imageData={{ imageSrc: mobile, imageAltText: imageAltText }}
             />
             <ImageSlab
-              slabSize="tablet"
+              slabSize={SlabSize.TABLET}
               imageData={{ imageSrc: tablet, imageAltText: imageAltText }}
             />
             <ImageSlab
-              slabSize="desktop"
+              slabSize={SlabSize.DESKTOP}
               imageData={{
                 imageSrc: desktop,
                 imageAltText: imageAltText,

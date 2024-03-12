@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import Banner from "../../components/Banner/Banner";
 import "./category-page.sass";
 import { useContext } from "react";
-import ImageSlab from "../../components/ImageSlab/ImageSlab";
+import ImageSlab, { SlabSize } from "../../components/ImageSlab/ImageSlab";
 import ProductInfo from "../../components/ProductInfoComponents/ProductInfo";
 import NewProductIntro from "../../components/NewProductIntro/NewProductIntro";
 import ButtonLink from "../../components/ButtonLink/ButtonLink";
@@ -52,21 +52,21 @@ const CategoryPage = () => {
               >
                 <div className="featured-product-image-container">
                   <ImageSlab
-                    slabSize="mobile"
+                    slabSize={SlabSize.MOBILE}
                     imageData={{
                       imageSrc: product.categoryImage.mobile,
                       imageAltText: product.categoryImage.imageAltText,
                     }}
                   />
                   <ImageSlab
-                    slabSize="tablet"
+                    slabSize={SlabSize.TABLET}
                     imageData={{
                       imageSrc: product.categoryImage.tablet,
                       imageAltText: product.categoryImage.imageAltText,
                     }}
                   />
                   <ImageSlab
-                    slabSize="desktop"
+                    slabSize={SlabSize.DESKTOP}
                     imageData={{
                       imageSrc: product.categoryImage.desktop,
                       imageAltText: product.categoryImage.imageAltText,
