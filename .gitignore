@@ -53,3 +53,7 @@ build
 
 # json-server db
 db.json
+
+
+# email correction
+.mailmap
