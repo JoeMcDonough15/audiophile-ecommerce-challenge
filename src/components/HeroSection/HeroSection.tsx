@@ -13,8 +13,7 @@ interface Props {
 }
 
 const HeroSection = ({ productSlug }: Props): JSX.Element => {
-  // @ts-ignore
-  const { data: allProducts, findProduct } = useContext(ProductsContext);
+  const { allProducts, findProduct } = useContext(ProductsContext);
   const product = findProduct(allProducts, productSlug);
 
   if (!product) {
@@ -29,13 +28,14 @@ const HeroSection = ({ productSlug }: Props): JSX.Element => {
           {isNewProduct && (
             <NewProductIntro className="new-product-grey-text" />
           )}
-          <FeaturedProductInfo
-            productName={name}
-            // @ts-ignore
-            productDescription={teaserDescription}
-            headerClass="featured-product-hero-header"
-            descriptionClass="featured-product-description-hero"
-          />
+          {teaserDescription && (
+            <FeaturedProductInfo
+              productName={name}
+              productDescription={teaserDescription}
+              headerClass="featured-product-hero-header"
+              descriptionClass="featured-product-description-hero"
+            />
+          )}
           <ButtonLink
             buttonText="see product"
             className={`button-dark-orange`}

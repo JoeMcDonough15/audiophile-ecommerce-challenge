@@ -15,8 +15,8 @@ import { ROUTE_PATHS } from "../../components/constants";
 
 const CategoryPage = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
-  // @ts-ignore
-  const { data: allProducts } = useContext(ProductsContext);
+
+  const { allProducts } = useContext(ProductsContext);
   const categoryPageProducts = allProducts
     .filter((product: Product) => {
       return product.category === categoryName;

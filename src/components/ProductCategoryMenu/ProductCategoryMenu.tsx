@@ -10,8 +10,7 @@ interface Props {
 const ProductCategoryMenu = ({
   handleMenuClick = () => {},
 }: Props): JSX.Element => {
-  //@ts-ignore
-  const { data: allProducts } = useContext(ProductsContext);
+  const { allProducts } = useContext(ProductsContext);
   const productsWithCategoryThumbnails = allProducts.filter(
     (product: Product) => {
       return product.categoryImage.categoryThumbnail;

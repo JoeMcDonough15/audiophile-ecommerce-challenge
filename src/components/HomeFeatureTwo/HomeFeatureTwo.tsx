@@ -11,8 +11,7 @@ interface Props {
 }
 
 const HomeFeatureTwo = ({ productSlug }: Props): JSX.Element => {
-  // @ts-ignore
-  const { data: allProducts, findProduct } = useContext(ProductsContext);
+  const { allProducts, findProduct } = useContext(ProductsContext);
   const featuredProduct = findProduct(allProducts, productSlug);
 
   if (!featuredProduct) {

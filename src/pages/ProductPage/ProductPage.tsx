@@ -22,8 +22,8 @@ const ProductPage = () => {
   const { productName: productSlug } = useParams<{
     productName: string;
   }>();
-  // @ts-ignore
-  const { data: allProducts, findProduct } = useContext(ProductsContext);
+  const { allProducts, findProduct } = useContext(ProductsContext);
+
   // @ts-ignore
   const pageProduct = findProduct(allProducts, productSlug);
   if (!pageProduct) {
