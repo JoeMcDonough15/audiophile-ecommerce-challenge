@@ -1,5 +1,5 @@
 import { PropsWithChildren, createContext } from "react";
-import data from "../../data.json";
+import allProducts from "../../data.json";
 
 export interface ProductImage {
   categoryThumbnail?: string;
@@ -41,12 +41,12 @@ export interface Product {
 
 interface ProductsContextType {
   allProducts: Product[];
-  findProduct: (arg0: Product[], arg1: string) => Product;
+  findProduct: (arg0: Product[], arg1: string) => Product | void;
 }
 
 export const ProductsContext = createContext<ProductsContextType>({
-  allProducts: data,
-  // @ts-ignore
+  allProducts,
+
   findProduct: () => {},
 });
 
@@ -57,8 +57,7 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
     });
   };
   return (
-    // @ts-ignore
-    <ProductsContext.Provider value={{ data, findProduct }}>
+    <ProductsContext.Provider value={{ allProducts, findProduct }}>
       {children}
     </ProductsContext.Provider>
   );
