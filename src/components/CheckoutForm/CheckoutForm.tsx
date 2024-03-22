@@ -41,7 +41,6 @@ const CheckoutForm = (): JSX.Element => {
             />
           </div>
           <FormFieldTextInput
-            isFormFieldShrink
             inputData={{
               inputName: "phone-input",
               inputType: "tel",
@@ -63,6 +62,7 @@ const CheckoutForm = (): JSX.Element => {
             }}
             labelText="Address"
             warningText="Wrong format"
+            isFormFieldFullWidth
           />
           <div className="zip-and-city-container">
             <FormFieldTextInput
@@ -87,7 +87,6 @@ const CheckoutForm = (): JSX.Element => {
             />
           </div>
           <FormFieldTextInput
-            isFormFieldShrink
             inputData={{
               inputName: "country-input",
               inputType: "text",

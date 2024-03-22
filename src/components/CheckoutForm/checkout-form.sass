@@ -73,9 +73,13 @@
 .form-sub-section-container > .form-field:last-of-type, .optional-emoney-details > .form-field:last-of-type
     margin-bottom: 0
 
-.form-field-shrink, .radio-inputs-container
+.form-field, .radio-inputs-container
     +all-screen-bigger-than-mobile
         width: 48.75%
+
+.form-field.form-field-full-width
+    +all-screen-bigger-than-mobile
+        width: 100%
 
 .name-and-email-container, .zip-and-city-container, .payment-method-container, .optional-emoney-details
     +all-screen-bigger-than-mobile

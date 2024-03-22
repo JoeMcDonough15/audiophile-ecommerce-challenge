@@ -9,21 +9,21 @@ interface Props {
   inputData: InputData;
   labelText: string;
   warningText: string;
-  isFormFieldShrink?: boolean;
+  isFormFieldFullWidth?: boolean;
 }
 
 const FormFieldTextInput = ({
   inputData,
   labelText,
   warningText,
-  isFormFieldShrink = false,
+  isFormFieldFullWidth = false,
 }: Props): JSX.Element => {
   const { inputName, inputType, placeholderText, inputOnChangeHandler } =
     inputData;
   return (
     <div
       className={`form-field col ${
-        isFormFieldShrink ? "form-field-shrink" : ""
+        isFormFieldFullWidth ? "form-field-full-width" : ""
       }`}
     >
       <p
