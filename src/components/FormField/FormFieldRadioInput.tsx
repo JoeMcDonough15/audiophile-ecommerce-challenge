@@ -1,6 +1,6 @@
 interface InputData {
   inputValue: string;
-  setPaymentOption: (arg0: string) => void;
+  inputOnChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 interface Props {
@@ -14,20 +14,18 @@ const FormFieldRadioInput = ({
   labelText,
   inputChecked = false,
 }: Props): JSX.Element => {
-  const { inputValue, setPaymentOption = () => {} } = inputData;
-  function handleChange(event: React.FormEvent<HTMLInputElement>) {
-    setPaymentOption(event.currentTarget.value);
-  }
+  const { inputValue, inputOnChangeHandler } = inputData;
+
   return (
     <div className={"form-field col radio-container"}>
       <label className={"radio-input-label input-label"}>
         <span className="input-label-text">{labelText}</span>
         <input
-          name="payment-type"
+          name="paymentOption"
           type="radio"
           value={inputValue}
-          checked={inputChecked}
-          onChange={handleChange}
+          defaultChecked={inputChecked}
+          onChange={inputOnChangeHandler}
           className="radio-input"
         />
       </label>
