@@ -5,19 +5,22 @@ import { FormEvent, useState } from "react";
 import FormFieldRadioInput from "../FormField/FormFieldRadioInput";
 import FormFieldTextInput from "../FormField/FormFieldTextInput";
 import { customerSchema } from "../../Validations/CustomerValidation";
-import * as yup from "yup";
 
-const CheckoutForm = (): JSX.Element => {
+interface Props {
+  setFormComplete: (arg0: boolean) => void;
+}
+
+const CheckoutForm = ({ setFormComplete }: Props): JSX.Element => {
   const [paymentInstructions, setPaymentInstructions] = useState("e-money");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    emailAddress: "",
+    email: "",
     address: "",
     zip: "",
     city: "",
     country: "",
-    paymentOption: "",
+    paymentOption: "e-money",
     emoneyNumber: "",
     emoneyPin: "",
   });
@@ -26,28 +29,22 @@ const CheckoutForm = (): JSX.Element => {
   const handleChange = (event: any) => {
     const inputName = event.target.name;
     const inputValue = event.target.value;
-    console.log("name: ", inputName);
-    console.log("value: ", inputValue);
     // if input name is paymentOption: call the setPaymentInstructions with inputValue
     if (inputName === "paymentOption") {
       setPaymentInstructions(inputValue);
     }
     // setFormData() with name and value
+    setFormData({ ...formData, [inputName]: inputValue });
   };
-
-  // used for uncontrolled input components
-  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-  //   const form = event.currentTarget; // use currentTarget because of bubbling; this line grabs the entire form element
-  //   const myFormData = new FormData(form); // not from state, but from each individual input field's value that is within the form
-  //   const formFields = Object.fromEntries(myFormData.entries()); // make an object from all myFormData input fields
-  //   console.log("form data: ", formFields);
-  // };
 
   // used for controlled input elements
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(formData);
+    customerSchema
+      .validate(formData)
+      .then((valid) => setFormComplete(true))
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -63,7 +60,7 @@ const CheckoutForm = (): JSX.Element => {
           <div className="name-and-email-container">
             <FormFieldTextInput
               inputData={{
-                inputName: "name-input",
+                inputName: "name",
                 inputType: "text",
                 placeholderText: "Alexei Ward",
                 inputOnChangeHandler: handleChange,
@@ -73,7 +70,7 @@ const CheckoutForm = (): JSX.Element => {
             />
             <FormFieldTextInput
               inputData={{
-                inputName: "email-input",
+                inputName: "email",
                 inputType: "email",
                 placeholderText: "alexeiward@mail.com",
                 inputOnChangeHandler: handleChange,
@@ -84,7 +81,7 @@ const CheckoutForm = (): JSX.Element => {
           </div>
           <FormFieldTextInput
             inputData={{
-              inputName: "phone-input",
+              inputName: "phone",
               inputType: "tel",
               placeholderText: "+1 202-555-0136",
               inputOnChangeHandler: handleChange,
@@ -97,7 +94,7 @@ const CheckoutForm = (): JSX.Element => {
           <CheckoutSectionHeader headerText="Shipping Info" />
           <FormFieldTextInput
             inputData={{
-              inputName: "address-input",
+              inputName: "address",
               inputType: "text",
               placeholderText: "1137 Williams Avenue",
               inputOnChangeHandler: handleChange,
@@ -109,7 +106,7 @@ const CheckoutForm = (): JSX.Element => {
           <div className="zip-and-city-container">
             <FormFieldTextInput
               inputData={{
-                inputName: "zip-input",
+                inputName: "zip",
                 inputType: "number",
                 placeholderText: "10001",
                 inputOnChangeHandler: handleChange,
@@ -119,7 +116,7 @@ const CheckoutForm = (): JSX.Element => {
             />
             <FormFieldTextInput
               inputData={{
-                inputName: "city-input",
+                inputName: "city",
                 inputType: "text",
                 placeholderText: "New York",
                 inputOnChangeHandler: handleChange,
@@ -130,7 +127,7 @@ const CheckoutForm = (): JSX.Element => {
           </div>
           <FormFieldTextInput
             inputData={{
-              inputName: "country-input",
+              inputName: "country",
               inputType: "text",
               placeholderText: "United States",
               inputOnChangeHandler: handleChange,
@@ -166,7 +163,7 @@ const CheckoutForm = (): JSX.Element => {
             <div className="optional-emoney-details">
               <FormFieldTextInput
                 inputData={{
-                  inputName: "e-money-number-input",
+                  inputName: "emoneyNumber",
                   inputType: "number",
                   placeholderText: "238521993",
                   inputOnChangeHandler: handleChange,
@@ -176,7 +173,7 @@ const CheckoutForm = (): JSX.Element => {
               />
               <FormFieldTextInput
                 inputData={{
-                  inputName: "e-money-pin-input",
+                  inputName: "emoneyPin",
                   inputType: "number",
                   placeholderText: "6891",
                   inputOnChangeHandler: handleChange,

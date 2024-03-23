@@ -28,7 +28,7 @@ const FormFieldTextInput = ({
     >
       <p
         id={`${inputName}-warning-text`}
-        className={`${inputName}-warning-text warning-text `}
+        className={`${inputName}-warning-text warning-text hide`}
       >
         {warningText}
       </p>

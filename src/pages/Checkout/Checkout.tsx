@@ -26,7 +26,13 @@ const Checkout = () => {
           <ButtonGoBack />
         </div>{" "}
         {!cartEmpty && (
-          <>{!formComplete ? <CheckoutForm /> : <h1>Form Complete!</h1>}</>
+          <>
+            {!formComplete ? (
+              <CheckoutForm setFormComplete={setFormComplete} />
+            ) : (
+              <h1>Form Complete!</h1>
+            )}
+          </>
         )}
       </main>
     </>
