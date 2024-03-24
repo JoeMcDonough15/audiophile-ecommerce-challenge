@@ -1,6 +1,6 @@
 interface InputData {
   inputValue: string;
-  inputOnChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
+  inputOnChangeHandler?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 interface Props {
@@ -14,7 +14,7 @@ const FormFieldRadioInput = ({
   labelText,
   inputChecked = false,
 }: Props): JSX.Element => {
-  const { inputValue, inputOnChangeHandler } = inputData;
+  const { inputValue, inputOnChangeHandler = () => {} } = inputData;
 
   return (
     <div className={"form-field col radio-container"}>

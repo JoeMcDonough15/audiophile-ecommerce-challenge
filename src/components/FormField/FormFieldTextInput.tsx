@@ -1,37 +1,46 @@
 interface InputData {
   inputName: string;
+  inputValue?: string;
   inputType: string;
   placeholderText: string;
-  inputOnChangeHandler: React.ChangeEventHandler<HTMLInputElement>;
+  inputOnChangeHandler?: React.ChangeEventHandler<HTMLInputElement>;
+  inputOnBlurHandler?: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 interface Props {
   inputData: InputData;
   labelText: string;
-  warningText: string;
+  warningText?: string;
   isFormFieldFullWidth?: boolean;
 }
 
 const FormFieldTextInput = ({
   inputData,
   labelText,
-  warningText,
+  warningText = "",
   isFormFieldFullWidth = false,
 }: Props): JSX.Element => {
-  const { inputName, inputType, placeholderText, inputOnChangeHandler } =
-    inputData;
+  const {
+    inputName,
+    inputType,
+    placeholderText,
+    inputOnChangeHandler = () => {},
+    inputOnBlurHandler = () => {},
+  } = inputData;
   return (
     <div
       className={`form-field col ${
         isFormFieldFullWidth ? "form-field-full-width" : ""
       }`}
     >
-      <p
-        id={`${inputName}-warning-text`}
-        className={`${inputName}-warning-text warning-text hide`}
-      >
-        {warningText}
-      </p>
+      {warningText && (
+        <p
+          id={`${inputName}-warning-text`}
+          className={`${inputName}-warning-text warning-text`}
+        >
+          {warningText}
+        </p>
+      )}
       <label className="input-label">
         <span className="input-label-text">{labelText}</span>
         <input
@@ -39,6 +48,7 @@ const FormFieldTextInput = ({
           type={inputType}
           placeholder={placeholderText}
           onChange={inputOnChangeHandler}
+          onBlur={inputOnBlurHandler}
         />
       </label>
     </div>

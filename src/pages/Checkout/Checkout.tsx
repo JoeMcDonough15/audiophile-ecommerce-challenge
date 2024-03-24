@@ -25,7 +25,7 @@ const Checkout = () => {
         <div className="main-container">
           <ButtonGoBack />
         </div>{" "}
-        {!cartEmpty && (
+        {/* {!cartEmpty && (
           <>
             {!formComplete ? (
               <CheckoutForm setFormComplete={setFormComplete} />
@@ -33,7 +33,14 @@ const Checkout = () => {
               <h1>Form Complete!</h1>
             )}
           </>
-        )}
+        )} */}
+        <>
+          {!formComplete ? (
+            <CheckoutForm setFormComplete={setFormComplete} />
+          ) : (
+            <h1>Form Complete!</h1>
+          )}
+        </>
       </main>
     </>
   );
