@@ -6,29 +6,25 @@ import FormFieldRadioInput from "../FormField/FormFieldRadioInput";
 import FormFieldTextInput from "../FormField/FormFieldTextInput";
 import { customerSchema } from "../../Validations/CustomerValidation";
 import { useFormik } from "formik";
+import { OrderInformation } from "../../pages/Checkout/Checkout";
 
 interface Props {
   setFormComplete: (arg0: boolean) => void;
+  orderInformation: OrderInformation;
+  setOrderInformation: (arg0: OrderInformation) => void;
 }
 
-const CheckoutForm = ({ setFormComplete }: Props): JSX.Element => {
+const CheckoutForm = ({
+  setFormComplete,
+  orderInformation,
+  setOrderInformation,
+}: Props): JSX.Element => {
   const [paymentInstructions, setPaymentInstructions] = useState("e-money");
   const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
-    initialValues: {
-      name: "",
-      phone: "",
-      email: "",
-      address: "",
-      zip: "",
-      city: "",
-      country: "",
-      paymentOption: "e-money",
-      emoneyNumber: "",
-      emoneyPin: "",
-    },
+    initialValues: orderInformation,
     validationSchema: customerSchema,
     onSubmit: (values) => {
-      console.log(JSON.stringify(values));
+      setOrderInformation(values);
       setFormComplete(true);
     },
   });
