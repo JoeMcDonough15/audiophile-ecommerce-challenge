@@ -12,9 +12,11 @@ export interface SvgDetails {
   internalLink?: boolean;
   linkDestination?: string;
   fill?: string;
+  circleFill?: string;
   opacity?: string;
   cx?: string;
   cy?: string;
+  r?: string;
   circleOneRadius?: string;
   circleTwoRadius?: string;
   circleThreeRadius?: string;
@@ -29,6 +31,8 @@ interface SvgCollection {
   shoppingCart: SvgDetails;
   arrowIcon: SvgDetails;
   circlesPattern: SvgDetails;
+  orderConfirmation: SvgDetails;
+  cashOnDelivery: SvgDetails;
 }
 
 export const AllSvgDetails = createContext<SvgCollection>(svgDetails);
