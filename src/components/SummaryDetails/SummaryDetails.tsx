@@ -3,12 +3,9 @@ import FeeInformation from "../FeeInformation/FeeInformation";
 import "./summary-details.sass";
 import fixPrice from "../../fixPrice";
 import { useContext } from "react";
-import {
-  CartContext,
-  ItemToPurchase,
-  SHIPPING_AND_HANDLING,
-} from "../Context/CartContext";
+import { CartContext, SHIPPING_AND_HANDLING } from "../Context/CartContext";
 import ButtonSubmit from "../ButtonSubmit/ButtonSubmit";
+import SummaryOfItems from "../SummaryOfItems/SummaryOfItems";
 
 const SummaryDetails = (): JSX.Element => {
   const { itemsInCart, determineVat, includeVatInTotal, calculateGrandTotal } =
@@ -19,11 +16,7 @@ const SummaryDetails = (): JSX.Element => {
   return (
     <section className="form-section-two">
       <h6 className="summary-header">Summary</h6>
-      <div className="items-in-cart col">
-        {itemsInCart.map((itemInCart: ItemToPurchase) => {
-          return <ItemRow key={itemInCart.product.id} itemData={itemInCart} />;
-        })}
-      </div>
+      <SummaryOfItems />
       <div className="fees-container col">
         <FeeInformation
           feeName="Total"

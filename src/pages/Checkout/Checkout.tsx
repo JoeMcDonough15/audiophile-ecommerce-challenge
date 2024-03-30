@@ -4,6 +4,7 @@ import ButtonGoBack from "../../components/ButtonGoBack/ButtonGoBack";
 import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 import "./checkout.sass";
 import { CartContext } from "../../components/Context/CartContext";
+import ConfirmationModal from "../../components/ConfirmationModal/ConfirmationModal";
 
 export interface OrderInformation {
   name: string;
@@ -18,7 +19,7 @@ export interface OrderInformation {
   emoneyPin: string;
 }
 
-const Checkout = () => {
+const Checkout = (): JSX.Element => {
   const [cartEmpty, setCartEmpty] = useState(true);
   const [formComplete, setFormComplete] = useState(false);
   const [orderInformation, setOrderInformation] = useState<OrderInformation>({
@@ -42,6 +43,8 @@ const Checkout = () => {
   let mainElementClasses = "checkout-page ";
   if (cartEmpty) {
     mainElementClasses += "empty-cart";
+  } else if (formComplete) {
+    mainElementClasses += "shadow-out-main";
   }
   return (
     <>
@@ -60,17 +63,19 @@ const Checkout = () => {
           </>
         )} */}
         <>
-          {!formComplete ? (
-            <CheckoutForm
-              setFormComplete={setFormComplete}
-              orderInformation={orderInformation}
-              setOrderInformation={setOrderInformation}
-            />
-          ) : (
-            <h1>Form Complete!</h1>
-          )}
+          <CheckoutForm
+            setFormComplete={setFormComplete}
+            orderInformation={orderInformation}
+            setOrderInformation={setOrderInformation}
+          />
         </>
       </main>
+      {formComplete && (
+        <ConfirmationModal
+          setFormComplete={setFormComplete}
+          orderInformation={orderInformation}
+        />
+      )}
     </>
   );
 };

@@ -1,10 +1,10 @@
 import "./thin-rule.sass";
 
 interface Props {
-  customStyle: string;
+  customStyle?: string;
 }
 
-const ThinRule = ({ customStyle }: Props): JSX.Element => {
+const ThinRule = ({ customStyle = "" }: Props): JSX.Element => {
   return <hr className={`thin-rule ${customStyle}`}></hr>;
 };
 

@@ -5,4 +5,5 @@ export const ROUTE_PATHS = {
   EARPHONES: "earphones",
   SPEAKERS: "speakers",
   CHECKOUT: "checkout",
+  HOME: "/",
 };

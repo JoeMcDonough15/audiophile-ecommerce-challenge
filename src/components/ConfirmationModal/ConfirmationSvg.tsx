@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AllSvgDetails } from "../Context/SvgDetailsContext";
 
-const OrderConfirmationSvg = () => {
+const ConfirmationSvg = (): JSX.Element => {
   const AllSvgs = useContext(AllSvgDetails);
   const { orderConfirmation } = AllSvgs;
   const {
@@ -21,10 +21,10 @@ const OrderConfirmationSvg = () => {
     <svg width={width} height={height} xmlns={src}>
       <g fill={fill} fillRule="evenodd">
         <circle fill={circleFill} cx={cx} cy={cy} r={r}></circle>
-        <path stroke={stroke} stroke-width={strokeWidth} d={d}></path>
+        <path stroke={stroke} strokeWidth={strokeWidth} d={d}></path>
       </g>
     </svg>
   );
 };
 
-export default OrderConfirmationSvg;
+export default ConfirmationSvg;
