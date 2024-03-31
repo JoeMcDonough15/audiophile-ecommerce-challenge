@@ -9,7 +9,7 @@ const ButtonGoBack = () => {
         navigate(-1);
       }}
     >
-      <span className="button-text">go back</span>
+      <span>go back</span>
     </button>
   );
 };

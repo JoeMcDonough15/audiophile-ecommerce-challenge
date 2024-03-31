@@ -4,7 +4,12 @@
 .order-confirmation-top 
     @include curve-top-corners
     background: $light-grey
+    display: flex
+    flex-direction: column
     padding: 24px
+
+    & .items-in-cart.col
+        margin: 0
 
     & .row.item-row > .item-image-and-details.row > .content-slab.image-thumbnail
         height: 50px 
@@ -13,8 +18,16 @@
     & .row.item-row > .item-image-and-details.row > .item-name-and-price.col > .item-price
         width: max-content
 
+.confirmation-thin-rule
+    background: $confirmation-table-thin-rule-grey
+    margin: 12px 0
+
+
 .order-confirmation-bottom
     @include curve-bottom-corners
     background: $black
     margin-bottom: 23px
     padding: 15px 24px 19px
+
+    & .fee-information.col
+        gap: 8px

@@ -27,7 +27,7 @@ const ConfirmationTable = () => {
     <div className="order-confirmation">
       <div className="order-confirmation-top">
         {<SummaryOfItems displayOne={!viewExpanded} />}
-        <ThinRule />
+        <ThinRule customStyle="confirmation-thin-rule" />
         {numItemsInCart > 1 && (
           <ButtonExpandOrderSummary
             buttonExpandText={buttonExpandText}

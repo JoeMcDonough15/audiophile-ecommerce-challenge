@@ -10,12 +10,12 @@ const ButtonExpandOrderSummary = ({
 }: Props) => {
   return (
     <button
-      className="button-text-only"
+      className="button-expand-order"
       onClick={() => {
         setViewExpanded(!viewExpanded);
       }}
     >
-      <span className="button-text">{buttonExpandText}</span>
+      <span>{buttonExpandText}</span>
     </button>
   );
 };
