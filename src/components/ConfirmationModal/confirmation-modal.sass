@@ -1,4 +1,19 @@
 @import ../../sass/global
 
+.confirmation-modal
+    @include mobile-modal-styles
+    padding: 32px
+    top: 22.4%
+
+    +all-screen-bigger-than-mobile
+        width: $confirmation-modal-big-screen
+
+
 .order-confirmation-header 
     line-height: 28px
+    margin: 23px 0 16px
+
+.order-confirmation-instructions 
+    margin-bottom: 24px
+
+

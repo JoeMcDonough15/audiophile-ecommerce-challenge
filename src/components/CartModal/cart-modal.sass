@@ -1,17 +1,9 @@
 @import ../../sass/global
 
-$cart-modal-mobile: min(87.2%, 327px)
-$cart-modal-big-screen: 377px
-
 .cart-modal
-    background: $white
-    border-radius: 8px
+    @include mobile-modal-styles
     padding: 32px 28px 31px
-    position: fixed
-    right: calc((100vw - $cart-modal-mobile) / 2)
     top: 114px
-    width: $cart-modal-mobile
-    z-index: 2
 
     +all-screen-bigger-than-mobile
         width: $cart-modal-big-screen
@@ -26,9 +18,11 @@ $cart-modal-big-screen: 377px
 .cart-top-row
     justify-content: space-between
 
-.items-in-cart.col
+.cart-modal .items-in-cart.col
     gap: 24px
     margin: 32px 0
+    max-height: 240px
+    overflow-y: scroll
 
 .cart-modal .cart-top-row .button-text-only
     padding: 0

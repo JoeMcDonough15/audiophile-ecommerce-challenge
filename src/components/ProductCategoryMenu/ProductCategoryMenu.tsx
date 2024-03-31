@@ -11,11 +11,21 @@ const ProductCategoryMenu = ({
   handleMenuClick = () => {},
 }: Props): JSX.Element => {
   const { allProducts } = useContext(ProductsContext);
-  const productsWithCategoryThumbnails = allProducts.filter(
-    (product: Product) => {
+  const productsWithCategoryThumbnails = allProducts
+    .filter((product: Product) => {
       return product.categoryImage.categoryThumbnail;
-    }
-  );
+    })
+    .sort((currentProduct: Product, nextProduct: Product): number => {
+      if (
+        currentProduct.category === "headphones" ||
+        (currentProduct.category === "speakers" &&
+          nextProduct.category === "earphones")
+      ) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
 
   return (
     <nav className={"main-container product-category-menu col"}>

@@ -21,7 +21,7 @@ const CategoryPage = () => {
     .filter((product: Product) => {
       return product.category === categoryName;
     })
-    .sort((featuredProduct: Product, nextFeaturedProduct: Product) => {
+    .sort((featuredProduct: Product, nextFeaturedProduct: Product): number => {
       if (featuredProduct.id > nextFeaturedProduct.id) {
         return -1;
       } else if (featuredProduct.id < nextFeaturedProduct.id) {

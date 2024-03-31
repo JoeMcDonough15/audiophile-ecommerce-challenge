@@ -18,12 +18,12 @@ const ConfirmationModal = ({
 }: Props): JSX.Element => {
   const { removeAllItemsFromCart } = useContext(CartContext);
   return (
-    <div className="main-container">
+    <section className="confirmation-modal">
       <ConfirmationSvg />
       <h5 className="order-confirmation-header black-text">{`Thank you for your order, ${getFirstName(
         orderInformation.name
       )}`}</h5>
-      <p>{`You will receive an email confirmation shortly at ${orderInformation.email}`}</p>
+      <p className="order-confirmation-instructions">{`You will receive an email confirmation shortly at ${orderInformation.email}`}</p>
       <ConfirmationTable />
       <ButtonLink
         buttonDestination={ROUTE_PATHS.HOME}
@@ -34,7 +34,7 @@ const ConfirmationModal = ({
           setFormComplete(false);
         }}
       />
-    </div>
+    </section>
   );
 };
 

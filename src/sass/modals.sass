@@ -1,0 +1,13 @@
+@import colors
+
+$mobile-modal: min(87.2%, 470px)
+$cart-modal-big-screen: 377px
+$confirmation-modal-big-screen: 540px
+
+@mixin mobile-modal-styles
+    background: $white
+    border-radius: 8px
+    position: fixed
+    right: calc((100vw - $mobile-modal) / 2)
+    width: $mobile-modal
+    z-index: 2

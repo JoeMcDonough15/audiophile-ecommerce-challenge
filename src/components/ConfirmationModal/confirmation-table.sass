@@ -2,7 +2,19 @@
 
 
 .order-confirmation-top 
+    @include curve-top-corners
     background: $light-grey
+    padding: 24px
+
+    & .row.item-row > .item-image-and-details.row > .content-slab.image-thumbnail
+        height: 50px 
+        width: 50px
+
+    & .row.item-row > .item-image-and-details.row > .item-name-and-price.col > .item-price
+        width: max-content
 
 .order-confirmation-bottom
+    @include curve-bottom-corners
     background: $black
+    margin-bottom: 23px
+    padding: 15px 24px 19px
