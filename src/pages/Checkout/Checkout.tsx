@@ -15,8 +15,8 @@ export interface OrderInformation {
   city: string;
   country: string;
   paymentOption: string;
-  emoneyNumber: string;
-  emoneyPin: string;
+  emoneyNumber?: string | undefined;
+  emoneyPin?: string | undefined;
 }
 
 const Checkout = (): JSX.Element => {

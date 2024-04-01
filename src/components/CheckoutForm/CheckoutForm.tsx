@@ -35,6 +35,19 @@ const CheckoutForm = ({
     setPaymentInstructions(values.paymentOption);
   }, [values]);
 
+  useEffect(() => {
+    if (paymentInstructions === "cash") {
+      Object.keys(values).forEach((keyName: string) => {
+        if (keyName === "emoneyNumber" || keyName === "emoneyPin") {
+          delete values[keyName];
+        }
+      });
+    } else {
+      values["emoneyNumber"] = "";
+      values["emoneyPin"] = "";
+    }
+  }, [paymentInstructions]);
+
   const { cashOnDelivery } = useContext(AllSvgDetails);
 
   return (

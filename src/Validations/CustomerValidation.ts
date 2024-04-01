@@ -21,6 +21,25 @@ export const customerSchema = yup.object().shape({
     .required("Can't be blank"),
   city: yup.string().required("Can't be blank"),
   country: yup.string().required("Can't be blank"),
-  emoneyNumber: yup.string().length(9, "Must be 9 digits").matches(/\d{9}/),
-  emoneyPin: yup.string().length(4, "Must be 4 digits").matches(/\d{4}/),
+  paymentOption: yup.string().required(),
+  emoneyNumber: yup.string().when("paymentOption", {
+    is: (paymentOptionValue: string) => paymentOptionValue === "e-money",
+    then: () =>
+      yup
+        .string()
+        .length(9, "Must be 9 digits")
+        .matches(/\d{9}/)
+        .required("Can't be blank"),
+    otherwise: () => yup.string(),
+  }),
+  emoneyPin: yup.string().when("paymentOption", {
+    is: (paymentOptionValue: string) => paymentOptionValue === "e-money",
+    then: () =>
+      yup
+        .string()
+        .length(4, "Must be 4 digits")
+        .matches(/\d{4}/)
+        .required("Can't be blank."),
+    otherwise: () => yup.string(),
+  }),
 });
