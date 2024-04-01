@@ -6,8 +6,6 @@
 
     +all-screen-bigger-than-mobile
         display: flex
-    
-    +all-tablets
         margin-bottom: 46px
 
 
@@ -52,7 +50,13 @@
         @include straighten-left-corners
         justify-content: center
         width: 44.59%
+    
+    +all-large-screen
+        padding: 0 32px
 
 .order-confirmation-bottom.col.push-to-flex-end
     +all-screen-bigger-than-mobile
         justify-content: flex-end
+    
+    +all-large-screen
+        padding-bottom: 41px
