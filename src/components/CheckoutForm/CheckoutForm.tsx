@@ -1,12 +1,14 @@
 import CheckoutSectionHeader from "./CheckoutSectionHeader";
 import SummaryDetails from "../SummaryDetails/SummaryDetails";
 import "./checkout-form.sass";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import FormFieldRadioInput from "../FormField/FormFieldRadioInput";
 import FormFieldTextInput from "../FormField/FormFieldTextInput";
 import { customerSchema } from "../../Validations/CustomerValidation";
 import { useFormik } from "formik";
 import { OrderInformation } from "../../pages/Checkout/Checkout";
+import IconAsSvg from "../IconAsSvg/IconAsSvg";
+import { AllSvgDetails } from "../Context/SvgDetailsContext";
 
 interface Props {
   setFormComplete: (arg0: boolean) => void;
@@ -32,6 +34,8 @@ const CheckoutForm = ({
   useEffect(() => {
     setPaymentInstructions(values.paymentOption);
   }, [values]);
+
+  const { cashOnDelivery } = useContext(AllSvgDetails);
 
   return (
     <form
@@ -159,7 +163,7 @@ const CheckoutForm = ({
               />
             </div>
           </div>
-          {paymentInstructions === "e-money" && (
+          {paymentInstructions === "e-money" ? (
             <div className="optional-emoney-details">
               <FormFieldTextInput
                 inputData={{
@@ -185,6 +189,19 @@ const CheckoutForm = ({
                 labelText="e-money PIN"
                 warningText={errors.emoneyPin}
               />
+            </div>
+          ) : (
+            <div className="optional-cash-instructions">
+              <IconAsSvg
+                svgDetails={cashOnDelivery}
+                className="cash-instructions-svg"
+              />
+              <p className="cash-instructions-text">
+                The ‘Cash on Delivery’ option enables you to pay in cash when
+                our delivery courier arrives at your residence. Just make sure
+                your address is correct so that your order will not be
+                cancelled.
+              </p>
             </div>
           )}
         </div>

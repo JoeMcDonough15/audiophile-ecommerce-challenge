@@ -142,3 +142,23 @@
     &:focus
         outline: none
 
+.optional-cash-instructions
+    align-items: center
+    display: flex
+    flex-direction: column
+    gap: 8px
+    
+
+    +all-screen-bigger-than-mobile
+        flex-direction: row
+        justify-content: space-between
+
+.cash-instructions-svg
+    fill: $dark-orange
+
+.cash-instructions-text
+    text-align: center
+
+    +all-screen-bigger-than-mobile
+        text-align: left
+        width: 87.38%
