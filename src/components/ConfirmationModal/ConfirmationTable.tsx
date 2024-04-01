@@ -10,7 +10,7 @@ import "./confirmation-table.sass";
 const ConfirmationTable = () => {
   const [viewExpanded, setViewExpanded] = useState(false);
   const [buttonExpandText, setButtonExpandText] = useState("");
-  const { numItemsInCart, calculateGrandTotal, calculateSubtotal } =
+  const { numItemsInCart, calculateGrandTotal, includeVatInTotal } =
     useContext(CartContext);
 
   useEffect(() => {
@@ -36,11 +36,15 @@ const ConfirmationTable = () => {
           />
         )}
       </div>
-      <div className="order-confirmation-bottom">
+      <div
+        className={`order-confirmation-bottom col ${
+          viewExpanded ? " push-to-flex-end" : ""
+        }`}
+      >
         <FeeInformation
           feeAsColumn
           feeName="grand total"
-          amountAsString={fixPrice(calculateGrandTotal(calculateSubtotal()))}
+          amountAsString={fixPrice(calculateGrandTotal(includeVatInTotal()))}
           customPriceColor="white-text"
         />
       </div>

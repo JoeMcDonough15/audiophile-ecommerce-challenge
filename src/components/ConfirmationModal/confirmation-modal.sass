@@ -8,14 +8,28 @@
     top: 22.4%
 
     +all-screen-bigger-than-mobile
+        height: 57.467vh
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
         width: $confirmation-modal-big-screen
 
+    +all-tablets
+        padding: 48px
+
+.confirmation-text-container
+    gap: 16px
+    margin: 24px 0
+
+    +all-tablets
+        gap: 24px
+        margin: 33px 0
 
 .order-confirmation-header 
     line-height: 28px
-    margin: 23px 0 16px
 
-.order-confirmation-instructions 
-    margin-bottom: 24px
+    +all-tablets
+        line-height: 36px
+        
 
 

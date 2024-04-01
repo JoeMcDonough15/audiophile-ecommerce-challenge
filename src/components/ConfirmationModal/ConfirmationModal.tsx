@@ -20,10 +20,12 @@ const ConfirmationModal = ({
   return (
     <section className="confirmation-modal">
       <ConfirmationSvg />
-      <h5 className="order-confirmation-header black-text">{`Thank you for your order, ${getFirstName(
-        orderInformation.name
-      )}`}</h5>
-      <p className="order-confirmation-instructions">{`You will receive an email confirmation shortly at ${orderInformation.email}`}</p>
+      <div className="confirmation-text-container col">
+        <h5 className="order-confirmation-header black-text">{`Thank you for your order, ${getFirstName(
+          orderInformation.name
+        )}`}</h5>
+        <p>You will receive an email confirmation shortly.</p>
+      </div>
       <ConfirmationTable />
       <ButtonLink
         buttonDestination={ROUTE_PATHS.HOME}

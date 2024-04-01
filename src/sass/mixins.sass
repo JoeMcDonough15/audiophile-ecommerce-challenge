@@ -22,7 +22,6 @@
     background-position: 60%
     background-size: cover
 
-
 @mixin set-as-header-background
     padding-top: 90px
     position: relative
@@ -36,3 +35,18 @@
     border-bottom-left-radius: 8px
     border-bottom-right-radius: 8px
 
+@mixin curve-left-corners
+    border-bottom-left-radius: 8px
+    border-top-left-radius: 8px
+    
+@mixin curve-right-corners
+    border-bottom-right-radius: 8px
+    border-top-right-radius: 8px
+
+@mixin straighten-left-corners
+    border-bottom-left-radius: 0
+    border-top-left-radius: 0
+    
+@mixin straighten-right-corners
+    border-bottom-right-radius: 0
+    border-top-right-radius: 0
