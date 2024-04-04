@@ -5,7 +5,7 @@
     "name": "YX1 Wireless Earphones",
     "abbreviatedName": "YX1",
     "image": {
-      "mobile": "http://www.localhost:3000/src/assets/product-yx1-earphones/mobile/image-product.jpg",
+      "mobile": "./assets/product-yx1-earphones/mobile/image-product.jpg",
       "tablet": "http://www.localhost:3000/src/assets/product-yx1-earphones/tablet/image-product.jpg",
       "desktop": "http://www.localhost:3000/src/assets/product-yx1-earphones/desktop/image-product.jpg",
       "imageAltText": "yx1-earphones-product-image"

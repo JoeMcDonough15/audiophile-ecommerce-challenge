@@ -9,7 +9,7 @@
         flex-direction: row
 
 .about-us-image-container
-    @include set-background-image-from-file('./images/image-best-gear-mobile.jpg')
+    @include set-background-image-from-file("../../assets/shared/mobile/image-best-gear.jpg")
     background-position: center
     background-size: cover
     border-radius: 8px
@@ -19,11 +19,11 @@
     width: 100%
 
     +all-tablets
-        @include set-background-image-from-file('./images/image-best-gear-tablet.jpg')
+        @include set-background-image-from-file("../../assets/shared/tablet/image-best-gear.jpg")
         max-width: none
 
     +all-large-screen
-        @include set-background-image-from-file('./images/image-best-gear-desktop.jpg')
+        @include set-background-image-from-file("../../assets/shared/desktop/image-best-gear.jpg")
         height: 588px
         max-width: none
         order: 3
