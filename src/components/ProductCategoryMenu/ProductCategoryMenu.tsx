@@ -34,8 +34,7 @@ const ProductCategoryMenu = ({
           <CategorySlab
             key={product.id}
             categoryName={product.category}
-            // @ts-ignore
-            imageSrc={product.categoryImage.categoryThumbnail}
+            imageData={product.categoryImage}
             thumbnailName={`${product.category}-thumbnail thumbnail-image`}
             buttonDestination={`/category/${product.category}`}
             handleMenuClick={handleMenuClick}

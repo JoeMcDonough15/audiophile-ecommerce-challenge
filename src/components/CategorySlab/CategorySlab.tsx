@@ -1,11 +1,12 @@
 import "./category-slab.sass";
 import svgDetails from "../svg-details.json";
 import ButtonLink from "../ButtonLink/ButtonLink";
+import { ProductImage } from "../Context/ProductsContext";
 
 const arrowIconDetails = svgDetails.arrowIcon;
 
 interface Props {
-  imageSrc: string;
+  imageData: ProductImage;
   categoryName: string;
   thumbnailName: string;
   buttonDestination: string;
@@ -14,7 +15,7 @@ interface Props {
 
 const CategorySlab = (props: Props): JSX.Element => {
   const {
-    imageSrc,
+    imageData,
     categoryName,
     thumbnailName,
     buttonDestination,
@@ -22,7 +23,11 @@ const CategorySlab = (props: Props): JSX.Element => {
   } = props;
   return (
     <div className="category-slab content-slab col">
-      <img src={imageSrc} alt="category-image" className={thumbnailName} />
+      <img
+        src={imageData.categoryThumbnail}
+        alt={imageData.imageAltText}
+        className={thumbnailName}
+      />
       <p className="category-name">{categoryName}</p>
       <ButtonLink
         withArrowIcon
