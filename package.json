@@ -2,7 +2,8 @@
   "name": "audiophile-ecommerce-site-challenge",
   "description": "Challenge by frontendmentor.io built with react and redux",
   "scripts": {
-    "start": "webpack serve --config webpack.config.dev.ts --port 3000"
+    "start": "webpack serve --config webpack.config.dev.ts --port 3000",
+    "build": "webpack build --config webpack.config.prod.ts"
   },
   "dependencies": {
     "@types/copy-webpack-plugin": "^10.1.0",
