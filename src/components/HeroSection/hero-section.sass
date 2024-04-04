@@ -2,17 +2,17 @@
 
 .hero-section-container
     @include set-as-header-background
-    @include set-background-image-from-file('./images/image-header-mobile.jpg')
+    @include set-background-image-from-file('../../assets/home/mobile/image-hero.jpg')
     height: 600px
 
     +all-screen-bigger-than-mobile
         height: 729px
 
     +all-tablets
-        @include set-background-image-from-file('./images/image-header-tablet.jpg')
+        @include set-background-image-from-file('../../assets/home/tablet/image-hero.jpg')
         
     +all-large-screen
-        @include set-background-image-from-file('./images/image-header-desktop.jpg')   
+        @include set-background-image-from-file('../../assets/home/desktop/image-hero.jpg')
 
 .hero-section
     align-items: center
