@@ -1,12 +1,12 @@
 import "./category-slab.sass";
 import svgDetails from "../svg-details.json";
 import ButtonLink from "../ButtonLink/ButtonLink";
-import { ProductImage } from "../Context/ProductsContext";
+import { ImageDataAllSizes } from "../Context/ProductsContext";
 
 const arrowIconDetails = svgDetails.arrowIcon;
 
 interface Props {
-  imageData: ProductImage;
+  imageData: ImageDataAllSizes;
   categoryName: string;
   thumbnailName: string;
   buttonDestination: string;
