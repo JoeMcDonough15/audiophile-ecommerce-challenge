@@ -17,26 +17,20 @@ export interface ImageDataOneSize {
   imageSize: string;
 }
 
+export interface GalleryImageData {
+  galleryImageOneData: ImageDataOneSize[];
+  galleryImageTwoData: ImageDataOneSize[];
+  galleryImageThreeData: ImageDataOneSize[];
+}
+
 export interface ProductImageData {
+  productName: string;
   categoryImageData: ImageDataAllSizes;
   productImageData: ImageDataAllSizes;
   homepageImageData?: ImageDataAllSizes;
   headerImageData?: ImageDataAllSizes;
-  galleryImageData: {
-    galleryImageOneData: ImageDataOneSize[];
-    galleryImageTwoData: ImageDataOneSize[];
-    galleryImageThreeData: ImageDataOneSize[];
-  };
+  galleryImageData: GalleryImageData;
   relatedProductsImageData: ImageDataOneSize[][];
-}
-
-export interface AllProductImages {
-  yx1Earphones: ProductImageData;
-  xx59Headphones: ProductImageData;
-  xx99MarkOneHeadphones: ProductImageData;
-  xx99MarkTwoHeadphones: ProductImageData;
-  zx7Speaker: ProductImageData;
-  zx9Speaker: ProductImageData;
 }
 
 export interface RelatedProduct {
@@ -71,14 +65,19 @@ export interface Product {
 
 interface ProductsContextType {
   allProducts: Product[];
-  allProductImages: AllProductImages;
+  allProductImages: ProductImageData[];
   findProduct: (arg0: Product[], arg1: string) => Product | void;
+  findProductImageData: (
+    arg0: ProductImageData[],
+    arg1: string
+  ) => ProductImageData | void;
 }
 
 export const ProductsContext = createContext<ProductsContextType>({
   allProducts,
   allProductImages,
   findProduct: () => {},
+  findProductImageData: () => {},
 });
 
 export const ProductsProvider = ({ children }: PropsWithChildren) => {
@@ -87,9 +86,26 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
       return product.slug === productSlug;
     });
   };
+  const findProductImageData = (
+    allProductImages: ProductImageData[],
+    productSlug: string
+  ) => {
+    let productImageData;
+    allProductImages.forEach((productImageObject) => {
+      if (productImageObject.productName === productSlug) {
+        productImageData = productImageObject;
+      }
+    });
+    return productImageData;
+  };
   return (
     <ProductsContext.Provider
-      value={{ allProducts, allProductImages, findProduct }}
+      value={{
+        allProducts,
+        allProductImages,
+        findProduct,
+        findProductImageData,
+      }}
     >
       {children}
     </ProductsContext.Provider>

@@ -22,27 +22,28 @@ const ProductPage = () => {
   const { productName: productSlug } = useParams<{
     productName: string;
   }>();
-  const { allProducts, findProduct } = useContext(ProductsContext);
+  const { allProducts, allProductImages, findProduct, findProductImageData } =
+    useContext(ProductsContext);
 
   // @ts-ignore
   const pageProduct = findProduct(allProducts, productSlug);
   if (!pageProduct) {
     return <PageNotFound />;
   }
+  // @ts-ignore
+  const allProductImageData = findProductImageData(
+    allProductImages,
+    //@ts-ignore
+    productSlug
+  );
 
-  const {
-    image,
-    isNewProduct,
-    features,
-    includes,
-    gallery,
-    others,
-    name,
-    price,
-    description,
-  } = pageProduct;
+  const { isNewProduct, features, includes, others, name, price, description } =
+    pageProduct;
 
-  const { mobile, tablet, desktop, imageAltText } = image;
+  //@ts-ignore
+  const { productImageData, galleryImageData } = allProductImageData;
+
+  const { mobile, tablet, desktop, imageAltText } = productImageData;
 
   // set local state for Quantity and ButtonSpecifyQuantity components
 
@@ -126,7 +127,7 @@ const ProductPage = () => {
           <ProductDetails detailsText={features} />
           <InTheBox productIncludes={includes} />
         </section>
-        <Gallery imageData={gallery} />
+        <Gallery imageData={galleryImageData} />
         <YouMayAlsoLike relatedProducts={others} />
       </main>
     </>

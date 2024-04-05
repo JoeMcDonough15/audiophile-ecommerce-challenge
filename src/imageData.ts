@@ -1,5 +1,6 @@
-const allProductImages = {
-  yx1Earphones: {
+const allProductImages = [
+  {
+    productName: "yx1-earphones",
     categoryImageData: {
       mobile: require("./assets/product-yx1-earphones/mobile/image-category-page-preview.jpg"),
       tablet: require("./assets/product-yx1-earphones/tablet/image-category-page-preview.jpg"),
@@ -143,7 +144,8 @@ const allProductImages = {
       ],
     ],
   },
-  xx59Headphones: {
+  {
+    productName: "xx59-headphones",
     categoryImageData: {
       mobile: require("./assets/product-xx59-headphones/mobile/image-category-page-preview.jpg"),
       tablet: require("./assets/product-xx59-headphones/tablet/image-category-page-preview.jpg"),
@@ -282,7 +284,8 @@ const allProductImages = {
       ],
     ],
   },
-  xx99MarkOneHeadphones: {
+  {
+    productName: "xx99-mark-one-headphones",
     categoryImageData: {
       mobile: require("./assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg"),
       tablet: require("./assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg"),
@@ -421,7 +424,8 @@ const allProductImages = {
       ],
     ],
   },
-  xx99MarkTwoHeadphones: {
+  {
+    productName: "xx99-mark-two-headphones",
     categoryImageData: {
       mobile: require("./assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg"),
       tablet: require("./assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg"),
@@ -565,7 +569,8 @@ const allProductImages = {
       ],
     ],
   },
-  zx7Speaker: {
+  {
+    productName: "zx7-speaker",
     categoryImageData: {
       mobile: require("./assets/product-zx7-speaker/mobile/image-category-page-preview.jpg"),
       tablet: require("./assets/product-zx7-speaker/tablet/image-category-page-preview.jpg"),
@@ -709,7 +714,8 @@ const allProductImages = {
       ],
     ],
   },
-  zx9Speaker: {
+  {
+    productName: "zx9-speaker",
     categoryImageData: {
       mobile: require("./assets/product-zx9-speaker/mobile/image-category-page-preview.jpg"),
       tablet: require("./assets/product-zx9-speaker/tablet/image-category-page-preview.jpg"),
@@ -853,6 +859,6 @@ const allProductImages = {
       ],
     ],
   },
-};
+];
 
 export default allProductImages;
