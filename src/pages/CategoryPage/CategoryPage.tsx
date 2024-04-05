@@ -16,7 +16,7 @@ import { ROUTE_PATHS } from "../../components/constants";
 const CategoryPage = () => {
   const { categoryName } = useParams<{ categoryName: string }>();
 
-  const { allProducts } = useContext(ProductsContext);
+  const { allProducts, allProductImages } = useContext(ProductsContext);
   const categoryPageProducts = allProducts
     .filter((product: Product) => {
       return product.category === categoryName;
@@ -31,7 +31,19 @@ const CategoryPage = () => {
       }
     });
 
-  if (categoryPageProducts.length === 0) {
+  const categoryImageData = categoryPageProducts
+    .map((product) => {
+      return allProductImages.find((productImageData) => {
+        if (productImageData.productName === product.slug) {
+          return productImageData;
+        }
+      });
+    })
+    .map((productImageDataObject) => {
+      return productImageDataObject?.categoryImageData;
+    });
+
+  if (categoryPageProducts.length === 0 || categoryImageData.length === 0) {
     return (
       <>
         <PageNotFound />
@@ -44,7 +56,7 @@ const CategoryPage = () => {
       <Banner bannerText={categoryName} />
       <main className="category-page">
         <section className="category-features col">
-          {categoryPageProducts.map((product: Product) => {
+          {categoryPageProducts.map((product: Product, productIndex) => {
             return (
               <section
                 className="main-container featured-product-container col"
@@ -54,22 +66,31 @@ const CategoryPage = () => {
                   <ImageSlab
                     slabSize="mobile"
                     imageData={{
-                      imageSrc: product.categoryImage.mobile,
-                      imageAltText: product.categoryImage.imageAltText,
+                      //@ts-ignore
+                      imageSrc: categoryImageData[productIndex].mobile,
+                      imageAltText:
+                        //@ts-ignore
+                        categoryImageData[productIndex].imageAltText,
                     }}
                   />
                   <ImageSlab
                     slabSize="tablet"
                     imageData={{
-                      imageSrc: product.categoryImage.tablet,
-                      imageAltText: product.categoryImage.imageAltText,
+                      //@ts-ignore
+                      imageSrc: categoryImageData[productIndex].tablet,
+                      imageAltText:
+                        //@ts-ignore
+                        categoryImageData[productIndex].imageAltText,
                     }}
                   />
                   <ImageSlab
                     slabSize="desktop"
                     imageData={{
-                      imageSrc: product.categoryImage.desktop,
-                      imageAltText: product.categoryImage.imageAltText,
+                      //@ts-ignore
+                      imageSrc: categoryImageData[productIndex].desktop,
+                      imageAltText:
+                        //@ts-ignore
+                        categoryImageData[productIndex].imageAltText,
                     }}
                   />
                 </div>
