@@ -7,7 +7,7 @@ import Gallery from "../../components/Gallery/Gallery";
 import YouMayAlsoLike from "../../components/YouMayAlsoLike/YouMayAlsoLike";
 import PageNotFound from "../PageNotFound";
 import "./product-page.sass";
-import ImageSlab, { SlabSize } from "../../components/ImageSlab/ImageSlab";
+import ImageSlab from "../../components/ImageSlab/ImageSlab";
 import ProductInfo from "../../components/ProductInfoComponents/ProductInfo";
 import NewProductIntro from "../../components/NewProductIntro/NewProductIntro";
 import ButtonGoBack from "../../components/ButtonGoBack/ButtonGoBack";
@@ -41,7 +41,8 @@ const ProductPage = () => {
     pageProduct;
 
   //@ts-ignore
-  const { productImageData, galleryImageData } = allProductImageData;
+  const { productImageData, galleryImageData, relatedProductsImageData } =
+    allProductImageData;
 
   const { mobile, tablet, desktop, imageAltText } = productImageData;
 
@@ -74,15 +75,15 @@ const ProductPage = () => {
         <section className="main-container featured-product-container col">
           <div className="featured-product-image-container">
             <ImageSlab
-              slabSize={SlabSize.MOBILE}
+              slabSize="mobile"
               imageData={{ imageSrc: mobile, imageAltText: imageAltText }}
             />
             <ImageSlab
-              slabSize={SlabSize.TABLET}
+              slabSize="tablet"
               imageData={{ imageSrc: tablet, imageAltText: imageAltText }}
             />
             <ImageSlab
-              slabSize={SlabSize.DESKTOP}
+              slabSize="desktop"
               imageData={{
                 imageSrc: desktop,
                 imageAltText: imageAltText,
@@ -128,7 +129,10 @@ const ProductPage = () => {
           <InTheBox productIncludes={includes} />
         </section>
         <Gallery imageData={galleryImageData} />
-        <YouMayAlsoLike relatedProducts={others} />
+        <YouMayAlsoLike
+          relatedProducts={others}
+          relatedProductImageData={relatedProductsImageData}
+        />
       </main>
     </>
   );

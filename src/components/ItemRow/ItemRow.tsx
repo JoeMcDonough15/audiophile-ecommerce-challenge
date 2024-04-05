@@ -1,4 +1,4 @@
-import ImageSlab, { SlabSize } from "../ImageSlab/ImageSlab";
+import ImageSlab from "../ImageSlab/ImageSlab";
 import ItemNameAndPrice from "../ItemNameAndPrice/ItemNameAndPrice";
 import Quantity from "../Quantity/Quantity";
 import { CartContext, ItemToPurchase } from "../Context/CartContext";
@@ -21,7 +21,7 @@ const ItemRow = ({
   return withSpecifyQuantity ? (
     <div className="row item-row with-specify-quantity">
       <ImageSlab
-        slabSize={SlabSize.THUMBNAIL}
+        slabSize="thumbnail"
         imageData={{
           imageSrc: mobile,
           imageAltText: imageAltText,
@@ -51,7 +51,7 @@ const ItemRow = ({
       {" "}
       <div className="item-image-and-details row">
         <ImageSlab
-          slabSize={SlabSize.THUMBNAIL}
+          slabSize="thumbnail"
           imageData={{
             imageSrc: mobile,
             imageAltText: imageAltText,

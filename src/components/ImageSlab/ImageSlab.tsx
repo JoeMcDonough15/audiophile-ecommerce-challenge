@@ -6,16 +6,9 @@ interface ImageData {
   imageClassName?: string;
 }
 
-export enum SlabSize {
-  MOBILE = "mobile",
-  TABLET = "tablet",
-  DESKTOP = "desktop",
-  THUMBNAIL = "thumbnail",
-}
-
 interface Props {
   imageData: ImageData;
-  slabSize: SlabSize;
+  slabSize: string;
   containerClassName?: string;
 }
 
