@@ -16,8 +16,10 @@ const ItemRow = ({
 }: Props): JSX.Element => {
   const { addItemToCart, removeItemFromCart } = useContext(CartContext);
   const { quantity, product } = itemData;
-  const { image } = product;
-  const { mobile, imageAltText } = image;
+  const { allImageData } = product;
+  const { productImageData } = allImageData;
+  const { mobile, imageAltText } = productImageData;
+
   return withSpecifyQuantity ? (
     <div className="row item-row with-specify-quantity">
       <ImageSlab
