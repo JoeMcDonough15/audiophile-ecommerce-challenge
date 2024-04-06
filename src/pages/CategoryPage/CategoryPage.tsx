@@ -50,32 +50,36 @@ const CategoryPage = () => {
                 className="main-container featured-product-container col"
                 key={product.id}
               >
-                <div className="featured-product-image-container">
-                  <ImageSlab
-                    slabSize="mobile"
-                    imageData={{
-                      imageSrc: product.allImageData.categoryImageData.mobile,
-                      imageAltText:
-                        product.allImageData.categoryImageData.imageAltText,
-                    }}
-                  />
-                  <ImageSlab
-                    slabSize="tablet"
-                    imageData={{
-                      imageSrc: product.allImageData.categoryImageData.tablet,
-                      imageAltText:
-                        product.allImageData.categoryImageData.imageAltText,
-                    }}
-                  />
-                  <ImageSlab
-                    slabSize="desktop"
-                    imageData={{
-                      imageSrc: product.allImageData.categoryImageData.desktop,
-                      imageAltText:
-                        product.allImageData.categoryImageData.imageAltText,
-                    }}
-                  />
-                </div>
+                {" "}
+                {product.allImageData && (
+                  <div className="featured-product-image-container">
+                    <ImageSlab
+                      slabSize="mobile"
+                      imageData={{
+                        imageSrc: product.allImageData.categoryImageData.mobile,
+                        imageAltText:
+                          product.allImageData.categoryImageData.imageAltText,
+                      }}
+                    />
+                    <ImageSlab
+                      slabSize="tablet"
+                      imageData={{
+                        imageSrc: product.allImageData.categoryImageData.tablet,
+                        imageAltText:
+                          product.allImageData.categoryImageData.imageAltText,
+                      }}
+                    />
+                    <ImageSlab
+                      slabSize="desktop"
+                      imageData={{
+                        imageSrc:
+                          product.allImageData.categoryImageData.desktop,
+                        imageAltText:
+                          product.allImageData.categoryImageData.imageAltText,
+                      }}
+                    />
+                  </div>
+                )}
                 <div className="featured-product-text-container col">
                   <div className="featured-product-info col">
                     {product.isNewProduct && (

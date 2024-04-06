@@ -13,7 +13,9 @@ const ProductCategoryMenu = ({
   const { allProducts } = useContext(ProductsContext);
   const productsWithCategoryThumbnails = allProducts
     .filter((product: Product) => {
-      return product.allImageData.categoryImageData.thumbnail;
+      if (product.allImageData) {
+        return product.allImageData.categoryImageData.thumbnail;
+      }
     })
     .sort((currentProduct: Product, nextProduct: Product): number => {
       if (
@@ -31,14 +33,16 @@ const ProductCategoryMenu = ({
     <nav className={"main-container product-category-menu col"}>
       {productsWithCategoryThumbnails.map((product: Product) => {
         return (
-          <CategorySlab
-            key={product.id}
-            categoryName={product.category}
-            imageData={product.allImageData.categoryImageData}
-            thumbnailName={`${product.category}-thumbnail thumbnail-image`}
-            buttonDestination={`/category/${product.category}`}
-            handleMenuClick={handleMenuClick}
-          />
+          product.allImageData && (
+            <CategorySlab
+              key={product.id}
+              categoryName={product.category}
+              imageData={product.allImageData.categoryImageData}
+              thumbnailName={`${product.category}-thumbnail thumbnail-image`}
+              buttonDestination={`/category/${product.category}`}
+              handleMenuClick={handleMenuClick}
+            />
+          )
         );
       })}
     </nav>

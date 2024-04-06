@@ -42,6 +42,10 @@ const ProductPage = () => {
     allImageData,
   } = pageProduct;
 
+  if (!allImageData) {
+    return <>No images to display</>;
+  }
+
   const { productImageData, galleryImageData, relatedProductsImageData } =
     allImageData;
 

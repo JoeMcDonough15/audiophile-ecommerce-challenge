@@ -20,11 +20,11 @@ const HomeFeatureTwo = ({ productSlug }: Props): JSX.Element => {
 
   const { name, allImageData } = featuredProduct;
 
-  const { homepageImageData } = allImageData;
-
-  if (!homepageImageData) {
+  if (!allImageData || !allImageData.homepageImageData) {
     return <>Item not found</>;
   }
+
+  const { homepageImageData } = allImageData;
 
   const { mobile, tablet, desktop, imageAltText } = homepageImageData;
 

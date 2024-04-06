@@ -17,6 +17,9 @@ const ItemRow = ({
   const { addItemToCart, removeItemFromCart } = useContext(CartContext);
   const { quantity, product } = itemData;
   const { allImageData } = product;
+  if (!allImageData) {
+    return <>No item to display</>;
+  }
   const { productImageData } = allImageData;
   const { mobile, imageAltText } = productImageData;
 

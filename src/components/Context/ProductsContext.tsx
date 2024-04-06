@@ -2,26 +2,6 @@ import { PropsWithChildren, createContext } from "react";
 import allProductsWithoutImages from "../../data.json";
 import allProductImages from "../../imageData";
 
-const assignImagesToProducts = (
-  productList: ProductWithoutImageData[],
-  productImagesList: ProductImageData[]
-) => {
-  const newProductList: Product[] = [];
-  productList.map((product, index) => {
-    const currentProductImages = productImagesList[index];
-    // @ts-ignore
-    product["allImageData"] = currentProductImages;
-    //@ts-ignore
-    newProductList.push(product);
-  });
-  return newProductList;
-};
-
-const allProducts: Product[] = assignImagesToProducts(
-  allProductsWithoutImages,
-  allProductImages
-);
-
 export interface ImageDataAllSizes {
   thumbnail?: string;
   mobile: string;
@@ -58,21 +38,6 @@ export interface RelatedProduct {
   name: string;
 }
 
-export interface ProductWithoutImageData {
-  id: number;
-  slug: string;
-  name: string;
-  abbreviatedName?: string;
-  category: string;
-  isNewProduct: boolean;
-  price: number;
-  description: string;
-  teaserDescription?: string;
-  features: string;
-  includes: { quantity: number; item: string }[];
-  others: RelatedProduct[];
-}
-
 export interface Product {
   id: number;
   slug: string;
@@ -86,13 +51,33 @@ export interface Product {
   features: string;
   includes: { quantity: number; item: string }[];
   others: RelatedProduct[];
-  allImageData: ProductImageData;
+  allImageData?: ProductImageData;
 }
 
 interface ProductsContextType {
   allProducts: Product[];
   findProduct: (arg0: Product[], arg1: string) => Product | void;
 }
+
+const assignImagesToProducts = (
+  productList: Product[],
+  productImagesList: ProductImageData[]
+) => {
+  const newProductList: Product[] = [];
+  productList.map((product, index) => {
+    const currentProductImages = productImagesList[index];
+    // @ts-ignore
+    product["allImageData"] = currentProductImages;
+    //@ts-ignore
+    newProductList.push(product);
+  });
+  return newProductList;
+};
+
+const allProducts: Product[] = assignImagesToProducts(
+  allProductsWithoutImages,
+  allProductImages
+);
 
 export const ProductsContext = createContext<ProductsContextType>({
   allProducts,

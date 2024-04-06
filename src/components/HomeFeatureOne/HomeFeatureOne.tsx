@@ -23,11 +23,11 @@ const HomeFeatureOne = ({ productSlug }: Props): JSX.Element => {
 
   const { allImageData, name, teaserDescription } = product;
 
-  const { homepageImageData } = allImageData;
-
-  if (!homepageImageData || !teaserDescription) {
+  if (!allImageData || !allImageData.homepageImageData || !teaserDescription) {
     return <>Item not found</>;
   }
+
+  const { homepageImageData } = allImageData;
 
   const { mobile, tablet, desktop, imageAltText } = homepageImageData;
   return (
