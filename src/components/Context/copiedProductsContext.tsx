@@ -56,6 +56,7 @@ export interface ProductImageData {
 export interface RelatedProduct {
   slug: string;
   name: string;
+  // image: ImageDataAllSizes;
 }
 
 export interface ProductWithoutImageData {
@@ -63,13 +64,22 @@ export interface ProductWithoutImageData {
   slug: string;
   name: string;
   abbreviatedName?: string;
+  // image: ImageDataAllSizes;
+  // headerImage?: ImageDataAllSizes;
+  // homePageImage?: ImageDataAllSizes;
   category: string;
+  // categoryImage: ImageDataAllSizes;
   isNewProduct: boolean;
   price: number;
   description: string;
   teaserDescription?: string;
   features: string;
   includes: { quantity: number; item: string }[];
+  // gallery: {
+  //   first: ImageDataAllSizes;
+  //   second: ImageDataAllSizes;
+  //   third: ImageDataAllSizes;
+  // };
   others: RelatedProduct[];
 }
 
@@ -78,13 +88,22 @@ export interface Product {
   slug: string;
   name: string;
   abbreviatedName?: string;
+  // image: ImageDataAllSizes;
+  // headerImage?: ImageDataAllSizes;
+  // homePageImage?: ImageDataAllSizes;
   category: string;
+  // categoryImage: ImageDataAllSizes;
   isNewProduct: boolean;
   price: number;
   description: string;
   teaserDescription?: string;
   features: string;
   includes: { quantity: number; item: string }[];
+  // gallery: {
+  //   first: ImageDataAllSizes;
+  //   second: ImageDataAllSizes;
+  //   third: ImageDataAllSizes;
+  // };
   others: RelatedProduct[];
   allImageData: ProductImageData;
 }
