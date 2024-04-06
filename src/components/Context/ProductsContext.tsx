@@ -1,6 +1,26 @@
 import { PropsWithChildren, createContext } from "react";
-import allProducts from "../../data.json";
+import allProductsWithoutImages from "../../data.json";
 import allProductImages from "../../imageData";
+
+const assignImagesToProducts = (
+  productList: ProductWithoutImageData[],
+  productImagesList: ProductImageData[]
+) => {
+  const newProductList: Product[] = [];
+  productList.map((product, index) => {
+    const currentProductImages = productImagesList[index];
+    // @ts-ignore
+    product["allImageData"] = currentProductImages;
+    //@ts-ignore
+    newProductList.push(product);
+  });
+  return newProductList;
+};
+
+const allProducts: Product[] = assignImagesToProducts(
+  allProductsWithoutImages,
+  allProductImages
+);
 
 export interface ImageDataAllSizes {
   categoryThumbnail?: string;
@@ -12,7 +32,7 @@ export interface ImageDataAllSizes {
 
 export interface ImageDataOneSize {
   id: number;
-  imageSrc: any;
+  imageSrc: string;
   imageAltText: string;
   imageSize: string;
 }
@@ -39,7 +59,7 @@ export interface RelatedProduct {
   image: ImageDataAllSizes;
 }
 
-export interface Product {
+export interface ProductWithoutImageData {
   id: number;
   slug: string;
   name: string;
@@ -63,21 +83,39 @@ export interface Product {
   others: RelatedProduct[];
 }
 
+export interface Product {
+  id: number;
+  slug: string;
+  name: string;
+  abbreviatedName?: string;
+  image: ImageDataAllSizes;
+  headerImage?: ImageDataAllSizes;
+  homePageImage?: ImageDataAllSizes;
+  category: string;
+  categoryImage: ImageDataAllSizes;
+  isNewProduct: boolean;
+  price: number;
+  description: string;
+  teaserDescription?: string;
+  features: string;
+  includes: { quantity: number; item: string }[];
+  gallery: {
+    first: ImageDataAllSizes;
+    second: ImageDataAllSizes;
+    third: ImageDataAllSizes;
+  };
+  others: RelatedProduct[];
+  allImageData: ProductImageData;
+}
+
 interface ProductsContextType {
   allProducts: Product[];
-  allProductImages: ProductImageData[];
   findProduct: (arg0: Product[], arg1: string) => Product | void;
-  findProductImageData: (
-    arg0: ProductImageData[],
-    arg1: string
-  ) => ProductImageData | void;
 }
 
 export const ProductsContext = createContext<ProductsContextType>({
   allProducts,
-  allProductImages,
   findProduct: () => {},
-  findProductImageData: () => {},
 });
 
 export const ProductsProvider = ({ children }: PropsWithChildren) => {
@@ -86,25 +124,12 @@ export const ProductsProvider = ({ children }: PropsWithChildren) => {
       return product.slug === productSlug;
     });
   };
-  const findProductImageData = (
-    allProductImages: ProductImageData[],
-    productSlug: string
-  ) => {
-    let productImageData;
-    allProductImages.forEach((productImageObject) => {
-      if (productImageObject.productName === productSlug) {
-        productImageData = productImageObject;
-      }
-    });
-    return productImageData;
-  };
+
   return (
     <ProductsContext.Provider
       value={{
         allProducts,
-        allProductImages,
         findProduct,
-        findProductImageData,
       }}
     >
       {children}

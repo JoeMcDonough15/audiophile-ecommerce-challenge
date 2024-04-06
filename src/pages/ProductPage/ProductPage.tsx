@@ -22,27 +22,28 @@ const ProductPage = () => {
   const { productName: productSlug } = useParams<{
     productName: string;
   }>();
-  const { allProducts, allProductImages, findProduct, findProductImageData } =
-    useContext(ProductsContext);
+
+  const { allProducts, findProduct } = useContext(ProductsContext);
 
   // @ts-ignore
   const pageProduct = findProduct(allProducts, productSlug);
   if (!pageProduct) {
     return <PageNotFound />;
   }
-  // @ts-ignore
-  const allProductImageData = findProductImageData(
-    allProductImages,
-    //@ts-ignore
-    productSlug
-  );
 
-  const { isNewProduct, features, includes, others, name, price, description } =
-    pageProduct;
+  const {
+    isNewProduct,
+    features,
+    includes,
+    others,
+    name,
+    price,
+    description,
+    allImageData,
+  } = pageProduct;
 
-  //@ts-ignore
   const { productImageData, galleryImageData, relatedProductsImageData } =
-    allProductImageData;
+    allImageData;
 
   const { mobile, tablet, desktop, imageAltText } = productImageData;
 
