@@ -43,6 +43,7 @@ const commonConfig: Configuration = {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/",
     filename: "bundle.js",
+    assetModuleFilename: "assets/[hash][ext]",
   },
   devServer: {
     stats: "minimal",
