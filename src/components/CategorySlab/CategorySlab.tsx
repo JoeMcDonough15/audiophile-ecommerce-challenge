@@ -24,7 +24,7 @@ const CategorySlab = (props: Props): JSX.Element => {
   return (
     <div className="category-slab content-slab col">
       <img
-        src={imageData.categoryThumbnail}
+        src={imageData.thumbnail}
         alt={imageData.imageAltText}
         className={thumbnailName}
       />

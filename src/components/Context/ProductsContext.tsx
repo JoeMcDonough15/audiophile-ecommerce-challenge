@@ -23,7 +23,7 @@ const allProducts: Product[] = assignImagesToProducts(
 );
 
 export interface ImageDataAllSizes {
-  categoryThumbnail?: string;
+  thumbnail?: string;
   mobile: string;
   tablet: string;
   desktop: string;

@@ -18,26 +18,32 @@ const HomeFeatureTwo = ({ productSlug }: Props): JSX.Element => {
     return <PageNotFound />;
   }
 
-  const { name, homePageImage } = featuredProduct;
+  const { name, allImageData } = featuredProduct;
 
-  // @ts-ignore
-  const { mobile, tablet, desktop, altImageText } = homePageImage;
+  const { homepageImageData } = allImageData;
+
+  if (!homepageImageData) {
+    return <>Item not found</>;
+  }
+
+  const { mobile, tablet, desktop, imageAltText } = homepageImageData;
+
   return (
     <section className="home-feature-two-container">
       <CustomImage
         className="home-feature-two-image image-mobile"
         src={mobile}
-        altText={altImageText}
+        altText={imageAltText}
       />
       <CustomImage
         className="home-feature-two-image image-tablet"
         src={tablet}
-        altText={altImageText}
+        altText={imageAltText}
       />
       <CustomImage
         className="home-feature-two-image image-desktop"
         src={desktop}
-        altText={altImageText}
+        altText={imageAltText}
       />
       <HeadingAndButton
         productName={name}

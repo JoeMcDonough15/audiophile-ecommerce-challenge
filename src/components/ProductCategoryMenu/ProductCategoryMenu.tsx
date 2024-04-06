@@ -13,7 +13,7 @@ const ProductCategoryMenu = ({
   const { allProducts } = useContext(ProductsContext);
   const productsWithCategoryThumbnails = allProducts
     .filter((product: Product) => {
-      return product.categoryImage.categoryThumbnail;
+      return product.allImageData.categoryImageData.thumbnail;
     })
     .sort((currentProduct: Product, nextProduct: Product): number => {
       if (
@@ -34,7 +34,7 @@ const ProductCategoryMenu = ({
           <CategorySlab
             key={product.id}
             categoryName={product.category}
-            imageData={product.categoryImage}
+            imageData={product.allImageData.categoryImageData}
             thumbnailName={`${product.category}-thumbnail thumbnail-image`}
             buttonDestination={`/category/${product.category}`}
             handleMenuClick={handleMenuClick}

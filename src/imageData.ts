@@ -2,6 +2,7 @@ const allProductImages = [
   {
     productName: "yx1-earphones",
     categoryImageData: {
+      thumbnail: require("./assets/shared/image-category-thumbnail-earphones.png"),
       mobile: require("./assets/product-yx1-earphones/mobile/image-category-page-preview.jpg"),
       tablet: require("./assets/product-yx1-earphones/tablet/image-category-page-preview.jpg"),
       desktop: require("./assets/product-yx1-earphones/desktop/image-category-page-preview.jpg"),
@@ -287,6 +288,7 @@ const allProductImages = [
   {
     productName: "xx99-mark-one-headphones",
     categoryImageData: {
+      thumbnail: require("./assets/shared/image-category-thumbnail-headphones.png"),
       mobile: require("./assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg"),
       tablet: require("./assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg"),
       desktop: require("./assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg"),
@@ -717,6 +719,7 @@ const allProductImages = [
   {
     productName: "zx9-speaker",
     categoryImageData: {
+      thumbnail: require("./assets/shared/image-category-thumbnail-speakers.png"),
       mobile: require("./assets/product-zx9-speaker/mobile/image-category-page-preview.jpg"),
       tablet: require("./assets/product-zx9-speaker/tablet/image-category-page-preview.jpg"),
       desktop: require("./assets/product-zx9-speaker/desktop/image-category-page-preview.jpg"),

@@ -21,9 +21,15 @@ const HomeFeatureOne = ({ productSlug }: Props): JSX.Element => {
     return <PageNotFound />;
   }
 
-  const { homePageImage, name, teaserDescription } = product;
-  // @ts-ignore
-  const { mobile, tablet, desktop, imageAltText } = homePageImage;
+  const { allImageData, name, teaserDescription } = product;
+
+  const { homepageImageData } = allImageData;
+
+  if (!homepageImageData || !teaserDescription) {
+    return <>Item not found</>;
+  }
+
+  const { mobile, tablet, desktop, imageAltText } = homepageImageData;
   return (
     <section className="home-feature-one">
       <SvgDetailsProvider>
@@ -50,7 +56,6 @@ const HomeFeatureOne = ({ productSlug }: Props): JSX.Element => {
         <div className={"featured-product-info col home-feature-one-info"}>
           <FeaturedProductInfo
             productName={name}
-            // @ts-ignore
             productDescription={teaserDescription}
             headerClass="home-feature-one-header"
             descriptionClass="home-feature-one-description light-grey-text"
