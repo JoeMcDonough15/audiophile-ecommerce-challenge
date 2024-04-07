@@ -5,6 +5,7 @@ import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 import "./checkout.sass";
 import { CartContext } from "../../components/Context/CartContext";
 import ConfirmationModal from "../../components/ConfirmationModal/ConfirmationModal";
+import EmptyCartText from "../../components/EmptyCartText/EmptyCartText";
 
 export interface OrderInformation {
   name: string;
@@ -53,22 +54,15 @@ const Checkout = (): JSX.Element => {
         <div className="main-container">
           <ButtonGoBack />
         </div>{" "}
-        {/* {!cartEmpty && (
-          <>
-            {!formComplete ? (
-              <CheckoutForm setFormComplete={setFormComplete} />
-            ) : (
-              <h1>Form Complete!</h1>
-            )}
-          </>
-        )} */}
-        <>
+        {!cartEmpty ? (
           <CheckoutForm
             setFormComplete={setFormComplete}
             orderInformation={orderInformation}
             setOrderInformation={setOrderInformation}
           />
-        </>
+        ) : (
+          <EmptyCartText />
+        )}
       </main>
       {formComplete && (
         <ConfirmationModal

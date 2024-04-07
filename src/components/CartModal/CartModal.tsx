@@ -7,6 +7,7 @@ import ButtonLink from "../ButtonLink/ButtonLink";
 import ButtonRemoveAll from "../ButtonRemoveAll/ButtonRemoveAll";
 import { CartContext, ItemToPurchase } from "../Context/CartContext";
 import { ROUTE_PATHS } from "../constants";
+import EmptyCartText from "../EmptyCartText/EmptyCartText";
 
 interface Props {
   modalIsOpen: boolean;
@@ -33,9 +34,7 @@ const CartModal = ({
   return (
     <section id="cart-modal" className={cartModalClasses}>
       {numItemsInCart === 0 ? (
-        <h6>
-          <em>No items in cart</em>
-        </h6>
+        <EmptyCartText />
       ) : (
         <>
           <div className="row cart-top-row">
