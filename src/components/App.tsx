@@ -12,6 +12,11 @@ import { CartProvider } from "../components/Context/CartContext";
 import { ProductsProvider } from "./Context/ProductsContext";
 import { SvgDetailsProvider } from "./Context/SvgDetailsContext";
 import { ROUTE_PATHS } from "./constants";
+import { CustomerProvider } from "./Context/CustomerContext";
+import { ModalVisibilityProvider } from "./Context/ModalVisibilityContext";
+import MobileMenu from "./MobileMenu/MobileMenu";
+import CartModal from "./CartModal/CartModal";
+import ConfirmationModal from "./ConfirmationModal/ConfirmationModal";
 
 /*  1. The Problem - When any of the modals are opened (MobileMenu, CartModal, and ConfirmationModal), I want for everything
 underneath those modals to be grayed/darkened so the modals are more visible and so that it's more clear to the user that
@@ -27,23 +32,7 @@ The ConfirmationModal lives inside the CheckoutPage component.  The CheckoutPage
 form state is marked as complete.  
 
 Perhaps, I could have all of the components of the entire app (other than the modals) wrapped in one element
-with a class of .overlay.  That overlay class would be what greys/darkens the content within it.  
-
-Instead of having the modals rendered inside other components, they could live on App.tsx, wrapped within
-whatever ContextProviders they rely on.  What do they rely on?
-
-MobileMenu - relies on ProductsProvider and SvgDetails (for the ButtonLink's arrow svg)
-
-CartModal - relies on CartProvider
-
-ConfirmationModal - relies on CartProvider, SVGDetailsProvider, and form state/OrderInformation, which could be moved into Context itself and used wherever it is 
-manipulated or rendered, so inside CheckoutPage, inside CheckoutForm, and inside ConfirmationModal
-
-
-This way, no props would be required for modals.  They could rely on useContext to get whatever data they need to render 
-their data.  Then, all modals could live outside the scope of all other elements of the app.  
-So when all other elements get their single container (.overlay) greyed out and have pointer-events disabled, 
-the modals themselves would not be affected.
+with a class of .overlay.  That overlay class would be what greys/darkens the content within it.
 
 
 <ProductsProvider>
@@ -67,10 +56,6 @@ the modals themselves would not be affected.
 ModalVisiibilityContext would contain: 
 
   All components that would need access to ModalVisiibilityContext: 
-
-  All three Modal components --> to determine whether they are opened or closed (with local state and useEffect hooks that changes that local state)
-  Header --> for buttons hamburgerMenu and shoppingCart to be able to call handleCartClick and handleMenuClick events
-  CategorySlab --> so that anytime a category link is visited, the MobileMenu is closed (if open)
   OverlayComponent --> so that this component's classList can include .dimmed whenever modalVisibilityIndicator > 0
  
 */
@@ -80,27 +65,34 @@ function App(): JSX.Element {
     <ProductsProvider>
       <CartProvider>
         <SvgDetailsProvider>
-          <Header />
-        </SvgDetailsProvider>
+          <CustomerProvider>
+            <ModalVisibilityProvider>
+              <Header />
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route
+                  path={`/${ROUTE_PATHS.CATEGORY}/:categoryName`}
+                  element={<CategoryPage />}
+                />
+                <Route
+                  path={`/${ROUTE_PATHS.PRODUCT}/:productName`}
+                  element={<ProductPage />}
+                />
+                <Route
+                  path={`/${ROUTE_PATHS.CHECKOUT}`}
+                  element={<Checkout />}
+                />
+                <Route element={<PageNotFound />} />
+              </Routes>
 
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route
-            path={`/${ROUTE_PATHS.CATEGORY}/:categoryName`}
-            element={<CategoryPage />}
-          />
-          <Route
-            path={`/${ROUTE_PATHS.PRODUCT}/:productName`}
-            element={<ProductPage />}
-          />
-          <Route path={`/${ROUTE_PATHS.CHECKOUT}`} element={<Checkout />} />
-          <Route element={<PageNotFound />} />
-        </Routes>
-
-        <ProductCategoryMenu />
-        <AboutUs />
-        <SvgDetailsProvider>
-          <Footer />
+              <ProductCategoryMenu />
+              <AboutUs />
+              <Footer />
+              <MobileMenu />
+              <CartModal />
+              <ConfirmationModal />
+            </ModalVisibilityProvider>
+          </CustomerProvider>
         </SvgDetailsProvider>
       </CartProvider>
     </ProductsProvider>

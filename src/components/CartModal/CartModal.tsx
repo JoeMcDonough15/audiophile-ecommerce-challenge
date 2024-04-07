@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import ItemRow from "../ItemRow/ItemRow";
 import FeeInformation from "../FeeInformation/FeeInformation";
 import fixPrice from "../../fixPrice";
@@ -8,18 +8,23 @@ import ButtonRemoveAll from "../ButtonRemoveAll/ButtonRemoveAll";
 import { CartContext, ItemToPurchase } from "../Context/CartContext";
 import { ROUTE_PATHS } from "../constants";
 import EmptyCartText from "../EmptyCartText/EmptyCartText";
+import { ModalVisibilityContext } from "../Context/ModalVisibilityContext";
 
-interface Props {
-  modalIsOpen: boolean;
-  handleCartClick: React.MouseEventHandler<HTMLAnchorElement>;
-}
+const CartModal = (): JSX.Element => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const { modalVisibilityIndicator, handleCartClick } = useContext(
+    ModalVisibilityContext
+  );
 
-const CartModal = ({
-  modalIsOpen = false,
-  handleCartClick,
-}: Props): JSX.Element => {
+  useEffect(() => {
+    if (modalVisibilityIndicator === 2) {
+      setModalIsOpen(true);
+    } else {
+      setModalIsOpen(false);
+    }
+  }, [modalVisibilityIndicator]);
+
   let cartModalClasses = "cart-modal col";
-
   if (!modalIsOpen) {
     cartModalClasses += " hide";
   }
@@ -42,6 +47,7 @@ const CartModal = ({
             <ButtonRemoveAll
               onClick={() => {
                 removeAllItemsFromCart();
+                handleCartClick();
               }}
             />
           </div>

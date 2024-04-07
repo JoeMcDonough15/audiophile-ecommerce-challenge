@@ -2,6 +2,8 @@ import "./category-slab.sass";
 import svgDetails from "../svg-details.json";
 import ButtonLink from "../ButtonLink/ButtonLink";
 import { ImageDataAllSizes } from "../Context/ProductsContext";
+import { useContext } from "react";
+import { ModalVisibilityContext } from "../Context/ModalVisibilityContext";
 
 const arrowIconDetails = svgDetails.arrowIcon;
 
@@ -10,17 +12,15 @@ interface Props {
   categoryName: string;
   thumbnailName: string;
   buttonDestination: string;
-  handleMenuClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-const CategorySlab = (props: Props): JSX.Element => {
-  const {
-    imageData,
-    categoryName,
-    thumbnailName,
-    buttonDestination,
-    handleMenuClick = () => {},
-  } = props;
+const CategorySlab = ({
+  imageData,
+  categoryName,
+  thumbnailName,
+  buttonDestination,
+}: Props): JSX.Element => {
+  const { closeAllModals } = useContext(ModalVisibilityContext);
   return (
     <div className="category-slab content-slab col">
       <img
@@ -35,7 +35,7 @@ const CategorySlab = (props: Props): JSX.Element => {
         buttonDestination={buttonDestination}
         buttonText="Shop"
         className="button-with-arrow-icon category-slab-button"
-        onClick={handleMenuClick}
+        onClick={closeAllModals}
       />
     </div>
   );

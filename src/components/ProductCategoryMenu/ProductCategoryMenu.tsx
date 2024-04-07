@@ -3,13 +3,7 @@ import CategorySlab from "../CategorySlab/CategorySlab";
 import "./product-category-menu.sass";
 import { Product, ProductsContext } from "../Context/ProductsContext";
 
-interface Props {
-  handleMenuClick?: React.MouseEventHandler<HTMLAnchorElement>;
-}
-
-const ProductCategoryMenu = ({
-  handleMenuClick = () => {},
-}: Props): JSX.Element => {
+const ProductCategoryMenu = (): JSX.Element => {
   const { allProducts } = useContext(ProductsContext);
   const productsWithCategoryThumbnails = allProducts
     .filter((product: Product) => {
@@ -40,7 +34,6 @@ const ProductCategoryMenu = ({
               imageData={product.allImageData.categoryImageData}
               thumbnailName={`${product.category}-thumbnail thumbnail-image`}
               buttonDestination={`/category/${product.category}`}
-              handleMenuClick={handleMenuClick}
             />
           )
         );

@@ -12,6 +12,7 @@ interface ModalVisibilityContextType {
   setModalVisibilityIndicator: (arg0: number) => void;
   handleCartClick: () => void;
   handleMenuClick: () => void;
+  closeAllModals: () => void;
 }
 export const ModalVisibilityContext = createContext<ModalVisibilityContextType>(
   {
@@ -19,6 +20,7 @@ export const ModalVisibilityContext = createContext<ModalVisibilityContextType>(
     setModalVisibilityIndicator: () => {},
     handleCartClick: () => {},
     handleMenuClick: () => {},
+    closeAllModals: () => {},
   }
 );
 
@@ -27,6 +29,9 @@ export const ModalVisibilityProvider = ({ children }: PropsWithChildren) => {
   const { formComplete } = useContext(CustomerContext);
 
   const handleCartClick = () => {
+    if (modalVisibilityIndicator === 3) {
+      return;
+    }
     if (modalVisibilityIndicator === 0 || modalVisibilityIndicator === 1) {
       setModalVisibilityIndicator(2);
     } else {
@@ -35,6 +40,9 @@ export const ModalVisibilityProvider = ({ children }: PropsWithChildren) => {
   };
 
   const handleMenuClick = () => {
+    if (modalVisibilityIndicator === 3) {
+      return;
+    }
     if (modalVisibilityIndicator === 0 || modalVisibilityIndicator === 2) {
       setModalVisibilityIndicator(1);
     } else {
@@ -42,9 +50,13 @@ export const ModalVisibilityProvider = ({ children }: PropsWithChildren) => {
     }
   };
 
+  const closeAllModals = () => {
+    setModalVisibilityIndicator(0);
+  };
+
   useEffect(() => {
     if (formComplete) {
-      setModalVisibilityIndicator(3);
+      setModalVisibilityIndicator(3); // so that other two modals cannot open if ConfirmationModal is visible
     } else {
       setModalVisibilityIndicator(0);
     }
@@ -57,6 +69,7 @@ export const ModalVisibilityProvider = ({ children }: PropsWithChildren) => {
         setModalVisibilityIndicator,
         handleCartClick,
         handleMenuClick,
+        closeAllModals,
       }}
     >
       {children}

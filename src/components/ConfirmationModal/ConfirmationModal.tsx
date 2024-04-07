@@ -9,9 +9,11 @@ import { ROUTE_PATHS } from "../constants";
 import { CustomerContext } from "../Context/CustomerContext";
 
 const ConfirmationModal = (): JSX.Element => {
-  const { customerInformation, setFormComplete } = useContext(CustomerContext);
+  const { customerInformation, setFormComplete, formComplete } =
+    useContext(CustomerContext);
   const { removeAllItemsFromCart } = useContext(CartContext);
-  return (
+
+  return formComplete ? (
     <section className="confirmation-modal">
       <ConfirmationSvg />
       <div className="confirmation-text-container col">
@@ -31,6 +33,8 @@ const ConfirmationModal = (): JSX.Element => {
         }}
       />
     </section>
+  ) : (
+    <></>
   );
 };
 
