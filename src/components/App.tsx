@@ -65,56 +65,14 @@ the modals themselves would not be affected.
 
 
 ModalVisiibilityContext would contain: 
-  const [modalVisibilityIndicator, setModalVisibilityIndicator] = useState(0);
-  function handleCartClick() {
-    if (modalVisibilityIndicator === 0 || modalVisibilityIndicator === 1) {
-      setModalVisibilityIndicator(2);
-    } else {
-      setModalVisibilityIndicator(0);
-    }
-  }
-
-  function handleMenuClick() {
-    if (modalVisibilityIndicator === 0 || modalVisibilityIndicator === 2) {
-      setModalVisibilityIndicator(1);
-    } else {
-      setModalVisibilityIndicator(0);
-    }
-  }
-
-  useEffect(() => {
-    if (formComplete) {
-      setModalVisibilityIndicator(3);
-    } else {
-      setModalVisibilityIndicator(0);
-    }
-  }, [formComplete]);
-
-
-
 
   All components that would need access to ModalVisiibilityContext: 
 
-  MobileMenu-----------|
-  CartModal --------|  |                     
-  ConfirmationModal --> to determine whether they are opened or closed (with local state and useEffect hooks that changes that local state)
+  All three Modal components --> to determine whether they are opened or closed (with local state and useEffect hooks that changes that local state)
   Header --> for buttons hamburgerMenu and shoppingCart to be able to call handleCartClick and handleMenuClick events
   CategorySlab --> so that anytime a category link is visited, the MobileMenu is closed (if open)
   OverlayComponent --> so that this component's classList can include .dimmed whenever modalVisibilityIndicator > 0
-
-
-*/
-
-/* 
-
-CustomerContext
-
-What are all the components that will need access to this Context?  
-
-CheckoutForm -  to have access to: setFormComplete, orderInformation, setOrderInformation,
-ModalVisibilityContext - to control the useEffect hook that's being used to render ConfirmationModal visible/invisible
-ConfirmationModal - to put the first name on the Thank you header
-
+ 
 */
 
 function App(): JSX.Element {
