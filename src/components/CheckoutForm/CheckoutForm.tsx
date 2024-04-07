@@ -6,27 +6,19 @@ import FormFieldRadioInput from "../FormField/FormFieldRadioInput";
 import FormFieldTextInput from "../FormField/FormFieldTextInput";
 import { customerSchema } from "../../Validations/CustomerValidation";
 import { useFormik } from "formik";
-import { OrderInformation } from "../../pages/Checkout/Checkout";
 import IconAsSvg from "../IconAsSvg/IconAsSvg";
 import { AllSvgDetails } from "../Context/SvgDetailsContext";
+import { CustomerContext } from "../Context/CustomerContext";
 
-interface Props {
-  setFormComplete: (arg0: boolean) => void;
-  orderInformation: OrderInformation;
-  setOrderInformation: (arg0: OrderInformation) => void;
-}
-
-const CheckoutForm = ({
-  setFormComplete,
-  orderInformation,
-  setOrderInformation,
-}: Props): JSX.Element => {
+const CheckoutForm = (): JSX.Element => {
+  const { setFormComplete, customerInformation, setCustomerInformation } =
+    useContext(CustomerContext);
   const [paymentInstructions, setPaymentInstructions] = useState("e-money");
   const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
-    initialValues: orderInformation,
+    initialValues: customerInformation,
     validationSchema: customerSchema,
     onSubmit: (values) => {
-      setOrderInformation(values);
+      setCustomerInformation(values);
       setFormComplete(true);
     },
   });
