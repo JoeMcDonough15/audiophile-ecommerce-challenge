@@ -24,18 +24,7 @@
     gap: 16px
     width: 55.11%
 
-    & .content-slab
-
-        +small-phone
-            height: 50px
-            width: 50px
-
-        +tiny-phone
-            height: 45px
-            width: 45px
-
-    & .content-slab img     
-        border-radius: 8px
+   
 
 .item-row .quantity-with-times 
     order: 2
@@ -47,3 +36,18 @@
     
     +tiny-phone
         font-size: 10px
+
+.item-image-and-details, .item-row.with-specify-quantity
+
+    & .content-slab.image-thumbnail
+
+        +small-phone
+            height: 50px
+            width: 50px
+
+        +tiny-phone
+            height: 45px
+            width: 45px
+
+        & img     
+            border-radius: 8px
