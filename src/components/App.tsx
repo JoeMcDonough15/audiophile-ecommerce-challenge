@@ -18,6 +18,7 @@ import MobileMenu from "./MobileMenu/MobileMenu";
 import CartModal from "./CartModal/CartModal";
 import ConfirmationModal from "./ConfirmationModal/ConfirmationModal";
 import Overlay from "./Overlay/Overlay";
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
 function App(): JSX.Element {
   return (
@@ -26,6 +27,7 @@ function App(): JSX.Element {
         <SvgDetailsProvider>
           <CustomerProvider>
             <ModalVisibilityProvider>
+              <ScrollToTop />
               <Overlay>
                 <Header />
                 <Routes>
