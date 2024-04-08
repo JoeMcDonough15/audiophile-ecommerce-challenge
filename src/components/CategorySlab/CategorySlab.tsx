@@ -20,7 +20,7 @@ const CategorySlab = ({
   thumbnailName,
   buttonDestination,
 }: Props): JSX.Element => {
-  const { closeAllModals } = useContext(ModalVisibilityContext);
+  const { closeModal } = useContext(ModalVisibilityContext);
   return (
     <div className="category-slab content-slab col">
       <img
@@ -35,7 +35,7 @@ const CategorySlab = ({
         buttonDestination={buttonDestination}
         buttonText="Shop"
         className="button-with-arrow-icon category-slab-button"
-        onClick={closeAllModals}
+        onClick={closeModal}
       />
     </div>
   );

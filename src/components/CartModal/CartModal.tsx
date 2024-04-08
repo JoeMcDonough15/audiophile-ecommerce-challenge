@@ -12,7 +12,7 @@ import { ModalVisibilityContext } from "../Context/ModalVisibilityContext";
 
 const CartModal = (): JSX.Element => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const { modalVisibilityIndicator, handleCartClick } = useContext(
+  const { modalVisibilityIndicator, closeModal } = useContext(
     ModalVisibilityContext
   );
 
@@ -47,7 +47,7 @@ const CartModal = (): JSX.Element => {
             <ButtonRemoveAll
               onClick={() => {
                 removeAllItemsFromCart();
-                handleCartClick();
+                closeModal();
               }}
             />
           </div>
@@ -70,7 +70,7 @@ const CartModal = (): JSX.Element => {
             className="button-checkout button-dark-orange"
             buttonText="checkout"
             buttonDestination={`${ROUTE_PATHS.CHECKOUT}`}
-            onClick={handleCartClick}
+            onClick={closeModal}
           />
         </>
       )}
