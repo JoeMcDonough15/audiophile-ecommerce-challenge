@@ -15,7 +15,7 @@ const Header = (): JSX.Element => {
   );
 
   return (
-    <header id="header" className="header-transparent-background">
+    <header id="header" className="header">
       <section className="mobile-header main-container row">
         <IconAsSvg
           className="hamburger-menu-icon"

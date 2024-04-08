@@ -9,13 +9,13 @@ const Overlay = ({ children }: PropsWithChildren) => {
   return (
     <>
       <div
-        className={
+        className={`overlay ${
           modalVisibilityIndicator === 3
             ? "confirmation-modal-open"
             : modalVisibilityIndicator > 0
             ? "cart-or-menu-modal-open"
             : ""
-        }
+        }`}
         onClickCapture={
           modalVisibilityIndicator < 3 && modalVisibilityIndicator > 0
             ? (event) => {

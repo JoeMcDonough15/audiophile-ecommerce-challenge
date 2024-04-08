@@ -72,7 +72,6 @@ const ProductPage = () => {
 
   return (
     <>
-      <Banner />
       <main className="product-page">
         <div className="main-container">
           <ButtonGoBack />

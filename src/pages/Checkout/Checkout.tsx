@@ -21,7 +21,6 @@ const Checkout = (): JSX.Element => {
 
   return (
     <>
-      <Banner />
       <main className={mainElementClasses}>
         <div className="main-container">
           <ButtonGoBack />
