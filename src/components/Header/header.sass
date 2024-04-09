@@ -2,10 +2,14 @@
 
 header.header
     background: $header-black-background
+    height: 90px
     position: fixed
     top: 0
     width: 100%
     z-index: 9999
+
+    +all-large-screen
+        height: 97px
     
 .mobile-header.row.main-container, .tablet-header.row.main-container, .desktop-header.row.main-container 
     align-items: center
