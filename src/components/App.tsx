@@ -29,7 +29,6 @@ function App(): JSX.Element {
             <ModalVisibilityProvider>
               <ScrollToTop />
               <Overlay>
-                <Header />
                 <Routes>
                   <Route path="/" element={<Homepage />} />
                   <Route
@@ -46,7 +45,7 @@ function App(): JSX.Element {
                   />
                   <Route element={<PageNotFound />} />
                 </Routes>
-
+                <Header />
                 <ProductCategoryMenu />
                 <AboutUs />
                 <Footer />
