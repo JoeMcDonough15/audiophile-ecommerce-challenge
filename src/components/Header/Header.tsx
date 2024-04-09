@@ -27,6 +27,7 @@ const Header = (): JSX.Element => {
           className="shopping-cart-icon"
           svgDetails={shoppingCart}
           onClick={handleCartClick}
+          withShoppingCartBadge
         />
       </section>
       <section className="tablet-header row main-container">
@@ -42,6 +43,7 @@ const Header = (): JSX.Element => {
           className="shopping-cart-icon"
           svgDetails={shoppingCart}
           onClick={handleCartClick}
+          withShoppingCartBadge
         />
       </section>
       <section className="desktop-header row main-container">
@@ -51,6 +53,7 @@ const Header = (): JSX.Element => {
           className="shopping-cart-icon"
           svgDetails={shoppingCart}
           onClick={handleCartClick}
+          withShoppingCartBadge
         />
       </section>
     </header>
