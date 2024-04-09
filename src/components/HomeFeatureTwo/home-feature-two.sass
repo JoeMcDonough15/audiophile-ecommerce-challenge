@@ -2,23 +2,21 @@
 
 
 .home-feature-two-container
+    @include set-background-image-from-file("../../assets/home/mobile/image-speaker-zx7.jpg")
     align-items: center
+    border-radius: 8px
     display: flex
     justify-content: flex-start
     padding: 106px 0 96px 25.5px 
     position: relative
 
     +all-tablets
+        @include set-background-image-from-file("../../assets/home/tablet/image-speaker-zx7.jpg")
         padding-left: 63px
         
     +all-large-screen
+        @include set-background-image-from-file("../../assets/home/desktop/image-speaker-zx7.jpg")
         padding-left: 96px
-    
-
-.home-feature-two-image
-    @include set-image-component-as-background
-    border-radius: 8px
-    z-index: -1
 
 
 .home-feature-two-container .featured-product-info.home-feature-two-info.col

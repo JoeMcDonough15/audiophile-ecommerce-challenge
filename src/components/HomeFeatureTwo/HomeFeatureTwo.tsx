@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import CustomImage from "../CustomImage/CustomImage";
 import HeadingAndButton from "../HeadingAndButton/HeadingAndButton";
 import "./home-feature-two.sass";
 import PageNotFound from "../../pages/PageNotFound";
@@ -18,33 +17,10 @@ const HomeFeatureTwo = ({ productSlug }: Props): JSX.Element => {
     return <PageNotFound />;
   }
 
-  const { name, allImageData } = featuredProduct;
-
-  if (!allImageData || !allImageData.homepageImageData) {
-    return <>Item not found</>;
-  }
-
-  const { homepageImageData } = allImageData;
-
-  const { mobile, tablet, desktop, imageAltText } = homepageImageData;
+  const { name } = featuredProduct;
 
   return (
     <section className="home-feature-two-container">
-      <CustomImage
-        className="home-feature-two-image image-mobile"
-        src={mobile}
-        altText={imageAltText}
-      />
-      <CustomImage
-        className="home-feature-two-image image-tablet"
-        src={tablet}
-        altText={imageAltText}
-      />
-      <CustomImage
-        className="home-feature-two-image image-desktop"
-        src={desktop}
-        altText={imageAltText}
-      />
       <HeadingAndButton
         productName={name}
         isHomeFeatureTwo
