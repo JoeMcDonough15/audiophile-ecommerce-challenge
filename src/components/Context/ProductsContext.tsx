@@ -66,9 +66,7 @@ const assignImagesToProducts = (
   const newProductList: Product[] = [];
   productList.map((product, index) => {
     const currentProductImages = productImagesList[index];
-    // @ts-ignore
     product["allImageData"] = currentProductImages;
-    //@ts-ignore
     newProductList.push(product);
   });
   return newProductList;
