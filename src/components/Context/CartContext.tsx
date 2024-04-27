@@ -11,7 +11,7 @@ export interface ItemToPurchase {
 
 interface CartContextType {
   itemsInCart: ItemToPurchase[];
-  numItemsInCart: number;
+  numItemsInCart: () => number;
   addItemToCart: (arg0: ItemToPurchase) => void;
   removeItemFromCart: (arg0: ItemToPurchase) => void;
   removeAllItemsFromCart: () => void;
@@ -23,7 +23,7 @@ interface CartContextType {
 
 export const CartContext = createContext<CartContextType>({
   itemsInCart: [],
-  numItemsInCart: 0,
+  numItemsInCart: () => 0,
   addItemToCart: () => {},
   removeItemFromCart: () => {},
   removeAllItemsFromCart: () => {},
@@ -72,6 +72,12 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
     setItemsInCart([]);
   };
 
+  const numItemsInCart = () => {
+    return itemsInCart.reduce((total, currentItem) => {
+      return total + currentItem.quantity;
+    }, 0);
+  };
+
   const calculateSubtotal = () => {
     return itemsInCart.reduce((total, currentItem) => {
       return total + currentItem.product.price * currentItem.quantity;
@@ -97,7 +103,7 @@ export const CartProvider = ({ children }: PropsWithChildren) => {
     <CartContext.Provider
       value={{
         itemsInCart,
-        numItemsInCart: itemsInCart.length,
+        numItemsInCart,
         addItemToCart,
         removeItemFromCart,
         removeAllItemsFromCart,

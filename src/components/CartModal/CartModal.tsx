@@ -38,12 +38,12 @@ const CartModal = (): JSX.Element => {
 
   return (
     <section id="cart-modal" className={cartModalClasses}>
-      {numItemsInCart === 0 ? (
+      {numItemsInCart() === 0 ? (
         <EmptyCartText />
       ) : (
         <>
           <div className="row cart-top-row">
-            <h6 className="black-text">Cart ({numItemsInCart})</h6>
+            <h6 className="black-text">Cart ({numItemsInCart()})</h6>
             <ButtonRemoveAll
               onClick={() => {
                 removeAllItemsFromCart();

@@ -11,7 +11,7 @@ const Checkout = (): JSX.Element => {
   const { numItemsInCart } = useContext(CartContext);
 
   useEffect(() => {
-    setCartEmpty(numItemsInCart === 0);
+    setCartEmpty(numItemsInCart() === 0);
   }, [numItemsInCart]);
 
   let mainElementClasses = "checkout-page ";

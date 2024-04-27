@@ -18,7 +18,7 @@ const ConfirmationTable = () => {
     if (viewExpanded) {
       buttonText = "View less";
     } else {
-      buttonText = `and ${numItemsInCart - 1} other item(s)`;
+      buttonText = `and ${numItemsInCart() - 1} other item(s)`;
     }
     setButtonExpandText(buttonText);
   }, [viewExpanded]);
@@ -28,7 +28,7 @@ const ConfirmationTable = () => {
       <div className="order-confirmation-top">
         {<SummaryOfItems displayOne={!viewExpanded} />}
         <ThinRule customStyle="confirmation-thin-rule" />
-        {numItemsInCart > 1 && (
+        {numItemsInCart() > 1 && (
           <ButtonExpandOrderSummary
             buttonExpandText={buttonExpandText}
             setViewExpanded={setViewExpanded}
